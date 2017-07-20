@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Piechart from './Piechart.js';
+import ChartTemplate from './ChartTemplate.js';
 import QueryForm from './QueryForm.js';
 import axios from 'axios';
 
@@ -55,13 +55,48 @@ class App extends Component {
 
         <h2> {this.state.queryValue} </h2>
 
-        { this.state.queryDrug && 
-          <Piechart 
-            data={this.state.queryDrug.dosages} 
-            title="Drug dosages"
-          />
-        }
 
+
+      <table className="charts">
+          <tr>
+              <td>
+                { this.state.queryDrug && 
+                  <ChartTemplate 
+                    data={this.state.queryDrug.dosages} 
+                    title="Drug dosages"
+                    labels={["Dosages", "Count"]}
+                    chartType="PieChart"
+                    graph_id="dosages"
+                  /> 
+                }
+              </td>
+              <td>
+                { this.state.queryDrug &&
+                  <ChartTemplate 
+                    data={this.state.queryDrug.associated_drugs} 
+                    title="Associated drugs"
+                    labels={["Drug", "Count"]}
+                    chartType="BarChart"
+                    graph_id="drugs"
+                    slice={20}
+                  />
+                }
+              </td>
+              <td>
+                { this.state.queryDrug &&
+                  <ChartTemplate 
+                    data={this.state.queryDrug.associated_symptoms} 
+                    title="Associated symptoms"
+                    labels={["Symptom", "Count"]}
+                    chartType="BarChart"
+                    graph_id="symptoms"
+                    slice={20}
+                  />
+
+                }
+              </td>
+          </tr>
+      </table>
       </div>
     );
   }

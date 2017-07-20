@@ -16,3 +16,8 @@
 .form {
   align-self: center;
 }
+
+.charts {
+  display: inline;
+  align-content: flex-start;
+}
