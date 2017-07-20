@@ -3,8 +3,8 @@ import './App.css';
 import ChartTemplate from './ChartTemplate.js';
 import QueryForm from './QueryForm.js';
 import axios from 'axios';
-
-const URL = 'http://localhost:5000/'
+import { URL } from './util.js';
+import MostCommon from './MostCommon.js';
 
 class App extends Component {
   
@@ -16,6 +16,7 @@ class App extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.getDrugJSON = this.getDrugJSON.bind(this);
+    this.getMostCommon = this.getMostCommon.bind(this);
   }
 
   onSubmit(text) {
@@ -39,12 +40,29 @@ class App extends Component {
       })
   }
 
+  getMostCommon(resource) {
+    axios.get(URL + "most_common/" + resource).then( res => {
+            let mostCommon = res.data
+            this.setState({
+              [resource]: mostCommon
+            });
+        }).catch (e => {
+          console.error(e);
+        })    
+  }
+
+  componentWillMount() {
+    this.getMostCommon("drugs");
+    this.getMostCommon("symptoms")
+  }
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <h2>Nettipuoskari</h2>
         </div>
+
         <p className="intro">
           Start making queries by typing into the box
         </p>
@@ -54,8 +72,6 @@ class App extends Component {
         />
 
         <h2> {this.state.queryValue} </h2>
-
-
 
       <table className="charts">
           <tr>
@@ -97,6 +113,13 @@ class App extends Component {
               </td>
           </tr>
       </table>
+      
+      { this.state.drugs && this.state.symptoms &&
+        <MostCommon 
+          drugData={this.state.drugs}
+          symptomData={this.state.symptoms}
+        />
+      }
       </div>
     );
   }

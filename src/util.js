@@ -1,3 +1,6 @@
+export const URL = 'http://localhost:5000/'
+
+
 function* entries(obj) {
    for (let key of Object.keys(obj)) {
      yield [key, obj[key]];

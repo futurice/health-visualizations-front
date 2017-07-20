@@ -21,3 +21,8 @@
   display: inline;
   align-content: flex-start;
 }
+
+.mostCommon {
+  display: block;
+  align-content: center;
+}
