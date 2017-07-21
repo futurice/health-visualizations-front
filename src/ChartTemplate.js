@@ -5,16 +5,34 @@ import { parse } from './util.js';
 
 export default class ChartTemplate extends React.Component {
   
+  constructor(props) {
+    super(props);
+
+    this.chartEvents = [
+      {
+        eventName: 'select',
+        callback: this.chartClicked
+      }
+    ]
+    this.chartClicked = this.chartClicked.bind(this);
+  }
+
+  chartClicked(Chart) {
+    let selected = Chart.chart.getSelection();
+    console.log(Chart); // TODO onclick new search
+  }
+
   render() {  
     let options = {
       title: this.props.title,
-      sliceVisibilityThreshold: 1/50
+      sliceVisibilityThreshold: 1/50,
+      tooltip: {isHtml: true}
     };
 
     if (!this.props.data) {
       return
     }
-    
+
     let labels = this.props.labels;
     let data = this.props.data;
 
@@ -25,8 +43,8 @@ export default class ChartTemplate extends React.Component {
           options={options}
           graph_id={this.props.graph_id}
           width="500px"
-          height={this.props.height || "700px"} 
-          legend_toggle
+          height={this.props.height || "700px"}
+          chartEvents={this.chartEvents}
         />
     );
   }

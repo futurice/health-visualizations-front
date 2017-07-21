@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const URL = 'http://localhost:5000/'
 
 function* entries(obj) {
@@ -20,9 +22,20 @@ export function parse(obj, labels) {
 export function parseAssociations(associations, labels, slice=20, minCount=30) {
   let data = Object.keys(associations)
     .filter( (e) => associations[e].count >= minCount) 
-    .map( (e) => [e, associations[e].value])
+    .map( (e) => [e, associations[e].value, associations[e].count])
     .sort( (a, b) => b[1] - a[1])
     .slice(0, slice);
+    
+    data = createCountTags(data);
+    labels.push({type: "string", role: 'tooltip', 'p': {'html': true}});
 
     return [labels, ...data];
+}
+
+function createCountTags(data) {
+  return data.map( (arr) => [arr[0], arr[1], tooltip(arr[2]) ] );
+}
+
+function tooltip(count) {
+   return `<p>Samples: <b>${count}</b></p>`;
 }

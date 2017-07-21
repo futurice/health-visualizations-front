@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Chart } from 'react-google-charts';
 
-
 export default class MostCommon extends React.Component {
   
   render() {  
