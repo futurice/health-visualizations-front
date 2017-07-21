@@ -14,8 +14,9 @@ export default class ChartTemplate extends React.Component {
     if (!this.props.data) {
       return
     }
+    
     let labels = this.props.labels;
-    let data = parse(this.props.data, labels, this.props.slice || this.props.data.length);
+    let data = this.props.data;
 
     return (
         <Chart

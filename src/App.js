@@ -3,20 +3,24 @@ import './App.css';
 import ChartTemplate from './ChartTemplate.js';
 import QueryForm from './QueryForm.js';
 import axios from 'axios';
-import { URL } from './util.js';
+import { URL, parse, parseAssociations } from './util.js';
 import MostCommon from './MostCommon.js';
+
+const SLICE = 20;
 
 class App extends Component {
   
   constructor(props) {
     super(props);
     this.state = {
-      queryValue: ''
+      queryValue: '',
+      minCount: 30
     };
 
     this.onSubmit = this.onSubmit.bind(this);
     this.getDrugJSON = this.getDrugJSON.bind(this);
     this.getMostCommon = this.getMostCommon.bind(this);
+    this.handleMinCount = this.handleMinCount.bind(this);
   }
 
   onSubmit(text) {
@@ -27,6 +31,14 @@ class App extends Component {
     });
 
     this.getDrugJSON(text);
+  }
+
+  handleMinCount(event) {
+    let value = event.target.value;
+
+    this.setState({
+      minCount: value
+    })
   }
 
   getDrugJSON(drug) {
@@ -69,6 +81,8 @@ class App extends Component {
 
         <QueryForm 
           onSubmit={this.onSubmit}
+          handleMinCount={this.handleMinCount}
+          minCount={this.state.minCount}
         />
 
         <h2> {this.state.queryValue} </h2>
@@ -78,37 +92,32 @@ class App extends Component {
               <td>
                 { this.state.queryDrug && 
                   <ChartTemplate 
-                    data={this.state.queryDrug.dosages} 
+                    data={parse(this.state.queryDrug.dosages, ["Dosages", "Count"])} 
                     title="Drug dosages"
-                    labels={["Dosages", "Count"]}
                     chartType="PieChart"
                     graph_id="dosages"
+                    height={"700px"}
                   /> 
                 }
               </td>
               <td>
                 { this.state.queryDrug &&
                   <ChartTemplate 
-                    data={this.state.queryDrug.associated_drugs} 
+                    data={parseAssociations(this.state.queryDrug.associated_drugs, ["Drug", "Value"], SLICE, this.state.minCount)} 
                     title="Associated drugs"
-                    labels={["Drug", "Count"]}
                     chartType="BarChart"
                     graph_id="drugs"
-                    slice={20}
                   />
                 }
               </td>
               <td>
                 { this.state.queryDrug &&
                   <ChartTemplate 
-                    data={this.state.queryDrug.associated_symptoms} 
+                    data={parseAssociations(this.state.queryDrug.associated_symptoms, ["Symptom", "Value"], SLICE, this.state.minCount)} 
                     title="Associated symptoms"
-                    labels={["Symptom", "Count"]}
                     chartType="BarChart"
                     graph_id="symptoms"
-                    slice={20}
                   />
-
                 }
               </td>
           </tr>
