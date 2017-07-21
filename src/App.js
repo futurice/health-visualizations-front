@@ -5,6 +5,7 @@ import QueryForm from './QueryForm.js';
 import axios from 'axios';
 import { URL, parse, parseAssociations } from './util.js';
 import MostCommon from './MostCommon.js';
+import QuoteModal from './QuoteModal.js';
 
 const SLICE = 20;
 
@@ -14,13 +15,16 @@ class App extends Component {
     super(props);
     this.state = {
       queryValue: '',
-      minCount: 30
+      minCount: 30,
+      modalIsOpen: false
     };
 
     this.onSubmit = this.onSubmit.bind(this);
     this.getDrugJSON = this.getDrugJSON.bind(this);
     this.getMostCommon = this.getMostCommon.bind(this);
     this.handleMinCount = this.handleMinCount.bind(this);
+    this.chartClicked = this.chartClicked.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   onSubmit(text) {
@@ -63,6 +67,24 @@ class App extends Component {
         })    
   }
 
+  chartClicked(Chart) {
+    let selected = Chart.chart.getSelection()[0].row + 1; // Row that user clicked on
+    let title = Chart.props.data[selected][0]; // Title of that row
+
+    // TODO request quotes from backend
+
+    this.setState({
+      modalIsOpen: true,
+      modalResourceTitle: `Quotes from posts with ${this.state.queryValue} and ${title}`
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modalIsOpen: false
+    });
+  }
+
   componentWillMount() {
     this.getMostCommon("drugs");
     this.getMostCommon("symptoms")
@@ -74,6 +96,13 @@ class App extends Component {
         <div className="App-header">
           <h2>Nettipuoskari</h2>
         </div>
+
+        <QuoteModal
+          isOpen={this.state.modalIsOpen}
+          resourceName={this.state.modalResourceTitle}
+          data={this.state.modalData}
+          closeModal={this.closeModal}
+        />
 
         <p className="intro">
           Start making queries by typing into the box
@@ -107,6 +136,7 @@ class App extends Component {
                     title="Associated drugs"
                     chartType="BarChart"
                     graph_id="drugs"
+                    chartClicked={this.chartClicked}
                   />
                 }
               </td>
@@ -117,6 +147,7 @@ class App extends Component {
                     title="Associated symptoms"
                     chartType="BarChart"
                     graph_id="symptoms"
+                    chartClicked={this.chartClicked}
                   />
                 }
               </td>

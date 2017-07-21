@@ -11,15 +11,9 @@ export default class ChartTemplate extends React.Component {
     this.chartEvents = [
       {
         eventName: 'select',
-        callback: this.chartClicked
+        callback: this.props.chartClicked
       }
     ]
-    this.chartClicked = this.chartClicked.bind(this);
-  }
-
-  chartClicked(Chart) {
-    let selected = Chart.chart.getSelection();
-    console.log(Chart); // TODO onclick new search
   }
 
   render() {  
