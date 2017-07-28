@@ -11,7 +11,7 @@ export default class ChartTemplate extends React.Component {
     this.chartEvents = [
       {
         eventName: 'select',
-        callback: this.props.chartClicked
+        ...this.props.chartClicked && {callback: this.props.chartClicked} // TODO fix
       }
     ]
   }
@@ -36,7 +36,7 @@ export default class ChartTemplate extends React.Component {
           data={data}
           options={options}
           graph_id={this.props.graph_id}
-          width="500px"
+          width="100%"
           height={this.props.height || "700px"}
           chartEvents={this.chartEvents}
         />

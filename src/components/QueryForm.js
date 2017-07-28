@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import '../css/QueryForm.css';
 
 export default class QueryForm extends React.Component {
 
@@ -29,9 +30,8 @@ export default class QueryForm extends React.Component {
     return (
       <div className="form">
         <form onSubmit={this.onSubmit}>
-          <input type="number" onChange={this.props.handleMinCount} value={this.props.minCount} /> 
-          <input onChange={this.handleChange} placeholder="Search e.g burana" />
-          <input type="submit" value="Search" />
+          <input className="input" onChange={this.handleChange} placeholder="Search e.g burana" />
+          <input className="button" type="submit" value="Search" />
         </form>
       </div>
     );

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+body {
+    background: black;
+    font-weight: 400;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+.body-text-container {
+  display: flex;
+  margin: 2%;
+}
+
+.body-text-container p {
+  margin: 2%;
+}
+
+.logo {
+  height: 169px;
+  width: 169px;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+}
+
+/* Color palette */
+
+:root {
+	--sunshine-yellow-60: rgba(255, 230, 56, 0.6);
+	--sunshine-yellow: #ffe638;
+	--white-60: rgba(216, 216, 216, 0.6);
+	--purpley: #9f6ce3;
+	--white-two: #e6e6e6;
+	--soft-green: #6ec872;
+	--white: #d8d8d8;
+	--hot-magenta: #d903ca;
+	--coral: #ff5240;
+	--beige: #f0d6c3;
+	--bright-blue: #0068fd;
+}
+
+/* Text styles */
+
+.title {
+  margin-top:0;
+	font-family: 'Space Mono', monospace;
+	font-size: 65px;
+	font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.heading-1 {
+	font-family: Futurice;
+	font-size: 53px;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+}
+
+.term-name {
+	font-family: Futurice;
+	font-size: 45px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.heading-2 {
+  font-weight: 400;
+  margin:0;
+	font-family: Futurice;
+	font-size: 38px;
+	color: #ffffff;
+}
+
+.heading-3 {
+	font-family: Futurice;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 1.1;
+	color: #ffffff;
+}
+
+.heading-4 {
+	font-family: Futurice;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1.25;
+	text-align: center;
+	color: #ffffff;
+}
+
+.heading-5 {
+	font-family: Futurice;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.body-text {
+	font-family: Futurice;
+  font-size: 15px;
+	line-height: 1.39;
+	color: #ffffff;
+}
+
+.small-text {
+	font-family: Futurice;
+	font-size: 16px;
+	line-height: 1.31;
+	color: #ffffff;
+}
+
+.buble-label {
+	font-family: Futurice;
+	font-size: 14px;
+	text-align: center;
+	color: #000000;
+}
+
+.item-label {
+	font-family: Futurice;
+	font-size: 14px;
+	color: #ffffff;
+}
+
+.text-link {
+	font-family: Futurice;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.really-small-text {
+  margin-top: 0;
+  text-align: center;
+	font-family: Futurice;
+	font-size: 12px;
+	line-height: 1.42;
+	color: #ffffff;
+}

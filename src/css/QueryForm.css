@@ -1,0 +1,18 @@
+.form {
+  text-align: center;
+}
+
+.input {
+  width: 40%;
+  height: 30px;
+}
+
+.button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 36px;
+  background-color: #9f6ce3;
+  width: 60px;
+  color: white;
+}
