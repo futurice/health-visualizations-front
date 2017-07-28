@@ -18,6 +18,56 @@ h1, h3 {
   margin: 2%;
 }
 
+.most-common-container {
+	display: flex;
+	margin: 2%;
+}
+
+.rectangle-white {
+	height: 400px;
+	width: 100%;
+	background-color: #e6e6e6;
+}
+
+.heading-1-white {
+	font-family: Futurice;
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+	padding-top: 5%;
+}
+
+.chilicorn-fund {
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	height: 400px;
+}
+
+.heading-1-chilicorn {
+	margin: 0;
+	font-family: 'Space Mono';
+	font-size: 60px;
+	font-weight: 900;
+	line-height: 0.68;
+	letter-spacing: 0.3px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	display: block;
+	padding-top: 150px;
+}
+
+.chilicorn-text {
+	font-family: 'Space Mono';
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.12;
+	text-align: center;
+	color: #ffffff;
+}
+
 .logo {
   height: 169px;
   width: 169px;
@@ -55,10 +105,11 @@ h1, h3 {
 
 .heading-1 {
 	font-family: Futurice;
-	font-size: 53px;
+	font-size: 50px;
 	font-weight: bold;
 	text-align: center;
 	color: #ffffff;
+	margin-top: 2px;
 }
 
 .term-name {
@@ -91,6 +142,13 @@ h1, h3 {
 	line-height: 1.25;
 	text-align: center;
 	color: #ffffff;
+	margin: 2%;
+}
+
+.heading-4-small {
+	font-weight: 400;
+	font-size: 20px;
+	margin-bottom: 0;
 }
 
 .heading-5 {
@@ -108,6 +166,7 @@ h1, h3 {
 }
 
 .small-text {
+	margin: 2%;
 	font-family: Futurice;
 	font-size: 16px;
 	line-height: 1.31;
