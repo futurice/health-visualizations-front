@@ -21,6 +21,11 @@
   padding: 0;
   background-color: #9f6ce3;
   flex: 1;
+  display: inline-flex;
+  align-items: center;      /* new */
+  justify-content: center;
   color: white;
-  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
 }

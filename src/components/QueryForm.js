@@ -1,35 +1,29 @@
 import React from 'react';
 import '../css/QueryForm.css';
-import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default class QueryForm extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      redirect: false
+      inputValue: ""
     };
 
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(event) {
-    event.preventDefault() // Stop full page reload
-
+  handleChange(e) {
     this.setState({
-      redirect: this.refs.input.value
+      inputValue: e.target.value
     })
   }
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect push to={`/search/${this.state.redirect}`} />;
-    }
     return (
-      <form className="form" onSubmit={this.onSubmit}>
-        <input ref="input" className="input" placeholder={this.props.value} />
-        <input className="button" type="submit" value="Search" />
-      </form>
+      <div className="form">
+        <input onChange={this.handleChange.bind(this)} className="input" placeholder={this.props.value} />
+        <Link className="button" to={`/search/${this.state.inputValue}`} >Search</Link>
+      </div>
     );
   }
 }

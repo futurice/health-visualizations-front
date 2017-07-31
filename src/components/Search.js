@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import QueryForm from './QueryForm';
 import '../css/Search.css';
 import AssociatedChart from './AssociatedChart';
-import Slider, { Range }  from 'rc-slider';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 
@@ -74,8 +73,6 @@ export default class Search extends Component {
         />
 
         <div className="line-separator"> </div>
-
-
       </div>
     );
   }
