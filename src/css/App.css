@@ -21,3 +21,17 @@
   margin: 0 auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-weight: bold;
+  font-family: 'Futurice';
+}
+
+p {
+  color: white;
+  font-family: 'Futurice';
+}
+
+.is-tight {
+  margin: 0;
+}

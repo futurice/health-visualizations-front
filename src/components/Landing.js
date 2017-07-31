@@ -14,8 +14,8 @@ export default class Landing extends Component {
         <div>
           <div className="content">
             <img src={logo} className="logo" alt="logo" />
-            <h1 className="title"> Nettipuoskari </h1>
-            <h3 className="heading-2"> How are Finns talking about drugs? </h3>
+            <h1 className="title is-centered"> Nettipuoskari </h1>
+            <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
 
             <p className="really-small-text"> A data science project by Futurice’s Chilicornfund and Spice Program </p>
 
@@ -51,6 +51,7 @@ export default class Landing extends Component {
 
               <h1 className="heading-1">What we did</h1>
             </div>
+
             <div className="rectangle-white">
               <h1 className="heading-1-white"> More information </h1>
             </div>

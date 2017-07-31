@@ -1,6 +1,7 @@
 .search-box {
     display: flex;
     align-items: center;
+    font-size: 16px;
 }
 
 .search-heading {
@@ -12,4 +13,39 @@
 
 .form {
   width: 100%;
+}
+
+.first-result {
+  padding-top: 3%;
+  display: flex;
+  max-width: 960px;
+  padding-left: 3%;
+}
+
+.keyword {
+  margin: 0;
+}
+
+.list-of-bucket {
+  text-decoration: underline;
+}
+
+.line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #313030;
+}
+
+.result {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.first-result-left {
+  flex: 2;
+  font-size: 2rem;
+}
+
+.chart {
+  flex: 4;
 }

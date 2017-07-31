@@ -12,7 +12,7 @@ export default class Main extends Component {
     return (
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/search" component={Search} />
+        <Route path="/search/:keyword" component={Search} />
       </Switch>
     );
   }
