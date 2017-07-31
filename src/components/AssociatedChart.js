@@ -6,7 +6,7 @@ export default class AssociatedChart extends Component {
   render() {
     return (
       <div className="associated">
-        <h1 style={{textAlign: "center"}}> Placeholder for chart </h1>
+        <h1 style={{textAlign: "center", paddingTop: '40%'}}> Placeholder for chart </h1>
       </div>
     );
   }

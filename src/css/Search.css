@@ -21,6 +21,7 @@
   max-width: 960px;
   min-height: 480px;
   padding-left: 3%;
+  padding-right: 3%;
 }
 
 .association-result-left {
@@ -40,6 +41,7 @@
   height:1px;
   background:#717171;
   border-bottom:1px solid #313030;
+  margin: 2%;
 }
 
 .result {
@@ -52,5 +54,5 @@
 }
 
 .minor-margin {
-  margi: 2%;
+  margin: 2%;
 }
