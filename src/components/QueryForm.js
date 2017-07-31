@@ -27,7 +27,7 @@ export default class QueryForm extends React.Component {
     }
     return (
       <form className="form" onSubmit={this.onSubmit}>
-        <input ref="input" className="input" placeholder="Search e.g burana" />
+        <input ref="input" className="input" placeholder={this.props.value} />
         <input className="button" type="submit" value="Search" />
       </form>
     );

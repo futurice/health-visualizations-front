@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import QueryForm from './QueryForm';
 import '../css/Search.css';
 import AssociatedChart from './AssociatedChart';
+import PostCountSlider from './PostCountSlider';
+import Slider, { Range }  from 'rc-slider';
+
 
 export default class Search extends Component {
   render() {
@@ -10,7 +13,7 @@ export default class Search extends Component {
         <div className="search-box">
           <h1 className="search-heading" > Nettipuoskari </h1>
           <QueryForm 
-          
+            value={ this.props.match.params.keyword }
           />
         </div>
 
@@ -29,6 +32,11 @@ export default class Search extends Component {
           <p className="body-text"> About the metric and data analysis
  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
           </p>
+          <p className="body-text" > Minimum post count </p>
+          <PostCountSlider
+
+          />
+          <p className="really-small-text"> Move slider to change minimum post count required </p>
         </div>
 
         <div className="chart">
