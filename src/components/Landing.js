@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './css/Landing.css';
-import MostCommon from './MostCommon.js';
-import logo from './css/chilicorn_sticker.svg';
-import QueryForm from './components/QueryForm.js';
-import ChilicornBackground from './css/chilicorn-world.jpg';
+import '../css/Landing.css';
+import logo from '../css/chilicorn_sticker.svg';
+import QueryForm from './QueryForm';
+import ChilicornBackground from '../css/chilicorn-world.jpg';
 
 export default class Landing extends Component {
   render() {

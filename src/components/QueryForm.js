@@ -1,17 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
 import '../css/QueryForm.css';
-
-import {
-  Link
-} from 'react-router-dom'
-
 import { Redirect } from 'react-router';
-
 
 export default class QueryForm extends React.Component {
 
-   constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       inputValue: '',
@@ -32,7 +25,7 @@ export default class QueryForm extends React.Component {
   onSubmit(event) {
     event.preventDefault() // Stop full page reload
     this.props.onSubmit(this.state.inputValue);
-    
+
     this.setState({
       redirect: true
     })
@@ -42,7 +35,7 @@ export default class QueryForm extends React.Component {
     if (this.state.redirect) {
       return <Redirect push to="/sample" />;
     }
-    return ( 
+    return (
       <div className="form">
         <form onSubmit={this.onSubmit}>
           <input className="input" onChange={this.handleChange} placeholder="Search e.g burana" />
