@@ -15,11 +15,17 @@
   width: 100%;
 }
 
-.first-result {
+.association-result {
   padding-top: 3%;
   display: flex;
   max-width: 960px;
+  min-height: 480px;
   padding-left: 3%;
+}
+
+.association-result-left {
+  flex: 2;
+  font-size: 2rem;
 }
 
 .keyword {
@@ -30,7 +36,7 @@
   text-decoration: underline;
 }
 
-.line-separator{
+.line-separator {
   height:1px;
   background:#717171;
   border-bottom:1px solid #313030;
@@ -41,11 +47,10 @@
   margin: 0;
 }
 
-.first-result-left {
-  flex: 2;
-  font-size: 2rem;
-}
-
 .chart {
   flex: 4;
+}
+
+.minor-margin {
+  margi: 2%;
 }
