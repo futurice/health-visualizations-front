@@ -4,13 +4,14 @@ import '../css/Search.css';
 import AssociatedChart from './AssociatedChart';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
+import { Link } from 'react-router-dom';
 
 export default class Search extends Component {
   render() {
     return (
       <div className="search-page">
         <div className="search-box">
-          <h1 className="search-heading" > Nettipuoskari </h1>
+          <Link to="/" className="search-heading" > Nettipuoskari </Link>
           <QueryForm 
             value={ this.props.match.params.keyword }
           />
