@@ -1,8 +1,22 @@
 /* Landing Page */
 
+@media only screen and (max-width: 480px)  {
+  html {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (min-width: 480px)  {
+  body {
+    font-size: 15px;
+
+  }
+}
+
 body {
     background: black;
     font-weight: 400;
+    
 }
 
 .content {
@@ -43,7 +57,7 @@ body {
 
 .heading-1-white {
 	font-family: Futurice;
-	font-size: 50px;
+	font-size: 3rem;
 	font-weight: bold;
 	text-align: center;
 	color: black;
@@ -60,7 +74,7 @@ body {
 .heading-1-chilicorn {
 	margin: 0;
 	font-family: 'Space Mono';
-	font-size: 60px;
+	font-size: 3.5rem;
 	font-weight: 900;
 	line-height: 0.68;
 	letter-spacing: 0.3px;
@@ -73,7 +87,7 @@ body {
 
 .chilicorn-text {
 	font-family: 'Space Mono';
-	font-size: 15px;
+	font-size: 1rem;
 	font-weight: bold;
 	line-height: 1.12;
 	text-align: center;
@@ -93,7 +107,7 @@ body {
 .title {
   margin-top:0;
   font-family: 'Space Mono', monospace;
-  font-size: 65px;
+  font-size: 3rem;
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 12px;
@@ -101,7 +115,7 @@ body {
 
 .heading-1 {
 	font-family: Futurice;
-	font-size: 50px;
+	font-size: 2.5rem;
 	font-weight: bold;
 	text-align: center;
 	color: #ffffff;
@@ -119,7 +133,7 @@ body {
   font-weight: 400;
   margin:0;
 	font-family: Futurice;
-	font-size: 38px;
+	font-size: 2rem;
 	color: #ffffff;
 }
 
@@ -133,7 +147,7 @@ body {
 
 .heading-4 {
 	font-family: Futurice;
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: bold;
 	line-height: 1.25;
 	text-align: center;
@@ -156,7 +170,7 @@ body {
 
 .body-text {
 	font-family: Futurice;
-  font-size: 15px;
+  font-size: 1rem;
 	line-height: 1.39;
 	color: #ffffff;
 }
@@ -193,7 +207,7 @@ body {
   margin-top: 0;
   text-align: center;
 	font-family: Futurice;
-	font-size: 12px;
+	font-size: 0.75rem;
 	line-height: 1.42;
 	color: #ffffff;
 }
