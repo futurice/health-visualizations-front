@@ -1,0 +1,15 @@
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-heading {
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.form {
+  width: 100%;
+}

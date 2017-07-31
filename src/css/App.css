@@ -1,31 +1,23 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+/* Color palette */
+
+:root {
+	--sunshine-yellow-60: rgba(255, 230, 56, 0.6);
+	--sunshine-yellow: #ffe638;
+	--white-60: rgba(216, 216, 216, 0.6);
+	--purpley: #9f6ce3;
+	--white-two: #e6e6e6;
+	--soft-green: #6ec872;
+	--white: #d8d8d8;
+	--hot-magenta: #d903ca;
+	--coral: #ff5240;
+	--beige: #f0d6c3;
+	--bright-blue: #0068fd;
 }
 
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
-  color: white;
+.main {
+  padding-top: 2%;
+  margin: 0 auto;
 }
 
-.intro {
-  font-size: large;
-}
-
-.form {
-  align-self: center;
-}
-
-.charts {
-  display: inline;
-  align-content: flex-start;
-}
-
-.mostCommon {
-  display: block;
-  align-content: center;
-}
-.closeButton {
-  float: right;
-}

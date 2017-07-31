@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
-
 body {
     background: black;
     font-weight: 400;
+}
+
+.content {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1, h3 {
@@ -21,6 +25,12 @@ h1, h3 {
 .most-common-container {
 	display: flex;
 	margin: 2%;
+}
+
+.form-box {
+  max-width: 480px;
+  display: flex;
+  margin: 0 auto;
 }
 
 .rectangle-white {
@@ -76,29 +86,13 @@ h1, h3 {
   margin-top: 2%;
 }
 
-/* Color palette */
-
-:root {
-	--sunshine-yellow-60: rgba(255, 230, 56, 0.6);
-	--sunshine-yellow: #ffe638;
-	--white-60: rgba(216, 216, 216, 0.6);
-	--purpley: #9f6ce3;
-	--white-two: #e6e6e6;
-	--soft-green: #6ec872;
-	--white: #d8d8d8;
-	--hot-magenta: #d903ca;
-	--coral: #ff5240;
-	--beige: #f0d6c3;
-	--bright-blue: #0068fd;
-}
-
 /* Text styles */
 
 .title {
   margin-top:0;
-	font-family: 'Space Mono', monospace;
-	font-size: 65px;
-	font-weight: bold;
+  font-family: 'Space Mono', monospace;
+  font-size: 65px;
+  font-weight: bold;
   color: #ffffff;
   margin-bottom: 12px;
 }

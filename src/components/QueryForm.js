@@ -7,41 +7,29 @@ export default class QueryForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: '',
       redirect: false
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    let text = event.target.value;
-    this.setState({
-      inputValue: text
-    });
   }
 
   onSubmit(event) {
     event.preventDefault() // Stop full page reload
-    this.props.onSubmit(this.state.inputValue);
 
     this.setState({
-      redirect: true
+      redirect: this.refs.input.value
     })
   }
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to="/sample" />;
+      return <Redirect push to={`/search/${this.state.redirect}`} />;
     }
     return (
-      <div className="form">
-        <form onSubmit={this.onSubmit}>
-          <input className="input" onChange={this.handleChange} placeholder="Search e.g burana" />
-          <input className="button" type="submit" value="Search" />
-        </form>
-      </div>
+      <form className="form" onSubmit={this.onSubmit}>
+        <input ref="input" className="input" placeholder="Search e.g burana" />
+        <input className="button" type="submit" value="Search" />
+      </form>
     );
   }
 }
