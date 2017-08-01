@@ -1,0 +1,8 @@
+@media screen and (max-width:480px) {
+  .search-box {
+    flex-wrap: wrap;
+  }
+  a {
+    margin: 0 auto;
+  }
+}

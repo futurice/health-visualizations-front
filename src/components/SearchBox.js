@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import QueryForm from './QueryForm';
 import { Link } from 'react-router-dom';
+import '../css/SearchBox.css';
 
 export default class SearchBox extends Component {
 

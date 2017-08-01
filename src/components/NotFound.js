@@ -11,7 +11,7 @@ export default class NotFound extends Component {
           history={this.props.history}
           match={this.props.match}
         />
-
+        <br />
         <h1 className="minor-margin heading-1">_result not found</h1>
 
         <p className="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
