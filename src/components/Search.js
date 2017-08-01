@@ -5,18 +5,16 @@ import AssociatedChart from './AssociatedChart';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 import { Link } from 'react-router-dom';
+import SearchBox from './SearchBox';
 
 export default class Search extends Component {
   render() {
     return (
       <div className="search-page">
-        <div className="search-box">
-          <Link to="/" className="search-heading" > Nettipuoskari </Link>
-          <QueryForm 
-            value={ this.props.match.params.keyword }
-            history={this.props.history}
-          />
-        </div>
+        <SearchBox
+          history={this.props.history}
+          match={this.props.match}
+        />
 
         <div className="association-result">
           <div className="association-result-left">

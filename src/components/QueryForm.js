@@ -11,6 +11,7 @@ export default class QueryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
     let value = this.refs.input.value;
     this.props.history.push(`/search/${value}`);
   }
