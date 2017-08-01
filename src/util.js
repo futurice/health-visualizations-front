@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export const URL = 'http://localhost:5000/'
 
@@ -41,4 +42,16 @@ function createCountTags(data) {
 
 function tooltip(count) {
    return `<p>Samples: <b>${count}</b></p>`;
+}
+
+export const getByKeyword = (keyword) => {
+  return axios.get(URL + "search/" + keyword);
+}
+
+export const formatBucket = (bucket) => {
+  let data = bucket
+    .sort()
+    .map((e) => <p key={e}> {e} </p>);
+
+  return data;
 }

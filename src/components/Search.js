@@ -4,25 +4,99 @@ import '../css/Search.css';
 import AssociatedChart from './AssociatedChart';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import SearchBox from './SearchBox';
+import { getByKeyword } from '../util';
+import QuoteModal from './QuoteModal';
 
 export default class Search extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      keyword: this.props.match.params.keyword,
+      notFound: false,
+      loading: true
+    }
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.updateKeyword = this.updateKeyword.bind(this);
+    this.findByKeyword = this.findByKeyword.bind(this);
+  }
+
+  openModal() {
+    this.setState({
+      modalIsOpen: true
+    })
+  }
+
+  updateKeyword(keyword) {
+    this.setState({
+      keyword
+    })
+  }
+
+  closeModal() {
+    this.setState({
+      modalIsOpen: false
+    })
+  }
+
+  componentWillMount() {
+    this.findByKeyword();
+  }
+
+  findByKeyword() {
+    this.setState({
+      loading: true
+    }, () => {
+      getByKeyword(this.state.keyword).then((response) => {
+        this.setState({
+          data: response.data,
+          loading: false
+        });
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          this.props.history.push("/not_found");
+        } 
+      })
+    });
+  }
+  
   render() {
+    if (this.state.notFound) {
+      return <Redirect to="/not_found" />;
+    }
+
+    if (this.state.loading) {
+      return <p> Loading... </p>;
+    }
+
     return (
-      <div className="search-page">
+      <div ref="search" className="search-page">
+        <QuoteModal
+          isOpen={this.state.modalIsOpen}
+          data={this.state.data.basket}
+          closeModal={this.closeModal}
+          heading="Basket"
+        />
         <SearchBox
           history={this.props.history}
           match={this.props.match}
+          updateKeyword={this.updateKeyword}
+          findByKeyword={this.findByKeyword}
         />
 
         <div className="association-result">
           <div className="association-result-left">
             <p className="result"> Search result </p>
-            <h3 className="keyword"> {this.props.match.params.keyword} </h3> 
+            <h3 className="keyword"> {this.state.keyword} </h3> 
             <p className="body-text is-tight " >100% of total posts</p>
             <p className="body-text is-tight" > 26,000 posts </p>
-            <p className="list-of-bucket body-text"> List of terms we think makes {this.props.match.params.keyword} </p>
+            <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
 
             <div className="line-separator"></div>
 

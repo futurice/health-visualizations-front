@@ -36,6 +36,7 @@
 
 .list-of-bucket {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .line-separator {

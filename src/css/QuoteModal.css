@@ -1,0 +1,51 @@
+.quote-modal {
+  background-color: black;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  border: 0;
+  background-color: #e6e6e6;
+  overflow: scroll;
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
+.modal-text {
+  color: black;
+  font-size: 0.75rem;
+  margin: 2%;
+}
+
+.modal-text p {
+  margin: 0;
+  color: black;
+}
+
+.modal-heading {
+  height: 4em;
+  border-bottom: solid 2px #979797;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-heading-header {
+  text-align: center;
+  padding-top: 1%;
+  color: black;
+  flex: 1;
+}
+
+.close-button {
+  float: right;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.top-right {
+    flex: 50%;
+    text-align: right;
+}

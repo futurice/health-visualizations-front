@@ -12,6 +12,8 @@ export default class SearchBox extends Component {
         <QueryForm
           value={this.props.match.params.keyword}
           history={this.props.history}
+          updateKeyword={this.props.updateKeyword}
+          findByKeyword={this.props.findByKeyword}
         />
       </div>
     )
