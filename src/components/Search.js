@@ -94,7 +94,6 @@ export default class Search extends Component {
           <div className="association-result-left">
             <p className="result"> Search result </p>
             <h3 className="keyword"> {this.state.keyword} </h3> 
-            <p className="body-text is-tight " >100% of total posts</p>
             <p className="body-text is-tight" > 26,000 posts </p>
             <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
 
@@ -136,7 +135,7 @@ export default class Search extends Component {
             <AssociatedChart
 
             />
-            <p className="minor-margin really-small-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
+            <p className="" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
           </div>
         </div>
 
