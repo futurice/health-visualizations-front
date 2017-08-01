@@ -14,6 +14,7 @@ export default class Search extends Component {
           <Link to="/" className="search-heading" > Nettipuoskari </Link>
           <QueryForm 
             value={ this.props.match.params.keyword }
+            history={this.props.history}
           />
         </div>
 

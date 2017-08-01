@@ -29,7 +29,7 @@ export default class Landing extends Component {
             </div>
               <div className="form-box">
                 <QueryForm
-
+                  history={this.props.history}
                 />
               </div>
               <div className="most-common-container">
