@@ -1,0 +1,2483 @@
+{
+  "associated_drugs": {
+    "abalgin": {
+      "count": 15,
+      "value": 17025.236205593344
+    },
+    "absenor": {
+      "count": 4,
+      "value": 651.8396382943421
+    },
+    "actavis": {
+      "count": 5,
+      "value": 550.3254255288614
+    },
+    "adderall": {
+      "count": 2,
+      "value": 1333.7407055845592
+    },
+    "ahdistusl\u00e4\u00e4ke": {
+      "count": 1,
+      "value": 63.96502750036183
+    },
+    "almogran": {
+      "count": 4,
+      "value": 3422.9057337220597
+    },
+    "alopam": {
+      "count": 2,
+      "value": 15312.712585034013
+    },
+    "alpratsolam": {
+      "count": 2,
+      "value": 981.5938656164219
+    },
+    "alprazolam": {
+      "count": 2,
+      "value": 1857.169852067811
+    },
+    "alprox": {
+      "count": 14,
+      "value": 1044.710749021094
+    },
+    "amfetamiini": {
+      "count": 24,
+      "value": 260.70707171215633
+    },
+    "amlodipin": {
+      "count": 1,
+      "value": 422.4648333909835
+    },
+    "amoxin": {
+      "count": 3,
+      "value": 729.3836368628168
+    },
+    "anafranil": {
+      "count": 2,
+      "value": 581.2248656368624
+    },
+    "anervan": {
+      "count": 2,
+      "value": 2063.187731232844
+    },
+    "antasidi": {
+      "count": 1,
+      "value": 1240.2358769594791
+    },
+    "antibiotti": {
+      "count": 11,
+      "value": 370.61717816897755
+    },
+    "antihistamiini": {
+      "count": 8,
+      "value": 155.54756617672973
+    },
+    "apydan": {
+      "count": 1,
+      "value": 426.93034478748757
+    },
+    "arcoxia": {
+      "count": 114,
+      "value": 13012.307721596102
+    },
+    "ardinex": {
+      "count": 65,
+      "value": 24636.452296968168
+    },
+    "asacol": {
+      "count": 2,
+      "value": 638.3335370076173
+    },
+    "aspirin": {
+      "count": 8,
+      "value": 1921.3393554142967
+    },
+    "atacand": {
+      "count": 6,
+      "value": 1290.6206843639713
+    },
+    "atarax": {
+      "count": 15,
+      "value": 881.7014385371982
+    },
+    "atenol": {
+      "count": 1,
+      "value": 1661.4528668610299
+    },
+    "aurorix": {
+      "count": 2,
+      "value": 164.59592420659249
+    },
+    "azamun": {
+      "count": 3,
+      "value": 1713.2603041216487
+    },
+    "azona": {
+      "count": 1,
+      "value": 254.31523183986235
+    },
+    "bafucin": {
+      "count": 1,
+      "value": 1333.7407055845592
+    },
+    "barbituraatti": {
+      "count": 5,
+      "value": 1671.576159199312
+    },
+    "bedrocan": {
+      "count": 2,
+      "value": 1480.7910343624628
+    },
+    "beetasalpaaja": {
+      "count": 15,
+      "value": 173.27504583393636
+    },
+    "bentsoja": {
+      "count": 107,
+      "value": 668.9288945558408
+    },
+    "bentzo": {
+      "count": 7,
+      "value": 529.090309593225
+    },
+    "burana": {
+      "count": 861,
+      "value": 6525.234915483918
+    },
+    "buspar": {
+      "count": 1,
+      "value": 308.2837770869937
+    },
+    "buspironi": {
+      "count": 1,
+      "value": 426.93034478748757
+    },
+    "cetirizin": {
+      "count": 1,
+      "value": 927.514172335601
+    },
+    "cipralex": {
+      "count": 15,
+      "value": 41.055941900860404
+    },
+    "circadin": {
+      "count": 1,
+      "value": 95.71698520678112
+    },
+    "citalopram": {
+      "count": 4,
+      "value": 67.07547517652046
+    },
+    "clarityn": {
+      "count": 1,
+      "value": 1085.5932757718472
+    },
+    "clotam": {
+      "count": 24,
+      "value": 8502.444233507356
+    },
+    "cocillana": {
+      "count": 6,
+      "value": 11109.245516388373
+    },
+    "codein": {
+      "count": 14,
+      "value": 33096.61172161172
+    },
+    "codesan": {
+      "count": 15,
+      "value": 9056.066882198424
+    },
+    "codit": {
+      "count": 5,
+      "value": 30725.42517006803
+    },
+    "concerta": {
+      "count": 8,
+      "value": 492.0849972642118
+    },
+    "cymbalta": {
+      "count": 33,
+      "value": 1593.9867287464529
+    },
+    "debrakine": {
+      "count": 1,
+      "value": 700.6603940277408
+    },
+    "depot": {
+      "count": 33,
+      "value": 1332.7310290313308
+    },
+    "dexit": {
+      "count": 3,
+      "value": 7606.356292517007
+    },
+    "diapam": {
+      "count": 63,
+      "value": 1786.3543328939152
+    },
+    "diatsepaami": {
+      "count": 4,
+      "value": 419.1650554958825
+    },
+    "diazepam": {
+      "count": 3,
+      "value": 2433.59658932066
+    },
+    "disperin": {
+      "count": 9,
+      "value": 3891.781676699457
+    },
+    "divinorum": {
+      "count": 1,
+      "value": 616.8703527922796
+    },
+    "dolan": {
+      "count": 24,
+      "value": 7728.679408271246
+    },
+    "dolcontin": {
+      "count": 6,
+      "value": 14696.204081632653
+    },
+    "dolmed": {
+      "count": 3,
+      "value": 7606.356292517007
+    },
+    "dormicum": {
+      "count": 9,
+      "value": 3222.5009165342785
+    },
+    "doxal": {
+      "count": 2,
+      "value": 225.33430258646996
+    },
+    "duact": {
+      "count": 13,
+      "value": 1085.5932757718472
+    },
+    "duphalac": {
+      "count": 3,
+      "value": 3034.789000345901
+    },
+    "duplo": {
+      "count": 2,
+      "value": 2271.1865515436943
+    },
+    "ebixa": {
+      "count": 1,
+      "value": 1020.9245516388373
+    },
+    "efexor": {
+      "count": 1,
+      "value": 1713.2603041216485
+    },
+    "emconcor": {
+      "count": 3,
+      "value": 419.5296376977757
+    },
+    "epilepsial\u00e4\u00e4ke": {
+      "count": 25,
+      "value": 1279.8310282035825
+    },
+    "escitalopram": {
+      "count": 3,
+      "value": 307.38447361323387
+    },
+    "estol\u00e4\u00e4kitys": {
+      "count": 48,
+      "value": 1368.605864181901
+    },
+    "esucos": {
+      "count": 2,
+      "value": 11109.245516388373
+    },
+    "fentanyl": {
+      "count": 6,
+      "value": 9384.74620617478
+    },
+    "finrexini\u00e4": {
+      "count": 1,
+      "value": 555.8601100014473
+    },
+    "forde": {
+      "count": 1,
+      "value": 3526.520608243297
+    },
+    "forte": {
+      "count": 32,
+      "value": 1832.249961688887
+    },
+    "frisium": {
+      "count": 3,
+      "value": 939.0592753955514
+    },
+    "furesis": {
+      "count": 2,
+      "value": 927.514172335601
+    },
+    "gabrion": {
+      "count": 8,
+      "value": 5702.432973189276
+    },
+    "gasterix": {
+      "count": 1,
+      "value": 2101.8160835762874
+    },
+    "gestinyl": {
+      "count": 1,
+      "value": 608.6304636797247
+    },
+    "glucadol": {
+      "count": 2,
+      "value": 6065.085034013605
+    },
+    "halcion": {
+      "count": 2,
+      "value": 1270.0188964474678
+    },
+    "hasis": {
+      "count": 3,
+      "value": 22.892060478676527
+    },
+    "heroiini": {
+      "count": 54,
+      "value": 829.4098041226541
+    },
+    "hexal": {
+      "count": 4,
+      "value": 1470.7223016595174
+    },
+    "hydrex": {
+      "count": 1,
+      "value": 2366.034013605442
+    },
+    "hydrochlorid": {
+      "count": 1,
+      "value": 1480.7910343624628
+    },
+    "ibumax": {
+      "count": 34,
+      "value": 5975.735975549639
+    },
+    "ibumetin": {
+      "count": 2,
+      "value": 4466.729654824892
+    },
+    "ibuprofen": {
+      "count": 5,
+      "value": 8011.953992123165
+    },
+    "ibusal": {
+      "count": 9,
+      "value": 2674.2882653061224
+    },
+    "ibuxin": {
+      "count": 28,
+      "value": 12592.822128851541
+    },
+    "imigran": {
+      "count": 16,
+      "value": 3325.0472411186693
+    },
+    "imocur": {
+      "count": 2,
+      "value": 2982.5425170068024
+    },
+    "imodiumia": {
+      "count": 14,
+      "value": 1343.330944417901
+    },
+    "imovane": {
+      "count": 42,
+      "value": 1223.7912649722466
+    },
+    "imurel": {
+      "count": 1,
+      "value": 1566.2391983820553
+    },
+    "indalgin": {
+      "count": 19,
+      "value": 25364.481662230108
+    },
+    "insomnia": {
+      "count": 4,
+      "value": 940.520680846178
+    },
+    "interferoni": {
+      "count": 2,
+      "value": 315.1572413477175
+    },
+    "ipsatol": {
+      "count": 2,
+      "value": 3144.781596849266
+    },
+    "ivax": {
+      "count": 3,
+      "value": 8707.264334305151
+    },
+    "ixel": {
+      "count": 5,
+      "value": 1123.231157542382
+    },
+    "jaydess": {
+      "count": 1,
+      "value": 633.9386945254291
+    },
+    "kannabis": {
+      "count": 59,
+      "value": 9.861372136519591
+    },
+    "kefexin": {
+      "count": 4,
+      "value": 623.1771300895723
+    },
+    "kepraa": {
+      "count": 1,
+      "value": 700.6603940277408
+    },
+    "ketipinor": {
+      "count": 22,
+      "value": 205.61485071721347
+    },
+    "ketomex": {
+      "count": 11,
+      "value": 11797.532521780644
+    },
+    "ketorin": {
+      "count": 93,
+      "value": 19468.35864038448
+    },
+    "kipul\u00e4\u00e4kitys": {
+      "count": 82,
+      "value": 4793.871953428031
+    },
+    "klortriptyl": {
+      "count": 1,
+      "value": 3526.520608243297
+    },
+    "kokaiini": {
+      "count": 12,
+      "value": 376.068342394873
+    },
+    "kolmiol\u00e4\u00e4ke": {
+      "count": 69,
+      "value": 5824.663890625888
+    },
+    "kortisoni": {
+      "count": 104,
+      "value": 491.81174408105494
+    },
+    "lamictal": {
+      "count": 11,
+      "value": 283.7913716703433
+    },
+    "lansoprazol": {
+      "count": 3,
+      "value": 4010.056689342404
+    },
+    "latonid": {
+      "count": 2,
+      "value": 10175.141723356008
+    },
+    "leponex": {
+      "count": 2,
+      "value": 293.93514594336136
+    },
+    "lescol": {
+      "count": 1,
+      "value": 3144.781596849266
+    },
+    "levozin": {
+      "count": 3,
+      "value": 182.37030690138653
+    },
+    "librax": {
+      "count": 3,
+      "value": 453.7501527557131
+    },
+    "lihasrelaksantti": {
+      "count": 37,
+      "value": 4891.425519879725
+    },
+    "limbitrol": {
+      "count": 1,
+      "value": 1020.9245516388373
+    },
+    "litalgin": {
+      "count": 22,
+      "value": 3359.9967027627386
+    },
+    "litium": {
+      "count": 1,
+      "value": 67.07547517652046
+    },
+    "lito": {
+      "count": 2,
+      "value": 86.53812508361892
+    },
+    "lomudal": {
+      "count": 3,
+      "value": 1416.0045165607228
+    },
+    "losatrix": {
+      "count": 1,
+      "value": 1441.2712585034012
+    },
+    "losec": {
+      "count": 1,
+      "value": 516.5085034013605
+    },
+    "lsd": {
+      "count": 10,
+      "value": 158.71107989985757
+    },
+    "lyrica": {
+      "count": 303,
+      "value": 5951.24964465864
+    },
+    "l\u00e4\u00e4kekannabis": {
+      "count": 5,
+      "value": 468.7347817355725
+    },
+    "magnesium": {
+      "count": 29,
+      "value": 197.92945506814624
+    },
+    "marevan": {
+      "count": 10,
+      "value": 291.43397041356224
+    },
+    "medipam": {
+      "count": 3,
+      "value": 1480.791034362463
+    },
+    "melpax": {
+      "count": 1,
+      "value": 3526.520608243297
+    },
+    "metadoni": {
+      "count": 7,
+      "value": 2310.9271082734767
+    },
+    "metopram": {
+      "count": 2,
+      "value": 2366.034013605442
+    },
+    "metyylifenidaatti": {
+      "count": 1,
+      "value": 90.86950569701563
+    },
+    "micardis": {
+      "count": 1,
+      "value": 944.929666781967
+    },
+    "microgynon": {
+      "count": 1,
+      "value": 625.3041216486595
+    },
+    "mielialal\u00e4\u00e4ke": {
+      "count": 28,
+      "value": 168.92410181084426
+    },
+    "migard": {
+      "count": 4,
+      "value": 6223.164137449851
+    },
+    "migpriv": {
+      "count": 4,
+      "value": 16340.226757369615
+    },
+    "minirin": {
+      "count": 1,
+      "value": 1333.7407055845592
+    },
+    "minullekkin": {
+      "count": 7,
+      "value": 66.3669824136285
+    },
+    "miranax": {
+      "count": 42,
+      "value": 6539.322344322345
+    },
+    "mirta": {
+      "count": 1,
+      "value": 126.65753801520606
+    },
+    "mobic": {
+      "count": 32,
+      "value": 12386.248170154135
+    },
+    "mobilisoida": {
+      "count": 3,
+      "value": 161.97245187026658
+    },
+    "moclobemid": {
+      "count": 1,
+      "value": 287.74119710777387
+    },
+    "montelukast": {
+      "count": 2,
+      "value": 827.0804562426474
+    },
+    "naprometin": {
+      "count": 9,
+      "value": 4562.669353455668
+    },
+    "naramig": {
+      "count": 3,
+      "value": 5184.35860058309
+    },
+    "neoral": {
+      "count": 2,
+      "value": 2907.3585531773683
+    },
+    "neuroleptit": {
+      "count": 18,
+      "value": 109.81571301237457
+    },
+    "neuroni": {
+      "count": 26,
+      "value": 1545.7105840282725
+    },
+    "neurotin": {
+      "count": 1,
+      "value": 2835.7547781017165
+    },
+    "neurotol": {
+      "count": 10,
+      "value": 841.2343563379551
+    },
+    "nexium": {
+      "count": 8,
+      "value": 233.473159378694
+    },
+    "nimed": {
+      "count": 5,
+      "value": 7803.955171812316
+    },
+    "nitro": {
+      "count": 7,
+      "value": 475.4079365079365
+    },
+    "noradrenaliini": {
+      "count": 3,
+      "value": 390.5903210090403
+    },
+    "norflex": {
+      "count": 28,
+      "value": 10965.53724053724
+    },
+    "norgesic": {
+      "count": 5,
+      "value": 6601.179384797397
+    },
+    "noritren": {
+      "count": 23,
+      "value": 7648.467529088139
+    },
+    "normison": {
+      "count": 5,
+      "value": 5307.96932808211
+    },
+    "novum": {
+      "count": 3,
+      "value": 5679.767219387755
+    },
+    "nozinan": {
+      "count": 2,
+      "value": 9384.746206174777
+    },
+    "nsaid": {
+      "count": 5,
+      "value": 3753.1781462585036
+    },
+    "nukahtamisl\u00e4\u00e4ke": {
+      "count": 29,
+      "value": 654.0593251218666
+    },
+    "omepratsoli": {
+      "count": 2,
+      "value": 2907.3585531773683
+    },
+    "opamox": {
+      "count": 72,
+      "value": 1099.368069302836
+    },
+    "opioidit": {
+      "count": 86,
+      "value": 7378.100323345135
+    },
+    "optipar": {
+      "count": 3,
+      "value": 210.32307218189294
+    },
+    "orfiril": {
+      "count": 2,
+      "value": 3325.0472411186693
+    },
+    "orion": {
+      "count": 5,
+      "value": 263.9365427398823
+    },
+    "orloc": {
+      "count": 2,
+      "value": 510.4044588132283
+    },
+    "orudis": {
+      "count": 3,
+      "value": 3144.7815968492664
+    },
+    "oxamin": {
+      "count": 6,
+      "value": 360.65392533102903
+    },
+    "oxepam": {
+      "count": 3,
+      "value": 772.4176934924914
+    },
+    "oxygen": {
+      "count": 114,
+      "value": 7145.563854407743
+    },
+    "pahoinvointil\u00e4\u00e4ke": {
+      "count": 27,
+      "value": 4738.874881347888
+    },
+    "palladon": {
+      "count": 2,
+      "value": 24560.34013605442
+    },
+    "pamit": {
+      "count": 11,
+      "value": 485.124550251507
+    },
+    "pamol": {
+      "count": 4,
+      "value": 4383.698206555349
+    },
+    "panadol": {
+      "count": 320,
+      "value": 12752.29453344856
+    },
+    "pantoprazol": {
+      "count": 2,
+      "value": 3422.9057337220597
+    },
+    "paracetamolia": {
+      "count": 83,
+      "value": 15406.12296433725
+    },
+    "parametri": {
+      "count": 16,
+      "value": 2516.4817120482144
+    },
+    "paratabs": {
+      "count": 24,
+      "value": 12230.170068027212
+    },
+    "paroxetin": {
+      "count": 2,
+      "value": 356.67296548248925
+    },
+    "pausanol": {
+      "count": 1,
+      "value": 450.45402089407185
+    },
+    "penisiliini": {
+      "count": 7,
+      "value": 1283.192155067155
+    },
+    "pepcid": {
+      "count": 2,
+      "value": 1989.859333563934
+    },
+    "peratsin": {
+      "count": 5,
+      "value": 690.3955171812315
+    },
+    "pertriptyl": {
+      "count": 1,
+      "value": 1000.9080417881437
+    },
+    "plavix": {
+      "count": 1,
+      "value": 722.0113378684806
+    },
+    "prednisolon": {
+      "count": 17,
+      "value": 1216.6638891737598
+    },
+    "primaspan": {
+      "count": 2,
+      "value": 137.57553117586147
+    },
+    "primperan": {
+      "count": 5,
+      "value": 1768.207586064729
+    },
+    "prolong": {
+      "count": 1,
+      "value": 27.115155340486695
+    },
+    "pronaxen": {
+      "count": 13,
+      "value": 6260.802019220387
+    },
+    "propofol": {
+      "count": 1,
+      "value": 1480.7910343624628
+    },
+    "propral": {
+      "count": 22,
+      "value": 265.584557273044
+    },
+    "pulmicort": {
+      "count": 4,
+      "value": 1010.8261322547035
+    },
+    "p\u00e4\u00e4ns\u00e4rkyl\u00e4\u00e4ke": {
+      "count": 8,
+      "value": 3608.3218249705897
+    },
+    "ranbaxy": {
+      "count": 1,
+      "value": 2835.7547781017165
+    },
+    "ranixal": {
+      "count": 1,
+      "value": 878.5849260339055
+    },
+    "ranoprin": {
+      "count": 2,
+      "value": 1612.5236205593346
+    },
+    "rapitab": {
+      "count": 7,
+      "value": 6750.094482237339
+    },
+    "rauhottavia": {
+      "count": 23,
+      "value": 639.6815638096657
+    },
+    "reductil": {
+      "count": 3,
+      "value": 108.27989979775694
+    },
+    "relifex": {
+      "count": 6,
+      "value": 19368.689581095598
+    },
+    "remeron": {
+      "count": 4,
+      "value": 77.79625188215155
+    },
+    "retard": {
+      "count": 51,
+      "value": 5596.002477077788
+    },
+    "reumal\u00e4\u00e4k\u00e4ri": {
+      "count": 34,
+      "value": 1177.3485140552257
+    },
+    "risolid": {
+      "count": 7,
+      "value": 1430.3402566700438
+    },
+    "risperdal": {
+      "count": 3,
+      "value": 117.08045894414104
+    },
+    "risperidon": {
+      "count": 1,
+      "value": 35.7948245377446
+    },
+    "ritalin": {
+      "count": 4,
+      "value": 260.0049654898456
+    },
+    "rivatril": {
+      "count": 47,
+      "value": 1284.4194772988033
+    },
+    "salvata": {
+      "count": 6,
+      "value": 338.27618725215206
+    },
+    "salvia": {
+      "count": 1,
+      "value": 44.04404285078516
+    },
+    "samarin": {
+      "count": 1,
+      "value": 516.5085034013605
+    },
+    "sandoz": {
+      "count": 5,
+      "value": 1085.5932757718474
+    },
+    "seloken": {
+      "count": 1,
+      "value": 302.9467342492552
+    },
+    "sepram": {
+      "count": 2,
+      "value": 4.581595148661663
+    },
+    "seretide": {
+      "count": 3,
+      "value": 440.79693280821095
+    },
+    "seromex": {
+      "count": 2,
+      "value": 242.50472411186695
+    },
+    "seronil": {
+      "count": 4,
+      "value": 6.157297184909254
+    },
+    "seroquel": {
+      "count": 9,
+      "value": 219.43445772091218
+    },
+    "serotoniini": {
+      "count": 14,
+      "value": 139.62018455355488
+    },
+    "sifrol": {
+      "count": 3,
+      "value": 820.161945375165
+    },
+    "simvastatin": {
+      "count": 3,
+      "value": 232.64847305828806
+    },
+    "singulair": {
+      "count": 9,
+      "value": 1527.148542701538
+    },
+    "sirdalud": {
+      "count": 152,
+      "value": 9890.32969264465
+    },
+    "snri": {
+      "count": 7,
+      "value": 342.1679839968774
+    },
+    "somac": {
+      "count": 29,
+      "value": 1689.6643241881338
+    },
+    "somadril": {
+      "count": 3,
+      "value": 3325.0472411186697
+    },
+    "somnor": {
+      "count": 4,
+      "value": 1841.759065831057
+    },
+    "sonata": {
+      "count": 3,
+      "value": 3920.707630878438
+    },
+    "sparine": {
+      "count": 1,
+      "value": 733.1195991910276
+    },
+    "spesicor": {
+      "count": 1,
+      "value": 806.6301520608242
+    },
+    "ssri": {
+      "count": 19,
+      "value": 49.98286254322471
+    },
+    "stemetil": {
+      "count": 2,
+      "value": 2907.3585531773683
+    },
+    "steroidi": {
+      "count": 1,
+      "value": 10.485394874795787
+    },
+    "stesolid": {
+      "count": 7,
+      "value": 2124.515218458517
+    },
+    "stilnoct": {
+      "count": 19,
+      "value": 2061.1921705951754
+    },
+    "stimulantti": {
+      "count": 3,
+      "value": 113.81797805827534
+    },
+    "strattera": {
+      "count": 1,
+      "value": 492.7966378859236
+    },
+    "subutex": {
+      "count": 67,
+      "value": 2501.1378921845817
+    },
+    "sulfa": {
+      "count": 3,
+      "value": 329.12424830721153
+    },
+    "suprium": {
+      "count": 2,
+      "value": 1085.5932757718472
+    },
+    "surmontil": {
+      "count": 1,
+      "value": 401.22642552956137
+    },
+    "sytostaatti": {
+      "count": 3,
+      "value": 17.879254952459007
+    },
+    "s\u00e4rkyl\u00e4\u00e4kitys": {
+      "count": 6,
+      "value": 3753.1781462585036
+    },
+    "tambocor": {
+      "count": 1,
+      "value": 290.1952553173167
+    },
+    "tamsumin": {
+      "count": 3,
+      "value": 7606.356292517007
+    },
+    "tannopon": {
+      "count": 1,
+      "value": 3526.520608243297
+    },
+    "targiniq": {
+      "count": 5,
+      "value": 13302.358769594794
+    },
+    "tegretol": {
+      "count": 5,
+      "value": 1530.9748767231763
+    },
+    "tematsepaami": {
+      "count": 1,
+      "value": 465.6041315608811
+    },
+    "temgesic": {
+      "count": 32,
+      "value": 8224.165446769424
+    },
+    "tenox": {
+      "count": 52,
+      "value": 1276.4895739317626
+    },
+    "theofol": {
+      "count": 1,
+      "value": 2101.8160835762874
+    },
+    "tolvon": {
+      "count": 2,
+      "value": 389.29246301695275
+    },
+    "topimax": {
+      "count": 12,
+      "value": 1245.1094619666048
+    },
+    "tradolan": {
+      "count": 35,
+      "value": 9322.619047619048
+    },
+    "tramal": {
+      "count": 659,
+      "value": 14583.017843928317
+    },
+    "trexan": {
+      "count": 15,
+      "value": 838.845436651818
+    },
+    "trimopan": {
+      "count": 1,
+      "value": 510.4044588132283
+    },
+    "triptyl": {
+      "count": 126,
+      "value": 3555.5327731092434
+    },
+    "trisykliset": {
+      "count": 3,
+      "value": 335.18247298919573
+    },
+    "truxal": {
+      "count": 1,
+      "value": 111.85859223414451
+    },
+    "tulehduskipul\u00e4\u00e4ke": {
+      "count": 187,
+      "value": 3979.514866810135
+    },
+    "unil\u00e4\u00e4ke": {
+      "count": 54,
+      "value": 420.4229980252222
+    },
+    "valeriaana": {
+      "count": 4,
+      "value": 408.4606213619468
+    },
+    "valium": {
+      "count": 1,
+      "value": 331.124827553399
+    },
+    "venlafaxin": {
+      "count": 9,
+      "value": 146.9326448870603
+    },
+    "verenpainel\u00e4\u00e4ke": {
+      "count": 19,
+      "value": 330.64932222889155
+    },
+    "vicodin": {
+      "count": 4,
+      "value": 15312.712585034013
+    },
+    "voltaren": {
+      "count": 108,
+      "value": 11090.406448293605
+    },
+    "voxra": {
+      "count": 2,
+      "value": 17.430191124068656
+    },
+    "vpeni": {
+      "count": 1,
+      "value": 1085.5932757718472
+    },
+    "xanax": {
+      "count": 1,
+      "value": 608.6304636797247
+    },
+    "xanor": {
+      "count": 68,
+      "value": 876.5333853084675
+    },
+    "xenical": {
+      "count": 3,
+      "value": 412.33393634462095
+    },
+    "zanor": {
+      "count": 1,
+      "value": 1000.9080417881437
+    },
+    "zapperia": {
+      "count": 3,
+      "value": 642.7813293992295
+    },
+    "zeldox": {
+      "count": 2,
+      "value": 727.5281924850476
+    },
+    "zoc": {
+      "count": 1,
+      "value": 616.8703527922796
+    },
+    "zoely": {
+      "count": 2,
+      "value": 325.1782782078348
+    },
+    "zofran": {
+      "count": 3,
+      "value": 7298.102040816327
+    },
+    "zoloft": {
+      "count": 2,
+      "value": 13.851985854360194
+    },
+    "zolpidem": {
+      "count": 2,
+      "value": 1441.2712585034012
+    },
+    "zolt": {
+      "count": 10,
+      "value": 2101.816083576288
+    },
+    "zomig": {
+      "count": 9,
+      "value": 3891.781676699457
+    },
+    "zopiclone": {
+      "count": 3,
+      "value": 2932.0090331214456
+    },
+    "zopinox": {
+      "count": 12,
+      "value": 1087.496314737773
+    },
+    "zyprexa": {
+      "count": 6,
+      "value": 245.38291507079026
+    },
+    "zyrtec": {
+      "count": 3,
+      "value": 318.44468556653436
+    },
+    "zyxal": {
+      "count": 1,
+      "value": 3526.520608243297
+    }
+  },
+  "associated_symptoms": {
+    "aamuj\u00e4ykkyys": {
+      "count": 1,
+      "value": 300.3301970138704
+    },
+    "aamukankeus": {
+      "count": 2,
+      "value": 5260.9435078379165
+    },
+    "aamupahoinvointi": {
+      "count": 1,
+      "value": 212.9484788839393
+    },
+    "aamup\u00e4\u00e4ns\u00e4rky": {
+      "count": 1,
+      "value": 1158.18061918645
+    },
+    "ahdistus": {
+      "count": 81,
+      "value": 47.69072747991899
+    },
+    "alaselk\u00e4kipu": {
+      "count": 7,
+      "value": 773.5950453055716
+    },
+    "alaselk\u00e4s\u00e4rky": {
+      "count": 1,
+      "value": 2702.3113790970933
+    },
+    "alavatsakipu": {
+      "count": 5,
+      "value": 189.71264257582737
+    },
+    "aristaa": {
+      "count": 12,
+      "value": 285.51860556624945
+    },
+    "arkuus": {
+      "count": 7,
+      "value": 144.6462315084764
+    },
+    "elohiiri": {
+      "count": 3,
+      "value": 84.2156882673388
+    },
+    "haavakipu": {
+      "count": 5,
+      "value": 6601.179384797397
+    },
+    "halva": {
+      "count": 20,
+      "value": 138.2641559039075
+    },
+    "hammaskipu": {
+      "count": 13,
+      "value": 3281.692212750079
+    },
+    "hammass\u00e4rky": {
+      "count": 37,
+      "value": 3682.8879976534563
+    },
+    "hartiajumi": {
+      "count": 1,
+      "value": 1522.390798424633
+    },
+    "hartiakipu": {
+      "count": 4,
+      "value": 771.3901108146438
+    },
+    "hartias\u00e4rky": {
+      "count": 3,
+      "value": 2050.611058376839
+    },
+    "haukkoa": {
+      "count": 3,
+      "value": 228.51252401493457
+    },
+    "heikotus": {
+      "count": 3,
+      "value": 232.0512585644671
+    },
+    "heitehuimaus": {
+      "count": 1,
+      "value": 633.9386945254291
+    },
+    "hengenahdistus": {
+      "count": 14,
+      "value": 125.12047594207218
+    },
+    "hengitysvaikeus": {
+      "count": 9,
+      "value": 417.1087167392586
+    },
+    "hermokipu": {
+      "count": 94,
+      "value": 4926.175136142922
+    },
+    "hermostuneisuus": {
+      "count": 3,
+      "value": 90.28040228437055
+    },
+    "hermos\u00e4rky": {
+      "count": 96,
+      "value": 4967.19317864132
+    },
+    "hikoilu": {
+      "count": 37,
+      "value": 135.89260212875223
+    },
+    "horkka": {
+      "count": 4,
+      "value": 594.6574686212512
+    },
+    "huimaus": {
+      "count": 89,
+      "value": 282.8443818219446
+    },
+    "humahdella": {
+      "count": 1,
+      "value": 793.4905846396529
+    },
+    "humina": {
+      "count": 3,
+      "value": 210.8446235637112
+    },
+    "huonoolo": {
+      "count": 1,
+      "value": 106.190134916843
+    },
+    "huonovointisuus": {
+      "count": 5,
+      "value": 214.54515479661256
+    },
+    "hyperventilointi": {
+      "count": 1,
+      "value": 254.31523183986235
+    },
+    "h\u00e4nt\u00e4luukipu": {
+      "count": 1,
+      "value": 3753.178146258503
+    },
+    "iskias": {
+      "count": 36,
+      "value": 2023.8570452104286
+    },
+    "jalkakipu": {
+      "count": 8,
+      "value": 1686.9811692793057
+    },
+    "jalkas\u00e4rky": {
+      "count": 3,
+      "value": 744.53219644022
+    },
+    "jomottaa": {
+      "count": 54,
+      "value": 1133.473848969006
+    },
+    "jumittua": {
+      "count": 5,
+      "value": 123.04938617994233
+    },
+    "jyske": {
+      "count": 1,
+      "value": 1184.392715419501
+    },
+    "jyskytt\u00e4\u00e4": {
+      "count": 4,
+      "value": 352.48330524870494
+    },
+    "jyskytys": {
+      "count": 4,
+      "value": 1768.2075860647287
+    },
+    "j\u00e4lkis\u00e4rky": {
+      "count": 8,
+      "value": 3188.0453514739224
+    },
+    "j\u00e4nnittyneisyys": {
+      "count": 2,
+      "value": 280.56080456874105
+    },
+    "j\u00e4nnitt\u00e4\u00e4": {
+      "count": 67,
+      "value": 148.4725079877957
+    },
+    "j\u00e4nnitys": {
+      "count": 35,
+      "value": 176.390388357213
+    },
+    "j\u00e4ykkyys": {
+      "count": 19,
+      "value": 599.74083420704
+    },
+    "j\u00e4yt\u00e4\u00e4": {
+      "count": 4,
+      "value": 524.3124085077068
+    },
+    "kankeus": {
+      "count": 2,
+      "value": 604.581146744412
+    },
+    "kasvohalvaus": {
+      "count": 2,
+      "value": 478.8812238510427
+    },
+    "kasvos\u00e4rky": {
+      "count": 2,
+      "value": 7153.041216486594
+    },
+    "katkeilla": {
+      "count": 1,
+      "value": 26.853601522913678
+    },
+    "keuhkokipu": {
+      "count": 2,
+      "value": 1240.2358769594791
+    },
+    "kiertohuimaus": {
+      "count": 2,
+      "value": 1120.8089176264566
+    },
+    "kihelm\u00f6inti": {
+      "count": 10,
+      "value": 332.94136474814644
+    },
+    "kihtikohtaus": {
+      "count": 1,
+      "value": 1133.017006802721
+    },
+    "kipeyty\u00e4": {
+      "count": 51,
+      "value": 577.6278808937368
+    },
+    "kipristell\u00e4": {
+      "count": 2,
+      "value": 401.22642552956137
+    },
+    "kipu": {
+      "count": 1892,
+      "value": 1496.9579940517986
+    },
+    "kirvell\u00e4": {
+      "count": 40,
+      "value": 292.99346830365613
+    },
+    "kivist\u00e4\u00e4": {
+      "count": 4,
+      "value": 540.5283152221928
+    },
+    "kivuntunne": {
+      "count": 2,
+      "value": 2063.187731232844
+    },
+    "kivut": {
+      "count": 1,
+      "value": 744.5321964402199
+    },
+    "kolotus": {
+      "count": 16,
+      "value": 639.9952028823532
+    },
+    "korvakipu": {
+      "count": 4,
+      "value": 759.2453009078195
+    },
+    "korvas\u00e4rky": {
+      "count": 4,
+      "value": 1342.125154155229
+    },
+    "kosketusarka": {
+      "count": 20,
+      "value": 1053.43031506335
+    },
+    "kouristaa": {
+      "count": 1,
+      "value": 105.50283446712015
+    },
+    "kouristelu": {
+      "count": 2,
+      "value": 147.59377646640982
+    },
+    "kouristus": {
+      "count": 5,
+      "value": 131.4221108863966
+    },
+    "kramppi": {
+      "count": 45,
+      "value": 862.9601753926146
+    },
+    "kuivua": {
+      "count": 39,
+      "value": 79.68635851321324
+    },
+    "kuolemanpelko": {
+      "count": 5,
+      "value": 199.8582214987162
+    },
+    "kurkkukipu": {
+      "count": 33,
+      "value": 646.8715349575954
+    },
+    "kurnia": {
+      "count": 1,
+      "value": 24.29606923414525
+    },
+    "kutina": {
+      "count": 23,
+      "value": 41.93889467698992
+    },
+    "kutista": {
+      "count": 9,
+      "value": 21.253857749393475
+    },
+    "kuukautiskipu": {
+      "count": 23,
+      "value": 532.4574298943485
+    },
+    "kuume": {
+      "count": 79,
+      "value": 280.35276664355706
+    },
+    "kuumottaa": {
+      "count": 12,
+      "value": 169.21768707482994
+    },
+    "kylkikipu": {
+      "count": 2,
+      "value": 484.368249669536
+    },
+    "kylmyys": {
+      "count": 5,
+      "value": 149.80085226959505
+    },
+    "kylm\u00e4hiki": {
+      "count": 1,
+      "value": 334.16091788828203
+    },
+    "kylm\u00e4t\u00e4": {
+      "count": 2,
+      "value": 401.22642552956137
+    },
+    "k\u00e4sikipu": {
+      "count": 2,
+      "value": 1333.7407055845592
+    },
+    "k\u00e4velyvaikeus": {
+      "count": 2,
+      "value": 1522.390798424633
+    },
+    "lapakipu": {
+      "count": 1,
+      "value": 7606.356292517006
+    },
+    "lepokipu": {
+      "count": 5,
+      "value": 3214.561846243874
+    },
+    "lepos\u00e4rky": {
+      "count": 14,
+      "value": 3481.3771981821774
+    },
+    "lepovapina": {
+      "count": 1,
+      "value": 768.3218357765641
+    },
+    "leukakipu": {
+      "count": 2,
+      "value": 2366.034013605442
+    },
+    "leukalukko": {
+      "count": 1,
+      "value": 1158.18061918645
+    },
+    "leukas\u00e4rky": {
+      "count": 2,
+      "value": 2982.5425170068024
+    },
+    "levottomuus": {
+      "count": 13,
+      "value": 321.378051746461
+    },
+    "lihasheikkous": {
+      "count": 5,
+      "value": 344.17039149953933
+    },
+    "lihasj\u00e4nnitys": {
+      "count": 10,
+      "value": 716.5675541739874
+    },
+    "lihasj\u00e4ykkyys": {
+      "count": 2,
+      "value": 147.0975965536515
+    },
+    "lihaskipu": {
+      "count": 12,
+      "value": 281.34546602146014
+    },
+    "lihaskireys": {
+      "count": 2,
+      "value": 255.33631319963138
+    },
+    "lihaskouristus": {
+      "count": 1,
+      "value": 377.91356852818643
+    },
+    "lihaskramppi": {
+      "count": 5,
+      "value": 312.10461457310197
+    },
+    "lihasnyki\u00e4": {
+      "count": 1,
+      "value": 455.4130661273517
+    },
+    "lihasnyk\u00e4ys": {
+      "count": 2,
+      "value": 395.18755293281964
+    },
+    "lihass\u00e4rky": {
+      "count": 6,
+      "value": 521.6892471274224
+    },
+    "lihasv\u00e4rin\u00e4": {
+      "count": 1,
+      "value": 1403.6792765886842
+    },
+    "liikekipu": {
+      "count": 4,
+      "value": 5146.8808800115785
+    },
+    "liikerajoitus": {
+      "count": 4,
+      "value": 1600.7131128313392
+    },
+    "limaneritys": {
+      "count": 1,
+      "value": 114.06545256991683
+    },
+    "lonkkakipu": {
+      "count": 7,
+      "value": 2284.2870297290187
+    },
+    "lonkkas\u00e4rky": {
+      "count": 1,
+      "value": 1522.390798424633
+    },
+    "lonksua": {
+      "count": 7,
+      "value": 1305.719714595936
+    },
+    "lukkiutua": {
+      "count": 4,
+      "value": 331.8798622776606
+    },
+    "luukipu": {
+      "count": 1,
+      "value": 927.514172335601
+    },
+    "luus\u00e4rky": {
+      "count": 1,
+      "value": 1403.6792765886842
+    },
+    "l\u00e4mm\u00f6nnousu": {
+      "count": 1,
+      "value": 216.1582068724926
+    },
+    "l\u00e4mp\u00f6ily": {
+      "count": 2,
+      "value": 158.4941314051826
+    },
+    "madaltua": {
+      "count": 14,
+      "value": 970.8584426326363
+    },
+    "mahakipu": {
+      "count": 9,
+      "value": 254.08912128986884
+    },
+    "migreeni": {
+      "count": 179,
+      "value": 1035.4565501475822
+    },
+    "muljahdella": {
+      "count": 6,
+      "value": 156.16696817231048
+    },
+    "m\u00e4rki\u00e4": {
+      "count": 3,
+      "value": 151.63612383729003
+    },
+    "naksahdella": {
+      "count": 1,
+      "value": 328.13090513983366
+    },
+    "naksua": {
+      "count": 6,
+      "value": 211.89300340709644
+    },
+    "nen\u00e4verenvuoto": {
+      "count": 1,
+      "value": 21.12151343838123
+    },
+    "nielemisvaikeus": {
+      "count": 2,
+      "value": 107.22974904247411
+    },
+    "niell\u00e4kipu": {
+      "count": 2,
+      "value": 3422.9057337220597
+    },
+    "nielukipu": {
+      "count": 1,
+      "value": 2580.4717539189583
+    },
+    "niist\u00e4\u00e4": {
+      "count": 8,
+      "value": 160.26744206917596
+    },
+    "nilkkakipu": {
+      "count": 1,
+      "value": 910.6696777071484
+    },
+    "nipistell\u00e4": {
+      "count": 2,
+      "value": 38.07581263188365
+    },
+    "niskakipu": {
+      "count": 7,
+      "value": 545.076162004413
+    },
+    "niskas\u00e4rky": {
+      "count": 2,
+      "value": 675.4823942155477
+    },
+    "niskavaiva": {
+      "count": 5,
+      "value": 1294.8156185551145
+    },
+    "nivelkipu": {
+      "count": 12,
+      "value": 259.3055872178886
+    },
+    "nivels\u00e4rky": {
+      "count": 6,
+      "value": 670.6356292517007
+    },
+    "nuha": {
+      "count": 14,
+      "value": 66.94620981855024
+    },
+    "nukahdella": {
+      "count": 6,
+      "value": 1014.1719940988444
+    },
+    "nukahtaaongelma": {
+      "count": 1,
+      "value": 431.4728477597936
+    },
+    "nyki\u00e4": {
+      "count": 15,
+      "value": 379.40008040541255
+    },
+    "nytk\u00e4hdell\u00e4": {
+      "count": 1,
+      "value": 334.16091788828203
+    },
+    "n\u00e4k\u00f6h\u00e4iri\u00f6": {
+      "count": 7,
+      "value": 206.5028070887446
+    },
+    "n\u00e4r\u00e4stys": {
+      "count": 19,
+      "value": 200.27330337415663
+    },
+    "ohimos\u00e4rky": {
+      "count": 1,
+      "value": 2101.8160835762874
+    },
+    "oksentelu": {
+      "count": 28,
+      "value": 347.9044653668421
+    },
+    "oksettaa": {
+      "count": 47,
+      "value": 405.07058845849656
+    },
+    "olkap\u00e4\u00e4kipu": {
+      "count": 4,
+      "value": 1768.2075860647287
+    },
+    "otsas\u00e4rky": {
+      "count": 1,
+      "value": 1826.5890731292516
+    },
+    "pahoinvointi": {
+      "count": 135,
+      "value": 759.2674784140374
+    },
+    "paine": {
+      "count": 51,
+      "value": 143.2832998566186
+    },
+    "pakokauhu": {
+      "count": 1,
+      "value": 21.599310335574074
+    },
+    "pakotus": {
+      "count": 4,
+      "value": 744.5321964402199
+    },
+    "palatunne": {
+      "count": 1,
+      "value": 278.22607570635614
+    },
+    "palella": {
+      "count": 6,
+      "value": 8.033032138088885
+    },
+    "paniikki": {
+      "count": 27,
+      "value": 25.69455253218105
+    },
+    "panikointi": {
+      "count": 1,
+      "value": 227.93005500072366
+    },
+    "pelkotila": {
+      "count": 8,
+      "value": 84.65249072298329
+    },
+    "pimet\u00e4": {
+      "count": 3,
+      "value": 194.51043156115952
+    },
+    "pistell\u00e4": {
+      "count": 23,
+      "value": 241.8441556950649
+    },
+    "pist\u00e4v\u00e4": {
+      "count": 8,
+      "value": 283.8185235183567
+    },
+    "polte": {
+      "count": 9,
+      "value": 449.9084767702918
+    },
+    "polvikipu": {
+      "count": 9,
+      "value": 1494.4185432793806
+    },
+    "puheh\u00e4iri\u00f6": {
+      "count": 1,
+      "value": 944.929666781967
+    },
+    "punoittaa": {
+      "count": 11,
+      "value": 10.467397579654119
+    },
+    "puristaa": {
+      "count": 41,
+      "value": 218.02778861922224
+    },
+    "puuroutua": {
+      "count": 2,
+      "value": 415.9066974069963
+    },
+    "puutua": {
+      "count": 75,
+      "value": 552.1599119196338
+    },
+    "py\u00f6rrytt\u00e4\u00e4": {
+      "count": 11,
+      "value": 257.11393035360544
+    },
+    "py\u00f6rrytys": {
+      "count": 2,
+      "value": 99.84068181567602
+    },
+    "py\u00f6rtyill\u00e4": {
+      "count": 2,
+      "value": 148.09195307901828
+    },
+    "py\u00f6rty\u00e4": {
+      "count": 12,
+      "value": 126.4494043714823
+    },
+    "p\u00e4ki\u00e4kipu": {
+      "count": 1,
+      "value": 962.9456955195872
+    },
+    "p\u00e4\u00e4kipu": {
+      "count": 23,
+      "value": 814.2292442444418
+    },
+    "p\u00e4\u00e4ns\u00e4rky": {
+      "count": 214,
+      "value": 701.0006661883987
+    },
+    "rannekipu": {
+      "count": 1,
+      "value": 820.1619453751649
+    },
+    "rasituskipu": {
+      "count": 2,
+      "value": 1301.1556895485467
+    },
+    "rintakipu": {
+      "count": 16,
+      "value": 403.27224767458
+    },
+    "ripuli": {
+      "count": 38,
+      "value": 182.49515409684915
+    },
+    "ruokahaluttomuus": {
+      "count": 9,
+      "value": 352.57557345940006
+    },
+    "ryki\u00e4": {
+      "count": 3,
+      "value": 324.20309867066095
+    },
+    "salpautua": {
+      "count": 3,
+      "value": 883.7901650021712
+    },
+    "selk\u00e4kipu": {
+      "count": 132,
+      "value": 2172.525061406858
+    },
+    "selk\u00e4s\u00e4rky": {
+      "count": 37,
+      "value": 4722.582373329881
+    },
+    "silm\u00e4s\u00e4rky": {
+      "count": 3,
+      "value": 1467.3945001729505
+    },
+    "soida": {
+      "count": 15,
+      "value": 57.085570766441464
+    },
+    "spastisuus": {
+      "count": 1,
+      "value": 418.0743726061853
+    },
+    "sumeus": {
+      "count": 1,
+      "value": 492.7966378859236
+    },
+    "suonenveto": {
+      "count": 10,
+      "value": 630.4603120869201
+    },
+    "syd\u00e4mentykytys": {
+      "count": 6,
+      "value": 227.9300550007237
+    },
+    "syd\u00e4nkipu": {
+      "count": 1,
+      "value": 346.74529231982643
+    },
+    "syd\u00e4noire": {
+      "count": 3,
+      "value": 73.3388481915728
+    },
+    "sykki\u00e4": {
+      "count": 5,
+      "value": 339.73502382408026
+    },
+    "s\u00e4hk\u00f6iskumainen": {
+      "count": 3,
+      "value": 633.9386945254292
+    },
+    "s\u00e4ps\u00e4htely": {
+      "count": 2,
+      "value": 690.3955171812314
+    },
+    "s\u00e4rky": {
+      "count": 574,
+      "value": 1712.8887343871972
+    },
+    "s\u00e4teilykipu": {
+      "count": 4,
+      "value": 2551.6494769950987
+    },
+    "s\u00e4tki\u00e4": {
+      "count": 2,
+      "value": 205.20222940661415
+    },
+    "takku": {
+      "count": 1,
+      "value": 244.41815832478238
+    },
+    "takuta": {
+      "count": 3,
+      "value": 429.95000292380564
+    },
+    "tasapainoh\u00e4iri\u00f6": {
+      "count": 1,
+      "value": 115.56241377669949
+    },
+    "tasapainoongelma": {
+      "count": 2,
+      "value": 1270.0188964474678
+    },
+    "toinenpuoleinen": {
+      "count": 11,
+      "value": 881.4172991917463
+    },
+    "tuikkia": {
+      "count": 3,
+      "value": 575.0093102934604
+    },
+    "tukko": {
+      "count": 19,
+      "value": 174.26039720500705
+    },
+    "tulehdus": {
+      "count": 157,
+      "value": 285.91696915598897
+    },
+    "tunnottomuus": {
+      "count": 23,
+      "value": 942.624674869948
+    },
+    "tuntoh\u00e4iri\u00f6": {
+      "count": 1,
+      "value": 80.79428252239308
+    },
+    "tuntu": {
+      "count": 18,
+      "value": 131.81853062929787
+    },
+    "turvotus": {
+      "count": 189,
+      "value": 371.9132766710832
+    },
+    "tuska": {
+      "count": 164,
+      "value": 461.36469134319657
+    },
+    "tuuttaus": {
+      "count": 1,
+      "value": 4010.056689342404
+    },
+    "tykytt\u00e4\u00e4": {
+      "count": 8,
+      "value": 331.8798622776606
+    },
+    "tykytys": {
+      "count": 11,
+      "value": 196.2688308176045
+    },
+    "t\u00e4rin\u00e4": {
+      "count": 17,
+      "value": 250.75784999408057
+    },
+    "t\u00e4rist\u00e4": {
+      "count": 14,
+      "value": 84.62286732874966
+    },
+    "ummetus": {
+      "count": 101,
+      "value": 1097.4492085295656
+    },
+    "unisuus": {
+      "count": 1,
+      "value": 700.6603940277408
+    },
+    "uupumus": {
+      "count": 4,
+      "value": 5.341051414158144
+    },
+    "valoherkkyys": {
+      "count": 2,
+      "value": 711.1953992123165
+    },
+    "vapina": {
+      "count": 15,
+      "value": 161.82410959853928
+    },
+    "varvaskipu": {
+      "count": 2,
+      "value": 6389.563193698532
+    },
+    "vatsakipu": {
+      "count": 29,
+      "value": 355.27747895695074
+    },
+    "vatsakramppi": {
+      "count": 1,
+      "value": 211.36793101078814
+    },
+    "vatsaoire": {
+      "count": 11,
+      "value": 565.5145767826268
+    },
+    "vatsaturvotus": {
+      "count": 1,
+      "value": 1403.6792765886842
+    },
+    "vatsavaiva": {
+      "count": 14,
+      "value": 163.8679011806496
+    },
+    "velttous": {
+      "count": 2,
+      "value": 638.3335370076173
+    },
+    "verenvuoto": {
+      "count": 54,
+      "value": 1031.977530896752
+    },
+    "vesiripuli": {
+      "count": 1,
+      "value": 23.05558950126955
+    },
+    "vihlaisu": {
+      "count": 16,
+      "value": 841.2343563379549
+    },
+    "vihloa": {
+      "count": 48,
+      "value": 573.4731033970257
+    },
+    "viill\u00e4": {
+      "count": 1,
+      "value": 114.81132522695486
+    },
+    "vilunv\u00e4ristys": {
+      "count": 4,
+      "value": 540.5283152221928
+    },
+    "vingunta": {
+      "count": 1,
+      "value": 2366.034013605442
+    },
+    "virtsaamisvaikeus": {
+      "count": 1,
+      "value": 381.6472682823129
+    },
+    "virtsataongelma": {
+      "count": 2,
+      "value": 1020.9245516388373
+    },
+    "virtsatatarve": {
+      "count": 2,
+      "value": 254.31523183986235
+    },
+    "virtsatavaiva": {
+      "count": 1,
+      "value": 431.4728477597936
+    },
+    "voimattomuus": {
+      "count": 16,
+      "value": 378.60922146636426
+    },
+    "vuoto": {
+      "count": 104,
+      "value": 149.70551214605092
+    },
+    "v\u00e4symys": {
+      "count": 81,
+      "value": 172.7019920025678
+    },
+    "v\u00e4sy\u00e4": {
+      "count": 59,
+      "value": 134.39877368655928
+    },
+    "yhdynt\u00e4kipu": {
+      "count": 8,
+      "value": 1222.2702485820064
+    },
+    "yl\u00e4selk\u00e4kipu": {
+      "count": 2,
+      "value": 5037.570861678004
+    },
+    "yl\u00e4vatsakipu": {
+      "count": 7,
+      "value": 1180.5814610710754
+    },
+    "yski\u00e4": {
+      "count": 23,
+      "value": 332.8356403611506
+    },
+    "ysk\u00e4": {
+      "count": 41,
+      "value": 290.13503070621675
+    },
+    "y\u00f6k\u00e4t\u00e4": {
+      "count": 1,
+      "value": 172.79137318644268
+    },
+    "y\u00f6s\u00e4rky": {
+      "count": 1,
+      "value": 592.7061835970342
+    },
+    "\u00e4rsytys": {
+      "count": 8,
+      "value": 207.293958081675
+    }
+  },
+  "basket": [
+    "panacod-nimisi\u00e4",
+    "panacod=tulehdusta",
+    "panacod-kipul\u00e4\u00e4ke",
+    "panacod-valmisteen",
+    "panacodiahan",
+    "panacod-respan",
+    "panacodim\u00e4\u00e4r\u00e4st\u00e4",
+    "panacod-kuuri",
+    "panacod-riippuvuus",
+    "panacodisti",
+    "panacodeille",
+    "panacodeillakin",
+    "panacodeilla",
+    "panacod-s\u00e4rkyl\u00e4\u00e4kitys",
+    "panacod-riippuvaisista",
+    "panacod-l\u00e4\u00e4ke",
+    "panacod+ibuma",
+    "panacod-tabletissa",
+    "panacodien",
+    "panacod-poretablettia",
+    "panacod-\u00f6veri",
+    "panacod-keskustelussa",
+    "panacod+1tbl",
+    "panacodistakin",
+    "panacod-poretableteista",
+    "panacod-s\u00e4rkyl\u00e4\u00e4ke",
+    "panacodja",
+    "panacod-pakkauksessani",
+    "panacodeissa",
+    "panacod-l\u00e4\u00e4kkeen",
+    "panacod-tabletti",
+    "panacod-riippuvaiset",
+    "panacodeista",
+    "panacod-k\u00e4ytt\u00f6\u00e4ni",
+    "panacod:illa",
+    "panacodeen",
+    "panacod500",
+    "panacod-ongelmaa",
+    "panacod_spc",
+    "panacodea",
+    "panacoden",
+    "panacoditkaan",
+    "panacodei",
+    "panacodia+lyricaa",
+    "panacodet",
+    "panacodikaan",
+    "panacodille",
+    "panacodinoviisi",
+    "panacod-poretabletteja",
+    "panacod+ketorin",
+    "panacod-nimisest\u00e4",
+    "panacod-reseptist\u00e4",
+    "panacod-poretabun",
+    "panagod",
+    "panacodeja",
+    "panacod+pronacsen",
+    "panacod-annoksia",
+    "panacod-annos",
+    "panacod-tabletit",
+    "panacodillakin",
+    "panacod-tabletin",
+    "panacodittomana",
+    "panacod-l\u00e4\u00e4kkeess\u00e4",
+    "panacod:han",
+    "panacod-p\u00f6llyss\u00e4",
+    "panacodiako",
+    "panacodiaki",
+    "panacodi\u00f6verit",
+    "panacoditkin",
+    "panacod-kuuria",
+    "panacod-paketti",
+    "panacodilta",
+    "panacodkin",
+    "panacodinkin",
+    "panacod-l\u00e4\u00e4kityksen",
+    "panacod-p\u00f6hn\u00e4n",
+    "panacodresepti",
+    "panacodill",
+    "panacodkaan",
+    "panacodeiksi",
+    "panacodila",
+    "panacod-liuosta",
+    "panacodisa",
+    "panacodejahan",
+    "panacod-annostuksella",
+    "panacodisi",
+    "panacodiax6+burana800mgx3",
+    "panacod+lyrica",
+    "panacod-keskuteluun",
+    "panacod-riippuvaisen",
+    "panacodea+",
+    "panacod-yhdistelm\u00e4",
+    "panacod-vieroituksessa",
+    "panacod-reseptin",
+    "panacod:lle",
+    "panacod-reseptit",
+    "panacodx8",
+    "panacod-totuutta",
+    "panacodia+1tbl",
+    "panacod-l\u00e4\u00e4kett\u00e4",
+    "panacod-tablettia",
+    "panacod\u00ae",
+    "panacod-poreet",
+    "panacod+burana",
+    "panacod",
+    "panacod-himosta",
+    "panacod-poreen",
+    "panacodeihin",
+    "panacod-resepti",
+    "panacod+burana800mg",
+    "panacod-poretta",
+    "panacod-s\u00e4rkyl\u00e4\u00e4kkeest\u00e4",
+    "panacodkoukku",
+    "panacod*3",
+    "panacod-keskustelua",
+    "panacodiin",
+    "panacod-merkkist\u00e4",
+    "panacod-tulehduskipul\u00e4\u00e4kett\u00e4",
+    "panacod-riippuvainen",
+    "panacod-vieroitus",
+    "panacodm",
+    "panacodilla",
+    "panacodia+",
+    "panacod:in",
+    "panacod-s\u00e4rkyl\u00e4\u00e4kkeit\u00e4",
+    "panacoddeja",
+    "panacodejakin",
+    "panacodejakaan",
+    "panacodeillakaan",
+    "panacod-toimituksia",
+    "panacodeporetta",
+    "panacodit",
+    "panacodx4",
+    "panacodissahan",
+    "panacodiinki",
+    "panacode",
+    "panacodia",
+    "panacodina",
+    "panacodeistakin",
+    "panacodikin",
+    "panacodii",
+    "panacodini",
+    "panacod-koukussa",
+    "panacod-kipul\u00e4\u00e4kkeen",
+    "panacodreseptin",
+    "panacod-valmistajan",
+    "panacod-poretabletti",
+    "panacodillie\u201d",
+    "panacod-pore",
+    "panacodista",
+    "panacodhan",
+    "panacodiakin",
+    "panacod-l\u00e4\u00e4kek\u00e4\u00e4n",
+    "panacod-annoksen",
+    "panacod=",
+    "panacod-vieroituksen",
+    "panacod-poretabletista",
+    "panacodinkaan",
+    "panacodella",
+    "panacod:a",
+    "panacodin",
+    "panacod-tabun",
+    "panacodillekin",
+    "panacod-kuorma",
+    "panacod+panadol",
+    "panacod-riippuvuutta",
+    "panacod-kipul\u00e4\u00e4kityksen",
+    "panacod-",
+    "panacod-boxin",
+    "panacodi",
+    "panacoddia",
+    "panacodoa",
+    "panacodi:a",
+    "panacodon",
+    "panacodissa",
+    "panacod+lyrica+diapam",
+    "panacod-l\u00e4\u00e4kitys",
+    "panacode+burana",
+    "panacodiannos",
+    "panacodilla+voltarenilla",
+    "panacod-tabletteja",
+    "panacodt",
+    "panacod-sirdalud-yhdistelm\u00e4\u00e4",
+    "panacod-reseptisi"
+  ],
+  "dosages": {
+    "000mg": 2,
+    "1000mg": 9,
+    "100mg": 9,
+    "10g": 3,
+    "10mg": 14,
+    "120mg": 9,
+    "12mg": 1,
+    "140mg": 1,
+    "1500mg": 2,
+    "150mg": 13,
+    "15g": 1,
+    "15mg": 2,
+    "160mg": 1,
+    "180mg": 1,
+    "1g": 25,
+    "1mg": 6,
+    "2000mg": 5,
+    "200mg": 2,
+    "20g": 1,
+    "20mg": 4,
+    "215g": 1,
+    "225mg": 1,
+    "2400mg": 1,
+    "240mg": 2,
+    "2500mg": 4,
+    "250g": 1,
+    "250mg": 1,
+    "25mg": 3,
+    "2g": 1,
+    "2mg": 3,
+    "3000mg": 6,
+    "300mg": 12,
+    "30mg": 30,
+    "3200mg": 1,
+    "335g": 1,
+    "350mg": 1,
+    "3g": 8,
+    "3mg": 4,
+    "4000mg": 3,
+    "400g": 1,
+    "400mg": 9,
+    "40mg": 3,
+    "45mg": 1,
+    "4g": 18,
+    "4mg": 2,
+    "5000mg": 3,
+    "500g": 1,
+    "500mg": 79,
+    "50mg": 9,
+    "550mg": 2,
+    "5g": 2,
+    "5mg": 1,
+    "6000mg": 1,
+    "600mg": 12,
+    "60mg": 3,
+    "65mg": 3,
+    "6g": 2,
+    "6mg": 3,
+    "70mg": 1,
+    "750mg": 2,
+    "75mg": 2,
+    "800mg": 11,
+    "8mg": 2,
+    "90mg": 3
+  },
+  "postCount": 4195
+}

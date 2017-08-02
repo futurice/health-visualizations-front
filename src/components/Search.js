@@ -8,6 +8,7 @@ import { Link, Redirect } from 'react-router-dom';
 import SearchBox from './SearchBox';
 import { getByKeyword } from '../util';
 import QuoteModal from './QuoteModal';
+import Chart from './charts/Chart';
 
 export default class Search extends Component {
 
@@ -17,13 +18,22 @@ export default class Search extends Component {
     this.state = {
       keyword: this.props.match.params.keyword,
       notFound: false,
-      loading: true
+      loading: true,
+      drugsSliderValue: 30,
+      symptomsSliderValue: 30
     }
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.updateKeyword = this.updateKeyword.bind(this);
     this.findByKeyword = this.findByKeyword.bind(this);
+    this.sliderOnChange = this.sliderOnChange.bind(this);
+  }
+
+  sliderOnChange(e) {
+    this.setState({
+      drugsSliderValue: e
+    })
   }
 
   openModal() {
@@ -94,7 +104,7 @@ export default class Search extends Component {
           <div className="association-result-left">
             <p className="result"> Search result </p>
             <h3 className="keyword"> {this.state.keyword} </h3> 
-            <p className="body-text is-tight" > 26,000 posts </p>
+            <p className="body-text is-tight" > {this.state.data.postCount} posts </p>
             <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
 
             <div className="line-separator"></div>
@@ -103,12 +113,15 @@ export default class Search extends Component {
               heading="Heading"
               bodyText="About the metric and data analysis Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud"
               includeSlider={true}
+              sliderOnChange={this.sliderOnChange}
             />
           </div>
 
-          <div className="chart">
-            <AssociatedChart
-
+          <div id="chart" className="chart">
+            <Chart
+              heading="Associated drugs"
+              keyword={this.state.keyword}
+              minCount={this.state.drugsSliderValue}
             />
             <p className="minor-margin really-small-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
           </div>

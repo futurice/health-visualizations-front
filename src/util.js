@@ -45,7 +45,7 @@ function tooltip(count) {
 }
 
 export const getByKeyword = (keyword) => {
-  return axios.get(URL + "search/" + keyword);
+  return axios.get(generateUrl(keyword));
 }
 
 export const formatBucket = (bucket) => {
@@ -54,4 +54,8 @@ export const formatBucket = (bucket) => {
     .map((e) => <p key={e}> {e} </p>);
 
   return data;
+}
+
+export const generateUrl = (keyword) => {
+  return URL + "search/" + keyword;
 }

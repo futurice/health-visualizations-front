@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Futurice";
+    
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Futurice";
+    font-weight: bold;
+}
+
+div.tooltip {
+    position: absolute;
+    height: 28px;
+    padding: 5px 10px;
+    font-family: "Futurice";
+    font-size: 12px;
+    background: white;
+    border: 0px;
+    border-radius: 2px;
+    pointer-events: none;
+}

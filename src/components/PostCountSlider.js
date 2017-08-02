@@ -5,14 +5,7 @@ import 'rc-slider/assets/index.css';
 export default class PostCountSlider extends Component {
 
   constructor(props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-
-  handleChange(e) {
-    console.log(e);
+    super(props);    
   }
 
   render() {
@@ -23,7 +16,7 @@ export default class PostCountSlider extends Component {
           step={1}
           min={0}
           max={50}
-          onChange={this.handleChange}
+          onChange={this.props.onChange}
           handleStyle={{
             borderColor: 'var(--purpley)',
             height: '1rem',

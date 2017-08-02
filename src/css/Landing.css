@@ -32,6 +32,7 @@ body {
 .body-text-container {
   display: flex;
   margin: 2%;
+  flex-wrap: wrap;
 }
 
 .body-text-container p {
@@ -40,7 +41,8 @@ body {
 
 .most-common-container {
 	display: flex;
-	margin: 2%;
+  margin: 2%;
+  flex-wrap: wrap;
 }
 
 .form-box {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Landing.css';
-import logo from '../css/chilicorn_sticker.svg';
+import logo from '../css/chilicorn-logo.svg';
 import QueryForm from './QueryForm';
 import ChilicornBackground from '../css/chilicorn-world.jpg';
 
@@ -33,8 +33,8 @@ export default class Landing extends Component {
                 />
               </div>
               <div className="most-common-container">
-                <h4 className="heading-4">Most common drugs mentioned</h4>
-                <h4 className="heading-4">Most common symptoms mentioned</h4>
+                <h4 className="heading-4 most-common-header">Most common drugs mentioned</h4>
+                <h4 className="heading-4 most-common-header">Most common symptoms mentioned</h4>
               </div>
 
               <h4 className="heading-4 heading-4-small">The Case</h4>
