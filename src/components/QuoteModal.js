@@ -6,10 +6,6 @@ import { formatBucket } from '../util';
 
 export default class QuoteModal extends React.Component {
   
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     this.setState({
       data: formatBucket(this.props.data)

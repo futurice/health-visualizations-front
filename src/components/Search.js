@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import QueryForm from './QueryForm';
 import '../css/Search.css';
 import AssociatedChart from './AssociatedChart';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import SearchBox from './SearchBox';
 import { getByKeyword } from '../util';
 import QuoteModal from './QuoteModal';
@@ -33,7 +32,7 @@ export default class Search extends Component {
   sliderOnChange(e) {
     this.setState({
       drugsSliderValue: e
-    })
+    });
   }
 
   openModal() {
@@ -68,21 +67,21 @@ export default class Search extends Component {
           loading: false
         });
       })
-      .catch((error) => {
-        if (error.response.status === 404) {
-          this.props.history.push("/not_found");
-        } 
-      })
+        .catch((error) => {
+          if (error.response.status === 404) {
+            this.props.history.push("/not_found");
+          }
+        })
     });
   }
-  
+
   render() {
     if (this.state.notFound) {
       return <Redirect to="/not_found" />;
     }
 
     if (this.state.loading) {
-      return <p> Loading... </p>;
+      return <p className="loading"> Loading... </p>;
     }
 
     return (
@@ -103,7 +102,7 @@ export default class Search extends Component {
         <div className="association-result">
           <div className="association-result-left">
             <p className="result"> Search result </p>
-            <h3 className="keyword"> {this.state.keyword} </h3> 
+            <h3 className="keyword"> {this.state.keyword} </h3>
             <p className="body-text is-tight" > {this.state.data.postCount} posts </p>
             <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
 
@@ -126,13 +125,13 @@ export default class Search extends Component {
             <p className="minor-margin really-small-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
           </div>
         </div>
-        
+
         <br />
         <div className="line-separator"></div>
-        
+
         <div className="association-result">
           <div className="association-result-left">
-            
+
             <ChartSideBar
               heading="Heading"
               bodyText="About the metric and data analysis Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud"
@@ -140,7 +139,7 @@ export default class Search extends Component {
             />
 
             <br />
-    
+
             <p className="really-small-text">This is not medical advice or a best practice example to follow </p>
 
           </div>

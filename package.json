@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "d3": "^4.10.0",
+    "lodash": "^4.17.4",
     "rc-slider": "^8.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

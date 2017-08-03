@@ -87,7 +87,7 @@ class Chart extends React.Component {
         this.div.transition()
           .duration(200)
           .style("opacity", .9);
-        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>" + "Value: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>")
+        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>Value: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
@@ -129,11 +129,6 @@ class Chart extends React.Component {
     this.forceUpdate();
   }
 
-  componentWillReceiveProps() {
-    //this.drawDotPlot(this.state.data.associated_drugs)
-    this.setState(this.state)
-  }
-
   doPlot() {
 
     let url = generateUrl(this.props.keyword);
@@ -147,8 +142,6 @@ class Chart extends React.Component {
         this.height = 400; //document.getElementById("chart").clientHeight;
 
         d3.select('.chart-container').html('');
-
-        let title = "Associated drugs mentioned with " + this.name;
 
         this.div = d3.select("body").append("div")
           .attr("class", "tooltip")
