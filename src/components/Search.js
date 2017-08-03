@@ -106,19 +106,19 @@ export default class Search extends Component {
           updateKeyword={this.updateKeyword}
           findByKeyword={this.findByKeyword}
         />
-
+        <div className="search-term-info">
+          <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
+          <h3 className="keyword heading-3"> {this.state.keyword} </h3>
+          <p className="body-text is-tight" > {this.state.data.postCount} posts </p>
+          <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
+        </div>
         /* Drugs association result */
         <div className="association-result">
           <div className="association-result-left">
-            <p className="result"> Search result </p>
-            <h3 className="keyword"> {this.state.keyword} </h3>
-            <p className="body-text is-tight" > {this.state.data.postCount} posts </p>
-            <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
-
+            
             <div className="line-separator"></div>
 
             <ChartSideBar
-              heading="Heading"
               bodyText="About the metric and data analysis Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud"
               includeSlider={true}
               sliderOnChange={this.drugsSliderOnChange}
@@ -144,7 +144,6 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              heading="Heading"
               bodyText="About the metric and data analysis Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud"
               includeSlider={true}
               sliderOnChange={this.symptomsSliderOnChange}

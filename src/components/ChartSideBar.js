@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PostCountSlider from './PostCountSlider';
+import '../css/ChartSideBar.css';
 
 export default class ChartSideBar extends Component {
 
   render() {
     return (
       <div className="chart-side-bar">
-        <h5 className="heading-5"> { this.props.heading } </h5>
 
         <p className="body-text"> 
           { this.props.bodyText }

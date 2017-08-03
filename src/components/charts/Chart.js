@@ -75,10 +75,10 @@ class Chart extends React.Component {
       .enter()
       .append("circle")
       .attr("class", "dots")
-      .attr("cx", (d, i) => this.xScale(d["value"]))
-      .attr("cy", (d, i) => this.yScale(i))
       .attr("r", this.radius)
       .attr("fill", this.sunshineYellow)
+      .attr("cx", 0)
+      .attr("cy", (d, i) => this.yScale(i))
       .attr("fill-opacity", 0.6)
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
@@ -99,7 +99,10 @@ class Chart extends React.Component {
         this.div.transition()
           .duration(250)
           .style("opacity", 0);
-      });
+      })
+      .transition()
+      .duration(500)
+      .attr("cx", (d, i) => this.xScale(d["value"]));
 
     this.svg.selectAll(".labels")
       .data(tempData)
@@ -108,11 +111,15 @@ class Chart extends React.Component {
       .attr("class", "labels")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 4)
+      .attr("opacity",0)
       .attr("text-anchor", "end")
       .attr("font-size", 12)
       .attr("fill", "#fff")
       .attr("font-family", "Futurice")
-      .text((d) => d.MedicineName);
+      .text((d) => d.MedicineName)
+      .transition()
+      .duration(500)
+      .attr("opacity",1);
 
     this.svg.selectAll(".dotsLine")
       .data(tempData)
@@ -121,10 +128,13 @@ class Chart extends React.Component {
       .attr("class", "dotsLine")
       .attr("x1", this.xScale(0))
       .attr("y1", (d, i) => this.yScale(i))
-      .attr("x2", (d, i) => this.xScale(d["value"]) - 7)
+      .attr("x2", this.xScale(0))
       .attr("y2", (d, i) => this.yScale(i))
       .attr("stroke", this.sunshineYellow)
-      .attr("stroke-width", 3);
+      .attr("stroke-width", 3)
+      .transition()
+      .duration(500)
+      .attr("x2", (d, i) => this.xScale(d["value"]) - 7);
 
     this.forceUpdate();
   }
