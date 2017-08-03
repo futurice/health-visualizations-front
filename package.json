@@ -9,7 +9,9 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-faux-dom": "^4.0.3",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "react-spinkit": "^3.0.0",
+    "react-spinner": "^0.2.7"
   },
   "scripts": {
     "start": "react-scripts start",

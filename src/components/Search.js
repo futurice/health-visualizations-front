@@ -9,6 +9,8 @@ import { getByKeyword } from '../util';
 import QuoteModal from './QuoteModal';
 import Chart from './charts/Chart';
 import warning from '../css/warning.svg';
+//import Spinner from 'react-spinner';
+import Spinner from 'react-spinkit'
 
 export default class Search extends Component {
 
@@ -90,7 +92,7 @@ export default class Search extends Component {
     }
 
     if (this.state.loading) {
-      return <p className="loading"> Loading... </p>;
+      return <Spinner fadeIn="none" name="pulse" color='white'/>;
     }
 
     return (
