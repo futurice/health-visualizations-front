@@ -13,7 +13,7 @@ class Chart extends React.Component {
     this.quant = 15;
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
-    this.margin = { top: 20, right: 10, bottom: 10, left: 125 };
+    this.margin = { top: 20, right: 10, bottom: 10, left: 90 };
     this.name = "Baruna";
     this.xScale = undefined;
     this.yScale = undefined;

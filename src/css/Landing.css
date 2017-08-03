@@ -178,8 +178,7 @@ body {
 	font-family: Futurice;
   font-size: 0.75rem;
 	line-height: 1.39;
-  color: #ffffff;
-  
+  color: #d8d8d8;
 }
 
 .small-text {
@@ -187,19 +186,6 @@ body {
 	font-family: Futurice;
 	font-size: 16px;
 	line-height: 1.31;
-	color: #ffffff;
-}
-
-.buble-label {
-	font-family: Futurice;
-	font-size: 14px;
-	text-align: center;
-	color: #000000;
-}
-
-.item-label {
-	font-family: Futurice;
-	font-size: 14px;
 	color: #ffffff;
 }
 
@@ -214,7 +200,7 @@ body {
   margin-top: 0;
   text-align: center;
 	font-family: Futurice;
-	font-size: 0.75rem;
+	font-size: 0.65rem;
 	line-height: 1.42;
-	color: #ffffff;
+	color: #d8d8d8;
 }

@@ -8,6 +8,7 @@ import SearchBox from './SearchBox';
 import { getByKeyword } from '../util';
 import QuoteModal from './QuoteModal';
 import Chart from './charts/Chart';
+import warning from '../css/warning.svg';
 
 export default class Search extends Component {
 
@@ -132,7 +133,11 @@ export default class Search extends Component {
               data={this.state.data.associated_drugs}
               resource="drugs"
             />
-            <p className="minor-margin really-small-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
+            <div className="minor-margin warning-container">
+            <p className="really-small-text" >Source: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
+              <img src={warning} className="warning" alt="warning" />
+              <span className="really-small-text">This is not medical advice or a best practice example to follow </span>
+            </div>
           </div>
         </div>
 
@@ -151,8 +156,6 @@ export default class Search extends Component {
 
             <br />
 
-            <p className="really-small-text">This is not medical advice or a best practice example to follow </p>
-
           </div>
           <div id="symptoms-chart" className="chart">
             <Chart
@@ -161,7 +164,11 @@ export default class Search extends Component {
               data={this.state.data.associated_symptoms}
               resource="symptoms"
             />
-            <p className="" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
+            <div className="minor-margin warning-container">
+            <p className="really-small-text" >Source: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
+              <img src={warning} className="warning" alt="warning" />
+              <span className="really-small-text">This is not medical advice or a best practice example to follow </span>
+            </div>
           </div>
         </div>
 

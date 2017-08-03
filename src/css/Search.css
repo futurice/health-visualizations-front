@@ -31,7 +31,6 @@
 }
 
 .association-result {
-  padding-top: 3%;
   display: flex;
   max-width: 960px;
   min-height: 480px;
@@ -39,6 +38,7 @@
   padding-right: 3%;
   flex-wrap: wrap;
   border-bottom: 2px solid #717171;
+  padding-bottom: 5%;
 }
 
 .association-result-left {
@@ -49,6 +49,7 @@
 
 .keyword {
   margin: 0;
+  font-size: 3.5rem;
 }
 
 .list-of-bucket {
@@ -68,5 +69,20 @@
 }
 
 .minor-margin {
-  margin: 2%;
+  margin: 4%;
+}
+
+.warning {
+	width: 18px;
+  height: 21px;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+.warning-container {
+  display: relative;
+}
+
+.warning-container p {
+  text-align: left;
 }
