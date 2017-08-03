@@ -16,12 +16,12 @@
 body {
     background: black;
     font-weight: 400;
-    
+    margin: 0;
 }
 
 .content {
   max-width: 960px;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -43,6 +43,10 @@ body {
 	display: flex;
   margin: 2%;
   flex-wrap: wrap;
+}
+
+.most-common-header {
+  margin: 0 auto;
 }
 
 .form-box {

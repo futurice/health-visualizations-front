@@ -4,6 +4,12 @@
     font-size: 16px;
 }
 
+.search-page {
+  max-width: 960px;
+  width: 95%;
+  margin: 0 auto;
+}
+
 .search-heading {
   color: white;
   font-family: 'Space Mono', monospace;

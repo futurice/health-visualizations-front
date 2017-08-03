@@ -1,7 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
-import { generateUrl } from '../../util.js';
 
 class Chart extends React.Component {
   constructor(props) {
@@ -18,6 +17,7 @@ class Chart extends React.Component {
     this.name = "Baruna";
     this.xScale = undefined;
     this.yScale = undefined;
+    this.chartContainerId = "chart-container-" + this.props.resource;
   }
 
   drawDotPlot(data) {
@@ -130,53 +130,51 @@ class Chart extends React.Component {
   }
 
   doPlot() {
+    let data = this.props.data;
+    
+    this.setState({
+      data
+    }, () => {
 
-    let url = generateUrl(this.props.keyword);
+      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;
+      this.height = 400;
 
-    d3.json(url, (error, data) => {
-      if (error) throw error;
-      this.setState({
-        data
-      }, () => {
-        this.width = document.getElementById("chart").clientWidth;
-        this.height = 400; //document.getElementById("chart").clientHeight;
+      d3.select("#"+this.chartContainerId).html('');
 
-        d3.select('.chart-container').html('');
+      this.div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+      
+      let mapSVG = d3
+        .select("#"+this.chartContainerId)
+        .append('svg')
+        .attr('xmlns', 'http://www.w3.org/2000/svg')
+        .attr("width", this.width)
+        .attr("height", this.height)
+        .attr('class', 'svg-map');
 
-        this.div = d3.select("body").append("div")
-          .attr("class", "tooltip")
-          .style("opacity", 0);
-
-
-        let mapSVG = d3
-          .select('.chart-container')
-          .append('svg')
-          .attr('xmlns', 'http://www.w3.org/2000/svg')
-          .attr("width", this.width)
-          .attr("height", this.height)
-          .attr('class', 'svg-map');
-
-        this.svg = d3.selectAll("svg").append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
-        this.drawDotPlot(this.state.data.associated_drugs)
-      });
+      this.svg = mapSVG.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+      this.drawDotPlot(data);
     });
-
   }
 
   componentWillMount() {
     this.doPlot()
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.minCount === this.props.minCount) {
+      return false;
+    }
     this.doPlot()
   }
 
   render() {
     return (
       <div>
-        <h4 className="heading-4">{this.props.heading}</h4>
+        <h4 className="heading-4"> Associated {this.props.resource}</h4>
         <p className="body-text is-centered"> Relevance factor </p>
-        <div id='chart-container' className='chart-container'>
+        <div id={this.chartContainerId} className='chart-container'>
 
         </div>
       </div>
