@@ -9,10 +9,9 @@ export const getByKeyword = (keyword) => {
 
 export const formatBucket = (bucket) => {
   let data = bucket
-    .sort()
-    .map((e) => <p key={e}> {e} </p>);
+    .join(", ");
 
-  return data;
+  return <p>{data}</p>;
 }
 
 export const generateUrl = (keyword) => {

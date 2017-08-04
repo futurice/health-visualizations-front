@@ -1,11 +1,14 @@
 .quote-modal {
   background-color: black;
-  width: 90%;
+  width: 40%;
   height: 90%;
-  margin: 5%;
+  margin: 3%;
+  margin-left: 1%;
   border: 0;
-  background-color: #e6e6e6;
+  background-color: white;
   overflow: scroll;
+  float: left;
+  border: solid 3px var(--beige);
 }
 
 .ReactModal__Body--open {
@@ -25,9 +28,18 @@
 
 .modal-heading {
   height: 4em;
-  border-bottom: solid 2px #979797;
+  border-bottom: solid 2px var(--beige);
   display: flex;
   flex-wrap: wrap;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .modal-heading-header {
