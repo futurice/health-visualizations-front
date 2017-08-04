@@ -87,7 +87,7 @@ class Chart extends React.Component {
         this.div.transition()
           .duration(200)
           .style("opacity", .9);
-        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>Value: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>")
+        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
@@ -150,6 +150,7 @@ class Chart extends React.Component {
       this.height = 400;
 
       d3.select("#"+this.chartContainerId).html('');
+      //d3.selectAll('.tooltip').remove();
 
       this.div = d3.select("body").append("div")
         .attr("class", "tooltip")

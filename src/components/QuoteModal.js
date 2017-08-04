@@ -5,7 +5,7 @@ import '../css/QuoteModal.css';
 import { formatBucket } from '../util';
 
 export default class QuoteModal extends React.Component {
-  
+
   componentWillMount() {
     this.setState({
       data: formatBucket(this.props.data)
@@ -18,6 +18,9 @@ export default class QuoteModal extends React.Component {
         isOpen={this.props.isOpen}
         contentLabel="Modal"
         className="quote-modal"
+        onRequestClose={() => {
+          this.props.closeModal();
+        }}
       >
       <div className="modal-heading">
         <h1 className="modal-heading-header" >{this.props.heading} </h1>
