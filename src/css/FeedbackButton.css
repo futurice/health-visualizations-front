@@ -1,0 +1,16 @@
+.feedback-button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: var(--purpley);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  height: 32px;
+  font-size: 0.6rem;
+  width: 100px;
+  float: right;
+}

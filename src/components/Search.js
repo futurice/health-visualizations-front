@@ -19,7 +19,6 @@ export default class Search extends Component {
 
     this.state = {
       keyword: this.props.match.params.keyword,
-      notFound: false,
       loading: true,
       drugsSliderValue: 30,
       symptomsSliderValue: 30
@@ -78,19 +77,15 @@ export default class Search extends Component {
         });
       })
         .catch((error) => {
-          console.error(error);
+          console.error(error); // TODO REMOVE
           if (error.response.status === 404) {
-            this.props.history.push("/not_found");
+            this.props.history.push("/not_found/" + this.state.keyword);
           }
         })
     });
   }
 
   render() {
-    if (this.state.notFound) {
-      return <Redirect to="/not_found" />;
-    }
-
     if (this.state.loading) {
       return <Spinner fadeIn="none" name="pulse" color='white'/>;
     }

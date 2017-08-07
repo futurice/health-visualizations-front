@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import SearchBox from './SearchBox';
 import '../css/NotFound.css';
+import FeedbackButton from './FeedbackButton';
 
 export default class NotFound extends Component {
 
   render() {
+    const keyword = this.props.match.params.keyword;
+
     return (
       <div className="not-found">
+        
         <SearchBox
           history={this.props.history}
           match={this.props.match}
@@ -14,15 +18,12 @@ export default class NotFound extends Component {
         <br />
         <h1 className="minor-margin heading-1">_result not found</h1>
 
-        <p className="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Vestibulum tempus dolor eros, eu bibendum felis tristique non. 
-          Nullam laoreet orci eget efficitur vehicula. 
-          Praesent risus ipsum, maximus at tristique luctus, pellentesque ut nunc.
-          Phasellus fermentum et nulla faucibus faucibus. 
-          Quisque efficitur, ligula a egestas eleifend, justo leo dapibus quam, non eleifend sapien neque consectetur ipsum. 
-          Nunc molestie elit quis eleifend egestas.
+        <p className="body-text">
+          This might be either because it isn’t mentioned in the data, or (more likely) we did not recognize it as a drug or symptom. <a href="#"> Our blog post </a> explains how we recognize drugs and symptoms. If you think <b>{ keyword }</b> should be searchable, please click the feedback button below.
         </p>
-
+        <FeedbackButton 
+          keyword={keyword}
+        />
       </div>
     )
   }

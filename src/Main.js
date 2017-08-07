@@ -14,7 +14,7 @@ export default class Main extends Component {
       <Switch>
         <Route exact path="/" component={ Landing } />
         <Route path="/search/:keyword" component={ Search } />
-        <Route exact path='/not_found' component={ NotFound } />
+        <Route path='/not_found/:keyword' component={ NotFound } />
       </Switch>
     );
   }

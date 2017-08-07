@@ -62,7 +62,7 @@ a {
 
 .rectangle-white {
 	height: 400px;
-	width: 100%;
+  width: 100%;
 	background-color: #e6e6e6;
 }
 
@@ -212,4 +212,8 @@ a {
 
 .whole-story {
   float: right;
+}
+
+.contact {
+  max-width: 960px;
 }
