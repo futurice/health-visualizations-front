@@ -4,7 +4,7 @@ import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 import SearchBox from './SearchBox';
 import { getByKeyword } from '../util';
-import QuoteModal from './QuoteModal';
+import BasketModal from './BasketModal';
 import AssociatedChart from './charts/AssociatedChart';
 import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
@@ -89,7 +89,7 @@ export default class Search extends Component {
 
     return (
       <div ref="search" className="search-page">
-        <QuoteModal
+        <BasketModal
           isOpen={this.state.modalIsOpen}
           data={this.state.data.basket}
           closeModal={this.closeModal}
@@ -105,7 +105,7 @@ export default class Search extends Component {
           <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
           <h3 className="keyword heading-3"> {this.state.keyword} </h3>
           <p className="body-text is-tight" > {this.state.data.postCount} posts </p>
-          <a onClick={this.openModal} className="list-of-bucket body-text"> List of terms we think makes {this.state.keyword} </a>
+          <a onClick={this.openModal} className="list-of-bucket body-text"> Words interpreted as {this.state.keyword} </a>
         </div>
         {/* Drugs association result */}
         <div className="association-result">
@@ -161,7 +161,7 @@ export default class Search extends Component {
         <DosageChart
           isDrug={this.state.data.dosages}
           data={this.state.data.dosages}
-          keyword={this.state.keyword}
+          keyword={this.props.keyword}
         />
 
         <div className="footer">

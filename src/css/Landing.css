@@ -217,3 +217,7 @@ a {
 .contact {
   max-width: 960px;
 }
+
+::-webkit-input-placeholder {
+   font-size: 1rem;
+}

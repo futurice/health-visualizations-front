@@ -93,3 +93,7 @@
 .footer a {
   color: white;
 }
+
+.chart-container {
+  min-height: 300px;
+}

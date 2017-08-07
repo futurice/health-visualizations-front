@@ -23,14 +23,12 @@ class BubbleChart extends React.Component {
       data
     }, () => {
 
-      this.width = document.getElementById("bubbles-chart").clientWidth;
-      this.height = 450;
+      this.width = document.getElementById("bubbles-chart").clientHeight;
+      this.height = document.getElementById("bubbles-chart").clientHeight;
 
       this.div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
-
-      console.log(this.div);
 
       this.svg = d3
         .select("#" + this.chartContainerId)
@@ -39,7 +37,7 @@ class BubbleChart extends React.Component {
         .attr("width", this.width)
         .attr("height", this.height)
         .attr("display", "block")
-        //.attr("transform", "translate(0, 0)")
+        .style("margin", "0 auto")
         .attr('class', 'svg-map');
 
       //.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");

@@ -82,6 +82,9 @@ class AssociatedChart extends React.Component {
       .attr("fill-opacity", 0.6)
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
+      .on("click", (e) => {
+        console.log(e);
+      } )
       .on("mouseover", (d) => {
 
         this.div.transition()
@@ -147,7 +150,7 @@ class AssociatedChart extends React.Component {
     }, () => {
 
       this.width = document.getElementById(this.props.resource + "-chart").clientWidth;
-      this.height = 400;
+      this.height = document.getElementById(this.props.resource + "-chart").clientHeight;
 
       d3.select("#"+this.chartContainerId).html('');
       //d3.selectAll('.tooltip').remove();
@@ -162,6 +165,8 @@ class AssociatedChart extends React.Component {
         .attr('xmlns', 'http://www.w3.org/2000/svg')
         .attr("width", this.width)
         .attr("height", this.height)
+        .attr("display", "block")
+        .style("margin", "0 auto")
         .attr('class', 'svg-map');
 
       this.svg = mapSVG.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
