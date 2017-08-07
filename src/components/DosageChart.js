@@ -1,38 +1,38 @@
 import React, { Component } from 'react';
 import '../css/DosageChart.css';
 import ChartSideBar from './ChartSideBar';
-import AssociatedChart from './AssociatedChart';
+import BubbleChart from './charts/BubbleChart';
+import warning from '../css/warning.svg';
+
 
 export default class DosageChart extends Component {
 
   render() {
-
     if (!this.props.isDrug) {
-        return <div> </div>;
+      return <div> </div>;
     }
 
     return (
       <div className="association-result">
-          <div className="association-result-left">
-            
-            <ChartSideBar
-              heading="Heading"
-              bodyText="About the metric and data analysis Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud"
-              includeSlider={false}
-            />
+        <div className="association-result-left">
 
-            <br />
-    
-            <p className="really-small-text">This is not medical advice or a best practice example to follow </p>
+          <ChartSideBar
+            bodyText="This plot describes which dosages are commonly mentioned along with the searched keyword. We assume that dosages mentioned inside posts are related to the closest drug mentioned within the post. We only find dosages mentioned as explicit quantities (e.g. “600mg”). Units other than g or mg are not recognized."
+            includeSlider={false}
+          />
 
-          </div>
-          <div className="chart">
-            <AssociatedChart
+        </div>
+        <div id="bubbles-chart" className="chart">
+          <BubbleChart
+            data={this.props.data}
+          />
 
-            />
-            <p className="minor-margin really-small-text" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus dolor eros, eu bibendum felis tristique non. </p>
+          <div className="minor-margin warning-container">
+            <img src={warning} className="warning" alt="warning" />
+            <span className="really-small-text">This is not medical advice or a best practice example to follow </span>
           </div>
         </div>
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
 
-class Chart extends React.Component {
+class AssociatedChart extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +14,6 @@ class Chart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.margin = { top: 20, right: 10, bottom: 10, left: 90 };
-    this.name = "Baruna";
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-" + this.props.resource;
@@ -130,7 +129,7 @@ class Chart extends React.Component {
       .attr("y1", (d, i) => this.yScale(i))
       .attr("x2", this.xScale(0))
       .attr("y2", (d, i) => this.yScale(i))
-      .attr("stroke", this.sunshineYellow)
+      .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8" ) )
       .attr("stroke-width", 3)
       .transition()
       .duration(500)
@@ -193,4 +192,4 @@ class Chart extends React.Component {
   }
 }
 
-export default Chart;
+export default AssociatedChart;
