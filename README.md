@@ -1,3 +1,14 @@
+Instructions:
+- Install npm and nodejs, for example with nvm:
+	- curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+	- nvm install node
+- Navigate to project folder and:
+	- npm install axios
+	- npm install react
+	- npm install react-google-charts
+	- npm start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
