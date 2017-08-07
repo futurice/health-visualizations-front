@@ -4,12 +4,14 @@
   html {
     font-size: 12px !important;
   }
+  .body-text-container {
+    flex-wrap: wrap;
+  }
 }
 
 @media only screen and (min-width: 480px)  {
   body {
     font-size: 15px;
-
   }
 }
 
@@ -32,7 +34,6 @@ body {
 .body-text-container {
   display: flex;
   margin: 2%;
-  flex-wrap: wrap;
 }
 
 .body-text-container p {
@@ -46,7 +47,11 @@ body {
 }
 
 .most-common-header {
-  margin: 0 auto;
+  margin: 0 auto !important;
+}
+
+a {
+  color: white;
 }
 
 .form-box {
@@ -203,4 +208,8 @@ body {
 	font-size: 0.65rem;
 	line-height: 1.42;
 	color: #d8d8d8;
+}
+
+.whole-story {
+  float: right;
 }

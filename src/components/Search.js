@@ -182,6 +182,10 @@ export default class Search extends Component {
         />
 
         <div className="line-separator"> </div>
+
+        <div className="footer">
+          <p>_Nettipuoskari is a data science project by <a href="https://spiceprogram.org/chilicorn-fund/"> Futurice’s Chilicorn Fund</a> and <a href="https://spiceprogram.org/"> Spice Program </a></p>
+        </div>
       </div>
     );
   }
