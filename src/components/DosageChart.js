@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../css/DosageChart.css';
 import ChartSideBar from './ChartSideBar';
 import BubbleChart from './charts/BubbleChart';
-import warning from '../css/warning.svg';
-
+import WarningText from './WarningText';
 
 export default class DosageChart extends Component {
 
@@ -25,12 +24,10 @@ export default class DosageChart extends Component {
         <div id="bubbles-chart" className="chart">
           <BubbleChart
             data={this.props.data}
+            keyword={this.props.keyword}
           />
 
-          <div className="minor-margin warning-container">
-            <img src={warning} className="warning" alt="warning" />
-            <span className="really-small-text">This is not medical advice or a best practice example to follow </span>
-          </div>
+          <WarningText />
         </div>
       </div>
     );

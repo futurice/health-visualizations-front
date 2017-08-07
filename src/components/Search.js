@@ -6,8 +6,8 @@ import SearchBox from './SearchBox';
 import { getByKeyword } from '../util';
 import QuoteModal from './QuoteModal';
 import AssociatedChart from './charts/AssociatedChart';
-import warning from '../css/warning.svg';
 import Spinner from 'react-spinkit'
+import WarningText from './WarningText';
 
 export default class Search extends Component {
 
@@ -111,8 +111,6 @@ export default class Search extends Component {
         <div className="association-result">
           <div className="association-result-left">
 
-            <div className="line-separator"></div>
-
             <ChartSideBar
               bodyText="Relevance is calculated by a statistic metric called <link>lift</link>. In short, Lift measures how likely other drugs are to appear in a post, given that the search term appears in that post. This measure takes into account how often a drug appears overall in the data -- common drugs are not favored over less common drugs."
               includeSlider={true}
@@ -127,10 +125,7 @@ export default class Search extends Component {
               data={this.state.data.associated_drugs}
               resource="drugs"
             />
-            <div className="minor-margin warning-container">
-              <img src={warning} className="warning" alt="warning" />
-              <span className="really-small-text">This is not medical advice or a best practice example to follow </span>
-            </div>
+            <WarningText />
           </div>
         </div>
 
@@ -156,10 +151,7 @@ export default class Search extends Component {
               data={this.state.data.associated_symptoms}
               resource="symptoms"
             />
-            <div className="minor-margin warning-container">
-              <img src={warning} className="warning" alt="warning" />
-              <span className="really-small-text">This is not medical advice or a best practice example to follow </span>
-            </div>
+            <WarningText />
           </div>
         </div>
 
@@ -167,8 +159,9 @@ export default class Search extends Component {
 
         {/* Dosages result, only rendered if the keyword is a drug */}
         <DosageChart
-          isDrug={true}
+          isDrug={this.state.data.dosages}
           data={this.state.data.dosages}
+          keyword={this.state.keyword}
         />
 
         <div className="footer">

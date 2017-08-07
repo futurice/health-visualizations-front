@@ -39,7 +39,7 @@ class BubbleChart extends React.Component {
         .attr("width", this.width)
         .attr("height", this.height)
         .attr("display", "block")
-        .attr("transform", "translate(75, 0)")
+        //.attr("transform", "translate(0, 0)")
         .attr('class', 'svg-map');
 
       //.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -121,8 +121,8 @@ class BubbleChart extends React.Component {
   render() {
     return (
       <div>
-        <h4 className="heading-4"> Associated dosages </h4>
-        <p className="body-text is-centered"> Relevance factor </p>
+        <h4 className="heading-4"> Dosages associated with { this.props.keyword } </h4>
+        <p className="body-text is-centered"> Count </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

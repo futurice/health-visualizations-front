@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export const URL = 'https://citizen-medscapes-staging.herokuapp.com/';
+export const URL = "http://localhost:5000/";// 'https://citizen-medscapes-staging.herokuapp.com/';
 
 export const getByKeyword = (keyword) => {
   return axios.get(generateUrl(keyword));

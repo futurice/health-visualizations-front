@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
+import _ from 'lodash';
 
 class AssociatedChart extends React.Component {
   constructor(props) {
@@ -182,8 +183,8 @@ class AssociatedChart extends React.Component {
   render() {
     return (
       <div>
-        <h4 className="heading-4"> Associated {this.props.resource}</h4>
-        <p className="body-text is-centered"> Relevance factor </p>
+        <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
+        <p className="body-text is-centered"> Relevance </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
