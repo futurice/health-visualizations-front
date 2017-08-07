@@ -39,7 +39,7 @@ export default class Landing extends Component {
                 <h4 className="heading-4 most-common-header">Most common drugs mentioned</h4>
                 <h4 className="heading-4 most-common-header">Most common symptoms mentioned</h4>
               </div>
-
+            
               <h4 className="heading-4 heading-4-small">The Case</h4>
               <h1 className="heading-1">Why are we doing this?</h1>
 
