@@ -150,7 +150,7 @@ class AssociatedChart extends React.Component {
     }, () => {
 
       this.width = document.getElementById(this.props.resource + "-chart").clientWidth;
-      this.height = document.getElementById(this.props.resource + "-chart").clientHeight;
+      this.height = 500;
 
       d3.select("#"+this.chartContainerId).html('');
       //d3.selectAll('.tooltip').remove();

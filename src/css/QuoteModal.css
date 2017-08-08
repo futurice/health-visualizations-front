@@ -1,0 +1,13 @@
+.modal-section {
+    border-bottom: 2px solid var(--beige);
+}
+
+.quote-modal {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  background-color: white;
+  overflow: scroll;
+  float: left;
+  border: solid 3px var(--beige);
+}

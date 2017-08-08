@@ -101,7 +101,8 @@ class BubbleChart extends React.Component {
           .duration(250)
           .style("opacity", 0);
       });
-    node.filter((d, i) => d.data.count >= 3)
+
+    node.filter((d, i) => d.data.count >= 8)
       .append("text")
       .attr("x", 0)
       .attr("y", 5)

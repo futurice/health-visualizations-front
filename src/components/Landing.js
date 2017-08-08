@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/Landing.css';
 import logo from '../css/chilicorn-logo.svg';
 import QueryForm from './QueryForm';
-import ChilicornBackground from '../css/chilicorn-world.jpg';
+import ChilicornBackground from '../css/chilicorn-world.png';
 import FeedbackButton from './FeedbackButton';
 
 export default class Landing extends Component {
@@ -15,7 +15,7 @@ export default class Landing extends Component {
         <div>
           <div className="content">
             <img src={logo} className="logo" alt="logo" />
-            <h1 className="title is-centered"> Nettipuoskari </h1>
+            <h1 className="title is-centered">Nettipuoskari</h1>
             <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
 
             <p className="really-small-text"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicornfund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>

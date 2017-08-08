@@ -2,7 +2,7 @@
 
 @media only screen and (max-width: 480px)  {
   html {
-    font-size: 12px !important;
+    font-size: 16px !important;
   }
   .body-text-container {
     flex-wrap: wrap;
@@ -11,7 +11,7 @@
 
 @media only screen and (min-width: 480px)  {
   body {
-    font-size: 15px;
+    font-size: 21px !important;
   }
 }
 
@@ -78,7 +78,7 @@ a {
 .chilicorn-fund {
 	margin: 0;
 	padding: 0;
-	background-size: cover;
+	background-size: fit;
 	height: 400px;
 }
 
@@ -181,7 +181,7 @@ a {
 
 .body-text {
 	font-family: Futurice;
-  font-size: 0.75rem;
+  font-size: 1rem;
 	line-height: 1.39;
   color: #d8d8d8;
 }
@@ -205,7 +205,7 @@ a {
   margin-top: 0;
   text-align: center;
 	font-family: Futurice;
-	font-size: 0.65rem;
+	font-size: 0.85rem;
 	line-height: 1.42;
 	color: #d8d8d8;
 }
@@ -219,5 +219,13 @@ a {
 }
 
 ::-webkit-input-placeholder {
-   font-size: 1rem;
+   font-size: 0.8rem;
+}
+
+a:hover {
+  color: var(--purpley);
+}
+
+.left-align {
+  text-align: left;
 }

@@ -41,21 +41,27 @@ export default class Search extends Component {
     });
   }
 
-  openModal() {
+  openModal(type) {
+    if (type === "basket") {
+      this.setState({
+        basketModalIsOpen: true
+      });
+      return;
+    }
     this.setState({
-      modalIsOpen: true
-    })
+      basketModalIsOpen: true
+    });
   }
 
   updateKeyword(keyword) {
     this.setState({
       keyword
-    })
+    });
   }
 
   closeModal() {
     this.setState({
-      modalIsOpen: false
+      basketModalIsOpen: false
     })
   }
 
@@ -90,7 +96,7 @@ export default class Search extends Component {
     return (
       <div ref="search" className="search-page">
         <BasketModal
-          isOpen={this.state.modalIsOpen}
+          isOpen={this.state.basketModalIsOpen}
           data={this.state.data.basket}
           closeModal={this.closeModal}
           heading="Basket"
@@ -104,7 +110,7 @@ export default class Search extends Component {
         <div className="search-term-info">
           <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
           <h3 className="keyword heading-3"> {this.state.keyword} </h3>
-          <p className="body-text is-tight" > {this.state.data.postCount} posts </p>
+          <p className="body-text is-tight" > {this.state.data.post_count} posts </p>
           <a onClick={this.openModal} className="list-of-bucket body-text"> Words interpreted as {this.state.keyword} </a>
         </div>
         {/* Drugs association result */}
