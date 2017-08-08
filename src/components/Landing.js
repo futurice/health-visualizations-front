@@ -18,7 +18,7 @@ export default class Landing extends Component {
             <h1 className="title is-centered">Nettipuoskari</h1>
             <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
 
-            <p className="really-small-text"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicornfund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
+            <p className="really-small-text is-centered"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicornfund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
 
             <div className="body-text-container">
                 <p className="body-text">
@@ -51,10 +51,8 @@ export default class Landing extends Component {
 
             <div style={ chilicornStyle } className="chilicorn-fund">
               <h1 className="heading-1-chilicorn"> Chilicorn Fund </h1>
-              <p className="chilicorn-text">Pro–bono projects for a slightly better world, by Futurice </p>
+              <p className="chilicorn-text">Pro–bono projects for a slightly better world, by <a href="https://futurice.com">Futurice</a> </p>
             </div>
-
-
         </div>
     );
   }

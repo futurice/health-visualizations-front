@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Modal from 'react-modal';
 import { getQuotesByKeywords } from '../util';
-
+import '../css/QuoteModal.css';
 
 export default class QuoteModal extends React.Component {
 
@@ -10,25 +10,37 @@ export default class QuoteModal extends React.Component {
     super(props);
 
     this.formatPosts = this.formatPosts.bind(this);
+
+    this.state = {}
   }
 
-  componentWillMount() {
-    getQuotesByKeywords(this.props.keyword1, this.props.keyword2, this.props.page)
+  componentWillReceiveProps() {
+    const keyword1 = this.props.keyword1;
+    const keyword2 = this.props.keyword2;
+
+    if (!keyword1 || !keyword2) {
+      return;
+    }
+
+    getQuotesByKeywords(keyword1, keyword2, this.props.page)
       .then((response) => {
         console.log(response);
+        this.setState({
+          posts: this.formatPosts(response.data)
+        });
       })
       .catch((error) => {
         console.error(error);
       });
   }
 
-  formatPosts() {
+  formatPosts(posts) {
     return (
-      this.state.posts.map((post) => {
+      posts.map((post) => {
         <div className="modal-section"> { post } </div>    
       }) 
     );
-  }
+  }  
 
   render() {
     return (
@@ -37,7 +49,7 @@ export default class QuoteModal extends React.Component {
         contentLabel="Modal"
         className="quote-modal"
         onRequestClose={() => {
-          this.props.closeModal();
+          this.props.closeModal;
         }}
       >
         <div className="modal-heading">
@@ -45,7 +57,7 @@ export default class QuoteModal extends React.Component {
           <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
         </div>
         <div className="modal-content">
-          { this.state.posts }
+          { this.state.data }
         </div>
       </Modal>
     );

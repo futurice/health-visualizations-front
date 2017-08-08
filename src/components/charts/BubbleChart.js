@@ -69,8 +69,6 @@ class BubbleChart extends React.Component {
     let nodes = d3.hierarchy(dataset)
       .sum((d) => d.count);
 
-    console.log(bubble(nodes).children);
-
     let node = svg.selectAll(".node")
       .data(bubble(nodes).children)
       .enter()

@@ -82,9 +82,7 @@ class AssociatedChart extends React.Component {
       .attr("fill-opacity", 0.6)
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
-      .on("click", (e) => {
-        console.log(e);
-      } )
+      .on("click", this.props.onClick )
       .on("mouseover", (d) => {
 
         this.div.transition()
@@ -153,7 +151,6 @@ class AssociatedChart extends React.Component {
       this.height = 500;
 
       d3.select("#"+this.chartContainerId).html('');
-      //d3.selectAll('.tooltip').remove();
 
       this.div = d3.select("body").append("div")
         .attr("class", "tooltip")
