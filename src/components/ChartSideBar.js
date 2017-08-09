@@ -14,11 +14,10 @@ export default class ChartSideBar extends Component {
 
         {this.props.includeSlider &&
           <div className="slider-container">
-            <p className="body-text" > Minimum post count </p>
             <PostCountSlider
               onChange={this.props.sliderOnChange}
             />
-            <p className="minor-margin really-small-text align-left"> Move slider to change minimum post count required </p>
+            <p className="move-slider really-small-text "> Move slider to change minimum post count required </p>
           </div>
             }
       </div>

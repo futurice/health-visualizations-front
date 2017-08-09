@@ -23,13 +23,16 @@ export default class Landing extends Component {
             <div className="body-text-container">
                 <p className="body-text">
                     Traditional medical research is expensive and focused on predetermined research questions. On the other hand, there is a huge amount of freely accessible Suomi24 online discussion data where people candidly describe their experiences. The topics which appear in these discussions are those that people truly care about. We used machine learning to organize and present this data in a way that would be useful to researchers.
-                </p>
-                <p className="body-text">
-                    The research is based on data from posts content from the online forum Suomi24, we focused on the “Health” section and covered the period from 11.11.2016 to 11.11.2017. The results are based on ~19 million posts containing around 200M words
                     <br />
-                    <a className="whole-story" href="#"> Read the full story </a>
-                </p> 
+                    <a className="whole-story" href="#"> Read the full story </a>                    
+                </p>
                 
+                <div className="numbers">
+                  <p>The numbers</p>
+                  <h3>19M posts </h3>
+                  <h3>200M words </h3>
+                  <h3>from 01/ 2001 to 11/2017</h3>
+                </div>
             </div>              
               <div className="form-box">
                 <QueryForm

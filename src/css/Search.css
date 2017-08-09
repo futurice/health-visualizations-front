@@ -72,6 +72,11 @@
   margin: 2%;
 }
 
+.move-slider {
+  margin-top: 4%;
+  text-align: left;
+}
+
 .sk-spinner {
   position: absolute;
   top: 50%;
@@ -96,4 +101,11 @@
 
 .chart-container {
   min-height: 300px;
+}
+
+.chart-side-bar .body-text {
+  font-size: 0.85rem;
+}
+.chart-side-bar {
+  margin-right: 10%;
 }

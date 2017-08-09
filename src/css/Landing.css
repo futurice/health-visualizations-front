@@ -46,6 +46,7 @@ body {
 }
 
 .body-text-container {
+  flex-direction: column;
   display: flex;
   margin: 2%;
 }
@@ -82,7 +83,7 @@ a {
 
 .heading-1-white {
 	font-family: Futurice;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 	text-align: center;
 	color: black;
@@ -240,3 +241,20 @@ a:hover:not(.feedback-button) {
 .left-align {
   text-align: left;
 }
+
+.numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.numbers h3 {
+  font-weight: 400;
+  margin: 2%;
+}
+
+.numbers p {
+  font-size: 1rem;
+  margin: auto 0;
+}
+

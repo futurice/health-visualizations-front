@@ -8,6 +8,8 @@
   margin: 0 auto;
   padding-top: 4%;
   padding-bottom: 4%;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .quote-modal {
@@ -22,4 +24,8 @@
 
 .modal-content {
     height: 900px;
+}
+
+.ReactModal__Overlay--after-open {
+  background-color: rgba(0,0,0,0.7) !important;
 }
