@@ -2,15 +2,22 @@
     border-bottom: 2px solid var(--beige);
 }
 
-.quote-modal {
+.modal-section p {
+  color: black;
   width: 80%;
+  margin: 0 auto;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.quote-modal {
+  width: 70%;
   height: 90%;
-  display: block;
   margin: 0 auto;
   background-color: white;
   overflow: scroll;
-  float: left;
   border: solid 3px var(--beige);
+  display: block;
 }
 
 .modal-content {

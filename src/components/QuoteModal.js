@@ -11,7 +11,9 @@ export default class QuoteModal extends React.Component {
 
     this.formatPosts = this.formatPosts.bind(this);
 
-    this.state = {}
+    this.state = {
+      posts: []
+    }
   }
 
   componentWillReceiveProps() {
@@ -26,7 +28,7 @@ export default class QuoteModal extends React.Component {
       .then((response) => {
         console.log(response);
         this.setState({
-          posts: this.formatPosts(response.data)
+          posts: response.data
         });
       })
       .catch((error) => {
@@ -35,14 +37,18 @@ export default class QuoteModal extends React.Component {
   }
 
   formatPosts(posts) {
-    return (
-      posts.map((post) => {
-        <div className="modal-section"> { post } </div>    
-      }) 
-    );
+    return posts.map((post, index) => {
+      return (
+        <div key={index} className="modal-section">
+          <p key={"p"-index}> { post } </p>
+        </div>
+      );  
+    }); 
   }  
 
   render() {
+
+    console.log(this.state.posts)
     return (
       <Modal
         isOpen={this.props.isOpen}
@@ -57,7 +63,7 @@ export default class QuoteModal extends React.Component {
           <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
         </div>
         <div className="modal-content">
-          { this.state.data }
+          { this.formatPosts(this.state.posts) }
         </div>
       </Modal>
     );

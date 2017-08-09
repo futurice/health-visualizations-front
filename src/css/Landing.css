@@ -7,11 +7,25 @@
   .body-text-container {
     flex-wrap: wrap;
   }
+  .chilicorn-fund {
+    height: 400px;
+  }
+  
+  .heading-1-chilicorn {
+	  padding-top: 10%;
+  }
 }
 
 @media only screen and (min-width: 480px)  {
   body {
     font-size: 21px !important;
+  }
+  .chilicorn-fund {
+    height: 600px;
+  }
+
+  .heading-1-chilicorn {
+	  padding-top: 5%;
   }
 }
 
@@ -78,22 +92,20 @@ a {
 .chilicorn-fund {
 	margin: 0;
 	padding: 0;
-	background-size: fit;
-	height: 400px;
+  background-size: cover;
 }
 
 .heading-1-chilicorn {
 	margin: 0;
 	font-family: 'Space Mono';
-	font-size: 3.5rem;
+	font-size: 3.0rem;
 	font-weight: 900;
-	line-height: 0.68;
+	line-height: 1;
 	letter-spacing: 0.3px;
 	text-align: center;
 	color: #ffffff;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 	display: block;
-	padding-top: 150px;
 }
 
 .chilicorn-text {
@@ -102,7 +114,8 @@ a {
 	font-weight: bold;
 	line-height: 1.12;
 	text-align: center;
-	color: #ffffff;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -118,7 +131,7 @@ a {
 .title {
   margin-top:0;
   font-family: 'Space Mono', monospace;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 12px;
