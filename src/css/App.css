@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
 
+@font-face {
+  font-family: 'Futurice';
+  src: local('Futurice'), url(./FuturiceRegular.otf) format('otf');
+}
+
+@font-face {
+  font-family: "Futurice";
+  src: local('Futurice'), url(./FuturiceBold.otf) format('otf');
+  font-weight: bold;
+}
 /* Color palette */
 
 :root {
@@ -25,7 +35,6 @@
 h1, h2, h3, h4, h5, h6 {
   color: white;
   font-weight: bold;
-  font-family: 'Futurice';
 }
 
 p {

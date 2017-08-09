@@ -82,7 +82,6 @@ a {
 }
 
 .heading-1-white {
-	font-family: Futurice;
 	font-size: 2.5rem;
 	font-weight: bold;
 	text-align: center;
@@ -138,7 +137,6 @@ a {
 }
 
 .heading-1 {
-	font-family: Futurice;
 	font-size: 2.5rem;
 	font-weight: bold;
 	text-align: center;
@@ -147,7 +145,6 @@ a {
 }
 
 .term-name {
-	font-family: Futurice;
 	font-size: 45px;
 	font-weight: bold;
 	color: #ffffff;
@@ -156,13 +153,11 @@ a {
 .heading-2 {
   font-weight: 400;
   margin: 1rem;
-	font-family: Futurice;
 	font-size: 2rem;
 	color: #ffffff;
 }
 
 .heading-3 {
-	font-family: Futurice;
 	font-size: 30px;
 	font-weight: bold;
 	line-height: 1.1;
@@ -170,7 +165,6 @@ a {
 }
 
 .heading-4 {
-	font-family: Futurice;
 	font-size: 1.5rem;
 	font-weight: bold;
 	line-height: 1.25;
@@ -186,14 +180,12 @@ a {
 }
 
 .heading-5 {
-	font-family: Futurice;
 	font-size: 18px;
 	font-weight: bold;
 	color: #ffffff;
 }
 
 .body-text {
-	font-family: Futurice;
   font-size: 1rem;
 	line-height: 1.39;
   color: #d8d8d8;
@@ -201,14 +193,12 @@ a {
 
 .small-text {
 	margin: 2%;
-	font-family: Futurice;
 	font-size: 16px;
 	line-height: 1.31;
 	color: #ffffff;
 }
 
 .text-link {
-	font-family: Futurice;
 	font-size: 14px;
 	text-align: center;
 	color: #ffffff;
@@ -216,7 +206,6 @@ a {
 
 .really-small-text {
   margin-top: 0;
-	font-family: Futurice;
 	font-size: 0.85rem;
 	line-height: 1.42;
 	color: #d8d8d8;

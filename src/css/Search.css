@@ -37,6 +37,7 @@
   padding-left: 3%;
   padding-right: 3%;
   flex-wrap: wrap;
+  flex-flow: wrap-reverse;
   border-bottom: 2px solid #717171;
   padding-bottom: 5%;
 }
@@ -108,4 +109,8 @@
 }
 .chart-side-bar {
   margin-right: 10%;
+}
+
+.labels {
+  font-size: 0.80rem;
 }
