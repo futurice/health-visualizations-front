@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Space+Mono:400,700');
 @font-face {
-  font-family: 'Futurice';
-  src: local('Futurice'), url(./FuturiceRegular.otf) format('otf');
+  font-family: Futurice;
+  src: local('Futurice'), url(../fonts/FuturiceRegular.otf);
 }
 
 @font-face {
-  font-family: "Futurice";
-  src: local('Futurice'), url(./FuturiceBold.otf) format('otf');
+  font-family: Futurice;
+  src: local('Futurice'), url(../fonts/FuturiceBold.otf);
   font-weight: bold;
 }
+
 /* Color palette */
 
 :root {
@@ -29,7 +29,7 @@
 .main {
   padding-top: 2%;
   margin: 0 auto;
-  font-family: 'Futurice';
+  font-family: 'Futurice', Roboto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: var(--white);
-  font-family: 'Futurice';
+  font-family: Futurice, Roboto;
 }
 
 .is-tight {

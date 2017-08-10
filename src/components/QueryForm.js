@@ -1,12 +1,25 @@
 import React from 'react';
 import '../css/QueryForm.css';
+import _ from 'lodash';
 
 export default class QueryForm extends React.Component {
 
   constructor(props) {
     super(props);
 
+    this.state = {
+      value: ""
+    }
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.downcase = this.downcase.bind(this);
+  }
+
+  downcase(e) {
+    let value = e.target.value;
+    this.setState({
+      value: value.toLowerCase()
+    })
   }
 
   handleSubmit(e) {
@@ -26,7 +39,7 @@ export default class QueryForm extends React.Component {
   render() {
     return (
         <form className="form" onSubmit={this.handleSubmit} >
-          <input ref="input" className="input" placeholder={this.props.value || "Enter any drug or symptom name (in Finnish)"} />
+          <input value={this.state.value} ref="input" onChange={this.downcase} className="input" placeholder={this.props.value || "Enter any drug or symptom name (in Finnish)"} />
           <input type="submit" className="button" value="Search" />
         </form>
     );
