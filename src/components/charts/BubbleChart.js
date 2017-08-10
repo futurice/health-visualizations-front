@@ -16,6 +16,11 @@ class BubbleChart extends React.Component {
     this.chartContainerId = "chart-container-bubbles";
   }
 
+  /* Remove all tooltip divs after switching page */
+  componentWillUnmount() {
+    d3.selectAll(".tooltip").remove()
+  }
+
   doPlot() {
     let data = this.props.data;
 
@@ -86,7 +91,7 @@ class BubbleChart extends React.Component {
         this.div.transition()
           .duration(200)
           .style("opacity", .9);
-        this.div.html("Dosage: <span style='font-weight:bold'>" + d.data.Dosage + "</span><br/>Count: <span style='font-weight:bold'>" + d.data.count + "</span>")
+        this.div.html("Dosage: <span style='font-weight:bold'>" + d.data.Dosage + "mg</span><br/>Count: <span style='font-weight:bold'>" + d.data.count + "</span>")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
@@ -104,7 +109,7 @@ class BubbleChart extends React.Component {
       .append("text")
       .attr("x", 0)
       .attr("y", 5)
-      .text((d) => d.data.Dosage)
+      .text((d) => d.data.Dosage + "mg")
       .attr("text-anchor", "middle")
       .attr("font-size", 12)
       .attr("fill", "#fff")

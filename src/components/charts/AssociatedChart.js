@@ -185,7 +185,7 @@ class AssociatedChart extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="associated-chart">
         <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
         <p className="body-text is-centered"> Relevance </p>
         <div id={this.chartContainerId} className='chart-container'>
