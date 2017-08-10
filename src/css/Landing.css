@@ -71,10 +71,29 @@ a {
   margin: 0 auto;
 }
 
-.rectangle-white {
+.more-information {
 	height: 400px;
   width: 100%;
-	background-color: #e6e6e6;
+  margin: 0 auto;
+  max-width: 960px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.more-information a {
+  width: 200px;
+  height: 45px;
+}
+
+.more-information p {
+  margin: 3%;
+}
+
+.more-information h3 {
+  font-weight: normal;
 }
 
 .heading-1-white {
@@ -209,10 +228,6 @@ a {
 
 .whole-story {
   float: right;
-}
-
-.contact {
-  max-width: 960px;
 }
 
 ::-webkit-input-placeholder {

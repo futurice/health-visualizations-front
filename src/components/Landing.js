@@ -22,7 +22,7 @@ export default class Landing extends Component {
             <h1 className="title is-centered">Nettipuoskari</h1>
             <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
 
-            <p className="really-small-text is-centered"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicornfund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
+            <p className="really-small-text is-centered"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
 
             <div className="body-text-container">
                 <p className="body-text">
@@ -48,12 +48,14 @@ export default class Landing extends Component {
                 <h4 className="heading-4 most-common-header">Most common symptoms mentioned</h4>
               </div>
             </div>
-            
-            <div className="rectangle-white">
-              <h1 className="heading-1-white"> More information </h1>
-              <div className="contact">
-                <FeedbackButton />    
-              </div>
+
+            <div className="more-information">
+              <h3 className="heading-3"> For more information </h3>
+                <p className="small-text"> If you have any questions or feedback, feel free to contact us with the button below  </p>
+                <FeedbackButton />
+                <p className="really-small-text">
+                  This site was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
+                </p>
             </div>
 
             <div style={ chilicornStyle } className="chilicorn-fund">
