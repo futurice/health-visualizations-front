@@ -120,7 +120,7 @@ export default class Search extends Component {
           isOpen={this.state.basketModalIsOpen}
           data={this.state.data.basket}
           closeModal={this.closeBasketModal}
-          heading="Basket"
+          heading={"Words interpreted as " + this.state.keyword}
         />
 
         <QuoteModal

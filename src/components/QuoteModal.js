@@ -17,6 +17,10 @@ export default class QuoteModal extends React.Component {
   }
 
   componentWillReceiveProps() {
+    this.setState({
+        posts: ["Loading..."]
+    })
+
     const keyword1 = this.props.keyword1;
     const keyword2 = this.props.keyword2;
 
