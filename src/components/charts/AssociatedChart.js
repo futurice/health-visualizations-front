@@ -14,7 +14,7 @@ class AssociatedChart extends React.Component {
     this.quant = 15;
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
-    this.margin = { top: 20, right: 10, bottom: 10, left: 90 };
+    this.margin = { top: 20, right: 100, bottom: 10, left: 90 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-" + this.props.resource;
@@ -148,7 +148,7 @@ class AssociatedChart extends React.Component {
       data
     }, () => {
 
-      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;
+      this.width = document.getElementById(this.props.resource + "-chart").clientWidth //+ this.margin.left;
       this.height = 500;
 
       d3.select("#"+this.chartContainerId).html('');
