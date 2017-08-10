@@ -1,14 +1,27 @@
+
+/* On mobile devices we want a full-sided basket */
+@media only screen and (max-width: 480px)  {
+  .basket-modal {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 481px)  {
+  .basket-modal {
+    width: 40%;
+    float: left;
+    margin: 3%;
+  }
+}
+
 .basket-modal {
-  background-color: black;
-  width: 40%;
   height: 90%;
-  margin: 3%;
-  margin-left: 1%;
-  border: 0;
   background-color: white;
   overflow: scroll;
-  float: left;
-  border: solid 3px var(--beige);
+  border: solid 4px var(--beige);
+  font-family: 'Futurice', Roboto;
 }
 
 .ReactModal__Body--open {
@@ -28,7 +41,6 @@
 
 .modal-heading {
   min-height: 12%;
-  height: 4em;
   border-bottom: solid 2px var(--beige);
   display: flex;
   flex-wrap: wrap;

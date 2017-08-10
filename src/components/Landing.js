@@ -5,6 +5,10 @@ import QueryForm from './QueryForm';
 import ChilicornBackground from '../css/chilicorn-world.png';
 import FeedbackButton from './FeedbackButton';
 
+import calendarIcon from '../css/calendar.svg';
+import postsIcon from '../css/posts.svg';
+import quotesIcon from '../css/quotes.svg';
+
 export default class Landing extends Component {
   render() {
 
@@ -29,9 +33,9 @@ export default class Landing extends Component {
                 
                 <div className="numbers">
                   <p>The numbers</p>
-                  <h3>19M posts </h3>
-                  <h3>200M words </h3>
-                  <h3>from 01/ 2001 to 11/2017</h3>
+                  <h3>19M posts <img src={postsIcon} className="posts-icon" alt="posts-icon" />  </h3>
+                  <h3>200M words <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" /></h3>
+                  <h3>01/2001 to 11/2016 <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" /></h3>
                 </div>
             </div>              
               <div className="form-box">
