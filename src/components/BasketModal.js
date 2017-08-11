@@ -22,11 +22,11 @@ export default class BasketModal extends React.Component {
           this.props.closeModal();
         }}
       >
-      <div className="modal-heading">
+      <div className="basket-modal-heading">
         <h1 className="modal-heading-header" >{this.props.heading} </h1>
         <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
       </div>
-      <div className="modal-text">
+      <div className="basket-modal-text">
         { this.state.data }
       </div>   
       </Modal>      

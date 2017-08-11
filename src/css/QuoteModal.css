@@ -24,10 +24,18 @@
   border: solid 3px var(--beige);
 }
 
-.modal-content {
+.quote-modal-content {
     height: 900px;
+    padding-top: 150px;
 }
 
 .ReactModal__Overlay--after-open {
   background-color: rgba(0,0,0,0.7) !important;
+}
+
+.quote-modal-heading {
+  position: fixed;
+  margin: 0 auto;
+  width: 80%;
+  background: white;
 }

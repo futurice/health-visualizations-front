@@ -126,7 +126,7 @@ export default class Search extends Component {
         <QuoteModal
           isOpen={this.state.quoteModalIsOpen}
           closeModal={this.closeQuoteModal}
-          heading="Quotes"
+          heading={`Posts with ${this.state.keyword} and ${this.state.quoteKeyword}`}
           keyword1={this.state.keyword}
           keyword2={this.state.quoteKeyword}
           searchWords={this.state.data.basket}

@@ -78,11 +78,11 @@ export default class QuoteModal extends React.Component {
           this.props.closeModal();
         }}
       >
-        <div className="modal-heading">
+        <div className="quote-modal-heading">
           <h1 className="modal-heading-header" >{this.props.heading} </h1>
           <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
         </div>
-        <div className="modal-content">
+        <div className="quote-modal-content">
           { this.formatPosts(this.state.posts) }
         </div>
       </Modal>
