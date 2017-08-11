@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/QueryForm.css';
-import _ from 'lodash';
 
 export default class QueryForm extends React.Component {
 

@@ -48,6 +48,7 @@ export default class QuoteModal extends React.Component {
           <Highlighter
             searchWords={this.props.searchWords}
             textToHighlight={post}
+            className="quote-modal-text"
           />
         </div>
       );  
