@@ -38,4 +38,19 @@
   margin: 0 auto;
   width: 80%;
   background: white;
+  border-bottom: 2px solid var(--beige);
+}
+
+.quote-modal-page-links {
+  color: black;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.quote-modal-page-links span {
+  margin: 2px
+}
+
+.top-right {
+  top: 0;
 }

@@ -67,6 +67,7 @@ export default class Search extends Component {
 
   associatedOnClick(e) {
     let quoteKeyword = e.MedicineName;
+    
     this.setState({
       quoteKeyword
     }, () => {
@@ -101,7 +102,7 @@ export default class Search extends Component {
         });
       })
         .catch((error) => {
-          console.error(error); // TODO REMOVE
+          console.error(error);
           if (error.response.status === 404) {
             this.props.history.push("/not_found/" + this.state.keyword);
           }
@@ -130,7 +131,6 @@ export default class Search extends Component {
           keyword1={this.state.keyword}
           keyword2={this.state.quoteKeyword}
           searchWords={this.state.data.basket}
-          page={1}
         />
 
         <SearchBox
