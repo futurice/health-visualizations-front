@@ -16,7 +16,7 @@ export default class DosageChart extends Component {
         <div className="association-result-left">
 
           <ChartSideBar
-            bodyText="This plot describes which dosages are commonly mentioned along with the searched keyword. We assume that dosages mentioned inside posts are related to the closest drug mentioned within the post. We only find dosages mentioned as explicit quantities (e.g. “600mg”). Units other than g or mg are not recognized."
+            bodyText={<p className="body-text">This plot describes which dosages are commonly mentioned along with the searched keyword. We assume that dosages mentioned inside posts are related to the closest drug mentioned within the post. We only find dosages mentioned as explicit quantities (e.g. “600mg”). Units other than g or mg are not recognized.</p>}
             includeSlider={false}
           />
 

@@ -7,11 +7,9 @@ export default class ChartSideBar extends Component {
   render() {
     return (
       <div className="chart-side-bar">
-
-        <p className="body-text"> 
-          { this.props.bodyText }
-        </p>
-
+ 
+        { this.props.bodyText }
+        
         {this.props.includeSlider &&
           <div className="slider-container">
             <PostCountSlider

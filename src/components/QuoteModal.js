@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Modal from 'react-modal';
 import { getQuotesByKeywords } from '../util';
 import '../css/QuoteModal.css';
+import Highlighter from 'react-highlight-words';
 
 export default class QuoteModal extends React.Component {
 
@@ -30,9 +31,9 @@ export default class QuoteModal extends React.Component {
 
     getQuotesByKeywords(keyword1, keyword2, this.props.page)
       .then((response) => {
-        console.log(response);
         this.setState({
-          posts: response.data
+          posts: response.data.posts,
+          pageCount: response.data.page_count
         });
       })
       .catch((error) => {
@@ -44,7 +45,10 @@ export default class QuoteModal extends React.Component {
     return posts.map((post, index) => {
       return (
         <div key={index} className="modal-section">
-          <p key={"p"-index}> { post } </p>
+          <Highlighter
+            searchWords={this.props.searchWords}
+            textToHighlight={post}
+          />
         </div>
       );  
     }); 
