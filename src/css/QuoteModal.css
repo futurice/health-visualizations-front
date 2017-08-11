@@ -48,9 +48,43 @@
 }
 
 .quote-modal-page-links span {
-  margin: 2px
+  margin: 2px;
+  cursor: pointer;
 }
 
 .top-right {
   top: 0;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.pagination {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.pagination p {
+  color: black;
+}
+
+.pagination a {
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.pagination ul {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.pagination li {
+  display: inline-block;  
+}
+
+.pagination .break a {
+  cursor: default;
 }

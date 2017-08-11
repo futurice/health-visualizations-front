@@ -5,6 +5,8 @@ import { getQuotesByKeywords, getBasketByKeyword } from '../util';
 import '../css/QuoteModal.css';
 import Highlighter from 'react-highlight-words';
 import Spinner from 'react-spinkit'
+import ReactPaginate from 'react-paginate';
+
 
 export default class QuoteModal extends React.Component {
 
@@ -12,9 +14,8 @@ export default class QuoteModal extends React.Component {
     super(props);
 
     this.formatPosts = this.formatPosts.bind(this);
-    this.createPageLinks = this.createPageLinks.bind(this);
-    this.jumpToPage = this.jumpToPage.bind(this);
     this.getPosts = this.getPosts.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
 
     this.state = {
       posts: [],
@@ -84,28 +85,14 @@ export default class QuoteModal extends React.Component {
     });
   }
 
-  jumpToPage(i) {
-    this.setState({
-      page: i
-    }, this.getPosts);
-  }
+  handlePageClick(data) {
+    let page = data.selected + 1;
 
-  createPageLinks() {
-    if (!this.state.pageCount || this.state.loading) {
-      return;
-    }
-    return (
-      <div>
-        {Array(this.state.pageCount).fill().map((_, i) => {
-          return (
-            <span key={`page-link-${i}`} onClick={() => this.jumpToPage(i)}>
-              {i}
-            </span>
-          )
-        })
-        }
-      </div>
-    );
+    this.setState({
+      page
+    }, () => {
+      this.getPosts();
+    });
   }
 
   render() {
@@ -127,9 +114,19 @@ export default class QuoteModal extends React.Component {
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
           {this.formatPosts(this.state.posts)}
-          <div className="quote-modal-page-links">
-            {this.createPageLinks()}
-          </div>
+         
+          <ReactPaginate previousLabel={"previous"}
+                       nextLabel={"next"}
+                       breakLabel={<p>...</p>}
+                       breakClassName={"break-me"}
+                       pageCount={this.state.pageCount}
+                       marginPagesDisplayed={2}
+                       pageRangeDisplayed={5}
+                       onPageChange={this.handlePageClick}
+                       containerClassName={"pagination"}
+                       subContainerClassName={"pages pagination"}
+                       activeClassName={"active"}
+                       />          
         </div>
 
       </Modal>
