@@ -57,6 +57,7 @@ export default class Search extends Component {
     this.setState({
       quoteModalIsOpen: true
     });
+    this.refs.qm.reset_page_to_one()
   }
 
   updateKeyword(keyword) {
@@ -125,6 +126,7 @@ export default class Search extends Component {
         />
 
         <QuoteModal
+          ref="qm"
           isOpen={this.state.quoteModalIsOpen}
           closeModal={this.closeQuoteModal}
           heading={`Posts with ${this.state.keyword} and ${this.state.quoteKeyword}`}
@@ -151,7 +153,7 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistic metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely other drugs are to appear in a post, given that the search term appears in that post. This measure takes into account how often a drug appears overall in the data -- common drugs are not favored over less common drugs. </p>}
+              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely other drugs are to appear in a post, given that the search term appears in that post. This measure takes into account how often a drug appears overall in the data -- common drugs are not favored over less common drugs. </p>}
               includeSlider={true}
               sliderOnChange={this.drugsSliderOnChange}
             />
@@ -176,7 +178,7 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistic metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post. This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.</p>}
+              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post. This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.</p>}
               includeSlider={true}
               sliderOnChange={this.symptomsSliderOnChange}
             />

@@ -24,6 +24,12 @@ export default class QuoteModal extends React.Component {
     }
   }
 
+  reset_page_to_one() {
+    this.setState({
+      page: 1
+    });
+  }
+
   getPosts() {
     this.setState({
       posts: [],
