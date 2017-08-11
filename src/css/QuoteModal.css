@@ -16,13 +16,12 @@
 
 .quote-modal {
   font-family: Futurice, Roboto;
-  width: 70%;
   height: 90%;
+  width: 80%;
   margin: 0 auto;
   background-color: white;
   overflow: scroll;
   border: solid 3px var(--beige);
-  display: block;
 }
 
 .modal-content {

@@ -190,6 +190,7 @@ export default class Search extends Component {
               minCount={this.state.symptomsSliderValue}
               data={this.state.data.associated_symptoms}
               resource="symptoms"
+              onClick={this.associatedOnClick}
             />
             <WarningText />
           </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Modal from 'react-modal';
-import { getQuotesByKeywords } from '../util';
+import { getQuotesByKeywords, getBasketByKeyword } from '../util';
 import '../css/QuoteModal.css';
 import Highlighter from 'react-highlight-words';
 
@@ -39,6 +39,19 @@ export default class QuoteModal extends React.Component {
       .catch((error) => {
         console.error(error);
       });
+
+    getBasketByKeyword(keyword2)
+      .then((response) => {
+        let keyword2Basket = response.data;
+
+        let hilightWords = [...this.props.searchWords, ...keyword2Basket];
+        this.setState({
+          hilightWords
+        })
+      }) 
+      .catch((error) => {
+        console.error(error);
+      })
   }
 
   formatPosts(posts) {
@@ -46,7 +59,7 @@ export default class QuoteModal extends React.Component {
       return (
         <div key={index} className="modal-section">
           <Highlighter
-            searchWords={this.props.searchWords}
+            searchWords={this.state.hilightWords || []}
             textToHighlight={post}
             className="quote-modal-text"
           />
@@ -56,15 +69,13 @@ export default class QuoteModal extends React.Component {
   }  
 
   render() {
-
-    console.log(this.state.posts)
     return (
       <Modal
         isOpen={this.props.isOpen}
         contentLabel="Modal"
         className="quote-modal"
         onRequestClose={() => {
-          this.props.closeModal;
+          this.props.closeModal();
         }}
       >
         <div className="modal-heading">

@@ -21,3 +21,7 @@ export const generateUrl = (keyword) => {
 export const getQuotesByKeywords = (keyword1, keyword2, page=1) => {
   return axios.get(`${URL}related_quotes/${keyword1}/${keyword2}/page/${page}`);
 }
+
+export const getBasketByKeyword = (keyword) => {
+  return axios.get(`${URL}baskets/${keyword}`);
+}
