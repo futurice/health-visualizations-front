@@ -29,8 +29,6 @@ export default class QuoteModal extends React.Component {
   }
 
   getPosts() {
-    console.log("lolOLOLOL")
-
     this.setState({
       posts: [],
       loading: true
@@ -39,8 +37,6 @@ export default class QuoteModal extends React.Component {
     const keyword1 = this.props.keyword1;
     const keyword2 = this.props.keyword2;
     const page = this.state.page;
-
-    console.log("COOL stuff");
 
     if (!keyword1 || !keyword2) {
       return;
