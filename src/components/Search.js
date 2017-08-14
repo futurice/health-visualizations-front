@@ -9,6 +9,7 @@ import QuoteModal from './QuoteModal';
 import AssociatedChart from './charts/AssociatedChart';
 import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
+import queryString from 'query-string';
 
 export default class Search extends Component {
 
@@ -19,7 +20,8 @@ export default class Search extends Component {
       keyword: this.props.match.params.keyword,
       loading: true,
       drugsSliderValue: 30,
-      symptomsSliderValue: 30
+      symptomsSliderValue: 30,
+      quoteModalIsOpen: false
     }
 
     this.openQuoteModal = this.openQuoteModal.bind(this);
@@ -72,6 +74,7 @@ export default class Search extends Component {
       quoteKeyword
     }, () => {
       this.openQuoteModal()
+      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${quoteKeyword}`);
     });
   }
 
@@ -89,6 +92,19 @@ export default class Search extends Component {
 
   componentWillMount() {
     this.findByKeyword();
+  }
+
+  componentDidMount() {
+    /* Preopen modal on certain links e.g /search/burana?quotes_with=ibusal */
+    const queryParams = queryString.parse(this.props.location.search);
+    const quoteKeyword = queryParams["quotes_with"];
+    
+    if (quoteKeyword) {
+      this.setState({
+        quoteKeyword,
+        quoteModalIsOpen: true
+      });
+    }
   }
 
   findByKeyword() {

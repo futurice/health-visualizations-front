@@ -65,6 +65,11 @@
   margin: 0 auto;
 }
 
+.pagination-hidden {
+  display: hidden;
+  list-style: none;
+}
+
 .pagination p {
   color: black;
 }
