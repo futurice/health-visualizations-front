@@ -20,7 +20,6 @@ export const generateUrl = (keyword) => {
 
 export const getQuotesByKeywords = (requestType, keyword1, keyword2, page=1) => {
   if ("keywordQuotes" === requestType) {
-    console.log(`${URL}keyword_quotes/${keyword1}/page/${page}`);
     return axios.get(`${URL}keyword_quotes/${keyword1}/page/${page}`);
   } else if ("dosageQuotes" === requestType) {
     return axios.get(`${URL}dosage_quotes/${keyword1}/${keyword2}/page/${page}`);

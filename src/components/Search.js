@@ -36,11 +36,11 @@ export default class Search extends Component {
 
   getHeading() {
     if ("relatedQuotes" === this.state.quoteModalResource) {
-      return `Posts with ${this.state.keyword} and ${this.state.keyword2}`
+      return `Posts with ${this.state.keyword} and ${this.state.keyword2}`;
     } else if ("dosageQuotes" === this.state.quoteModalResource) {
-      return `Posts with ${this.state.keyword} ${this.state.keyword2} mg`
+      return `Posts with ${this.state.keyword} ${this.state.keyword2} mg`;
     } else {
-      return `Posts with ${this.state.keyword}`
+      return `Posts with ${this.state.keyword}`;
     }
   }
 
