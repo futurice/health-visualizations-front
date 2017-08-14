@@ -17,13 +17,17 @@ export default class QuoteModal extends React.Component {
     this.getPosts = this.getPosts.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
 
-    this.state = {
+    this.state = this.getInitialState();
+  }
+
+  getInitialState() {
+    return {
       posts: [],
       page: 1,
       loading: false
-    }
+    };
   }
-  
+
   getPosts() {
     this.setState({
       posts: [],
@@ -57,19 +61,19 @@ export default class QuoteModal extends React.Component {
         let hilightWords = [...this.props.searchWords, ...keyword2Basket];
         this.setState({
           hilightWords
-        })
+        });
       })
       .catch((error) => {
         console.error(error);
-      })
+      });
+  }
+  
+  componentWillReceiveProps() {
+    this.setState(this.getInitialState(), this.getPosts);    
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      posts: [],
-      loading: false,
-      page: 1
-    }, this.getPosts);
+  componentWillMount() {
+    this.setState(this.getInitialState(), this.getPosts);
   }
 
   formatPosts(posts) {
@@ -124,7 +128,7 @@ export default class QuoteModal extends React.Component {
                        marginPagesDisplayed={2}
                        pageRangeDisplayed={5}
                        onPageChange={this.handlePageClick}
-                       containerClassName={"pagination"}
+                       containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
                        subContainerClassName={"pages pagination"}
                        activeClassName={"active"}
                        />          
