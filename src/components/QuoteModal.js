@@ -68,12 +68,14 @@ export default class QuoteModal extends React.Component {
     }
   }
   
-  componentWillReceiveProps() {
-    this.setState(this.getInitialState(), this.getPosts);    
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isOpen) {
+      this.setState(this.getInitialState(), this.getPosts);
+    }
   }
 
   componentWillMount() {
-    this.setState(this.getInitialState(), this.getPosts);
+    this.setState(this.getInitialState());
   }
 
   formatPosts(posts) {
