@@ -36,13 +36,10 @@ export default class QuoteModal extends React.Component {
 
     const keyword1 = this.props.keyword1;
     const keyword2 = this.props.keyword2;
+    const quoteModalResource = this.props.resource;
     const page = this.state.page;
 
-    if (!keyword1 || !keyword2) {
-      return;
-    }
-
-    getQuotesByKeywords(keyword1, keyword2, page)
+    getQuotesByKeywords(quoteModalResource, keyword1, keyword2, page)
       .then((response) => {
         this.setState({
           posts: response.data.posts,
@@ -54,18 +51,21 @@ export default class QuoteModal extends React.Component {
         console.error(error);
       });
 
-    getBasketByKeyword(keyword2)
-      .then((response) => {
-        let keyword2Basket = response.data;
-
-        let hilightWords = [...this.props.searchWords, ...keyword2Basket];
-        this.setState({
-          hilightWords
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    this.setState({
+      hilightWords: this.props.searchWords
+    });
+    if (quoteModalResource === 'relatedQuotes') {
+      getBasketByKeyword(keyword2)
+        .then((response) => {
+          let keyword2Basket = response.data;
+          this.setState({
+            hilightWords: [...this.props.searchWords, ...keyword2Basket]
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+    }
   }
   
   componentWillReceiveProps() {

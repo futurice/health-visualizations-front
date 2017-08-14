@@ -21,20 +21,27 @@ export default class Search extends Component {
       loading: true,
       drugsSliderValue: 30,
       symptomsSliderValue: 30,
-      quoteModalIsOpen: false
-    }
-
-    this.openQuoteModal = this.openQuoteModal.bind(this);
-    this.openBasketModal = this.openBasketModal.bind(this);
-    this.closeBasketModal = this.closeBasketModal.bind(this);
-    this.closeQuoteModal = this.closeQuoteModal.bind(this);
+      quoteModalResource: "temp"
+    };
 
     this.updateKeyword = this.updateKeyword.bind(this);
     this.findByKeyword = this.findByKeyword.bind(this);
     this.drugsSliderOnChange = this.drugsSliderOnChange.bind(this);
     this.symptomsSliderOnChange = this.symptomsSliderOnChange.bind(this);
+    this.getHeading = this.getHeading.bind(this);
 
     this.associatedOnClick = this.associatedOnClick.bind(this);
+    this.dosagesOnClick = this.dosagesOnClick.bind(this);
+  }
+
+  getHeading() {
+    if ("relatedQuotes" === this.state.quoteModalResource) {
+      return `Posts with ${this.state.keyword} and ${this.state.keyword2}`
+    } else if ("dosageQuotes" === this.state.quoteModalResource) {
+      return `Posts with ${this.state.keyword} ${this.state.keyword2} mg`
+    } else {
+      return `Posts with ${this.state.keyword}`
+    }
   }
 
   drugsSliderOnChange(e) {
@@ -49,18 +56,6 @@ export default class Search extends Component {
     });
   }
 
-  openBasketModal() {
-    this.setState({
-      basketModalIsOpen: true
-    });
-  }
-
-  openQuoteModal() {
-    this.setState({
-      quoteModalIsOpen: true
-    });
-  }
-
   updateKeyword(keyword) {
     this.setState({
       keyword
@@ -68,25 +63,25 @@ export default class Search extends Component {
   }
 
   associatedOnClick(e) {
-    let quoteKeyword = e.MedicineName;
+    let keyword2 = e.MedicineName;
     
     this.setState({
-      quoteKeyword
+      keyword2: keyword2,
+      quoteModalResource: "relatedQuotes"
     }, () => {
-      this.openQuoteModal()
-      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${quoteKeyword}`);
+      this.setState({quoteModalIsOpen: true});
+      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${keyword2}`);
     });
   }
 
-  closeBasketModal() {
-    this.setState({
-      basketModalIsOpen: false
-    });
-  }
+  dosagesOnClick(e) {
+    let keyword2 = e.data.Dosage;
 
-  closeQuoteModal() {
     this.setState({
-      quoteModalIsOpen: false
+      keyword2: keyword2,
+      quoteModalResource: "dosageQuotes"
+    }, () => {
+      this.setState({quoteModalIsOpen: true});
     });
   }
 
@@ -101,7 +96,7 @@ export default class Search extends Component {
     
     if (quoteKeyword) {
       this.setState({
-        quoteKeyword,
+        keyword2: quoteKeyword,
         quoteModalIsOpen: true
       });
     }
@@ -136,17 +131,18 @@ export default class Search extends Component {
         <BasketModal
           isOpen={this.state.basketModalIsOpen}
           data={this.state.data.basket}
-          closeModal={this.closeBasketModal}
+          closeModal={() => this.setState({basketModalIsOpen: false})}
           heading={"Words interpreted as " + this.state.keyword}
         />
 
         <QuoteModal
           isOpen={this.state.quoteModalIsOpen}
-          closeModal={this.closeQuoteModal}
-          heading={`Posts with ${this.state.keyword} and ${this.state.quoteKeyword}`}
+          closeModal={() => this.setState({quoteModalIsOpen: false})}
+          heading={this.getHeading()}
           keyword1={this.state.keyword}
-          keyword2={this.state.quoteKeyword}
+          keyword2={this.state.keyword2}
           searchWords={this.state.data.basket}
+          resource={this.state.quoteModalResource}
         />
 
         <SearchBox
@@ -158,8 +154,8 @@ export default class Search extends Component {
         <div className="search-term-info">
           <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
           <h3 className="keyword heading-3"> {this.state.keyword} </h3>
-          <p className="body-text is-tight" > {this.state.data.post_count} posts </p>
-          <a onClick={this.openBasketModal} className="list-of-bucket body-text"> Words interpreted as {this.state.keyword} </a>
+          <a onClick={() => this.setState({quoteModalResource: "keywordQuotes", quoteModalIsOpen: true, keyword2: undefined})} className="list-of-posts body-text is-tight">{this.state.data.post_count} posts</a><br/>
+          <a onClick={() => this.setState({basketModalIsOpen: true})} className="list-of-bucket body-text"> Words interpreted as {this.state.keyword} </a>
         </div>
 
         {/* Drugs association result */}
@@ -212,13 +208,14 @@ export default class Search extends Component {
           </div>
         </div>
 
-        <br />
+        <br/>
 
         {/* Dosages result, only rendered if the keyword is a drug */}
         <DosageChart
           isDrug={this.state.data.dosages}
           data={this.state.data.dosages}
           keyword={this.state.keyword}
+          onClick={this.dosagesOnClick}
         />
 
         <div className="footer">
