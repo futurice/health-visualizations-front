@@ -8,3 +8,10 @@ Instructions:
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+
+# Deploying
+
+* `npm run build`
+* `cd build`
+* `surge` or `surge --domain nettipuoskari-staging.surge.sh` for staging
