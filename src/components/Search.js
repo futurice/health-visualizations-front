@@ -57,7 +57,6 @@ export default class Search extends Component {
     this.setState({
       quoteModalIsOpen: true
     });
-    this.refs.qm.reset_page_to_one()
   }
 
   updateKeyword(keyword) {
@@ -126,7 +125,6 @@ export default class Search extends Component {
         />
 
         <QuoteModal
-          ref="qm"
           isOpen={this.state.quoteModalIsOpen}
           closeModal={this.closeQuoteModal}
           heading={`Posts with ${this.state.keyword} and ${this.state.quoteKeyword}`}

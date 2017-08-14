@@ -23,13 +23,7 @@ export default class QuoteModal extends React.Component {
       loading: false
     }
   }
-
-  reset_page_to_one() {
-    this.setState({
-      page: 1
-    });
-  }
-
+  
   getPosts() {
     this.setState({
       posts: [],
@@ -73,7 +67,8 @@ export default class QuoteModal extends React.Component {
   componentWillReceiveProps() {
     this.setState({
       posts: [],
-      loading: false
+      loading: false,
+      page: 1
     }, this.getPosts);
   }
 
@@ -93,7 +88,7 @@ export default class QuoteModal extends React.Component {
 
   handlePageClick(data) {
     let page = data.selected + 1;
-
+    
     this.setState({
       page
     }, () => {
@@ -119,7 +114,7 @@ export default class QuoteModal extends React.Component {
           { this.state.loading &&
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
-          {this.formatPosts(this.state.posts)}
+          { this.formatPosts(this.state.posts) }
          
           <ReactPaginate previousLabel={"previous"}
                        nextLabel={"next"}
