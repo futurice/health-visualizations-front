@@ -25,6 +25,7 @@ export default class DosageChart extends Component {
           <BubbleChart
             data={this.props.data}
             keyword={this.props.keyword}
+            onClick={this.props.onClick}
           />
 
           <WarningText />

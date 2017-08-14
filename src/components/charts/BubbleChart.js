@@ -87,6 +87,8 @@ class BubbleChart extends React.Component {
       .attr("fill-opacity", 0.6)
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
+      .style("cursor", "pointer")
+      .on("click", this.props.onClick)
       .on("mouseover", (d) => {
         this.div.transition()
           .duration(200)
