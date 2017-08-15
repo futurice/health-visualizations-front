@@ -93,11 +93,14 @@ export default class Search extends Component {
     /* Preopen modal on certain links e.g /search/burana?quotes_with=ibusal */
     const queryParams = queryString.parse(this.props.location.search);
     const quoteKeyword = queryParams["quotes_with"];
-    
+    const page = parseInt(queryParams["page"]) || 1;
+
     if (quoteKeyword) {
       this.setState({
         keyword2: quoteKeyword,
-        quoteModalIsOpen: true
+        quoteModalIsOpen: true,
+        quoteModalResource: 'relatedQuotes',
+        quoteModalPage: page
       });
     }
   }
@@ -113,9 +116,10 @@ export default class Search extends Component {
         });
       })
         .catch((error) => {
-          console.error(error);
           if (error.response.status === 404) {
             this.props.history.push("/not_found/" + this.state.keyword);
+          } else {
+            console.error(error);
           }
         })
     });

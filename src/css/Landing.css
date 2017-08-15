@@ -14,6 +14,11 @@
   .heading-1-chilicorn {
 	  padding-top: 10%;
   }
+
+  .most-common-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
 @media only screen and (min-width: 480px)  {
@@ -54,11 +59,11 @@ body {
 .most-common-container {
 	display: flex;
   margin: 2%;
-  flex-wrap: wrap;
+  max-width: 960px;
 }
 
-.most-common-header {
-  margin: 0 auto !important;
+.most-common-container div {
+  flex: 1;
 }
 
 a {
@@ -260,4 +265,8 @@ a:hover:not(.feedback-button) {
 
 .quotes-icon, .calendar-icon, .posts-icon {
   width: 32px;
+}
+
+.most-common-tooltip {
+  height: 14px !important;
 }

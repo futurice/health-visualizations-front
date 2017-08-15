@@ -4,13 +4,52 @@ import logo from '../css/chilicorn-logo.svg';
 import QueryForm from './QueryForm';
 import ChilicornBackground from '../css/chilicorn-world.png';
 import FeedbackButton from './FeedbackButton';
+import Spinner from 'react-spinkit';
 
 import calendarIcon from '../css/calendar.svg';
 import postsIcon from '../css/posts.svg';
 import quotesIcon from '../css/quotes.svg';
 
+import MostCommonChart from './charts/MostCommonChart';
+import { getMostCommon } from '../util';
+
 export default class Landing extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {}
+    this.chartOnClick = this.chartOnClick.bind(this);
+  }
+
+  chartOnClick(keyword) {
+    this.props.history.push(`/search/${keyword}`);    
+  }
+
+  componentWillMount() {
+    this.setState({
+      loading: true
+    }, () => {
+      Promise.all([
+        getMostCommon("drugs"),
+        getMostCommon("symptoms")
+      ]).then((response) => {
+        this.setState({
+          drugData: response[0].data,
+          symptomData: response[1].data,
+          loading: false
+        })
+      }).catch((error) => {
+        console.error(error);
+      });
+    });
+  }
+
   render() {
+    
+    if (this.state.loading) {
+      return <Spinner fadeIn="none" name="pulse" color='white' />;
+    }
 
     let chilicornStyle = {
         backgroundImage: `url(${ChilicornBackground})`
@@ -44,8 +83,20 @@ export default class Landing extends Component {
                 />
               </div>
               <div className="most-common-container">
-                <h4 className="heading-4 most-common-header">Most common drugs mentioned</h4>
-                <h4 className="heading-4 most-common-header">Most common symptoms mentioned</h4>
+                <div id="drugs-chart">
+                  <MostCommonChart
+                    resource="drugs"
+                    data={this.state.drugData}
+                    onClick={this.chartOnClick}
+                  />
+                </div>
+                <div id="symptoms-chart">
+                  <MostCommonChart
+                    resource="symptoms"
+                    data={this.state.symptomData}
+                    onClick={this.chartOnClick}
+                  />
+                </div>
               </div>
             </div>
 
