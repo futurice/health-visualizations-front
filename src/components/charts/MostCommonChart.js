@@ -99,7 +99,7 @@ class MostCommonChart extends React.Component {
       .attr("y", (d, i) => this.yScale(i))
       .attr("width", (d, i) => this.xScale(d.count))
       .attr("height", 15)
-      .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8"))
+      .attr("stroke", this.sunshineYellow)
       .attr("fill", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8"))
       .attr("fill-opacity", 0.6)
       .attr("stroke-width", 1)

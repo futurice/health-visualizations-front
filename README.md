@@ -12,6 +12,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Deploying
 
-* `npm run build`
-* `cd build`
-* `surge` or `surge --domain nettipuoskari-staging.surge.sh` for staging
+1. Install `surge`, `npm install -g surge`
+2. `npm run deploy-staging` or `npm run deploy-production`
