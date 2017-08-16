@@ -8,7 +8,7 @@ export default class QueryForm extends React.Component {
 
     this.state = {
       value: ""
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.downcase = this.downcase.bind(this);
