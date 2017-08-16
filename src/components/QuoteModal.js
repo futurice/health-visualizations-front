@@ -91,7 +91,7 @@ export default class QuoteModal extends React.Component {
         <div key={index} className="modal-section">
           <Highlighter
             searchWords={this.state.hilightWords || []}
-            textToHighlight={post}
+            textToHighlight={post[1]}
             className="quote-modal-text"
           />
         </div>
