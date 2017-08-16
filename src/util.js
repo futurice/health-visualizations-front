@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export const URL = 'https://nettipuoskari-production.herokuapp.com/';
+export const URL = 'https://be.nettipuoskari.fi/';
 
 export const getByKeyword = (keyword) => {
   return axios.get(generateUrl(keyword));
@@ -35,3 +35,7 @@ export const getMostCommon = (resource) => {
 export const getBasketByKeyword = (keyword) => {
   return axios.get(`${URL}baskets/${keyword}`);
 };
+
+export const isNumeric = (n) => {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}

@@ -54,6 +54,7 @@ export default class QuoteModal extends React.Component {
     this.setState({
       hilightWords: this.props.searchWords
     });
+
     if (quoteModalResource === 'relatedQuotes') {
       getBasketByKeyword(keyword2)
         .then((response) => {
@@ -69,14 +70,18 @@ export default class QuoteModal extends React.Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    if (nextProps.isOpen) {
+    if (!this.props.isOpen && nextProps.isOpen) {
       this.setState(this.getInitialState(), this.getPosts);
     }
   }
 
-  componentWillMount() {
+  componentWillMount() {    
     if (this.props.isOpen) {
-      this.setState(this.getInitialState(), this.getPosts);
+      this.setState({
+        page: this.props.forcePage || 1,
+        posts: [],
+        loading: false
+      }, this.getPosts);
     }
   }
 
@@ -96,11 +101,12 @@ export default class QuoteModal extends React.Component {
 
   handlePageClick(data) {
     let page = data.selected + 1;
-    
+
     this.setState({
       page
-    }, () => {
+    }, () => { 
       this.getPosts();
+      this.props.history.push(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
     });
   }
 
@@ -124,18 +130,20 @@ export default class QuoteModal extends React.Component {
           }
           { this.formatPosts(this.state.posts) }
          
-          <ReactPaginate previousLabel={"previous"}
-                       nextLabel={"next"}
-                       breakLabel={<p>...</p>}
-                       breakClassName={"break-me"}
-                       pageCount={this.state.pageCount}
-                       marginPagesDisplayed={2}
-                       pageRangeDisplayed={5}
-                       onPageChange={this.handlePageClick}
-                       containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
-                       subContainerClassName={"pages pagination"}
-                       activeClassName={"active"}
-                       />          
+          <ReactPaginate 
+            previousLabel={"previous"}
+            nextLabel={"next"}
+            breakLabel={<p>...</p>}
+            breakClassName={"break-me"}
+            pageCount={this.state.pageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={this.handlePageClick}
+            containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
+            subContainerClassName={"pages pagination"}
+            activeClassName={"active"}
+            forcePage={this.state.page - 1}
+          />          
         </div>
 
       </Modal>

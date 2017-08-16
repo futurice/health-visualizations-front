@@ -3,7 +3,7 @@ import '../css/Search.css';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 import SearchBox from './SearchBox';
-import { getByKeyword, getQuotesByKeywords } from '../util';
+import { getByKeyword, getQuotesByKeywords, isNumeric } from '../util';
 import BasketModal from './BasketModal';
 import QuoteModal from './QuoteModal';
 import AssociatedChart from './charts/AssociatedChart';
@@ -69,8 +69,8 @@ export default class Search extends Component {
       keyword2: keyword2,
       quoteModalResource: "relatedQuotes"
     }, () => {
-      this.setState({quoteModalIsOpen: true});
-      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${keyword2}`);
+      this.setState({ quoteModalIsOpen: true });
+      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);
     });
   }
 
@@ -93,13 +93,16 @@ export default class Search extends Component {
     /* Preopen modal on certain links e.g /search/burana?quotes_with=ibusal */
     const queryParams = queryString.parse(this.props.location.search);
     const quoteKeyword = queryParams["quotes_with"];
-    const page = parseInt(queryParams["page"]) || 1;
+
+    /* Assume this refers to a dosage, not a drug or symptom */
+    const resource = isNumeric(quoteKeyword) ? "dosageQuotes" : "relatedQuotes";
+    const page = parseInt(queryParams["page"]);
 
     if (quoteKeyword) {
       this.setState({
         keyword2: quoteKeyword,
         quoteModalIsOpen: true,
-        quoteModalResource: 'relatedQuotes',
+        quoteModalResource: resource,
         quoteModalPage: page
       });
     }
@@ -114,8 +117,7 @@ export default class Search extends Component {
           data: response.data,
           loading: false
         });
-      })
-        .catch((error) => {
+      }).catch((error) => {
           if (error.response.status === 404) {
             this.props.history.push("/not_found/" + this.state.keyword);
           } else {
@@ -141,12 +143,20 @@ export default class Search extends Component {
 
         <QuoteModal
           isOpen={this.state.quoteModalIsOpen}
-          closeModal={() => this.setState({quoteModalIsOpen: false})}
+          closeModal={() => {
+            this.setState({
+              quoteModalIsOpen: false
+            });
+            this.props.history.push(`/search/${this.state.keyword}`);
+          }}
           heading={this.getHeading()}
           keyword1={this.state.keyword}
           keyword2={this.state.keyword2}
           searchWords={this.state.data.basket}
           resource={this.state.quoteModalResource}
+          forcePage={this.state.quoteModalPage}
+          history={this.props.history}
+          match={this.props.match}
         />
 
         <SearchBox
