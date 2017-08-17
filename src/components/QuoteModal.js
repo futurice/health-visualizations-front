@@ -67,10 +67,6 @@ export default class QuoteModal extends React.Component {
           console.error(error);
         })
     }
-
-    this.setState({
-      hilightWords: []
-    });
   }
   
   componentWillReceiveProps(nextProps) {
