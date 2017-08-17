@@ -30,7 +30,7 @@ export const getQuotesByKeywords = (requestType, keyword1, keyword2, page=1) => 
 
 export const getMostCommon = (resource) => {
   return axios.get(`${URL}most_common/${resource}`);
-}
+};
 
 export const getBasketByKeyword = (keyword) => {
   return axios.get(`${URL}baskets/${keyword}`);
@@ -38,4 +38,4 @@ export const getBasketByKeyword = (keyword) => {
 
 export const isNumeric = (n) => {
   return !isNaN(parseFloat(n)) && isFinite(n);
-}
+};

@@ -95,6 +95,9 @@ export default class QuoteModal extends React.Component {
             className="quote-modal-text"
             autoEscape={true}
           />
+          <a href={post[0]} target="_blank" className="quote-modal-link">
+            Full thread
+          </a>
         </div>
       );
     });
