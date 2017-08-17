@@ -1,7 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
-import _ from 'lodash';
 
 class MostCommonChart extends React.Component {
   constructor(props) {
@@ -41,8 +40,6 @@ class MostCommonChart extends React.Component {
 
     this.xScale = d3.scaleLinear().range([0, this.width - this.margin.right - this.margin.left]).domain([0, Math.ceil(d3.max(dataArray, (d) => d["count"]))]);
     this.yScale = d3.scaleLinear().range([0, this.height - this.margin.bottom - this.margin.top]).domain([0, this.quant]);
-
-    let countLimit = this.props.minCount;
 
     for (var k = 0; k <= this.noOfTicks; k++) {
       let steps = (Math.ceil(d3.max(dataArray, (d) => d["count"]) / 1000) * 1000) / this.noOfTicks;

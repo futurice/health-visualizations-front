@@ -111,7 +111,7 @@ export default class Landing extends Component {
                 <h1 className="fund-title"> Chilicorn Fund </h1>
                 <h2>Pro bono projects for a slightly better world, by <a href="https://futurice.com">Futurice</a> </h2>
               </div>
-              <img className="chilicorn-static" src={unicorn} />
+              <img alt="A unicorn" className="chilicorn-static" src={unicorn} />
             </section>
         </div>
     );

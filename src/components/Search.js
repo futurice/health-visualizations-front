@@ -3,7 +3,7 @@ import '../css/Search.css';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 import SearchBox from './SearchBox';
-import { getByKeyword, getQuotesByKeywords, isNumeric } from '../util';
+import { getByKeyword, isNumeric } from '../util';
 import BasketModal from './BasketModal';
 import QuoteModal from './QuoteModal';
 import AssociatedChart from './charts/AssociatedChart';
@@ -96,7 +96,7 @@ export default class Search extends Component {
 
     /* Assume this refers to a dosage, not a drug or symptom */
     const resource = isNumeric(quoteKeyword) ? "dosageQuotes" : "relatedQuotes";
-    const page = parseInt(queryParams["page"]);
+    const page = parseInt(queryParams["page"], 10);
 
     if (quoteKeyword) {
       this.setState({
@@ -119,7 +119,7 @@ export default class Search extends Component {
         });
       }).catch((error) => {
           if (error.response.status === 404) {
-            this.props.history.push("/not_found/" + this.state.keyword);
+            this.props.history.replace("/not_found/" + this.state.keyword);
           } else {
             console.error(error);
           }
@@ -239,7 +239,7 @@ export default class Search extends Component {
 
           <p>This work is licenced under ???</p>
 
-          <a href="#"> Contact us </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUNP2r2h5VO2DnnYNpB9D3elPX7F2vfxxKyOfLEnSacPEKUw/viewform"> Contact us </a>
         </div>
       </div>
     );
