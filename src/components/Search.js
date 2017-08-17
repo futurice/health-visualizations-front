@@ -101,8 +101,9 @@ export default class Search extends Component {
     /* Preopen modal on certain links e.g /search/burana?quotes_with=ibusal */
     const queryParams = queryString.parse(this.props.location.search);
     const quoteKeyword = queryParams["quotes_with"];
+    const postsKeyword = queryParams["posts"];
 
-    /* Assume this refers to a dosage, not a drug or symptom */
+    /* Does this refer to a dosage or (drug or symptom) */
     const resource = isNumeric(quoteKeyword) ? "dosageQuotes" : "relatedQuotes";
     const page = parseInt(queryParams["page"], 10);
 
@@ -111,6 +112,13 @@ export default class Search extends Component {
         keyword2: quoteKeyword,
         quoteModalIsOpen: true,
         quoteModalResource: resource,
+        quoteModalPage: page
+      });
+    }
+    if (postsKeyword) {
+      this.setState({
+        quoteModalIsOpen: true,
+        quoteModalResource: "keywordQuotes",
         quoteModalPage: page
       });
     }

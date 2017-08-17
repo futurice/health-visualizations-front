@@ -118,6 +118,8 @@ class AssociatedChart extends React.Component {
       .attr("font-size", 12)
       .attr("fill", "#fff")
       .attr("font-family", "Futurice")
+      .style("cursor", "pointer")
+      .on("click", this.props.onClick )
       .text((d) => d.MedicineName)
       .transition()
       .duration(500)
@@ -134,6 +136,8 @@ class AssociatedChart extends React.Component {
       .attr("y2", (d, i) => this.yScale(i))
       .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8" ) )
       .attr("stroke-width", 3)
+      .style("cursor", "pointer")
+      .on("click", this.props.onClick )
       .transition()
       .duration(500)
       .attr("x2", (d, i) => this.xScale(d["value"]) - 7);

@@ -22,7 +22,7 @@ class MostCommonChart extends React.Component {
   handleClick = (e) => { 
     this.props.onClick(e.Name);
     d3.selectAll(".tooltip").remove();
-  }
+  };
 
   drawBarChart(data) {
 
