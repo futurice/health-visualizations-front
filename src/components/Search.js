@@ -32,6 +32,7 @@ export default class Search extends Component {
 
     this.associatedOnClick = this.associatedOnClick.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
+    this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
   }
 
   getHeading() {
@@ -85,8 +86,15 @@ export default class Search extends Component {
     });
   }
 
+  onBackButtonEvent() {
+    this.setState({
+      quoteModalIsOpen: false
+    });
+  }
+
   componentWillMount() {
     this.findByKeyword();
+    window.onpopstate = this.onBackButtonEvent;
   }
 
   componentDidMount() {
@@ -147,7 +155,7 @@ export default class Search extends Component {
             this.setState({
               quoteModalIsOpen: false
             });
-            this.props.history.push(`/search/${this.state.keyword}`);
+            this.props.history.replace(`/search/${this.state.keyword}`);
           }}
           heading={this.getHeading()}
           keyword1={this.state.keyword}
