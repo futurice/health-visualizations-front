@@ -1,18 +1,10 @@
 import { Selector } from 'testcafe';
 import ReactSelector from 'testcafe-react-selectors';
 
-fixture`Landing`
+fixture`Search - General`
   .page`http://localhost:3000/search/panacod`;
 
-
-
-test('Can click on chart to get quotes', async t => {
-  const circle = Selector('svg').find('.dots').nth(0)();
-  const header = Selector('h1').nth(0)();
-  
-  await t.click(await circle);
-  await t.expect(await header.innerText).eql("Posts with panacod and kodeiini");
-});
+/* General result view */
 
 test('Can show posts of keyword', async t => {
   const quotesButton = Selector('.list-of-posts')();
