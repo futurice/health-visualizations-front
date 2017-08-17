@@ -24,9 +24,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "testcafe chrome src/tests",
     "eject": "react-scripts eject",
     "deploy-production": "npm run build && cd build && mv index.html 200.html && surge . --domain nettipuoskari.surge.sh",
     "deploy-staging": "npm run build && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
+  },
+  "devDependencies": {
+    "moxios": "^0.4.0",
+    "testcafe": "^0.17.0",
+    "testcafe-react-selectors": "0.0.6"
   }
 }

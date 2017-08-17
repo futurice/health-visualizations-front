@@ -1,23 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Landing from '../components/Landing';
-import { MemoryRouter } from 'react-router-dom';
-import { shallow, mount } from 'enzyme';
+import { Selector } from 'testcafe';
+import ReactSelector from 'testcafe-react-selectors';
 
-it('renders landing page', () => {
-  const wrapper = shallow(<Landing />);
-  const welcome = <h1 className="title is-centered">Nettipuoskari</h1>;
-  expect(wrapper.contains(welcome)).toEqual(true);
+fixture`Landing`
+  .page`http://localhost:3000/`;
+
+
+test('Send feedback links to Google Forms', async t => {
+  const feedbackButton = Selector('.feedback-button')();
+  
+  await t
+    .click(await feedbackButton);
+
+  const content = Selector('div').withText('Nettipuoskari feedback')();
+  await t.expect(await content.exists).ok();
 });
 
-// This test just checks that these exist and can be altered.
-it('can search with a keyword', () => {
-  const wrapper = mount(<Landing />);
-  let input = wrapper.find("input").first();
-  let button = wrapper.find("input").last();
-  
-  input.simulate('change', {target: {value: 'My new value'}});
-  button.simulate('click');
+test('Can search from Landing', async t => {
 
-  
+  await t
+    .typeText('#search-input', 'burana')
+    .click('#search-button');
+
+  const header = await Selector('.search-term-info').child(1)().innerText;
+
+  await t
+    .expect(header).eql('burana')
+});
+
+test('Most common charts have correct items', async t => {
+  const mostCommonDrug = Selector('svg').find('.labels').nth(0)();
+  await t
+    .expect(await mostCommonDrug.textContent).eql("kannabis");
+    
+  const mostCommonSymptom = Selector('svg').nth(1).find('.labels').nth(0)();
+  await t
+    .expect(await mostCommonSymptom.textContent).eql("kipu");
 });
