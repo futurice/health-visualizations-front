@@ -67,6 +67,10 @@ export default class QuoteModal extends React.Component {
           console.error(error);
         })
     }
+
+    this.setState({
+      hilightWords: []
+    });
   }
   
   componentWillReceiveProps(nextProps) {
@@ -93,6 +97,7 @@ export default class QuoteModal extends React.Component {
             searchWords={this.state.hilightWords || []}
             textToHighlight={post[1]}
             className="quote-modal-text"
+            autoEscape=True
           />
         </div>
       );
