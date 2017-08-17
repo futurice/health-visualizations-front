@@ -95,6 +95,9 @@ export default class QuoteModal extends React.Component {
             className="quote-modal-text"
             autoEscape={true}
           />
+          <a href={post[0]} target="_blank" className="quote-modal-link">
+            Full thread
+          </a>
         </div>
       );
     });
@@ -107,7 +110,12 @@ export default class QuoteModal extends React.Component {
       page
     }, () => { 
       this.getPosts();
-      this.props.history.push(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
+      if (this.props.resource !== "keywordQuotes") {
+        this.props.history.push(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
+      } else {
+        this.props.history.push(`/search/${this.props.keyword1}?posts=true&page=${page}`)
+      }
+
     });
   }
 
