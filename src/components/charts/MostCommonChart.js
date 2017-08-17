@@ -140,7 +140,7 @@ class MostCommonChart extends React.Component {
 
       d3.select("#" + this.chartContainerId).html('');
 
-      this.div = d3.select("body").append("div")
+      this.div = d3.select(".most-common-container").append("div")
         .attr("class", "most-common-tooltip tooltip")
         .style("opacity", 0);
 

@@ -115,27 +115,146 @@ a {
   background-size: cover;
 }
 
-.heading-1-chilicorn {
-	margin: 0;
-	font-family: 'Space Mono';
-	font-size: 3.0rem;
-	font-weight: 900;
-	line-height: 1;
-	letter-spacing: 0.3px;
-	text-align: center;
-	color: #ffffff;
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-	display: block;
+.chilicorn-container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  max-width: 90%;
+  position: relative;
+  text-align: center
 }
 
-.chilicorn-text {
-	font-family: 'Space Mono';
-	font-size: 1rem;
-	font-weight: bold;
-	line-height: 1.12;
-	text-align: center;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+.chilicorn-container h1 {
+  text-align: center;
+  font-size: 61px;
+  font-weight: 800;
+  padding-bottom: 10px;
+  font-family: "Space mono"
+}
+
+.chilicorn-container h2 {
+  font-size: 53px;
+  font-weight: 800;
+  padding-bottom: 30px
+}
+
+.chilicorn-container:after {
+  content: " ";
+  display: block;
+  clear: both
+}
+
+.hero {
+  color: #000;
+  text-align: center;
+  padding: 40px 0 0px 0;
+  margin-bottom: 0px
+}
+
+.hero p,.hero h2 {
+  font-size: 23px;
+  font-weight: 300;
+  max-width: 20em;
+  margin: auto;
+  opacity: 0.7;
+  font-family: "space mono"
+}
+
+.hero a,.hero a:visited {
+  color: #000
+}
+
+.hero h1 {
+  color: #000
+}
+
+.hero img.chilicorn {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px
+}
+
+@media screen and (max-width: 500px) {
+  .hero h1 {
+      font-size:38px
+  }
+
+  .hero p,.hero h2 {
+      font-size: 18px
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .hero {
+      padding-top:60px
+  }
+
+  .hero h1 {
+      font-size: 53px
+  }
+
+  .hero p,.hero h2 {
+      font-size: 23px
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hero {
+      padding-top:120px
+  }
+
+  .hero h1 {
+      font-size: 75px
+  }
+}
+
+.chilicorn.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 400px;
+  background-color: #615a47;
+  background-image: url("./chilicorn-world-no-clouds-no-corn.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.chilicorn.hero h1,.chilicorn.hero h2,.chilicorn.hero p,.chilicorn.hero a,.chilicorn.hero a:hover,.chilicorn.hero a:visited,.chilicorn.hero a:active {
+  color: white;
+  text-shadow: 1px 1px 1px gray
+}
+
+.chilicorn.hero h1 {
+  margin: 0
+}
+
+.chilicorn.hero h2 {
+  font-weight: 100;
+  opacity: 1;
+  line-height: 1.1;
+}
+
+.chilicorn.hero .container {
+  z-index: 100
+}
+
+.chilicorn-static {
+  position: absolute;
+  left: 33%;
+  bottom: 5%;
+  width: 110px !important;
+}
+
+img {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {

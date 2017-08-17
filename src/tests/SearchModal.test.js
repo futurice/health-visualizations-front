@@ -21,6 +21,7 @@ test('Can navigate using pagination', async t => {
   
   await t
     .click(await Selector('.quote-modal').find('a').withText('2')())
+    .wait(1000);
 
   await t.expect(await Selector('.active')().innerText).eql('2');
   await t
