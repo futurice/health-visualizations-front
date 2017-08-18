@@ -89,15 +89,19 @@ export default class QuoteModal extends React.Component {
     return posts.map((post, index) => {
       return (
         <div key={index} className="modal-section">
+
           <Highlighter
             searchWords={this.state.hilightWords || []}
             textToHighlight={post[1]}
             className="quote-modal-text"
             autoEscape={true}
           />
-          <a href={post[0]} target="_blank" className="quote-modal-link">
-            Full thread
-          </a>
+          <div className="link-container">
+            <a href={post[0]} target="_blank" className="quote-modal-thread-link">
+              Full thread
+            </a>
+          </div>
+
         </div>
       );
     });
@@ -141,6 +145,10 @@ export default class QuoteModal extends React.Component {
          
           <ReactPaginate 
             previousLabel={"previous"}
+            previousClassName={"pagination-prev-next"}
+            nextClassName={"pagination-prev-next"}
+            pageLinkClassName={"pagination-page-link"}
+            activeClassName={"pagination-active"}
             nextLabel={"next"}
             breakLabel={<p>...</p>}
             breakClassName={"break-me"}
@@ -150,7 +158,6 @@ export default class QuoteModal extends React.Component {
             onPageChange={this.handlePageClick}
             containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
             subContainerClassName={"pages pagination"}
-            activeClassName={"active"}
             forcePage={this.state.page - 1}
           />          
         </div>

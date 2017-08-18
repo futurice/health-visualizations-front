@@ -8,22 +8,25 @@
   margin: 0 auto;
   padding-top: 4%;
   padding-bottom: 4%;
-  font-size: 0.85rem;
   line-height: 1.5;
   display: block;
   font-size: 1rem;
 }
 
-.quote-modal-link {
+.quote-modal-thread-link {
   color: black;
-  width: 80%;
-  margin: 0 auto;
   padding-bottom: 4%;
-  font-size: 0.85rem;
   line-height: 1.5;
-  display: block;
   font-size: 1rem;
 }
+
+.link-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: end;
+  padding-bottom: 3%;
+}
+
 
 .quote-modal {
   font-family: Futurice, Roboto;
@@ -45,6 +48,7 @@
 }
 
 .quote-modal-heading {
+  font-size: 0.9rem;
   position: fixed;
   margin: 0 auto;
   width: 80%;
@@ -73,7 +77,7 @@
 
 .pagination {
   padding-top: 4%;
-  width: 80%;
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -86,11 +90,36 @@
   color: black;
 }
 
+.pagination-prev-next {
+  font-family: Futurice;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.pagination-page-link {
+  font-family: Futurice;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 1.7px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
 .pagination a {
   color: black;
   padding: 5px;
   cursor: pointer;
 }
+
+.pagination-active a {
+  color: var(--purpley);
+  text-decoration: underline;
+}
+
+
 
 .pagination ul {
   display: inline-block;
