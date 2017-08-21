@@ -1,3 +1,7 @@
+.highlighted {
+  background-color: #f0d6c3;
+}
+
 .modal-section {
     border-bottom: 2px solid var(--beige);
 }
@@ -122,6 +126,8 @@
   font-weight: bold;
   text-align: center;
   color: #4a4a4a;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .disabled a {
@@ -143,6 +149,7 @@
 .pagination a {
   color: black;
   padding: 5px;
+  padding-bottom: 10px; /* TODO why does this not work? Trying to lift page links a bit higher than prev/next. */
   cursor: pointer;
 }
 
