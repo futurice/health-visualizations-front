@@ -12,20 +12,21 @@ test('Can use a link to navigate to a specific quote', async t => {
     .expect(await header.exists).ok();
 
   const firstQuote = Selector('.quote-modal').find("span").nth(0)();
-  await t.expect(await firstQuote.innerText).contains("siis et kai ole syönyt buranaa useita grammoja ???");
+  await t.expect(await firstQuote.innerText).contains("myös itsehoidosta saatavilla kipulääkkeillä voi olla yhteisvaikutuksia alkoholin kanssa .");
 });
 
 test('Can navigate using pagination', async t => {
-  const activeLabel = Selector('.active');
-  await t.expect(await activeLabel().innerText).eql('1');
+  const activeLabel = Selector('.pagination-active');
+  await t.expect(await activeLabel().textContent).eql('1');
   
   await t
     .click(await Selector('.quote-modal').find('a').withText('2')())
+    .wait(1000);
 
-  await t.expect(await Selector('.active')().innerText).eql('2');
+  await t.expect(await activeLabel().innerText).eql('2');
   await t
     .expect(await Selector('.quote-modal').find('span').nth(0)().innerText)
-    .contains("nyttemmin sain ibuprofeenista allergisen reaktion , jolloin");
+    .contains("jos ei burana , ketorin tai panadol kelpaa , niin kotikonstit ovat vähän heiveröisiä . nekin kannattaa ottaa etupainotteisesti ");
 });
 
 
@@ -38,7 +39,7 @@ test('Can use a link to navigate to a specific page', async t => {
     .expect(await header.exists).ok();
 
   const firstQuote = Selector('.quote-modal').find("span").nth(0)();
-  await t.expect(await firstQuote.innerText).contains("nyttemmin sain ibuprofeenista allergisen reaktion , jolloin");
+  await t.expect(await firstQuote.innerText).contains("jos ei burana , ketorin tai panadol kelpaa , niin kotikonstit ovat vähän heiveröisiä");
 });
 
 

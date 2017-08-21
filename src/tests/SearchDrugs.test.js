@@ -19,9 +19,9 @@ test('Can adjust slider', async t => {
 
   /* Drag slider */
   await t.drag(await handle, -30, 0)
-
-  /* Value is now 24 */
-  await t.expect(await handle.getAttribute('aria-valuenow')).eql('24');
+  
+  /* Value is now less */
+  await t.expect(await handle.getAttribute('aria-valuenow')).lt('30');
 
 });
 

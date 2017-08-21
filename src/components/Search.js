@@ -3,7 +3,7 @@ import '../css/Search.css';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 import SearchBox from './SearchBox';
-import { getByKeyword, getQuotesByKeywords, isNumeric } from '../util';
+import { getByKeyword, isNumeric } from '../util';
 import BasketModal from './BasketModal';
 import QuoteModal from './QuoteModal';
 import AssociatedChart from './charts/AssociatedChart';
@@ -32,6 +32,7 @@ export default class Search extends Component {
 
     this.associatedOnClick = this.associatedOnClick.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
+    this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
   }
 
   getHeading() {
@@ -70,7 +71,7 @@ export default class Search extends Component {
       quoteModalResource: "relatedQuotes"
     }, () => {
       this.setState({ quoteModalIsOpen: true });
-      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);
+      this.props.history.replace(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);
     });
   }
 
@@ -82,11 +83,20 @@ export default class Search extends Component {
       quoteModalResource: "dosageQuotes"
     }, () => {
       this.setState({quoteModalIsOpen: true});
+      this.props.history.replace(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);      
     });
+  }
+
+  onBackButtonEvent(e) {
+    const queryParams = queryString.parse(this.props.location.search);
+    if (Object.keys(queryParams).length !== 0) {
+      this.props.history.push("/search/" + this.state.keyword);
+    }
   }
 
   componentWillMount() {
     this.findByKeyword();
+    window.onpopstate = this.onBackButtonEvent;
   }
 
   componentDidMount() {
@@ -97,7 +107,7 @@ export default class Search extends Component {
 
     /* Does this refer to a dosage or (drug or symptom) */
     const resource = isNumeric(quoteKeyword) ? "dosageQuotes" : "relatedQuotes";
-    const page = parseInt(queryParams["page"]);
+    const page = parseInt(queryParams["page"], 10);
 
     if (quoteKeyword) {
       this.setState({
@@ -127,7 +137,7 @@ export default class Search extends Component {
         });
       }).catch((error) => {
           if (error.response && error.response.status === 404) {
-            this.props.history.push("/not_found/" + this.state.keyword);
+            this.props.history.replace("/not_found/" + this.state.keyword);
           } else {
             console.error(error);
           }
@@ -247,7 +257,7 @@ export default class Search extends Component {
 
           <p>This work is licenced under ???</p>
 
-          <a href="#"> Contact us </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUNP2r2h5VO2DnnYNpB9D3elPX7F2vfxxKyOfLEnSacPEKUw/viewform"> Contact us </a>
         </div>
       </div>
     );

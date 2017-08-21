@@ -14,6 +14,7 @@ export default class BasketModal extends React.Component {
 
   render() { 
     return (
+      <div className="basket-modal-wrapper">
       <Modal
         isOpen={this.props.isOpen}
         contentLabel="Modal"
@@ -23,13 +24,14 @@ export default class BasketModal extends React.Component {
         }}
       >
       <div className="basket-modal-heading">
-        <h1 className="modal-heading-header" >{this.props.heading} </h1>
-        <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
+        <h1 className="basket-modal-heading-text" >{this.props.heading} </h1>
+        <button className="close-button" onClick={this.props.closeModal}>&times;</button>
       </div>
-      <div className="basket-modal-text">
+      <div className="basket-modal-content">
         { this.state.data }
       </div>   
-      </Modal>      
+      </Modal>
+      </div>
     );
   }
 }

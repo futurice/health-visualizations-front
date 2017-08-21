@@ -1,3 +1,7 @@
+.highlighted {
+  background-color: #f0d6c3;
+}
+
 .modal-section {
     border-bottom: 2px solid var(--beige);
 }
@@ -18,7 +22,6 @@
 
 .quote-modal-thread-link {
   color: black;
-  padding-bottom: 4%;
   line-height: 1.5;
   font-size: 1rem;
 }
@@ -61,8 +64,14 @@
   flex: 1;
 }
 .close-button {
+  top: 0;
   right: 0;
   position: absolute;
+  float: right;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
 }
 .quote-modal-content {
     overflow: overlay;
@@ -94,15 +103,9 @@
   cursor: pointer;
 }
 
-.top-right {
-  top: 0;
-}
-
 .active {
   font-weight: bold;
 }
-
-
 
 .pagination {
   padding-top: 2.5%;
@@ -115,6 +118,8 @@
 
 .pagination p {
   color: black;
+  padding: 0;
+  margin: 0;
 }
 
 .pagination-prev-next {
@@ -123,6 +128,14 @@
   font-weight: bold;
   text-align: center;
   color: #4a4a4a;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.disabled a {
+  pointer-events: none;
+  cursor: default;
+  color: gray !important;
 }
 
 .pagination-page-link {
@@ -138,6 +151,7 @@
 .pagination a {
   color: black;
   padding: 5px;
+  padding-bottom: 10px; /* TODO why does this not work? Trying to lift page links a bit higher than prev/next. */
   cursor: pointer;
 }
 
@@ -146,12 +160,8 @@
   text-decoration: underline;
 }
 
-
-
 .pagination ul {
   display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .pagination li {
@@ -162,7 +172,12 @@
   cursor: default;
 }
 
-.pagination-hidden {
-  display: none;
-  list-style: none;
+.pagination-container {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.quote-modal-footer-hidden {
+  visibility: hidden;
 }
