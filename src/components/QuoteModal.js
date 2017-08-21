@@ -68,14 +68,14 @@ export default class QuoteModal extends React.Component {
         })
     }
   }
-  
+
   componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       this.setState(this.getInitialState(), this.getPosts);
     }
   }
 
-  componentWillMount() {    
+  componentWillMount() {
     if (this.props.isOpen) {
       this.setState({
         page: this.props.forcePage || 1,
@@ -112,7 +112,7 @@ export default class QuoteModal extends React.Component {
 
     this.setState({
       page
-    }, () => { 
+    }, () => {
       this.getPosts();
       if (this.props.resource !== "keywordQuotes") {
         this.props.history.replace(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
@@ -125,26 +125,29 @@ export default class QuoteModal extends React.Component {
 
   render() {
     return (
-      <Modal
-        isOpen={this.props.isOpen}
-        contentLabel="Modal"
-        className="quote-modal"
-        onRequestClose={() => {
-          this.props.closeModal();
-        }}
-      >
-        <div className="quote-modal-heading">
-          <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
-          <h1 className="modal-heading-header" >{this.props.heading} </h1>
-        </div>
-        <div className="quote-modal-content">
+      <div className="quote-modal-wrapper">
+        <Modal
+          isOpen={this.props.isOpen}
+          contentLabel="Modal"
+          className="quote-modal"
+          onRequestClose={() => {
+            this.props.closeModal();
+          }}
+        >
           { this.state.loading &&
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
-          { this.formatPosts(this.state.posts) }
-          <div className={this.state.loading ? "pagination-container-hidden" : "pagination-container"}>
-            <ReactPaginate 
-              previousLabel={"prev"}
+          <div className="quote-modal-heading">
+            <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
+            <h1 className="quote-modal-heading-text" >{this.props.heading} </h1>
+          </div>
+          <div className="quote-modal-content">
+            {this.formatPosts(this.state.posts)}
+          </div>
+          <div className={this.state.loading ? "quote-modal-footer-hidden" : "quote-modal-footer"}>
+            <ReactPaginate
+              containerClassName={"pagination"}
+              previousLabel={"previous"}
               previousClassName={"pagination-prev-next"}
               nextClassName={"pagination-prev-next"}
               pageLinkClassName={"pagination-page-link"}
@@ -156,14 +159,14 @@ export default class QuoteModal extends React.Component {
               marginPagesDisplayed={2}
               pageRangeDisplayed={5}
               onPageChange={this.handlePageClick}
-              containerClassName="pagination"
               subContainerClassName={"pages pagination"}
               forcePage={this.state.page - 1}
-            />          
+            />
           </div>
-        </div>
 
-      </Modal>
+
+        </Modal>
+      </div>
     );
   }
 }
