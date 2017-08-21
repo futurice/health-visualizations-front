@@ -71,7 +71,7 @@ export default class Search extends Component {
       quoteModalResource: "relatedQuotes"
     }, () => {
       this.setState({ quoteModalIsOpen: true });
-      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);
+      this.props.history.replace(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);
     });
   }
 
@@ -83,13 +83,15 @@ export default class Search extends Component {
       quoteModalResource: "dosageQuotes"
     }, () => {
       this.setState({quoteModalIsOpen: true});
+      this.props.history.replace(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);      
     });
   }
 
-  onBackButtonEvent() {
-    this.setState({
-      quoteModalIsOpen: false
-    });
+  onBackButtonEvent(e) {
+    const queryParams = queryString.parse(this.props.location.search);
+    if (Object.keys(queryParams).length !== 0) {
+      this.props.history.push("/search/" + this.state.keyword);
+    }
   }
 
   componentWillMount() {
@@ -163,7 +165,7 @@ export default class Search extends Component {
             this.setState({
               quoteModalIsOpen: false
             });
-            this.props.history.replace(`/search/${this.state.keyword}`);
+            this.props.history.push(`/search/${this.state.keyword}`);
           }}
           heading={this.getHeading()}
           keyword1={this.state.keyword}

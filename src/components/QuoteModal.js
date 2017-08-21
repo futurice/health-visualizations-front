@@ -115,9 +115,9 @@ export default class QuoteModal extends React.Component {
     }, () => { 
       this.getPosts();
       if (this.props.resource !== "keywordQuotes") {
-        this.props.history.push(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
+        this.props.history.replace(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
       } else {
-        this.props.history.push(`/search/${this.props.keyword1}?posts=true&page=${page}`)
+        this.props.history.replace(`/search/${this.props.keyword1}?posts=true&page=${page}`)
       }
 
     });
@@ -142,24 +142,25 @@ export default class QuoteModal extends React.Component {
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
           { this.formatPosts(this.state.posts) }
-         
-          <ReactPaginate 
-            previousLabel={"previous"}
-            previousClassName={"pagination-prev-next"}
-            nextClassName={"pagination-prev-next"}
-            pageLinkClassName={"pagination-page-link"}
-            activeClassName={"pagination-active"}
-            nextLabel={"next"}
-            breakLabel={<p>...</p>}
-            breakClassName={"break-me"}
-            pageCount={this.state.pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={this.handlePageClick}
-            containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
-            subContainerClassName={"pages pagination"}
-            forcePage={this.state.page - 1}
-          />          
+          <div className="pagination-container">
+            <ReactPaginate 
+              previousLabel={"prev"}
+              previousClassName={"pagination-prev-next"}
+              nextClassName={"pagination-prev-next"}
+              pageLinkClassName={"pagination-page-link"}
+              activeClassName={"pagination-active"}
+              nextLabel={"next"}
+              breakLabel={<p>...</p>}
+              breakClassName={"break-me"}
+              pageCount={this.state.pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={this.handlePageClick}
+              containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
+              subContainerClassName={"pages pagination"}
+              forcePage={this.state.page - 1}
+            />          
+          </div>
         </div>
 
       </Modal>
