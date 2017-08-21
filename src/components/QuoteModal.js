@@ -142,7 +142,7 @@ export default class QuoteModal extends React.Component {
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
           { this.formatPosts(this.state.posts) }
-          <div className="pagination-container">
+          <div className={this.state.loading ? "pagination-container-hidden" : "pagination-container"}>
             <ReactPaginate 
               previousLabel={"prev"}
               previousClassName={"pagination-prev-next"}
@@ -156,7 +156,7 @@ export default class QuoteModal extends React.Component {
               marginPagesDisplayed={2}
               pageRangeDisplayed={5}
               onPageChange={this.handlePageClick}
-              containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
+              containerClassName="pagination"
               subContainerClassName={"pages pagination"}
               forcePage={this.state.page - 1}
             />          

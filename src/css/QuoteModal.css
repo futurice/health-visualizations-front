@@ -79,10 +79,6 @@
   margin: 0 auto;
 }
 
-.pagination-hidden {
-  display: hidden;
-  list-style: none;
-}
 
 .pagination p {
   color: black;
@@ -145,4 +141,10 @@
   text-align: center;
   padding-top: 2%;
   padding-bottom: 2%;
+}
+
+.pagination-container-hidden {
+  visibility: hidden;
+  display: hidden !important;
+  list-style: none !important;
 }
