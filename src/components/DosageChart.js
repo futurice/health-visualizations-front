@@ -8,6 +8,8 @@ export default class DosageChart extends Component {
 
   render() {
     if (!this.props.isDrug) {
+      //TODO return empty div also in case there is not enough data to draw bubbles
+      //currently the whole page crashes when trying to draw bubbles with insufficient data
       return <div> </div>;
     }
 

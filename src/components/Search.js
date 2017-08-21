@@ -126,7 +126,7 @@ export default class Search extends Component {
           loading: false
         });
       }).catch((error) => {
-          if (error.response.status === 404) {
+          if (error.response && error.response.status === 404) {
             this.props.history.push("/not_found/" + this.state.keyword);
           } else {
             console.error(error);
