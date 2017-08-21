@@ -139,7 +139,7 @@ export default class QuoteModal extends React.Component {
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
           <div className="quote-modal-heading">
-            <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
+            <button className="close-button" onClick={this.props.closeModal}>&times;</button>
             <h1 className="quote-modal-heading-text" >{this.props.heading} </h1>
           </div>
           <div className="quote-modal-content">
