@@ -95,6 +95,7 @@ export default class QuoteModal extends React.Component {
             textToHighlight={post[1]}
             className="quote-modal-text"
             autoEscape={true}
+            highlightClassName={'highlighted'}
           />
           <div className="link-container">
             <a href={post[0]} target="_blank" className="quote-modal-thread-link">
@@ -147,12 +148,12 @@ export default class QuoteModal extends React.Component {
           <div className={this.state.loading ? "quote-modal-footer-hidden" : "quote-modal-footer"}>
             <ReactPaginate
               containerClassName={"pagination"}
-              previousLabel={"previous"}
+              previousLabel={"PREVIOUS"}
               previousClassName={"pagination-prev-next"}
               nextClassName={"pagination-prev-next"}
               pageLinkClassName={"pagination-page-link"}
               activeClassName={"pagination-active"}
-              nextLabel={"next"}
+              nextLabel={"NEXT"}
               breakLabel={<p>...</p>}
               breakClassName={"break-me"}
               pageCount={this.state.pageCount}
