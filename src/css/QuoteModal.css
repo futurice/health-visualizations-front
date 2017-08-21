@@ -1,6 +1,9 @@
 .modal-section {
     border-bottom: 2px solid var(--beige);
 }
+.modal-section:last-of-type {
+  border-bottom: 0;
+}
 
 .quote-modal-text {
   color: black;
@@ -27,34 +30,58 @@
   padding-bottom: 3%;
 }
 
+.quote-modal-wrapper {
+  width: 20%;
+  height: 80%;
+}
 
 .quote-modal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   font-family: Futurice, Roboto;
   height: 90%;
   width: 80%;
   margin: 0 auto;
   background-color: white;
-  overflow: scroll;
   border: solid 3px var(--beige);
 }
-
+.quote-modal-heading {
+  font-size: 0.9rem;
+  top: 95px;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid var(--beige);
+  z-index: 1001;
+}
+.quote-modal-heading-text {
+  text-align: center;
+  padding-top: 1%;
+  color: black;
+  flex: 1;
+}
+.close-button {
+  right: 0;
+  position: absolute;
+}
 .quote-modal-content {
-    height: 900px;
-    padding-top: 150px;
+    overflow: overlay;
+    max-height: 800px;
+    z-index: 1000;
+}
+.quote-modal-footer {
+  bottom: 95px;
+  width: 100%;
+  background: #fff;
+  border-top: 2px solid var(--beige);
+  z-index: 1002;
 }
 
 .ReactModal__Overlay--after-open {
   background-color: rgba(0,0,0,0.7) !important;
 }
 
-.quote-modal-heading {
-  font-size: 0.9rem;
-  position: fixed;
-  margin: 0 auto;
-  width: 80%;
-  background: white;
-  border-bottom: 2px solid var(--beige);
-}
+
 
 .quote-modal-page-links {
   color: black;
@@ -75,16 +102,16 @@
   font-weight: bold;
 }
 
+
+
 .pagination {
-  padding-top: 4%;
+  padding-top: 2.5%;
+  padding-bottom: 2%;
   text-align: center;
   margin: 0 auto;
+  -webkit-padding-start: 0;
 }
 
-.pagination-hidden {
-  display: hidden;
-  list-style: none;
-}
 
 .pagination p {
   color: black;
@@ -133,4 +160,9 @@
 
 .pagination .break a {
   cursor: default;
+}
+
+.pagination-hidden {
+  display: none;
+  list-style: none;
 }

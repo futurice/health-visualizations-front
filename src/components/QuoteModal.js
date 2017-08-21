@@ -125,6 +125,7 @@ export default class QuoteModal extends React.Component {
 
   render() {
     return (
+      <div className="quote-modal-wrapper">
       <Modal
         isOpen={this.props.isOpen}
         contentLabel="Modal"
@@ -135,15 +136,17 @@ export default class QuoteModal extends React.Component {
       >
         <div className="quote-modal-heading">
           <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
-          <h1 className="modal-heading-header" >{this.props.heading} </h1>
+          <h1 className="quote-modal-heading-text" >{this.props.heading} </h1>
         </div>
         <div className="quote-modal-content">
           { this.state.loading &&
             <Spinner fadeIn="none" name="pulse" color='black' />
           }
           { this.formatPosts(this.state.posts) }
-         
-          <ReactPaginate 
+        </div>
+        <div className="quote-modal-footer">
+          <ReactPaginate
+            containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
             previousLabel={"previous"}
             previousClassName={"pagination-prev-next"}
             nextClassName={"pagination-prev-next"}
@@ -156,13 +159,14 @@ export default class QuoteModal extends React.Component {
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={this.handlePageClick}
-            containerClassName={this.state.loading ? "pagination-hidden" : "pagination"}
             subContainerClassName={"pages pagination"}
             forcePage={this.state.page - 1}
-          />          
+          />
         </div>
 
+
       </Modal>
+      </div>
     );
   }
 }
