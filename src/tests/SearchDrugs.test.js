@@ -42,6 +42,6 @@ test('Can click on chart to get quotes', async t => {
   await t.expect(await prev.exists).ok();
   await t.expect(await prev.hasClass('disabled')).ok();
 
-  const next = Selector("li").withText("next")();
+  const next = Selector("li").withText("NEXT")();
   await t.expect(await next.exists).ok();
 });
