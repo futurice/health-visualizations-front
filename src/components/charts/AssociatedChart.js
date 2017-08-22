@@ -55,7 +55,7 @@ class AssociatedChart extends React.Component {
         .attr("y2", this.height - this.margin.bottom - this.margin.top)
         .attr("stroke", "#fff")
         .attr("stroke-width", 1)
-        .attr("opacity", 0.5)
+        .attr("opacity", 0.5);
 
       this.svg.append("text")
         .attr("class", "xAxesLabels")
@@ -90,7 +90,7 @@ class AssociatedChart extends React.Component {
           .transition()
           .duration(200)
           .attr('fill-opacity', 1)                
-          .attr('r', this.radius + 5)
+          .attr('r', this.radius + 5);
 
         this.div.transition()
           .duration(200)

@@ -13,6 +13,7 @@ class MostCommonChart extends React.Component {
     this.quant = 15;
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
+    this.purpley = "#9f6ce3";
     this.margin = { top: 20, right: 50, bottom: 10, left: 90 };
     this.xScale = undefined;
     this.yScale = undefined;
@@ -52,7 +53,7 @@ class MostCommonChart extends React.Component {
         .attr("y2", this.height - this.margin.bottom - this.margin.top)
         .attr("stroke", "#fff")
         .attr("stroke-width", 1)
-        .attr("opacity", 0.5)
+        .attr("opacity", 0.5);
 
       this.svg.append("text")
         .attr("class", "xAxesLabels")
@@ -63,7 +64,7 @@ class MostCommonChart extends React.Component {
         .attr("font-size", 12)
         .attr("fill", "#fff")
         .attr("font-family", "Futurice")
-        .attr("opacity", 1)
+        .attr("opacity", 1);
     }
 
     let tempData = dataArray.filter((d, i) => i < this.quant);
@@ -80,6 +81,16 @@ class MostCommonChart extends React.Component {
       .attr("font-size", 12)
       .attr("fill", "#fff")
       .attr("font-family", "Futurice")
+      .on("mouseover", (d, index, all) => {
+        d3.select(all[index])
+          .transition(200)
+          .style('fill', this.purpley)
+      })
+      .on("mouseout", (d, index, all) => {
+        d3.select(all[index])
+          .transition(200)
+          .style('fill', 'white')
+      })
       .text((d) => d.Name)
       .style("cursor", "pointer")
       .on("click", this.handleClick)
@@ -102,7 +113,11 @@ class MostCommonChart extends React.Component {
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
       .on("click", this.handleClick)
-      .on("mouseover", (d) => {
+      .on("mouseover", (d, index, all) => {
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr("stroke-width", 3);
         this.div.transition()
           .duration(200)
           .style("opacity", 1);
@@ -114,7 +129,11 @@ class MostCommonChart extends React.Component {
         this.div.style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
-      .on("mouseout", (d) => {
+      .on("mouseout", (d, index, all) => {
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr("stroke-width", 1);
         this.div.transition()
           .duration(250)
           .style("opacity", 0);
