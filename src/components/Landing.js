@@ -8,7 +8,7 @@ import Spinner from 'react-spinkit';
 
 import calendarIcon from '../css/calendar.svg';
 import postsIcon from '../css/posts.svg';
-import quotesIcon from '../css/quotes.svg';
+import quotesIcon from '../css/group-3.svg';
 
 import MostCommonChart from './charts/MostCommonChart';
 import { getMostCommon } from '../util';
@@ -56,23 +56,51 @@ export default class Landing extends Component {
           <div className="content">
             <img src={logo} className="logo" alt="logo" />
             <h1 className="title is-centered">Nettipuoskari</h1>
+            <p className="really-small-text is-centered"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
             <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
 
-            <p className="really-small-text is-centered"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
 
             <div className="body-text-container">
+              <div className="numbers-container">
+                <div className="numbers-duo">
+                  <div className="numbers-duo-icon">
+                    <img src={postsIcon} className="posts-icon" alt="posts-icon" />
+                  </div>
+                  <div className="numbers-duo-text">
+                    <div className="numbers-duo-text-large">19M</div>
+                    <div className="numbers-duo-text-small">posts</div>
+                  </div>
+
+                </div>
+                <div className="numbers-duo">
+                  <div className="numbers-duo-text">
+                    <div className="numbers-duo-text-large">200M</div>
+                    <div className="numbers-duo-text-small">words</div>
+                  </div>
+                  <div className="numbers-duo-icon">
+                    <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" />
+                  </div>
+                </div>
+                <div className="numbers-duo">
+                  <div className="numbers-duo-text">
+                    <div className="numbers-duo-text-large">16</div>
+                    <div className="numbers-duo-text-small">years</div>
+                  </div>
+                  <div className="numbers-duo-icon">
+                    <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
+                  </div>
+                </div>
+
+
+              </div>
+
                 <p className="body-text">
                     Traditional medical research is expensive and focused on predetermined research questions. On the other hand, there is a huge amount of freely accessible Suomi24 online discussion data where people candidly describe their experiences. The topics which appear in these discussions are those that people truly care about. We used machine learning to organize and present this data in a way that would be useful to researchers.
                     <br />
                     <a className="whole-story" href="#"> Read the full story </a>                    
                 </p>
                 
-                <div className="numbers">
-                  <p>The numbers</p>
-                  <h3>19M posts <img src={postsIcon} className="posts-icon" alt="posts-icon" />  </h3>
-                  <h3>200M words <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" /></h3>
-                  <h3>01/2001 to 11/2016 <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" /></h3>
-                </div>
+
             </div>              
               <div className="form-box">
                 <QueryForm

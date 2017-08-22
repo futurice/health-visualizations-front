@@ -30,7 +30,7 @@
   }
 
   .heading-1-chilicorn {
-	  padding-top: 5%;
+    padding-top: 5%;
   }
 }
 
@@ -252,9 +252,9 @@ a {
 }
 
 img {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -273,6 +273,7 @@ img {
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
+    -webkit-margin-after: 0;
 }
 
 .heading-1 {
@@ -292,8 +293,9 @@ img {
 .heading-2 {
   font-weight: 400;
   margin: 1rem;
-	font-size: 2rem;
-	color: #ffffff;
+  margin-top: 50px;
+  font-size: 2.5rem;
+  color: #ffffff;
 }
 
 .heading-3 {
@@ -366,24 +368,62 @@ a:hover:not(.feedback-button) {
   text-align: left;
 }
 
-.numbers {
+.numbers-container {
   display: flex;
+  width: 100%;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  height: 150px;
 }
 
-.numbers h3 {
-  margin: 2%;
+.numbers-duo {
+  flex: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+  height: 100%;
+}
+
+.numbers-duo-text {
+  max-width: 40px;
+  color: white;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.numbers-duo-text-large {
   font-weight: normal;
+  font-size: 2rem;
+  -webkit-margin-after: 0;
+  line-height: 0.7;
 }
 
-.numbers p {
+.numbers-duo-text-small {
+  font-weight: normal;
   font-size: 1rem;
+  text-align: center;
+  -webkit-margin-after: 0;
+  left: 10px;
+  width: 100%;
 }
 
-.quotes-icon, .calendar-icon, .posts-icon {
-  width: 32px;
+.quotes-icon {
+  right: 0;
+  top: 15%;
+  position: absolute;
+}
+
+.posts-icon {
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.calendar-icon {
+  right: 20%;
+  top: 0;
+  position: absolute;
 }
 
 .most-common-tooltip {

@@ -17,9 +17,11 @@
 }
 
 .basket-modal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   height: 90%;
   background-color: white;
-  overflow: scroll;
   border: solid 4px var(--beige);
   font-family: 'Futurice', Roboto;
 }
@@ -28,49 +30,38 @@
   overflow-y: hidden;
 }
 
-.basket-modal-text {
-  color: black;
-  font-size: 1rem;
-  margin: 2%;
-}
-
-.basket-modal-text p {
-  margin: 0;
-  color: black;
-}
-
 .basket-modal-heading {
-  min-height: 12%;
-  border-bottom: solid 2px var(--beige);
-  display: flex;
-  flex-wrap: wrap;
+  font-size: 0.9rem;
+  top: 95px;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid var(--beige);
+  z-index: 1001;
 }
 
 .no-select {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-touch-callout: none;s
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-.modal-heading-header {
+.basket-modal-heading-text {
   text-align: center;
   padding-top: 1%;
   color: black;
   flex: 1;
 }
-
-.close-button {
-  float: right;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  font-size: 2rem;
+.basket-modal-content {
+  overflow: overlay;
+  max-height: 800px;
+  z-index: 1000;
+  color: black;
+  font-size: 1rem;
+  margin: 2%;
 }
-
-.top-right {
-    flex: 50%;
-    text-align: right;
+.basket-modal-content p {
+  margin: 0;
+  color: black;
 }

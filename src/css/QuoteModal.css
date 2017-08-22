@@ -1,5 +1,9 @@
+.highlighted {
+  background-color: #f0d6c3;
+}
+
 .modal-section {
-    border-bottom: 2px solid var(--beige);
+  border-bottom: 2px solid var(--beige);
 }
 .modal-section:last-of-type {
   border-bottom: 0;
@@ -60,13 +64,19 @@
   flex: 1;
 }
 .close-button {
+  top: 0;
   right: 0;
   position: absolute;
+  float: right;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
 }
 .quote-modal-content {
-    overflow: overlay;
-    max-height: 800px;
-    z-index: 1000;
+  overflow: overlay;
+  max-height: 800px;
+  z-index: 1000;
 }
 .quote-modal-footer {
   bottom: 95px;
@@ -91,10 +101,6 @@
 .quote-modal-page-links span {
   margin: 2px;
   cursor: pointer;
-}
-
-.top-right {
-  top: 0;
 }
 
 .active {
@@ -122,6 +128,8 @@
   font-weight: bold;
   text-align: center;
   color: #4a4a4a;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .disabled a {
