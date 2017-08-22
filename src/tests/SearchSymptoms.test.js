@@ -26,10 +26,9 @@ test('Can adjust slider', async t => {
   /* Drag slider */
   await t.drag(await handle, -70, 0)
 
-  /* Value is now 17 */
+  /* Value is now less */
   await t
-    .expect(await handle.getAttribute('aria-valuenow')).eql('17')
-    //.expect(await Selector('#symptoms-chart').find('.labels').nth(0).getAttribute('y')).eql(plotFirstY)
+    .expect(await handle.getAttribute('aria-valuenow')).lt('30')
     .wait(1000);
 
   /* Plot changed, jälkisärky is now the first */ 

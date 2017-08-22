@@ -14,7 +14,8 @@ class AssociatedChart extends React.Component {
     this.quant = 15;
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
-    this.margin = { top: 20, right: 100, bottom: 10, left: 90 };
+    this.purpley = "#9f6ce3";
+    this.margin = { top: 20, right: 70, bottom: 10, left: 150 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-" + this.props.resource;
@@ -84,7 +85,12 @@ class AssociatedChart extends React.Component {
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
       .on("click", this.props.onClick )
-      .on("mouseover", (d) => {
+      .on("mouseover", (d, index, all) => {
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr('fill-opacity', 1)                
+          .attr('r', this.radius + 5)
 
         this.div.transition()
           .duration(200)
@@ -97,10 +103,15 @@ class AssociatedChart extends React.Component {
         this.div.style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
-      .on("mouseout", (d) => {
+      .on("mouseout", (d, index, all) => {
         this.div.transition()
           .duration(250)
           .style("opacity", 0);
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr('r', this.radius)
+          .attr('fill-opacity', 0.6);          
       })
       .transition()
       .duration(500)
@@ -118,6 +129,16 @@ class AssociatedChart extends React.Component {
       .attr("font-size", 12)
       .attr("fill", "#fff")
       .attr("font-family", "Futurice")
+      .on("mouseover", (d, index, all) => {
+        d3.select(all[index])
+          .transition(200)
+          .style('fill', this.purpley)
+      })
+      .on("mouseout", (d, index, all) => {
+        d3.select(all[index])
+          .transition(200)
+          .style('fill', 'white')
+      })
       .style("cursor", "pointer")
       .on("click", this.props.onClick )
       .text((d) => d.MedicineName)

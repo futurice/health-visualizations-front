@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../css/Landing.css';
 import logo from '../css/chilicorn-logo.svg';
+import unicorn from '../css/chilicorn.png';
 import QueryForm from './QueryForm';
-import ChilicornBackground from '../css/chilicorn-world.png';
 import FeedbackButton from './FeedbackButton';
 import Spinner from 'react-spinkit';
 
@@ -51,9 +51,6 @@ export default class Landing extends Component {
       return <Spinner fadeIn="none" name="pulse" color='white' />;
     }
 
-    let chilicornStyle = {
-        backgroundImage: `url(${ChilicornBackground})`
-    };
     return (
         <div>
           <div className="content">
@@ -109,10 +106,13 @@ export default class Landing extends Component {
                 </p>
             </div>
 
-            <div style={ chilicornStyle } className="chilicorn-fund">
-              <h1 className="heading-1-chilicorn"> Chilicorn Fund </h1>
-              <p className="chilicorn-text">Pro–bono projects for a slightly better world, by <a href="https://futurice.com">Futurice</a> </p>
-            </div>
+            <section className="chilicorn hero">
+              <div className="chilicorn-container">
+                <h1 className="fund-title"> Chilicorn Fund </h1>
+                <h2>Pro bono projects for a slightly better world, by <a href="https://futurice.com">Futurice</a> </h2>
+              </div>
+              <img alt="A unicorn" className="chilicorn-static" src={unicorn} />
+            </section>
         </div>
     );
   }

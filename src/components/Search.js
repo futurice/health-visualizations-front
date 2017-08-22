@@ -3,7 +3,7 @@ import '../css/Search.css';
 import ChartSideBar from './ChartSideBar';
 import DosageChart from './DosageChart';
 import SearchBox from './SearchBox';
-import { getByKeyword, getQuotesByKeywords, isNumeric } from '../util';
+import { getByKeyword } from '../util';
 import BasketModal from './BasketModal';
 import QuoteModal from './QuoteModal';
 import AssociatedChart from './charts/AssociatedChart';
@@ -17,31 +17,19 @@ export default class Search extends Component {
     super(props);
 
     this.state = {
-      keyword: this.props.match.params.keyword,
       loading: true,
       drugsSliderValue: 30,
-      symptomsSliderValue: 30,
-      quoteModalResource: "temp"
+      symptomsSliderValue: 30
     };
 
-    this.updateKeyword = this.updateKeyword.bind(this);
     this.findByKeyword = this.findByKeyword.bind(this);
     this.drugsSliderOnChange = this.drugsSliderOnChange.bind(this);
     this.symptomsSliderOnChange = this.symptomsSliderOnChange.bind(this);
-    this.getHeading = this.getHeading.bind(this);
 
     this.associatedOnClick = this.associatedOnClick.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
-  }
-
-  getHeading() {
-    if ("relatedQuotes" === this.state.quoteModalResource) {
-      return `Posts with ${this.state.keyword} and ${this.state.keyword2}`;
-    } else if ("dosageQuotes" === this.state.quoteModalResource) {
-      return `Posts with ${this.state.keyword} ${this.state.keyword2} mg`;
-    } else {
-      return `Posts with ${this.state.keyword}`;
-    }
+    this.getKeyword = this.getKeyword.bind(this);
+    this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
   }
 
   drugsSliderOnChange(e) {
@@ -56,63 +44,51 @@ export default class Search extends Component {
     });
   }
 
-  updateKeyword(keyword) {
-    this.setState({
-      keyword
-    });
-  }
-
   associatedOnClick(e) {
     let keyword2 = e.MedicineName;
     
     this.setState({
-      keyword2: keyword2,
       quoteModalResource: "relatedQuotes"
     }, () => {
-      this.setState({ quoteModalIsOpen: true });
-      this.props.history.push(`/search/${this.state.keyword}?quotes_with=${keyword2}&page=1`);
+      this.props.history.replace(`/search/${this.getKeyword()}?quotes_with=${keyword2}&page=1`);
     });
   }
 
   dosagesOnClick(e) {
     let keyword2 = e.data.Dosage;
 
-    this.setState({
-      keyword2: keyword2,
-      quoteModalResource: "dosageQuotes"
-    }, () => {
-      this.setState({quoteModalIsOpen: true});
-    });
+    this.props.history.replace(`/search/${this.getKeyword()}?quotes_with=${keyword2}&page=1`);      
+  }
+  
+  onBackButtonEvent(e) {
+    
+    if (this.quoteModalIsOpen() || this.basketModalIsOpen()) {
+      e.preventDefault();
+      this.props.history.push(this.props.location.pathname);
+    }
+  }
+  quoteModalIsOpen() {
+    const queryParams = queryString.parse(this.props.location.search);
+    return !!queryParams["quotes_with"] || !!queryParams["posts"];
+  }
+
+  basketModalIsOpen() {
+    const queryParams = queryString.parse(this.props.location.search);
+    return !!queryParams["basket"];
+  }
+
+  getKeyword() {
+    return this.props.match.params.keyword;
   }
 
   componentWillMount() {
     this.findByKeyword();
+    window.onpopstate = this.onBackButtonEvent;
   }
 
-  componentDidMount() {
-    /* Preopen modal on certain links e.g /search/burana?quotes_with=ibusal */
-    const queryParams = queryString.parse(this.props.location.search);
-    const quoteKeyword = queryParams["quotes_with"];
-    const postsKeyword = queryParams["posts"];
-
-    /* Does this refer to a dosage or (drug or symptom) */
-    const resource = isNumeric(quoteKeyword) ? "dosageQuotes" : "relatedQuotes";
-    const page = parseInt(queryParams["page"]);
-
-    if (quoteKeyword) {
-      this.setState({
-        keyword2: quoteKeyword,
-        quoteModalIsOpen: true,
-        quoteModalResource: resource,
-        quoteModalPage: page
-      });
-    }
-    if (postsKeyword) {
-      this.setState({
-        quoteModalIsOpen: true,
-        quoteModalResource: "keywordQuotes",
-        quoteModalPage: page
-      });
+  componentWillReceiveProps(nextProps) {
+    if (this.getKeyword() !== nextProps.match.params.keyword) {
+      this.findByKeyword();
     }
   }
 
@@ -120,14 +96,14 @@ export default class Search extends Component {
     this.setState({
       loading: true
     }, () => {
-      getByKeyword(this.state.keyword).then((response) => {
+      getByKeyword(this.getKeyword()).then((response) => {
         this.setState({
           data: response.data,
           loading: false
         });
       }).catch((error) => {
           if (error.response && error.response.status === 404) {
-            this.props.history.push("/not_found/" + this.state.keyword);
+            this.props.history.replace("/not_found/" + this.getKeyword());
           } else {
             console.error(error);
           }
@@ -139,45 +115,35 @@ export default class Search extends Component {
     if (this.state.loading) {
       return <Spinner fadeIn="none" name="pulse" color='white' />;
     }
-
     return (
       <div ref="search" className="search-page">
         <BasketModal
-          isOpen={this.state.basketModalIsOpen}
+          isOpen={this.basketModalIsOpen()}
           data={this.state.data.basket}
-          closeModal={() => this.setState({basketModalIsOpen: false})}
-          heading={"Words interpreted as " + this.state.keyword}
+          closeModal={() => this.props.history.push("/search/" + this.getKeyword())}
+          heading={"Words interpreted as " + this.getKeyword()}
         />
 
         <QuoteModal
-          isOpen={this.state.quoteModalIsOpen}
-          closeModal={() => {
-            this.setState({
-              quoteModalIsOpen: false
-            });
-            this.props.history.push(`/search/${this.state.keyword}`);
-          }}
-          heading={this.getHeading()}
-          keyword1={this.state.keyword}
-          keyword2={this.state.keyword2}
+          isOpen={this.quoteModalIsOpen()}
+          closeModal={() => this.props.history.push("/search/" + this.getKeyword())}
           searchWords={this.state.data.basket}
           resource={this.state.quoteModalResource}
           forcePage={this.state.quoteModalPage}
           history={this.props.history}
           match={this.props.match}
+          location={this.props.location}
         />
 
         <SearchBox
           history={this.props.history}
           match={this.props.match}
-          updateKeyword={this.updateKeyword}
-          findByKeyword={this.findByKeyword}
         />
         <div className="search-term-info">
           <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
-          <h3 className="keyword heading-3"> {this.state.keyword} </h3>
-          <a onClick={() => this.setState({quoteModalResource: "keywordQuotes", quoteModalIsOpen: true, keyword2: undefined})} className="list-of-posts body-text is-tight">{this.state.data.post_count} posts</a><br/>
-          <a onClick={() => this.setState({basketModalIsOpen: true})} className="list-of-bucket body-text"> Words interpreted as {this.state.keyword} </a>
+          <h3 className="keyword heading-3"> {this.getKeyword()} </h3>
+          <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="list-of-posts body-text is-tight">{this.state.data.post_count} posts</a><br/>
+          <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="list-of-bucket body-text"> Words interpreted as {this.getKeyword()} </a>
         </div>
 
         {/* Drugs association result */}
@@ -193,7 +159,7 @@ export default class Search extends Component {
 
           <div id="drugs-chart" className="chart">
             <AssociatedChart
-              keyword={this.state.keyword}
+              keyword={this.getKeyword()}
               minCount={this.state.drugsSliderValue}
               data={this.state.data.associated_drugs}
               resource="drugs"
@@ -220,7 +186,7 @@ export default class Search extends Component {
           </div>
           <div id="symptoms-chart" className="chart">
             <AssociatedChart
-              keyword={this.state.keyword}
+              keyword={this.getKeyword()}
               minCount={this.state.symptomsSliderValue}
               data={this.state.data.associated_symptoms}
               resource="symptoms"
@@ -236,7 +202,7 @@ export default class Search extends Component {
         <DosageChart
           isDrug={this.state.data.dosages}
           data={this.state.data.dosages}
-          keyword={this.state.keyword}
+          keyword={this.getKeyword()}
           onClick={this.dosagesOnClick}
         />
 
@@ -247,7 +213,7 @@ export default class Search extends Component {
 
           <p>This work is licenced under ???</p>
 
-          <a href="#"> Contact us </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUNP2r2h5VO2DnnYNpB9D3elPX7F2vfxxKyOfLEnSacPEKUw/viewform"> Contact us </a>
         </div>
       </div>
     );

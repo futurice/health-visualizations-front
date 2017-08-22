@@ -89,7 +89,13 @@ class BubbleChart extends React.Component {
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
       .on("click", this.props.onClick)
-      .on("mouseover", (d) => {
+      .on("mouseover", (d, index, all) => {
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr('r', (d) => d.r + 5)
+          .attr('stroke-width', 3)
+
         this.div.transition()
           .duration(200)
           .style("opacity", .9);
@@ -101,7 +107,13 @@ class BubbleChart extends React.Component {
         this.div.style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
-      .on("mouseout", (d) => {
+      .on("mouseout", (d, index, all) => {
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr('r', (d) => d.r)
+          .attr('stroke-width', 1)
+
         this.div.transition()
           .duration(250)
           .style("opacity", 0);

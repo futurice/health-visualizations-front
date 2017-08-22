@@ -25,13 +25,6 @@ export default class QueryForm extends React.Component {
     e.preventDefault();
 
     let value = this.refs.input.value;
-    
-    if (this.props.updateKeyword) {
-      this.props.updateKeyword(value);      
-    }
-    if (this.props.findByKeyword) {
-      this.props.findByKeyword(value);
-    }
     this.props.history.push(`/search/${value}`);
   }
 
