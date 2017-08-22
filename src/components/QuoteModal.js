@@ -147,9 +147,9 @@ export default class QuoteModal extends React.Component {
     const [keyword1, keyword2] = this.getQueryParams();
 
     if (this.currentResource() !== "keyword_quotes") {
-      this.props.history.replace(`/search/${keyword1}?quotes_with=${keyword2}&page=${page}`)
+      this.props.history.push(`/search/${keyword1}?quotes_with=${keyword2}&page=${page}`)
     } else {
-      this.props.history.replace(`/search/${keyword1}?posts=true&page=${page}`)
+      this.props.history.push(`/search/${keyword1}?posts=true&page=${page}`)
     }
     this.getPosts();    
   }

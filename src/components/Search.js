@@ -29,6 +29,7 @@ export default class Search extends Component {
     this.associatedOnClick = this.associatedOnClick.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
+    this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
   }
 
   drugsSliderOnChange(e) {
@@ -59,16 +60,12 @@ export default class Search extends Component {
     this.props.history.replace(`/search/${this.getKeyword()}?quotes_with=${keyword2}&page=1`);      
   }
   
-  onBackButtonEvent() {
-    /*
-    this.setState({
-      keyword: this.props.match.params.keyword,
-      quoteModalIsOpen: false,
-      basketModalIsOpen: false
-    }, () => {
-      this.findByKeyword();
-    });
-    */
+  onBackButtonEvent(e) {
+    
+    if (this.quoteModalIsOpen() || this.basketModalIsOpen()) {
+      e.preventDefault();
+      this.props.history.push(this.props.location.pathname);
+    }
   }
   quoteModalIsOpen() {
     const queryParams = queryString.parse(this.props.location.search);
