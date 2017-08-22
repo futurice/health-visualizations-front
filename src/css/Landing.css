@@ -252,9 +252,9 @@ a {
 }
 
 img {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -273,6 +273,7 @@ img {
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
+    -webkit-margin-after: 0;
 }
 
 .heading-1 {
@@ -292,6 +293,7 @@ img {
 .heading-2 {
   font-weight: 400;
   margin: 1rem;
+    margin-top: 40px;
 	font-size: 2rem;
 	color: #ffffff;
 }
