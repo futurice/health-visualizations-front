@@ -14,7 +14,7 @@ class MostCommonChart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.purpley = "#9f6ce3";
-    this.margin = { top: 20, right: 50, bottom: 10, left: 90 };
+    this.margin = { top: 20, right: 50, bottom: 10, left: 120 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "most-common-container-" + this.props.resource;

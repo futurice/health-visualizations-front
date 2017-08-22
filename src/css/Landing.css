@@ -393,6 +393,7 @@ a:hover:not(.feedback-button) {
 }
 
 .numbers-duo-text-large {
+  font-family: Futurice;
   font-weight: normal;
   font-size: 2rem;
   -webkit-margin-after: 0;
@@ -400,8 +401,21 @@ a:hover:not(.feedback-button) {
 }
 
 .numbers-duo-text-small {
+  font-family: Futurice-monospaced;
   font-weight: normal;
   font-size: 1rem;
+  text-align: center;
+  -webkit-margin-after: 0;
+  left: 10px;
+  width: 100%;
+}
+
+.numbers-duo-text-tiny {
+  font-family: Futurice-monospaced;
+  margin-top: 30%;
+  color: white;
+  font-weight: normal;
+  font-size: 0.8rem;
   text-align: center;
   -webkit-margin-after: 0;
   left: 10px;
@@ -421,7 +435,7 @@ a:hover:not(.feedback-button) {
 }
 
 .calendar-icon {
-  right: 20%;
+  right: 0%;
   top: 0;
   position: absolute;
 }

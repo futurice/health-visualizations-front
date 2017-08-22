@@ -88,6 +88,12 @@ export default class Landing extends Component {
                   </div>
                   <div className="numbers-duo-icon">
                     <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
+                    <div className="numbers-duo-text-tiny">
+                      <p>
+                      01.2001<br/>
+                      12.2016
+                      </p>
+                    </div>
                   </div>
                 </div>
 
