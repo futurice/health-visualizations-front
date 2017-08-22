@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Modal from 'react-modal';
-import { getQuotesByKeywords, getBasketByKeyword } from '../util';
+import { getQuotesByKeywords, getBasketByKeyword, isNumeric } from '../util';
 import '../css/QuoteModal.css';
 import Highlighter from 'react-highlight-words';
 import Spinner from 'react-spinkit'
 import ReactPaginate from 'react-paginate';
-
+import queryString from 'query-string';
 
 export default class QuoteModal extends React.Component {
 
@@ -16,6 +16,8 @@ export default class QuoteModal extends React.Component {
     this.formatPosts = this.formatPosts.bind(this);
     this.getPosts = this.getPosts.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
+    this.currentResource = this.currentResource.bind(this);
+    this.getQueryParams = this.getQueryParams.bind(this);
 
     this.state = this.getInitialState();
   }
@@ -27,17 +29,33 @@ export default class QuoteModal extends React.Component {
       loading: false
     };
   }
+  
+  /*
+    If ?posts=true then simply display all the posts with a certain keyword
+    If ?quotes_with=<number> then display quotes with that dose
+    If ?quotes_with=<drug / symptom> then display quotes with that drug 
+  */
+  currentResource() {
+    const queryParams = queryString.parse(this.props.location.search);
+        
+    let quoteModalResource = "related_quotes";
+    if (queryParams["posts"]) {
+      quoteModalResource = "keyword_quotes";
+    } else if (isNumeric(queryParams["quotes_with"])) {
+      quoteModalResource = "dosage_quotes";
+    } 
+
+    return quoteModalResource;
+  }
 
   getPosts() {
     this.setState({
       posts: [],
       loading: true
     });
-
-    const keyword1 = this.props.keyword1;
-    const keyword2 = this.props.keyword2;
-    const quoteModalResource = this.props.resource;
-    const page = this.state.page;
+        
+    const [keyword1, keyword2, page] = this.getQueryParams();
+    const quoteModalResource = this.currentResource();
 
     getQuotesByKeywords(quoteModalResource, keyword1, keyword2, page)
       .then((response) => {
@@ -55,7 +73,7 @@ export default class QuoteModal extends React.Component {
       hilightWords: this.props.searchWords
     });
 
-    if (quoteModalResource === 'relatedQuotes') {
+    if (quoteModalResource === 'related_quotes') {
       getBasketByKeyword(keyword2)
         .then((response) => {
           let keyword2Basket = response.data;
@@ -77,11 +95,20 @@ export default class QuoteModal extends React.Component {
 
   componentWillMount() {
     if (this.props.isOpen) {
-      this.setState({
-        page: this.props.forcePage || 1,
-        posts: [],
-        loading: false
-      }, this.getPosts);
+      this.setState(this.getInitialState(), this.getPosts);
+    }
+  }
+
+  heading() {
+    const queryParams = queryString.parse(this.props.location.search);
+    const [keyword1, keyword2] = this.getQueryParams();
+    
+    if (queryParams["posts"]) {
+      return `Posts with ${keyword1}`;
+    } else if (isNumeric(queryParams["quotes_with"])) {
+      return `Posts with ${keyword1} ${keyword2} mg`;
+    } else {
+      return `Posts with ${keyword1} and ${keyword2}`;
     }
   }
 
@@ -101,26 +128,30 @@ export default class QuoteModal extends React.Component {
               Full thread
             </a>
           </div>
-
         </div>
       );
     });
   }
 
+  getQueryParams() {
+    const queryParams = queryString.parse(this.props.location.search);
+    const keyword1 = this.props.match.params.keyword; // Base word comes from /search/:keyword
+    const keyword2 = queryParams["quotes_with"]; // Comparison word comes from ?quotes_with=:keyword  
+    const page = parseInt(queryParams["page"]);
+
+    return [keyword1, keyword2, page];
+  }
+
   handlePageClick(data) {
     let page = data.selected + 1;
+    const [keyword1, keyword2] = this.getQueryParams();
 
-    this.setState({
-      page
-    }, () => {
-      this.getPosts();
-      if (this.props.resource !== "keywordQuotes") {
-        this.props.history.replace(`/search/${this.props.keyword1}?quotes_with=${this.props.keyword2}&page=${page}`)
-      } else {
-        this.props.history.replace(`/search/${this.props.keyword1}?posts=true&page=${page}`)
-      }
-
-    });
+    if (this.currentResource() !== "keyword_quotes") {
+      this.props.history.replace(`/search/${keyword1}?quotes_with=${keyword2}&page=${page}`)
+    } else {
+      this.props.history.replace(`/search/${keyword1}?posts=true&page=${page}`)
+    }
+    this.getPosts();    
   }
 
   render() {
@@ -139,7 +170,7 @@ export default class QuoteModal extends React.Component {
           }
           <div className="quote-modal-heading">
             <button className="close-button top-right" onClick={this.props.closeModal}>&times;</button>
-            <h1 className="quote-modal-heading-text" >{this.props.heading} </h1>
+            <h1 className="quote-modal-heading-text" >{this.heading()} </h1>
           </div>
           <div className="quote-modal-content">
             {this.formatPosts(this.state.posts)}
@@ -160,7 +191,7 @@ export default class QuoteModal extends React.Component {
               pageRangeDisplayed={5}
               onPageChange={this.handlePageClick}
               subContainerClassName={"pages pagination"}
-              forcePage={this.state.page - 1}
+              forcePage={parseInt(queryString.parse(this.props.location.search)["page"]) - 1}
             />
           </div>
 
