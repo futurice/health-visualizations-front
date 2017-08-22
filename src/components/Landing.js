@@ -8,7 +8,7 @@ import Spinner from 'react-spinkit';
 
 import calendarIcon from '../css/calendar.svg';
 import postsIcon from '../css/posts.svg';
-import quotesIcon from '../css/quotes.svg';
+import quotesIcon from '../css/group-3.svg';
 
 import MostCommonChart from './charts/MostCommonChart';
 import { getMostCommon } from '../util';
@@ -61,11 +61,37 @@ export default class Landing extends Component {
 
 
             <div className="body-text-container">
-              <div className="numbers">
-                <p>The numbers</p>
-                <h3>19M posts <img src={postsIcon} className="posts-icon" alt="posts-icon" />  </h3>
-                <h3>200M words <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" /></h3>
-                <h3>01/2001 to 11/2016 <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" /></h3>
+              <div className="numbers-container">
+                <div className="numbers-duo">
+                  <div className="numbers-duo-icon">
+                    <img src={postsIcon} className="posts-icon" alt="posts-icon" />
+                  </div>
+                  <div className="numbers-duo-text">
+                    <div className="numbers-duo-text-large">19M</div>
+                    <div className="numbers-duo-text-small">posts</div>
+                  </div>
+
+                </div>
+                <div className="numbers-duo">
+                  <div className="numbers-duo-text">
+                    <div className="numbers-duo-text-large">200M</div>
+                    <div className="numbers-duo-text-small">words</div>
+                  </div>
+                  <div className="numbers-duo-icon">
+                    <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" />
+                  </div>
+                </div>
+                <div className="numbers-duo">
+                  <div className="numbers-duo-text">
+                    <div className="numbers-duo-text-large">16</div>
+                    <div className="numbers-duo-text-small">years</div>
+                  </div>
+                  <div className="numbers-duo-icon">
+                    <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
+                  </div>
+                </div>
+
+
               </div>
 
                 <p className="body-text">
