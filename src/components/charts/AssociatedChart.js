@@ -15,7 +15,7 @@ class AssociatedChart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.purpley = "#9f6ce3";
-    this.margin = { top: 20, right: 100, bottom: 10, left: 90 };
+    this.margin = { top: 20, right: 70, bottom: 10, left: 150 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-" + this.props.resource;

@@ -87,11 +87,12 @@ export default class Search extends Component {
     });
   }
 
-  onBackButtonEvent(e) {
-    const queryParams = queryString.parse(this.props.location.search);
-    if (Object.keys(queryParams).length !== 0) {
-      this.props.history.push("/search/" + this.state.keyword);
-    }
+  onBackButtonEvent() {
+    this.setState({
+      keyword: this.props.match.params.keyword
+    }, () => {
+      this.findByKeyword();
+    });
   }
 
   componentWillMount() {
@@ -149,7 +150,6 @@ export default class Search extends Component {
     if (this.state.loading) {
       return <Spinner fadeIn="none" name="pulse" color='white' />;
     }
-
     return (
       <div ref="search" className="search-page">
         <BasketModal
