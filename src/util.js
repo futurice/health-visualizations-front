@@ -25,16 +25,6 @@ export const getQuotesByKeywords = (requestType, keyword1, keyword2, page=1) => 
   } else {
     return axios.get(`${URL}${requestType}/${keyword1}/${keyword2}/page/${page}`);
   }
-  
-  /*
-  if ("keywordQuotes" === requestType) {
-    return axios.get(`${URL}keyword_quotes/${keyword1}/page/${page}`);
-  } else if ("dosageQuotes" === requestType) {
-    return axios.get(`${URL}dosage_quotes/${keyword1}/${keyword2}/page/${page}`);
-  } else {
-    return axios.get(`${URL}related_quotes/${keyword1}/${keyword2}/page/${page}`);
-  }
-  */
 };
 
 export const getMostCommon = (resource) => {
