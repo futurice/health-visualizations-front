@@ -410,18 +410,6 @@ a:hover:not(.feedback-button) {
   width: 100%;
 }
 
-.numbers-duo-text-tiny {
-  font-family: Futurice-monospaced;
-  margin-top: 30%;
-  color: white;
-  font-weight: normal;
-  font-size: 0.8rem;
-  text-align: center;
-  -webkit-margin-after: 0;
-  left: 10px;
-  width: 100%;
-}
-
 .quotes-icon {
   right: 0;
   top: 15%;
@@ -434,10 +422,50 @@ a:hover:not(.feedback-button) {
   position: absolute;
 }
 
-.calendar-icon {
-  right: 0%;
-  top: 0;
+/*.calendar-icon {*/
+  /*right: 0%;*/
+  /*top: 0;*/
+  /*position: absolute;*/
+/*}*/
+
+.numbers-duo-calendar-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+}
+
+.numbers-duo-calendar-text {
   position: absolute;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-family: Futurice-monospaced;
+  margin-top: 30%;
+  -webkit-margin-after: 0;
+  left: 10px;
+}
+.numbers-duo-calendar-text:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.numbers-duo-calendar-text h4 {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: normal;
+}
+
+.numbers-duo-calendar-container img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .most-common-tooltip {

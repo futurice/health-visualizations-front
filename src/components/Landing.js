@@ -86,14 +86,14 @@ export default class Landing extends Component {
                     <div className="numbers-duo-text-large">16</div>
                     <div className="numbers-duo-text-small">years</div>
                   </div>
-                  <div className="numbers-duo-icon">
-                    <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
-                    <div className="numbers-duo-text-tiny">
-                      <p>
+                  <div className="numbers-duo-calendar-container">
+                    <div className="numbers-duo-calendar-text">
+                      <h4>
                       01.2001<br/>
                       12.2016
-                      </p>
+                      </h4>
                     </div>
+                    <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
                   </div>
                 </div>
 
