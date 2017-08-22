@@ -3,7 +3,7 @@
 }
 
 .modal-section {
-    border-bottom: 2px solid var(--beige);
+  border-bottom: 2px solid var(--beige);
 }
 .modal-section:last-of-type {
   border-bottom: 0;
@@ -74,9 +74,9 @@
   font-size: 2rem;
 }
 .quote-modal-content {
-    overflow: overlay;
-    max-height: 800px;
-    z-index: 1000;
+  overflow: overlay;
+  max-height: 800px;
+  z-index: 1000;
 }
 .quote-modal-footer {
   bottom: 95px;
@@ -151,7 +151,6 @@
 .pagination a {
   color: black;
   padding: 5px;
-  padding-bottom: 10px; /* TODO why does this not work? Trying to lift page links a bit higher than prev/next. */
   cursor: pointer;
 }
 
