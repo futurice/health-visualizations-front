@@ -1,3 +1,8 @@
+.text-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .centered {
   text-align: center;
 }

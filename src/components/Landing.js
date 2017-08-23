@@ -18,7 +18,7 @@ export default class Landing extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {}
+    this.state = {};
     this.chartOnClick = this.chartOnClick.bind(this);
   }
 

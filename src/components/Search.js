@@ -10,6 +10,7 @@ import AssociatedChart from './charts/AssociatedChart';
 import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
 import queryString from 'query-string';
+import postsSmallIcon from '../css/posts-small.svg';
 
 export default class Search extends Component {
 
@@ -18,10 +19,10 @@ export default class Search extends Component {
 
     this.state = {
       loading: true,
-      drugsSliderValue: this.getCookie("drugsSliderValue") || 30,
-      symptomsSliderValue: this.getCookie("symptomsSliderValue") || 30,
-      drugsSliderVisible: this.getCookie("drugsSliderValue"),
-      symptomsSliderVisible: this.getCookie("symptomsSliderValue"),
+      drugsSliderValue: this.getIntFromCookie("drugsSliderValue") || 30,
+      symptomsSliderValue: this.getIntFromCookie("symptomsSliderValue") || 30,
+      drugsSliderVisible: this.getIntFromCookie("drugsSliderValue"),
+      symptomsSliderVisible: this.getIntFromCookie("symptomsSliderValue"),
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
@@ -34,10 +35,10 @@ export default class Search extends Component {
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
     this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
     this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
-    this.getCookie = this.getCookie.bind(this);
+    this.getIntFromCookie = this.getIntFromCookie.bind(this);
   }
 
-  getCookie(key) {
+  getIntFromCookie(key) {
     let raw = localStorage.getItem(key);
     if (!raw) {
       return undefined;
@@ -108,8 +109,8 @@ export default class Search extends Component {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
     this.setState({
-      drugsSliderValue: this.getCookie("drugsSliderValue") || 30,
-      symptomSliderValue: this.getCookie("symptomsSliderValue") || 30
+      drugsSliderValue: this.getIntFromCookie("drugsSliderValue") || 30,
+      symptomSliderValue: this.getIntFromCookie("symptomsSliderValue") || 30
     });
   }
 
@@ -167,10 +168,21 @@ export default class Search extends Component {
           match={this.props.match}
         />
         <div className="search-term-info">
-          <p className="no-margin size-18 whiteish"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
-          <h3 className="no-margin size-45 white"> {this.getKeyword()} </h3>
-          <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="list-of-posts body-text is-tight">{this.state.data.post_count} posts</a><br/>
-          <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="list-of-bucket body-text"> Words interpreted as {this.getKeyword()} </a>
+          <p className="size-18"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
+          <h3 className="no-margin size-45"> {this.getKeyword()} </h3>
+
+          <div className="post-link-container">
+            <div className="post-link-icon">
+              <img src={postsSmallIcon} className="posts-small-icon" alt="posts-icon" />
+            </div>
+            <div className="post-link-text">
+              <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="text-link size-16">{this.state.data.post_count} posts</a>
+            </div>
+          </div>
+          <div className="basket-link-container">
+            <p>
+              <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="text-link size-14"> Words interpreted as {this.getKeyword()} </a></p>
+          </div>
         </div>
 
         {/* Drugs association result */}
@@ -178,14 +190,14 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+              bodyText={<p className="size-16">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
                 In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>
                 <br/>
                 {this.state.drugsSliderVisible ?
                   "Move slider to change the minimum sample size" :
-                  <a onClick={this.setDrugsSliderVisible} className="text-sample-size-filtering">Sample size filtering</a>
+                  <a onClick={this.setDrugsSliderVisible} className="text-link size-16">Sample size filtering</a>
                 }
 
               </p>}
@@ -215,14 +227,14 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+              bodyText={<p className="size-16">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
                 In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>
                 <br/>
                 {this.state.symptomsSliderVisible ?
                   "Move slider to change the minimum sample size" :
-                  <a onClick={this.setSymptomsSliderVisible} className="text-sample-size-filtering">Sample size filtering</a>
+                  <a onClick={this.setSymptomsSliderVisible} className="text-link size-16">Sample size filtering</a>
                 }
 
                 </p>}
@@ -259,7 +271,7 @@ export default class Search extends Component {
           onClick={this.dosagesOnClick}
         />
 
-        <div className="footer">
+        <div className="footer size-14 centered">
           <p>_Nettipuoskari is a data science project by <a href="https://spiceprogram.org/chilicorn-fund/"> Futurice’s Chilicorn Fund</a></p>
 
           <p>In partnership with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes </a></p>

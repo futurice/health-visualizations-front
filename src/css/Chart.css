@@ -9,6 +9,10 @@ div.tooltip {
     pointer-events: none;
 }
 
+.associated-chart {
+    margin-bottom: 5%;
+}
+
 .associated-chart p {
   margin: 0;
 }

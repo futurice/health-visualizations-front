@@ -48,16 +48,6 @@
   min-width: 320px;
 }
 
-.list-of-posts {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.list-of-bucket {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .chart {
   flex: 4;
   display: flex;
@@ -83,8 +73,6 @@
 
 .footer {
   margin: 2%;
-  text-align: center;
-  font-size: 0.75rem;
 }
 
 .footer p {
@@ -108,4 +96,23 @@
 
 .labels {
   font-size: 0.80rem;
+}
+
+.post-link-container {
+  padding-top: 5px;
+  width: 200px;
+}
+
+.post-link-icon {
+  width: 30px;
+  float: left;
+}
+
+.post-link-text {
+  width: 170px;
+  float: left;
+}
+
+.basket-link-container {
+  padding-top: 15px;
 }
