@@ -235,6 +235,7 @@ export default class Search extends Component {
               resource="symptoms"
               onClick={this.associatedOnClick}
             />
+            <span className="really-small-text align-center">Click the bubbles to see the posts.</span>
             <WarningText />
           </div>
         </div>

@@ -360,9 +360,9 @@ img {
 
 .really-small-text {
   margin-top: 0;
-	font-size: 0.85rem;
-	line-height: 1.42;
-	color: #d8d8d8;
+  font-size: 0.70rem;
+  line-height: 1.42;
+  color: #d8d8d8;
 }
 
 .whole-story {
