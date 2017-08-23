@@ -91,18 +91,14 @@ export default class Landing extends Component {
                       <p className="numbers-duo-text-small">years</p>
                     </div>
                   </div>
-                  <div className="numbers-duo-calendar-container">
+                  <div className="numbers-duo-icon">                  
                     <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
-                    <div className="numbers-duo-calendar-text">
-                      <p>
-                      01.2001<br/>
-                      12.2016
-                      </p>
-                    </div>
+                    {/*<p>
+                    01.2001<br/>
+                    12.2016
+                    </p>*/}
                   </div>
                 </div>
-
-
               </div>
 
                 <p className="body-text">
@@ -137,7 +133,7 @@ export default class Landing extends Component {
             </div>
 
             <div className="more-information">
-              <h3 className="heading-3"> For more information </h3>
+              <h3 className="heading-1-white"> For more information </h3>
                 <p className="small-text"> If you have any questions or feedback, feel free to contact us with the button below  </p>
                 <FeedbackButton />
                 <p className="really-small-text">
@@ -146,10 +142,6 @@ export default class Landing extends Component {
             </div>
 
             <section className="chilicorn hero">
-              <div className="chilicorn-container">
-                <h1 className="fund-title"> Chilicorn Fund </h1>
-                <h2>Pro bono projects for a slightly better world, by <a href="https://futurice.com">Futurice</a> </h2>
-              </div>
               <img alt="A unicorn" className="chilicorn-static" src={unicorn} />
             </section>
         </div>
