@@ -36,7 +36,7 @@ export default class PostCountSlider extends Component {
     return (
       <div className="post-count-slider">
         <Slider
-          defaultValue={30}
+          defaultValue={this.props.value}
           step={1}
           min={0}
           max={50}
