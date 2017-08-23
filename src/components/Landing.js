@@ -63,37 +63,42 @@ export default class Landing extends Component {
             <div className="body-text-container">
               <div className="numbers-container">
                 <div className="numbers-duo">
+                  <div className="numbers-duo-text">
+                    <div>
+                      <p className="numbers-duo-text-large">19M</p>
+                      <p className="numbers-duo-text-small">posts</p>
+                    </div>
+                  </div>
                   <div className="numbers-duo-icon">
                     <img src={postsIcon} className="posts-icon" alt="posts-icon" />
                   </div>
-                  <div className="numbers-duo-text">
-                    <div className="numbers-duo-text-large">19M</div>
-                    <div className="numbers-duo-text-small">posts</div>
-                  </div>
-
                 </div>
                 <div className="numbers-duo">
                   <div className="numbers-duo-text">
-                    <div className="numbers-duo-text-large">200M</div>
-                    <div className="numbers-duo-text-small">words</div>
+                    <div>
+                      <p className="numbers-duo-text-large">200M</p>
+                      <p className="numbers-duo-text-small">words</p>
+                    </div>
                   </div>
-                  <div className="numbers-duo-icon">
+                  <div className="numbers-duo-icon icon-centered">
                     <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" />
                   </div>
                 </div>
                 <div className="numbers-duo">
                   <div className="numbers-duo-text">
-                    <div className="numbers-duo-text-large">16</div>
-                    <div className="numbers-duo-text-small">years</div>
+                    <div>
+                      <p className="numbers-duo-text-large">16</p>
+                      <p className="numbers-duo-text-small">years</p>
+                    </div>
                   </div>
                   <div className="numbers-duo-calendar-container">
+                    <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
                     <div className="numbers-duo-calendar-text">
-                      <h4>
+                      <p>
                       01.2001<br/>
                       12.2016
-                      </h4>
+                      </p>
                     </div>
-                    <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
                   </div>
                 </div>
 

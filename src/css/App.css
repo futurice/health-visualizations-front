@@ -11,8 +11,8 @@
 }
 
 @font-face {
-  font-family: Futurice-monospaced;
-  src: local('Futurice'), url(../fonts/FuturiceMonospaced.otf);
+  font-family: 'Futurice-monospaced';
+  src: local('Futurice-monospaced'), url(../fonts/FuturiceMonospaced.otf);
 }
 
 
