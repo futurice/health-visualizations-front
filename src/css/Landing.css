@@ -458,3 +458,15 @@ a:hover:not(.feedback-button) {
 .most-common-tooltip {
   height: 14px !important;
 }
+
+.icon-text {
+  position: relative;
+  flex: 1;
+  font-family: 'Futurice-monospaced', 'Roboto';
+  font-size: 0.85rem;
+  margin: -45% auto;
+}
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+}

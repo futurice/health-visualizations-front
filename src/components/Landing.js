@@ -91,9 +91,9 @@ export default class Landing extends Component {
                       <p className="numbers-duo-text-small">years</p>
                     </div>
                   </div>
-                  <div className="numbers-duo-icon">                  
+                  <div className="numbers-duo-icon calendar-container">                  
                     <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
-                    {/*<p>
+                    {/*<p className="icon-text">
                     01.2001<br/>
                     12.2016
                     </p>*/}
