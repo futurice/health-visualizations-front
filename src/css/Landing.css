@@ -202,11 +202,11 @@ a {
 
 @media screen and (min-width: 800px) {
   .hero {
-      padding-top:120px
+    padding-top:120px
   }
 
   .hero h1 {
-      font-size: 75px
+    font-size: 75px
   }
 }
 
@@ -252,9 +252,9 @@ a {
 }
 
 img {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
@@ -273,21 +273,21 @@ img {
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
-    -webkit-margin-after: 0;
+  -webkit-margin-after: 0;
 }
 
 .heading-1 {
-	font-size: 2.5rem;
-	font-weight: bold;
-	text-align: center;
-	color: #ffffff;
-	margin-top: 2px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 2px;
 }
 
 .term-name {
-	font-size: 45px;
-	font-weight: bold;
-	color: #ffffff;
+  font-size: 45px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .heading-2 {
@@ -393,6 +393,7 @@ a:hover:not(.feedback-button) {
 }
 
 .numbers-duo-text-large {
+  font-family: Futurice;
   font-weight: normal;
   font-size: 2rem;
   -webkit-margin-after: 0;
@@ -400,6 +401,7 @@ a:hover:not(.feedback-button) {
 }
 
 .numbers-duo-text-small {
+  font-family: Futurice-monospaced;
   font-weight: normal;
   font-size: 1rem;
   text-align: center;
@@ -420,10 +422,50 @@ a:hover:not(.feedback-button) {
   position: absolute;
 }
 
-.calendar-icon {
-  right: 20%;
-  top: 0;
+/*.calendar-icon {*/
+  /*right: 0%;*/
+  /*top: 0;*/
+  /*position: absolute;*/
+/*}*/
+
+.numbers-duo-calendar-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+}
+
+.numbers-duo-calendar-text {
   position: absolute;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-family: Futurice-monospaced;
+  margin-top: 30%;
+  -webkit-margin-after: 0;
+  left: 10px;
+}
+.numbers-duo-calendar-text:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.numbers-duo-calendar-text h4 {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: normal;
+}
+
+.numbers-duo-calendar-container img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .most-common-tooltip {
