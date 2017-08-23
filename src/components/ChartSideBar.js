@@ -14,6 +14,7 @@ export default class ChartSideBar extends Component {
           <div className="slider-container">
 
             <PostCountSlider
+              value={this.props.value}
               className="slider-slider"
               onChange={this.props.sliderOnChange}
             />

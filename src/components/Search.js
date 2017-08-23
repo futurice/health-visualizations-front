@@ -18,9 +18,10 @@ export default class Search extends Component {
 
     this.state = {
       loading: true,
-      drugsSliderValue: 30,
-      symptomsSliderValue: 30,
-      slidersAreVisible: false
+      drugsSliderValue: localStorage.getItem("drugsSliderValue") || 30,
+      symptomsSliderValue: localStorage.getItem("symptomsSliderValue") || 30,
+      drugsSliderVisible: localStorage.getItem("drugsSliderValue"),
+      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue"),
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
@@ -31,23 +32,31 @@ export default class Search extends Component {
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
-    this.makeSlidersVisible = this.makeSlidersVisible.bind(this);
+    this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
+    this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
+
   }
 
-  makeSlidersVisible(e) {
-    this.setState({slidersAreVisible: true});
+  setDrugsSliderVisible(e) {
+    this.setState({drugsSliderVisible: true});
+  }
+
+  setSymptomsSliderVisible(e) {
+    this.setState({symptomsSliderVisible: true});
   }
 
   drugsSliderOnChange(e) {
     this.setState({
       drugsSliderValue: e
     });
+    localStorage.setItem("drugsSliderValue", e);
   }
 
   symptomsSliderOnChange(e) {
     this.setState({
       symptomsSliderValue: e
     });
+    localStorage.setItem("symptomsSliderValue", e);
   }
 
   associatedOnClick(e) {
@@ -83,10 +92,6 @@ export default class Search extends Component {
     return !!queryParams["basket"];
   }
 
-  slidersAreVisible() {
-    return this.state.slidersAreVisible;
-  }
-
   getKeyword() {
     return this.props.match.params.keyword;
   }
@@ -94,6 +99,10 @@ export default class Search extends Component {
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
+    this.setState({
+      drugsSliderValue: localStorage.getItem("drugsSliderValue") || 30,
+      symptomSliderValue: localStorage.getItem("symptomsSliderValue") || 30
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -166,13 +175,14 @@ export default class Search extends Component {
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>
                 <br/>
-                {this.slidersAreVisible() ?
+                {this.state.drugsSliderVisible ?
                   "Move slider to change the minimum sample size" :
-                  <a onClick={this.makeSlidersVisible} className="text-sample-size-filtering">Sample size filtering</a>
+                  <a onClick={this.setDrugsSliderVisible} className="text-sample-size-filtering">Sample size filtering</a>
                 }
 
               </p>}
-              includeSlider={this.slidersAreVisible()}
+              value={this.state.drugsSliderValue}
+              includeSlider={this.state.drugsSliderVisible}
               sliderOnChange={this.drugsSliderOnChange}
             />
           </div>
@@ -201,13 +211,14 @@ export default class Search extends Component {
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>
                 <br/>
-                {this.slidersAreVisible() ?
+                {this.state.symptomsSliderVisible ?
                   "Move slider to change the minimum sample size" :
-                  <a onClick={this.makeSlidersVisible} className="text-sample-size-filtering">Sample size filtering</a>
+                  <a onClick={this.setSymptomsSliderVisible} className="text-sample-size-filtering">Sample size filtering</a>
                 }
 
                 </p>}
-              includeSlider={this.slidersAreVisible()}
+              value={this.state.symptomsSliderValue}
+              includeSlider={this.state.symptomsSliderVisible}
               sliderOnChange={this.symptomsSliderOnChange}
             />
 
