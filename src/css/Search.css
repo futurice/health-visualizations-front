@@ -48,11 +48,6 @@
   min-width: 320px;
 }
 
-.keyword {
-  margin: 0;
-  font-size: 3.5rem;
-}
-
 .list-of-posts {
   text-decoration: underline;
   cursor: pointer;
@@ -61,11 +56,6 @@
 .list-of-bucket {
   text-decoration: underline;
   cursor: pointer;
-}
-
-.result {
-  font-size: 1rem;
-  margin: 0;
 }
 
 .chart {

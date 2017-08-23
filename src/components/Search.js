@@ -18,10 +18,10 @@ export default class Search extends Component {
 
     this.state = {
       loading: true,
-      drugsSliderValue: localStorage.getItem("drugsSliderValue") || 30,
-      symptomsSliderValue: localStorage.getItem("symptomsSliderValue") || 30,
-      drugsSliderVisible: localStorage.getItem("drugsSliderValue"),
-      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue"),
+      drugsSliderValue: this.getCookie("drugsSliderValue") || 30,
+      symptomsSliderValue: this.getCookie("symptomsSliderValue") || 30,
+      drugsSliderVisible: this.getCookie("drugsSliderValue"),
+      symptomsSliderVisible: this.getCookie("symptomsSliderValue"),
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
@@ -34,7 +34,15 @@ export default class Search extends Component {
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
     this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
     this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
+    this.getCookie = this.getCookie.bind(this);
+  }
 
+  getCookie(key) {
+    let raw = localStorage.getItem(key);
+    if (!raw) {
+      return undefined;
+    }
+    return parseInt(raw);
   }
 
   setDrugsSliderVisible(e) {
@@ -100,8 +108,8 @@ export default class Search extends Component {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
     this.setState({
-      drugsSliderValue: localStorage.getItem("drugsSliderValue") || 30,
-      symptomSliderValue: localStorage.getItem("symptomsSliderValue") || 30
+      drugsSliderValue: this.getCookie("drugsSliderValue") || 30,
+      symptomSliderValue: this.getCookie("symptomsSliderValue") || 30
     });
   }
 
@@ -159,8 +167,8 @@ export default class Search extends Component {
           match={this.props.match}
         />
         <div className="search-term-info">
-          <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
-          <h3 className="keyword heading-3"> {this.getKeyword()} </h3>
+          <p className="no-margin size-18 whiteish"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
+          <h3 className="no-margin size-45 white"> {this.getKeyword()} </h3>
           <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="list-of-posts body-text is-tight">{this.state.data.post_count} posts</a><br/>
           <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="list-of-bucket body-text"> Words interpreted as {this.getKeyword()} </a>
         </div>
@@ -195,6 +203,7 @@ export default class Search extends Component {
               resource="drugs"
               onClick={this.associatedOnClick}
             />
+            <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
             <WarningText />
           </div>
         </div>
@@ -235,7 +244,7 @@ export default class Search extends Component {
               resource="symptoms"
               onClick={this.associatedOnClick}
             />
-            <span className="really-small-text align-center">Click the bubbles to see the posts.</span>
+            <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
             <WarningText />
           </div>
         </div>

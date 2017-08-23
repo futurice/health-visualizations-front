@@ -1,0 +1,42 @@
+.centered {
+  text-align: center;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+/* All sizes are scaled proportionately according to design specs.
+   For example, if design spec says "45px", go with size-45. */
+
+.size-45 {
+  font-size: 2.42rem;
+}
+
+.size-27 {
+  font-size: 1.45rem;
+}
+
+.size-18 {
+  font-size: 0.97rem;
+}
+
+.size-16 {
+  font-size: 0.86rem;
+}
+
+.size-14 {
+  font-size: 0.75rem;
+}
+
+.size-13 {
+  font-size: 0.70rem;
+}
+
+.whiteish {
+  color: #d8d8d8;
+}
+
+.white {
+  color: #fff;
+}
