@@ -4,3 +4,35 @@
   }
 }
 
+.slider-container {
+  position: relative;
+  height: 90px;
+}
+
+.post-count-sliderx {
+  position: absolute;
+  margin-bottom: 20%;
+}
+
+.slider-text-top-left {
+  color: #d8d8d8;
+  font-size: 0.85rem;
+  position: absolute;
+  top: 22%;
+  left: 0;
+}
+
+.slider-text-top-right {
+  color: #d8d8d8;
+  font-size: 0.85rem;
+  position: absolute;
+  top: 22%;
+  right: 0;
+}
+
+.text-sample-size-filtering {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #d8d8d8;
+  font-size: 0.85rem;
+}

@@ -19,7 +19,8 @@ export default class Search extends Component {
     this.state = {
       loading: true,
       drugsSliderValue: 30,
-      symptomsSliderValue: 30
+      symptomsSliderValue: 30,
+      slidersAreVisible: false
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
@@ -30,6 +31,11 @@ export default class Search extends Component {
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
+    this.makeSlidersVisible = this.makeSlidersVisible.bind(this);
+  }
+
+  makeSlidersVisible(e) {
+    this.setState({slidersAreVisible: true});
   }
 
   drugsSliderOnChange(e) {
@@ -75,6 +81,10 @@ export default class Search extends Component {
   basketModalIsOpen() {
     const queryParams = queryString.parse(this.props.location.search);
     return !!queryParams["basket"];
+  }
+
+  slidersAreVisible() {
+    return this.state.slidersAreVisible;
   }
 
   getKeyword() {
@@ -151,8 +161,18 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely other drugs are to appear in a post, given that the search term appears in that post. This measure takes into account how often a drug appears overall in the data -- common drugs are not favored over less common drugs. </p>}
-              includeSlider={true}
+              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
+                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
+                <br/>
+                <br/>
+                {this.slidersAreVisible() ?
+                  "Move slider to change the minimum sample size" :
+                  <a onClick={this.makeSlidersVisible} className="text-sample-size-filtering">Sample size filtering</a>
+                }
+
+              </p>}
+              includeSlider={this.slidersAreVisible()}
               sliderOnChange={this.drugsSliderOnChange}
             />
           </div>
@@ -176,12 +196,24 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post. This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.</p>}
-              includeSlider={true}
+              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
+                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
+                <br/>
+                <br/>
+                {this.slidersAreVisible() ?
+                  "Move slider to change the minimum sample size" :
+                  <a onClick={this.makeSlidersVisible} className="text-sample-size-filtering">Sample size filtering</a>
+                }
+
+                </p>}
+              includeSlider={this.slidersAreVisible()}
               sliderOnChange={this.symptomsSliderOnChange}
             />
 
             <br />
+
+
 
           </div>
           <div id="symptoms-chart" className="chart">
