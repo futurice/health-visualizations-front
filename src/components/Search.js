@@ -19,10 +19,10 @@ export default class Search extends Component {
 
     this.state = {
       loading: true,
-      drugsSliderValue: this.getIntFromCookie("drugsSliderValue") || 30,
-      symptomsSliderValue: this.getIntFromCookie("symptomsSliderValue") || 30,
-      drugsSliderVisible: this.getIntFromCookie("drugsSliderValue"),
-      symptomsSliderVisible: this.getIntFromCookie("symptomsSliderValue"),
+      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
+      symptomsSliderValue: this.getSliderVal("symptomsSliderValue"),
+      drugsSliderVisible: this.getSliderVal("drugsSliderValue"),
+      symptomsSliderVisible: this.getSliderVal("symptomsSliderValue"),
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
@@ -35,13 +35,13 @@ export default class Search extends Component {
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
     this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
     this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
-    this.getIntFromCookie = this.getIntFromCookie.bind(this);
+    this.getSliderVal = this.getSliderVal.bind(this);
   }
 
-  getIntFromCookie(key) {
+  getSliderVal(key) {
     let raw = localStorage.getItem(key);
     if (!raw) {
-      return undefined;
+      return 30;
     }
     return parseInt(raw);
   }
@@ -109,8 +109,8 @@ export default class Search extends Component {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
     this.setState({
-      drugsSliderValue: this.getIntFromCookie("drugsSliderValue") || 30,
-      symptomSliderValue: this.getIntFromCookie("symptomsSliderValue") || 30
+      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
+      symptomSliderValue: this.getSliderVal("symptomsSliderValue")
     });
   }
 
@@ -190,7 +190,7 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-16">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
                 In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>
@@ -227,7 +227,7 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-16">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
                 In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>

@@ -95,7 +95,9 @@ class AssociatedChart extends React.Component {
         this.div.transition()
           .duration(200)
           .style("opacity", 1);
-        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>")
+        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>" +
+          "Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>" +
+          "<br/><b>Click to see posts</b>")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
@@ -121,7 +123,7 @@ class AssociatedChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "labels")
+      .attr("class", "size-13")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 4)
       .attr("opacity",0)
@@ -173,7 +175,7 @@ class AssociatedChart extends React.Component {
       data
     }, () => {
 
-      this.width = document.getElementById(this.props.resource + "-chart").clientWidth //+ this.margin.left;
+      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;//+ this.margin.left;
       this.height = 500;
 
       d3.select("#"+this.chartContainerId).html('');
@@ -212,7 +214,7 @@ class AssociatedChart extends React.Component {
     return (
       <div className="associated-chart">
         <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
-        <p className="body-text is-centered"> Relevance </p>
+        <p className="size-16 centered whiteish"> Relevance </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

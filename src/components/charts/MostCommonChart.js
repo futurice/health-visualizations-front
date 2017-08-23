@@ -73,7 +73,7 @@ class MostCommonChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "labels")
+      .attr("class", "size-14")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 11)
       .attr("opacity", 0)
@@ -151,7 +151,7 @@ class MostCommonChart extends React.Component {
       data
     }, () => {
 
-      this.width = document.getElementById(this.props.resource + "-chart").clientWidth //+ this.margin.left;
+      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;//+ this.margin.left;
       this.height = 500;
 
       d3.select("#" + this.chartContainerId).html('');

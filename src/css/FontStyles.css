@@ -38,6 +38,24 @@
   font-size: 0.70rem;
 }
 
+.heading-2 {
+  font-weight: 400;
+  margin: 1rem;
+  margin-top: 50px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.heading-4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.25;
+  text-align: center;
+  color: #ffffff;
+  margin: 2%;
+}
+
+
 .whiteish {
   color: #d8d8d8;
 }

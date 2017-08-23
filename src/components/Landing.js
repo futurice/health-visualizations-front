@@ -55,9 +55,9 @@ export default class Landing extends Component {
         <div>
           <div className="content">
             <img src={logo} className="logo" alt="logo" />
-            <h1 className="title is-centered">Nettipuoskari</h1>
+            <h1 className="title centered">Nettipuoskari</h1>
             <p className="size-13 centered whiteish"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
-            <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
+            <h3 className="heading-2 centered"> How are Finns talking about drugs? </h3>
 
 
             <div className="body-text-container">
@@ -101,7 +101,7 @@ export default class Landing extends Component {
                 </div>
               </div>
 
-                <p className="body-text">
+                <p className="size-16">
                     Traditional medical research is expensive and focused on predetermined research questions. On the other hand, there is a huge amount of freely accessible Suomi24 online discussion data where people candidly describe their experiences. The topics which appear in these discussions are those that people truly care about. We used machine learning to organize and present this data in a way that would be useful to researchers.
                     <br />
                     <a className="whole-story" href="#"> Read the full story </a>                    
