@@ -21,8 +21,8 @@ export default class Search extends Component {
       loading: true,
       drugsSliderValue: this.getSliderVal("drugsSliderValue"),
       symptomsSliderValue: this.getSliderVal("symptomsSliderValue"),
-      drugsSliderVisible: this.getSliderVal("drugsSliderValue"),
-      symptomsSliderVisible: this.getSliderVal("symptomsSliderValue"),
+      drugsSliderVisible: localStorage.getItem("drugsSliderValue") !== null,
+      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue") !== null,
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
