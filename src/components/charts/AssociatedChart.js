@@ -2,6 +2,8 @@ import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
 import _ from 'lodash';
+import WarningText from "../WarningText";
+import '../../css/Associated.css';
 
 class AssociatedChart extends React.Component {
   constructor(props) {
@@ -55,7 +57,7 @@ class AssociatedChart extends React.Component {
         .attr("y2", this.height - this.margin.bottom - this.margin.top)
         .attr("stroke", "#fff")
         .attr("stroke-width", 1)
-        .attr("opacity", 0.5)
+        .attr("opacity", 0.5);
 
       this.svg.append("text")
         .attr("class", "xAxesLabels")
@@ -84,18 +86,20 @@ class AssociatedChart extends React.Component {
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
-      .on("click", this.props.onClick )
+      .on("click", this.props.onClickBubble )
       .on("mouseover", (d, index, all) => {
         d3.select(all[index])
           .transition()
           .duration(200)
           .attr('fill-opacity', 1)                
-          .attr('r', this.radius + 5)
+          .attr('r', this.radius + 5);
 
         this.div.transition()
           .duration(200)
           .style("opacity", 1);
-        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>")
+        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>" +
+          "Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>" +
+          "<br/><b>Click to see posts</b>")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
@@ -121,7 +125,7 @@ class AssociatedChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "labels")
+      .attr("class", "size-13")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 4)
       .attr("opacity",0)
@@ -140,7 +144,7 @@ class AssociatedChart extends React.Component {
           .style('fill', 'white')
       })
       .style("cursor", "pointer")
-      .on("click", this.props.onClick )
+      .on("click", this.props.onClickLabel )
       .text((d) => d.MedicineName)
       .transition()
       .duration(500)
@@ -158,7 +162,7 @@ class AssociatedChart extends React.Component {
       .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8" ) )
       .attr("stroke-width", 3)
       .style("cursor", "pointer")
-      .on("click", this.props.onClick )
+      .on("click", this.props.onClickBubble )
       .transition()
       .duration(500)
       .attr("x2", (d, i) => this.xScale(d["value"]) - 7);
@@ -173,7 +177,7 @@ class AssociatedChart extends React.Component {
       data
     }, () => {
 
-      this.width = document.getElementById(this.props.resource + "-chart").clientWidth //+ this.margin.left;
+      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;//+ this.margin.left;
       this.height = 500;
 
       d3.select("#"+this.chartContainerId).html('');
@@ -209,13 +213,34 @@ class AssociatedChart extends React.Component {
   }
 
   render() {
+    let size = 0, key;
+    for (key in this.props.data) {
+      if (this.props.data[key].count >= this.props.minCount) {
+        size += 1;
+      }
+    }
+    if (size === 0) {
+      return (
+        <div className="no-results-found-container">
+          <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
+          <p className="no-results-found centered size-16 white monospaced">
+            NO RESULTS FOUND
+          </p>
+          <p className="centered size-14 white monospaced">
+            Try adjusting the sample size filter
+          </p>
+        </div>
+      )
+    }
     return (
       <div className="associated-chart">
         <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
-        <p className="body-text is-centered"> Relevance </p>
+        <p className="size-16 centered whiteish"> Relevance </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
+        <div className="size-13 centered whiteish top-margin">Click the bubbles to see the posts.</div>
+        <WarningText />
       </div>
     )
   }

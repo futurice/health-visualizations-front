@@ -18,7 +18,7 @@ export default class Landing extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {}
+    this.state = {};
     this.chartOnClick = this.chartOnClick.bind(this);
   }
 
@@ -55,46 +55,53 @@ export default class Landing extends Component {
         <div>
           <div className="content">
             <img src={logo} className="logo" alt="logo" />
-            <h1 className="title is-centered">Nettipuoskari</h1>
-            <p className="really-small-text is-centered"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
-            <h3 className="heading-2 is-centered"> How are Finns talking about drugs? </h3>
+            <h1 className="title centered">Nettipuoskari</h1>
+            <p className="size-13 centered whiteish"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
+            <h3 className="heading-2 centered"> How are Finns talking about drugs? </h3>
 
 
             <div className="body-text-container">
               <div className="numbers-container">
                 <div className="numbers-duo">
+                  <div className="numbers-duo-text">
+                    <div>
+                      <p className="numbers-duo-text-large">19M</p>
+                      <p className="numbers-duo-text-small">posts</p>
+                    </div>
+                  </div>
                   <div className="numbers-duo-icon">
                     <img src={postsIcon} className="posts-icon" alt="posts-icon" />
                   </div>
-                  <div className="numbers-duo-text">
-                    <div className="numbers-duo-text-large">19M</div>
-                    <div className="numbers-duo-text-small">posts</div>
-                  </div>
-
                 </div>
                 <div className="numbers-duo">
                   <div className="numbers-duo-text">
-                    <div className="numbers-duo-text-large">200M</div>
-                    <div className="numbers-duo-text-small">words</div>
+                    <div>
+                      <p className="numbers-duo-text-large">200M</p>
+                      <p className="numbers-duo-text-small">words</p>
+                    </div>
                   </div>
-                  <div className="numbers-duo-icon">
+                  <div className="numbers-duo-icon icon-centered">
                     <img src={quotesIcon} className="quotes-icon" alt="quotes-icon" />
                   </div>
                 </div>
                 <div className="numbers-duo">
                   <div className="numbers-duo-text">
-                    <div className="numbers-duo-text-large">16</div>
-                    <div className="numbers-duo-text-small">years</div>
+                    <div>
+                      <p className="numbers-duo-text-large">16</p>
+                      <p className="numbers-duo-text-small">years</p>
+                    </div>
                   </div>
-                  <div className="numbers-duo-icon">
+                  <div className="numbers-duo-icon calendar-container">                  
                     <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
+                    {/*<p className="icon-text">
+                    01.2001<br/>
+                    12.2016
+                    </p>*/}
                   </div>
                 </div>
-
-
               </div>
 
-                <p className="body-text">
+                <p className="size-16">
                     Traditional medical research is expensive and focused on predetermined research questions. On the other hand, there is a huge amount of freely accessible Suomi24 online discussion data where people candidly describe their experiences. The topics which appear in these discussions are those that people truly care about. We used machine learning to organize and present this data in a way that would be useful to researchers.
                     <br />
                     <a className="whole-story" href="#"> Read the full story </a>                    
@@ -126,19 +133,15 @@ export default class Landing extends Component {
             </div>
 
             <div className="more-information">
-              <h3 className="heading-3"> For more information </h3>
-                <p className="small-text"> If you have any questions or feedback, feel free to contact us with the button below  </p>
+              <h3 className="heading-1-white"> For more information </h3>
+                <p className="size-18 whiteish"> If you have any questions or feedback, feel free to contact us with the button below  </p>
                 <FeedbackButton />
-                <p className="really-small-text">
+                <p className="size-13 whiteish">
                   This site was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
                 </p>
             </div>
 
             <section className="chilicorn hero">
-              <div className="chilicorn-container">
-                <h1 className="fund-title"> Chilicorn Fund </h1>
-                <h2>Pro bono projects for a slightly better world, by <a href="https://futurice.com">Futurice</a> </h2>
-              </div>
               <img alt="A unicorn" className="chilicorn-static" src={unicorn} />
             </section>
         </div>

@@ -10,6 +10,7 @@ import AssociatedChart from './charts/AssociatedChart';
 import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
 import queryString from 'query-string';
+import postsSmallIcon from '../css/posts-small.svg';
 
 export default class Search extends Component {
 
@@ -18,33 +19,57 @@ export default class Search extends Component {
 
     this.state = {
       loading: true,
-      drugsSliderValue: 30,
-      symptomsSliderValue: 30
+      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
+      symptomsSliderValue: this.getSliderVal("symptomsSliderValue"),
+      drugsSliderVisible: localStorage.getItem("drugsSliderValue") !== null,
+      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue") !== null,
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
     this.drugsSliderOnChange = this.drugsSliderOnChange.bind(this);
     this.symptomsSliderOnChange = this.symptomsSliderOnChange.bind(this);
 
-    this.associatedOnClick = this.associatedOnClick.bind(this);
+    this.onClickLabel = this.onClickLabel.bind(this);
+    this.onClickBubble = this.onClickBubble.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
+    this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
+    this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
+    this.getSliderVal = this.getSliderVal.bind(this);
+  }
+
+  getSliderVal(key) {
+    let raw = localStorage.getItem(key);
+    if (!raw) {
+      return 30;
+    }
+    return parseInt(raw);
+  }
+
+  setDrugsSliderVisible(e) {
+    this.setState({drugsSliderVisible: true});
+  }
+
+  setSymptomsSliderVisible(e) {
+    this.setState({symptomsSliderVisible: true});
   }
 
   drugsSliderOnChange(e) {
     this.setState({
       drugsSliderValue: e
     });
+    localStorage.setItem("drugsSliderValue", e);
   }
 
   symptomsSliderOnChange(e) {
     this.setState({
       symptomsSliderValue: e
     });
+    localStorage.setItem("symptomsSliderValue", e);
   }
 
-  associatedOnClick(e) {
+  onClickBubble(e) {
     let keyword2 = e.MedicineName;
     
     this.setState({
@@ -52,6 +77,11 @@ export default class Search extends Component {
     }, () => {
       this.props.history.replace(`/search/${this.getKeyword()}?quotes_with=${keyword2}&page=1`);
     });
+  }
+
+  onClickLabel(e) {
+    let keyword = e.MedicineName;
+    this.props.history.push(`/search/${keyword}`);
   }
 
   dosagesOnClick(e) {
@@ -84,6 +114,10 @@ export default class Search extends Component {
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
+    this.setState({
+      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
+      symptomSliderValue: this.getSliderVal("symptomsSliderValue")
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -140,10 +174,21 @@ export default class Search extends Component {
           match={this.props.match}
         />
         <div className="search-term-info">
-          <p className="result"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
-          <h3 className="keyword heading-3"> {this.getKeyword()} </h3>
-          <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="list-of-posts body-text is-tight">{this.state.data.post_count} posts</a><br/>
-          <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="list-of-bucket body-text"> Words interpreted as {this.getKeyword()} </a>
+          <p className="size-18"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
+          <h3 className="no-margin size-45"> {this.getKeyword()} </h3>
+
+          <a className="post-link-container">
+            <div className="post-link-icon">
+              <img src={postsSmallIcon} className="posts-small-icon" alt="posts-icon" />
+            </div>
+            <div className="post-link-text">
+              <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="text-link size-16">{this.state.data.post_count} posts</a>
+            </div>
+          </a>
+          <div className="basket-link-container">
+            <p>
+              <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="text-link size-14"> Words interpreted as {this.getKeyword()} </a></p>
+          </div>
         </div>
 
         {/* Drugs association result */}
@@ -151,8 +196,19 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely other drugs are to appear in a post, given that the search term appears in that post. This measure takes into account how often a drug appears overall in the data -- common drugs are not favored over less common drugs. </p>}
-              includeSlider={true}
+              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
+                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
+                <br/>
+                <br/>
+                {this.state.drugsSliderVisible ?
+                  "Move slider to change the minimum sample size" :
+                  <a onClick={this.setDrugsSliderVisible} className="text-link size-14">Sample size filtering</a>
+                }
+
+              </p>}
+              value={this.state.drugsSliderValue}
+              includeSlider={this.state.drugsSliderVisible}
               sliderOnChange={this.drugsSliderOnChange}
             />
           </div>
@@ -163,9 +219,9 @@ export default class Search extends Component {
               minCount={this.state.drugsSliderValue}
               data={this.state.data.associated_drugs}
               resource="drugs"
-              onClick={this.associatedOnClick}
+              onClickLabel={this.onClickLabel}
+              onClickBubble={this.onClickBubble}
             />
-            <WarningText />
           </div>
         </div>
 
@@ -176,12 +232,25 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="body-text">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>. In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post. This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.</p>}
-              includeSlider={true}
+              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
+                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
+                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
+                <br/>
+                <br/>
+                {this.state.symptomsSliderVisible ?
+                  "Move slider to change the minimum sample size" :
+                  <a onClick={this.setSymptomsSliderVisible} className="text-link size-14">Sample size filtering</a>
+                }
+
+                </p>}
+              value={this.state.symptomsSliderValue}
+              includeSlider={this.state.symptomsSliderVisible}
               sliderOnChange={this.symptomsSliderOnChange}
             />
 
             <br />
+
+
 
           </div>
           <div id="symptoms-chart" className="chart">
@@ -190,9 +259,9 @@ export default class Search extends Component {
               minCount={this.state.symptomsSliderValue}
               data={this.state.data.associated_symptoms}
               resource="symptoms"
-              onClick={this.associatedOnClick}
+              onClickLabel={this.onClickLabel}
+              onClickBubble={this.onClickBubble}
             />
-            <WarningText />
           </div>
         </div>
 
@@ -206,7 +275,7 @@ export default class Search extends Component {
           onClick={this.dosagesOnClick}
         />
 
-        <div className="footer">
+        <div className="footer size-14 centered">
           <p>_Nettipuoskari is a data science project by <a href="https://spiceprogram.org/chilicorn-fund/"> Futurice’s Chilicorn Fund</a></p>
 
           <p>In partnership with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes </a></p>

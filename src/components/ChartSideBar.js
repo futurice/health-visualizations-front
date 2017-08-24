@@ -12,12 +12,21 @@ export default class ChartSideBar extends Component {
         
         {this.props.includeSlider &&
           <div className="slider-container">
+
             <PostCountSlider
+              value={this.props.value}
+              className="slider-slider"
               onChange={this.props.sliderOnChange}
             />
-            <p className="move-slider really-small-text "> Move slider to change the minimum sample size </p>
+            <div className="slider-text-top-left size-14 whiteish">
+              More results
+            </div>
+            <div className="slider-text-top-right size-14 whiteish">
+              More confidence
+            </div>
           </div>
             }
+        {this.props.includeSlider}
       </div>
     );
   }
