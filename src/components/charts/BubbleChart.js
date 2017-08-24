@@ -25,6 +25,14 @@ class BubbleChart extends React.Component {
   doPlot() {
     let data = this.props.data;
 
+    let size = 0, key;
+    for (key in this.props.data) {
+      size += 1
+    }
+    if (size === 0) {
+      return;
+    }
+
     this.setState({
       data
     }, () => {
@@ -136,9 +144,6 @@ class BubbleChart extends React.Component {
   }
 
   render() {
-
-    console.log(this.props.data)
-
     let size = 0, key;
     for (key in this.props.data) {
       size += 1
