@@ -94,8 +94,9 @@ body {
 }
 
 .most-common-container {
-    display: flex;
+  display: flex;
   margin: 2%;
+  margin-top: 5%;
   max-width: 960px;
 }
 

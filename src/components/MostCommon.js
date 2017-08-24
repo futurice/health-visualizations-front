@@ -11,8 +11,8 @@ export default class MostCommon extends React.Component {
       sliceVisibilityThreshold: 1/50
     };
 
-    let drugLabels = ["Drug", "Count"]
-    let symptomLabels = ["Symptom", "Count"]
+    let drugLabels = ["Drug", "Count"];
+    let symptomLabels = ["Symptom", "Count"];
     let drugData = [drugLabels, ...this.props.drugData].slice(0, 20);
     let symptomData = [symptomLabels, ...this.props.symptomData].slice(0, 20);
 
