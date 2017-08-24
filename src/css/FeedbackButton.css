@@ -9,7 +9,7 @@
   color: white;
   text-decoration: none;
   cursor: pointer;
-  height: 40px;
+  min-height: 40px;
   font-size: 0.9rem;
   width: 150px;
   float: right;
