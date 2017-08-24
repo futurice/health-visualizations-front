@@ -11,6 +11,14 @@
   margin: 0;
 }
 
+.top-margin {
+  margin-top: 25px;
+}
+
+.monospaced {
+  font-family: Futurice-monospaced;
+}
+
 /* All sizes are scaled proportionately according to design specs.
    For example, if design spec says "45px", go with size-45. */
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3'
 import '../../css/BubbleChart.css';
+import WarningText from "../WarningText";
 
 class BubbleChart extends React.Component {
   constructor(props) {
@@ -135,6 +136,24 @@ class BubbleChart extends React.Component {
   }
 
   render() {
+
+    console.log(this.props.data)
+
+    let size = 0, key;
+    for (key in this.props.data) {
+      size += 1
+    }
+    if (size === 0) {
+      return (
+        <div className="no-results-found-container">
+          <h4 className="heading-4"> Dosages associated with { this.props.keyword } </h4>
+          <p className="no-results-found centered size-16 white monospaced">
+            NO RESULTS FOUND
+          </p>
+        </div>
+      )
+    }
+
     return (
       <div>
         <h4 className="heading-4"> Dosages associated with { this.props.keyword } </h4>
@@ -142,7 +161,9 @@ class BubbleChart extends React.Component {
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
+        <WarningText />
       </div>
+
     )
   }
 }

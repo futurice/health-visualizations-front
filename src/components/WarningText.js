@@ -7,7 +7,7 @@ export default class WarningText extends Component {
 
   render() {
     return (
-      <div className="minor-margin warning-container">
+      <div className="minor-margin warning-container centered">
         <img src={warning} className="warning" alt="warning" />
         <span className="warning-text size-13 whiteish">This is not medical advice, the data only reflects what people talk about.</span>
       </div>

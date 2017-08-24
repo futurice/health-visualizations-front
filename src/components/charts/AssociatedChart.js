@@ -2,6 +2,8 @@ import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
 import _ from 'lodash';
+import WarningText from "../WarningText";
+import '../../css/Associated.css';
 
 class AssociatedChart extends React.Component {
   constructor(props) {
@@ -211,6 +213,25 @@ class AssociatedChart extends React.Component {
   }
 
   render() {
+    let size = 0, key;
+    for (key in this.props.data) {
+      if (this.props.data[key].count >= this.props.minCount) {
+        size += 1;
+      }
+    }
+    if (size === 0) {
+      return (
+        <div className="no-results-found-container">
+          <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
+          <p className="no-results-found centered size-16 white monospaced">
+            NO RESULTS FOUND
+          </p>
+          <p className="centered size-14 white monospaced">
+            Try adjusting the sample size filter
+          </p>
+        </div>
+      )
+    }
     return (
       <div className="associated-chart">
         <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
@@ -218,6 +239,8 @@ class AssociatedChart extends React.Component {
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
+        <div className="size-13 centered whiteish top-margin">Click the bubbles to see the posts.</div>
+        <WarningText />
       </div>
     )
   }

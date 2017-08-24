@@ -222,8 +222,6 @@ export default class Search extends Component {
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
             />
-            <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
-            <WarningText />
           </div>
         </div>
 
@@ -264,8 +262,6 @@ export default class Search extends Component {
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
             />
-            <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
-            <WarningText />
           </div>
         </div>
 
