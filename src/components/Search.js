@@ -11,6 +11,7 @@ import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
 import queryString from 'query-string';
 import postsSmallIcon from '../css/posts-small.svg';
+import _ from 'lodash';
 
 export default class Search extends Component {
 
@@ -36,6 +37,8 @@ export default class Search extends Component {
     this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
     this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
     this.getSliderVal = this.getSliderVal.bind(this);
+    this.onResize = this.onResize.bind(this);
+    this.debouncedUpdateDimensions = this.debouncedUpdateDimensions.bind(this);
   }
 
   getSliderVal(key) {
@@ -108,6 +111,8 @@ export default class Search extends Component {
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
+    window.addEventListener("resize", this.debouncedUpdateDimensions)
+
     this.setState({
       drugsSliderValue: this.getSliderVal("drugsSliderValue"),
       symptomSliderValue: this.getSliderVal("symptomsSliderValue")
@@ -137,6 +142,12 @@ export default class Search extends Component {
           }
         })
     });
+  }
+
+  debouncedUpdateDimensions = _.debounce(this.onResize, 300);
+
+  onResize() {
+    this.forceUpdate();
   }
 
   render() {
