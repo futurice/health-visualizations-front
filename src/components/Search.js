@@ -22,15 +22,16 @@ export default class Search extends Component {
       loading: true,
       drugsSliderValue: this.getSliderVal("drugsSliderValue"),
       symptomsSliderValue: this.getSliderVal("symptomsSliderValue"),
-      drugsSliderVisible: this.getSliderVal("drugsSliderValue"),
-      symptomsSliderVisible: this.getSliderVal("symptomsSliderValue"),
+      drugsSliderVisible: localStorage.getItem("drugsSliderValue") !== null,
+      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue") !== null,
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
     this.drugsSliderOnChange = this.drugsSliderOnChange.bind(this);
     this.symptomsSliderOnChange = this.symptomsSliderOnChange.bind(this);
 
-    this.associatedOnClick = this.associatedOnClick.bind(this);
+    this.onClickLabel = this.onClickLabel.bind(this);
+    this.onClickBubble = this.onClickBubble.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
@@ -71,7 +72,7 @@ export default class Search extends Component {
     localStorage.setItem("symptomsSliderValue", e);
   }
 
-  associatedOnClick(e) {
+  onClickBubble(e) {
     let keyword2 = e.MedicineName;
     
     this.setState({
@@ -79,6 +80,11 @@ export default class Search extends Component {
     }, () => {
       this.props.history.replace(`/search/${this.getKeyword()}?quotes_with=${keyword2}&page=1`);
     });
+  }
+
+  onClickLabel(e) {
+    let keyword = e.MedicineName;
+    this.props.history.push(`/search/${keyword}`);
   }
 
   dosagesOnClick(e) {
@@ -224,7 +230,8 @@ export default class Search extends Component {
               minCount={this.state.drugsSliderValue}
               data={this.state.data.associated_drugs}
               resource="drugs"
-              onClick={this.associatedOnClick}
+              onClickLabel={this.onClickLabel}
+              onClickBubble={this.onClickBubble}
             />
             <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
             <WarningText />
@@ -265,7 +272,8 @@ export default class Search extends Component {
               minCount={this.state.symptomsSliderValue}
               data={this.state.data.associated_symptoms}
               resource="symptoms"
-              onClick={this.associatedOnClick}
+              onClickLabel={this.onClickLabel}
+              onClickBubble={this.onClickBubble}
             />
             <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
             <WarningText />
