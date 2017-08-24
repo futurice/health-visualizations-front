@@ -7,6 +7,9 @@ import WarningText from './WarningText';
 export default class DosageChart extends Component {
 
   render() {
+    if (!this.props.isDrug) {
+      return <div> </div>;
+    }
     return (
       <div className="association-result">
         <div className="association-result-left">
