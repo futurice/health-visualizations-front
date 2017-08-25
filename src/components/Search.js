@@ -15,6 +15,9 @@ import _ from 'lodash';
 
 export default class Search extends Component {
 
+  drugChartContainer = null;
+  symptomChartContainer = null;
+  
   constructor(props) {
     super(props);
 
@@ -38,8 +41,6 @@ export default class Search extends Component {
     this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
     this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
     this.getSliderVal = this.getSliderVal.bind(this);
-    this.onResize = this.onResize.bind(this);
-    this.debouncedUpdateDimensions = this.debouncedUpdateDimensions.bind(this);
   }
 
   getSliderVal(key) {
@@ -150,12 +151,6 @@ export default class Search extends Component {
     });
   }
 
-  debouncedUpdateDimensions = _.debounce(this.onResize, 300);
-
-  onResize() {
-    this.forceUpdate();
-  }
-
   render() {
     if (this.state.loading) {
       return <Spinner fadeIn="none" name="pulse" color='white' />;
@@ -224,7 +219,7 @@ export default class Search extends Component {
             />
           </div>
 
-          <div id="drugs-chart" className="chart">
+          <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.state.drugsSliderValue}
@@ -232,6 +227,7 @@ export default class Search extends Component {
               resource="drugs"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
+              //width={this.drugChartContainer ? this.drugChartContainer.clientWidth : 500}
             />
             <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
             <WarningText />
@@ -263,10 +259,8 @@ export default class Search extends Component {
 
             <br />
 
-
-
           </div>
-          <div id="symptoms-chart" className="chart">
+          <div ref={(e) => this.symptomChart = e} id="symptoms-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.state.symptomsSliderValue}
@@ -274,6 +268,7 @@ export default class Search extends Component {
               resource="symptoms"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
+              //width={this.symptomChartContainer ? this.symptomChartContainer.clientWidth : 500}
             />
             <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
             <WarningText />
