@@ -11,9 +11,13 @@ import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
 import queryString from 'query-string';
 import postsSmallIcon from '../css/posts-small.svg';
+import _ from 'lodash';
 
 export default class Search extends Component {
 
+  drugChartContainer = null;
+  symptomChartContainer = null;
+  
   constructor(props) {
     super(props);
 
@@ -114,6 +118,8 @@ export default class Search extends Component {
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
+    window.addEventListener("resize", this.debouncedUpdateDimensions)
+
     this.setState({
       drugsSliderValue: this.getSliderVal("drugsSliderValue"),
       symptomSliderValue: this.getSliderVal("symptomsSliderValue")
@@ -213,7 +219,7 @@ export default class Search extends Component {
             />
           </div>
 
-          <div id="drugs-chart" className="chart">
+          <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.state.drugsSliderValue}
@@ -221,6 +227,7 @@ export default class Search extends Component {
               resource="drugs"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
+              //width={this.drugChartContainer ? this.drugChartContainer.clientWidth : 500}
             />
           </div>
         </div>
@@ -250,10 +257,8 @@ export default class Search extends Component {
 
             <br />
 
-
-
           </div>
-          <div id="symptoms-chart" className="chart">
+          <div ref={(e) => this.symptomChart = e} id="symptoms-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.state.symptomsSliderValue}
@@ -261,6 +266,7 @@ export default class Search extends Component {
               resource="symptoms"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
+              //width={this.symptomChartContainer ? this.symptomChartContainer.clientWidth : 500}
             />
           </div>
         </div>

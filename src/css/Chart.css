@@ -11,6 +11,7 @@ div.tooltip {
 
 .associated-chart {
     margin-bottom: 5%;
+    min-width: 240px;
 }
 
 .no-results-found-container {

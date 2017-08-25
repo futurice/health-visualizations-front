@@ -398,6 +398,7 @@ a:hover:not(.feedback-button) {
 
 .calendar-icon {
   display: flex;
+  margin: 0 auto;
 }
 
 .numbers-duo-calendar-container {

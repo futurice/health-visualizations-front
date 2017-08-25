@@ -17,7 +17,7 @@ class AssociatedChart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.purpley = "#9f6ce3";
-    this.margin = { top: 20, right: 70, bottom: 10, left: 150 };
+    this.margin = { top: 20, right: 0, bottom: 10, left: 150 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-" + this.props.resource;
@@ -125,7 +125,7 @@ class AssociatedChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "size-13")
+      .attr("class", "size-13 labels")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 4)
       .attr("opacity",0)
@@ -179,6 +179,9 @@ class AssociatedChart extends React.Component {
 
       this.width = document.getElementById(this.props.resource + "-chart").clientWidth;//+ this.margin.left;
       this.height = 500;
+      if (this.width <= 480 ) {
+        this.height = 400;
+      }
 
       d3.select("#"+this.chartContainerId).html('');
 
@@ -195,8 +198,10 @@ class AssociatedChart extends React.Component {
         .attr("display", "block")
         .style("margin", "0 auto")
         .attr('class', 'svg-map');
-
-      this.svg = mapSVG.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+      let marginRight = this.margin.right, marginLeft = this.margin.left 
+      
+      if (this.width <= 480) marginLeft = 100
+      this.svg = mapSVG.append("g").attr("transform", "translate(" + marginLeft + "," + this.margin.top + ")");
       this.drawDotPlot(data);
     });
   }

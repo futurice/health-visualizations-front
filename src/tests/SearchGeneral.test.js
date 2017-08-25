@@ -7,7 +7,7 @@ fixture`Search - General`
 /* General result view */
 
 test('Can show posts of keyword', async t => {
-  const quotesButton = Selector('.list-of-posts')();
+  const quotesButton = Selector('.post-link-container').find('a')();
   const header = Selector('h1').nth(0)();
 
   await t.click(await quotesButton);
@@ -15,7 +15,7 @@ test('Can show posts of keyword', async t => {
 });
 
 test('Can show basket of keyword', async t => {
-  const basketButton = Selector('.list-of-bucket')();
+  const basketButton = Selector('.basket-link-container').find('a')();
   const header = Selector('h1').nth(0)();
 
   await t.click(await basketButton);
