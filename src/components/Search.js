@@ -183,14 +183,14 @@ export default class Search extends Component {
           <p className="size-18"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
           <h3 className="no-margin size-45"> {this.getKeyword()} </h3>
 
-          <div className="post-link-container">
+          <a className="post-link-container">
             <div className="post-link-icon">
               <img src={postsSmallIcon} className="posts-small-icon" alt="posts-icon" />
             </div>
             <div className="post-link-text">
               <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="text-link size-16">{this.state.data.post_count} posts</a>
             </div>
-          </div>
+          </a>
           <div className="basket-link-container">
             <p>
               <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="text-link size-14"> Words interpreted as {this.getKeyword()} </a></p>
@@ -209,7 +209,7 @@ export default class Search extends Component {
                 <br/>
                 {this.state.drugsSliderVisible ?
                   "Move slider to change the minimum sample size" :
-                  <a onClick={this.setDrugsSliderVisible} className="text-link size-16">Sample size filtering</a>
+                  <a onClick={this.setDrugsSliderVisible} className="text-link size-14">Sample size filtering</a>
                 }
 
               </p>}
@@ -229,8 +229,6 @@ export default class Search extends Component {
               onClickBubble={this.onClickBubble}
               //width={this.drugChartContainer ? this.drugChartContainer.clientWidth : 500}
             />
-            <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
-            <WarningText />
           </div>
         </div>
 
@@ -248,7 +246,7 @@ export default class Search extends Component {
                 <br/>
                 {this.state.symptomsSliderVisible ?
                   "Move slider to change the minimum sample size" :
-                  <a onClick={this.setSymptomsSliderVisible} className="text-link size-16">Sample size filtering</a>
+                  <a onClick={this.setSymptomsSliderVisible} className="text-link size-14">Sample size filtering</a>
                 }
 
                 </p>}
@@ -270,8 +268,6 @@ export default class Search extends Component {
               onClickBubble={this.onClickBubble}
               //width={this.symptomChartContainer ? this.symptomChartContainer.clientWidth : 500}
             />
-            <span className="size-13 centered whiteish">Click the bubbles to see the posts.</span>
-            <WarningText />
           </div>
         </div>
 

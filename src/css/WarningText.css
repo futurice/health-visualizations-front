@@ -11,7 +11,8 @@
 }
 
 .warning-container p {
-  text-align: left;
+  text-align: center;
+  margin-left: 500px;
 }
 
 .warning-text {

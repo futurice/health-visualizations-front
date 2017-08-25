@@ -1,6 +1,6 @@
 div.tooltip {
     position: absolute;
-    height: 28px;
+    height: 42px;
     padding: 5px 10px;
     font-family: "Futurice";
     font-size: 12px;
@@ -12,6 +12,10 @@ div.tooltip {
 .associated-chart {
     margin-bottom: 5%;
     min-width: 240px;
+}
+
+.no-results-found-container {
+    margin-bottom: 5%;
 }
 
 .associated-chart p {
