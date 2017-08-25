@@ -125,7 +125,7 @@ class AssociatedChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "size-13")
+      .attr("class", "size-13 labels")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 4)
       .attr("opacity",0)
