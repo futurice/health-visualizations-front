@@ -4,3 +4,25 @@
   }
 }
 
+.slider-container {
+  position: relative;
+  height: 90px;
+  color: #d8d8d8;
+}
+
+.post-count-sliderx {
+  position: absolute;
+  margin-bottom: 20%;
+}
+
+.slider-text-top-left {
+  position: absolute;
+  top: 22%;
+  left: 0;
+}
+
+.slider-text-top-right {
+  position: absolute;
+  top: 22%;
+  right: 0;
+}

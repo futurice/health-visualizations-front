@@ -14,7 +14,7 @@ class MostCommonChart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.purpley = "#9f6ce3";
-    this.margin = { top: 20, right: 50, bottom: 10, left: 120 };
+    this.margin = { top: 20, right: 50, bottom: 10, left: 100 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "most-common-container-" + this.props.resource;
@@ -73,7 +73,7 @@ class MostCommonChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "labels")
+      .attr("class", "size-14 labels")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 11)
       .attr("opacity", 0)
@@ -151,7 +151,7 @@ class MostCommonChart extends React.Component {
       data
     }, () => {
 
-      this.width = document.getElementById(this.props.resource + "-chart").clientWidth //+ this.margin.left;
+      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;//+ this.margin.left;
       this.height = 500;
 
       d3.select("#" + this.chartContainerId).html('');
@@ -187,7 +187,7 @@ class MostCommonChart extends React.Component {
     return (
       <div>
         <h4 className="heading-4"> Most common {this.props.resource} </h4>
-        <p className="body-text is-centered"> Count </p>
+        <p className="size-14 centered"> Count </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

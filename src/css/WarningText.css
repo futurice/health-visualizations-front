@@ -11,5 +11,11 @@
 }
 
 .warning-container p {
-  text-align: left;
+  text-align: center;
+  margin-left: 500px;
+}
+
+.warning-text {
+  margin-top: 0;
+  line-height: 1.42;
 }
