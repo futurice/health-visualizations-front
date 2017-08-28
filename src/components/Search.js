@@ -23,7 +23,7 @@ export default class Search extends Component {
     super(props);
 
     this.state = {
-      loading: true,
+      loading: true
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
@@ -208,22 +208,23 @@ export default class Search extends Component {
           </div>
           <div id="drugs-chart" className="chart">
 
-          <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
-            <AssociatedChart
-              keyword={this.getKeyword()}
-              minCount={this.getSliderVal("drugsSlider")}
-              data={this.state.data.associated_drugs}
-              resource="drugs"
-              onClickLabel={this.onClickLabel}
-              onClickBubble={this.onClickBubble}
-              width={this.state.drugPlotWidth}
-            />
+            <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
+              <AssociatedChart
+                keyword={this.getKeyword()}
+                minCount={this.getSliderVal("drugsSlider")}
+                data={this.state.data.associated_drugs}
+                resource="drugs"
+                onClickLabel={this.onClickLabel}
+                onClickBubble={this.onClickBubble}
+                width={this.state.drugPlotWidth}
+              />
+            </div>
           </div>
         </div>
 
         <br />
 
-        {/* Symptoms association result */}
+          {/* Symptoms association result */}
         <div className="association-result">
           <div className="association-result-left">
 
@@ -233,7 +234,7 @@ export default class Search extends Component {
                 It <i>also</i> takes into account how often each result appears <i>in general</i>.
                 Relevance is a measure of how much the presence of the search term increases
                 the prevalence of different results. To learn more, please see the FAQ.
-                </p>}
+              </p>}
               sliderType="symptomsSlider"
               getSliderVal={this.getSliderVal}
               onChangeSlider={this.onChangeSlider}
@@ -267,6 +268,7 @@ export default class Search extends Component {
           ref={(e) => this.dosageChart = e}
         />
 
+
         <div className="footer size-14 centered">
           <p>_Nettipuoskari is a data science project by <a href="https://spiceprogram.org/chilicorn-fund/"> Futurice’s Chilicorn Fund</a></p>
 
@@ -277,6 +279,7 @@ export default class Search extends Component {
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUNP2r2h5VO2DnnYNpB9D3elPX7F2vfxxKyOfLEnSacPEKUw/viewform"> Contact us </a>
         </div>
       </div>
-    );
+        );
+
   }
 };
