@@ -12,6 +12,7 @@
     "rc-tooltip": "^3.4.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-ga": "^2.2.0",
     "react-highlight-words": "^0.8.1",
     "react-modal": "^2.2.4",
     "react-paginate": "^4.4.3",
