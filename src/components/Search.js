@@ -167,9 +167,11 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
-                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
-                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
+              bodyText={<p className="size-14">
+                Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
+                It <i>also</i> takes into account how often each result appears <i>in general</i>.
+                Relevance is a measure of how much the presence of the search term increases
+                the prevalence of different results. To learn more, please see the FAQ.
                 <br/>
                 <br/>
 
@@ -198,10 +200,11 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
-                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
-                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
-
+              bodyText={<p className="size-14">
+                Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
+                It <i>also</i> takes into account how often each result appears <i>in general</i>.
+                Relevance is a measure of how much the presence of the search term increases
+                the prevalence of different results. To learn more, please see the FAQ.
                 </p>}
               sliderType="symptomsSlider"
               getSliderVal={this.getSliderVal}
