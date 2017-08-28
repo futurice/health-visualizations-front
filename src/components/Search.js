@@ -11,9 +11,14 @@ import Spinner from 'react-spinkit'
 import WarningText from './WarningText';
 import queryString from 'query-string';
 import postsSmallIcon from '../css/posts-small.svg';
+import _ from 'lodash';
 
 export default class Search extends Component {
 
+  drugChartContainer = null;
+  symptomChartContainer = null;
+  dosageChart = null;
+  
   constructor(props) {
     super(props);
 
@@ -29,6 +34,9 @@ export default class Search extends Component {
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
     this.getSliderVal = this.getSliderVal.bind(this);
     this.onChangeSlider = this.onChangeSlider.bind(this);
+
+    this.onResize = this.onResize.bind(this);
+    this.debouncedUpdateDimensions = this.debouncedUpdateDimensions.bind(this);
   }
 
   getSliderVal(key) {
@@ -86,9 +94,24 @@ export default class Search extends Component {
     return this.props.match.params.keyword;
   }
 
+  debouncedUpdateDimensions = _.debounce(this.onResize, 200);  
+
+  onResize() {
+    const bubblePlotWidth = this.dosageChart.bubbleChartContainer.clientWidth;
+    const symptomPlotWidth = this.symptomChartContainer.clientWidth;
+    const drugPlotWidth = this.drugChartContainer.clientWidth;
+
+    this.setState({
+      bubblePlotWidth,
+      symptomPlotWidth,
+      drugPlotWidth
+    });
+  }
+
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
+    window.addEventListener("resize", this.debouncedUpdateDimensions);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -106,6 +129,8 @@ export default class Search extends Component {
           data: response.data,
           loading: false
         });
+
+        this.onResize();
       }).catch((error) => {
           if (error.response && error.response.status === 404) {
             this.props.history.replace("/not_found/" + this.getKeyword());
@@ -182,6 +207,8 @@ export default class Search extends Component {
             />
           </div>
           <div id="drugs-chart" className="chart">
+
+          <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.getSliderVal("drugsSlider")}
@@ -189,6 +216,7 @@ export default class Search extends Component {
               resource="drugs"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
+              width={this.state.drugPlotWidth}
             />
           </div>
         </div>
@@ -213,10 +241,8 @@ export default class Search extends Component {
 
             <br />
 
-
-
           </div>
-          <div id="symptoms-chart" className="chart">
+          <div ref={(e) => this.symptomChartContainer = e} id="symptoms-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.getSliderVal("symptomsSlider")}
@@ -224,6 +250,7 @@ export default class Search extends Component {
               resource="symptoms"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
+              width={this.state.symptomPlotWidth}
             />
           </div>
         </div>
@@ -236,6 +263,8 @@ export default class Search extends Component {
           data={this.state.data.dosages}
           keyword={this.getKeyword()}
           onClick={this.dosagesOnClick}
+          width={this.state.bubblePlotWidth}
+          ref={(e) => this.dosageChart = e}
         />
 
         <div className="footer size-14 centered">
@@ -250,4 +279,4 @@ export default class Search extends Component {
       </div>
     );
   }
-}
+};

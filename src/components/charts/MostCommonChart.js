@@ -73,7 +73,7 @@ class MostCommonChart extends React.Component {
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "size-14")
+      .attr("class", "size-14 labels")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 11)
       .attr("opacity", 0)

@@ -3,15 +3,21 @@ import '../css/DosageChart.css';
 import ChartSideBar from './ChartSideBar';
 import BubbleChart from './charts/BubbleChart';
 import WarningText from './WarningText';
+import _ from 'lodash';
 
 export default class DosageChart extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {}
+  }
 
   render() {
     if (!this.props.isDrug) {
       return <div> </div>;
     }
     return (
-      <div className="association-result">
+      <div ref={(e) => this.plotContainer = e} className="association-result">
         <div className="association-result-left">
 
           <ChartSideBar
@@ -20,11 +26,12 @@ export default class DosageChart extends Component {
           />
 
         </div>
-        <div id="bubbles-chart" className="chart">
+        <div ref={e => this.bubbleChartContainer = e} id="bubbles-chart" className="chart">
           <BubbleChart
             data={this.props.data}
             keyword={this.props.keyword}
             onClick={this.props.onClick}
+            width={this.props.width}
           />
 
         </div>

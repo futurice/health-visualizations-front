@@ -12,6 +12,8 @@ test('Can see drugs header', async t => {
 });
 
 test('Can adjust slider', async t => {
+  await t.click(await Selector('a').withText('Sample size filtering').nth(0)());
+  
   const handle = Selector('.rc-slider-handle')();
 
   /* Value is 30 at first */

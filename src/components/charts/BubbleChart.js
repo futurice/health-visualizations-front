@@ -15,6 +15,7 @@ class BubbleChart extends React.Component {
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-bubbles";
+    this.scalePlot = this.scalePlot.bind(this);
   }
 
   /* Remove all tooltip divs after switching page */
@@ -36,13 +37,26 @@ class BubbleChart extends React.Component {
     this.setState({
       data
     }, () => {
-
-      this.width = document.getElementById("bubbles-chart").clientHeight;
+      this.width = document.getElementById("bubbles-chart").clientWidth;
       this.height = document.getElementById("bubbles-chart").clientHeight;
+      /*
+      if (this.props.width) {
+        this.width = this.props.width;
+        this.height = this.props.width;
+      }
+      */
+      this.width = Math.min(this.width, 480);
+      this.height = Math.min(this.width, 480);
 
-      this.div = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
+      if (!this.initialWidth) {
+        this.initialWidth = 1.0 * this.width;
+      }
+
+      if (!this.div) {
+        this.div = d3.select("body").append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0); 
+      }
 
       this.svg = d3
         .select("#" + this.chartContainerId)
@@ -53,17 +67,29 @@ class BubbleChart extends React.Component {
         .attr("display", "block")
         .style("margin", "0 auto")
         .attr('class', 'svg-map');
-
-      //.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+      
       this.drawBubbles(this.props.data);
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.width === this.props.width) {
+      return;
+    }    
+    if (this.svg) {
+      this.scalePlot();
+    }
+  }
+
+  scalePlot() {      
+    this.svg.remove();
+    this.doPlot();
   }
 
   drawBubbles(data) {
     let dataArray = [];
 
-    let svg = this.svg;
+    let svg = this.svg.append('g').attr('class','inside-circle');
 
     for (let i = 0; i < d3.keys(data).length; i++) {
       let object = {
@@ -82,7 +108,7 @@ class BubbleChart extends React.Component {
       .padding(5);
     let nodes = d3.hierarchy(dataset)
       .sum((d) => d.count);
-
+      
     let node = svg.selectAll(".node")
       .data(bubble(nodes).children)
       .enter()
@@ -140,7 +166,7 @@ class BubbleChart extends React.Component {
   }
 
   componentWillMount() {
-    this.doPlot()
+    this.doPlot();
   }
 
   render() {

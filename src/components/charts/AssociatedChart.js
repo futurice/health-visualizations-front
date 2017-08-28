@@ -17,7 +17,7 @@ class AssociatedChart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.purpley = "#9f6ce3";
-    this.margin = { top: 20, right: 70, bottom: 10, left: 150 };
+    this.margin = { top: 20, right: 0, bottom: 10, left: 150 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "chart-container-" + this.props.resource;
@@ -59,16 +59,18 @@ class AssociatedChart extends React.Component {
         .attr("stroke-width", 1)
         .attr("opacity", 0.5);
 
-      this.svg.append("text")
-        .attr("class", "xAxesLabels")
-        .text(steps * k)
-        .attr("y", this.height - this.margin.bottom - this.margin.top)
-        .attr("x", this.xScale(steps * k) - 3)
-        .attr("text-anchor", "end")
-        .attr("font-size", 12)
-        .attr("fill", "#fff")
-        .attr("font-family", "Futurice")
-        .attr("opacity", 1)
+      if (this.width >= 330) {
+        this.svg.append("text")
+          .attr("class", "xAxesLabels")
+          .text(steps * k)
+          .attr("y", this.height - this.margin.bottom - this.margin.top)
+          .attr("x", this.xScale(steps * k) - 3)
+          .attr("text-anchor", "end")
+          .attr("font-size", 12)
+          .attr("fill", "#fff")
+          .attr("font-family", "Futurice")
+          .attr("opacity", 1)
+      }
     }
 
     let tempData = dataArray.filter((d, i) => d["count"] >= countLimit).sort((x, y) => d3.descending(x["value"], y["value"])).filter((d, i) => i < this.quant);
@@ -86,12 +88,12 @@ class AssociatedChart extends React.Component {
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
-      .on("click", this.props.onClickBubble )
+      .on("click", this.props.onClickBubble)
       .on("mouseover", (d, index, all) => {
         d3.select(all[index])
           .transition()
           .duration(200)
-          .attr('fill-opacity', 1)                
+          .attr('fill-opacity', 1)
           .attr('r', this.radius + 5);
 
         this.div.transition()
@@ -115,20 +117,22 @@ class AssociatedChart extends React.Component {
           .transition()
           .duration(200)
           .attr('r', this.radius)
-          .attr('fill-opacity', 0.6);          
+          .attr('fill-opacity', 0.6);
       })
       .transition()
       .duration(500)
       .attr("cx", (d, i) => this.xScale(d["value"]));
 
+
+
     this.svg.selectAll(".labels")
       .data(tempData)
       .enter()
       .append("text")
-      .attr("class", "size-13")
+      .attr("class", "size-13 labels")
       .attr("x", this.xScale(0) - 5)
       .attr("y", (d, i) => this.yScale(i) + 4)
-      .attr("opacity",0)
+      .attr("opacity", 0)
       .attr("text-anchor", "end")
       .attr("font-size", 12)
       .attr("fill", "#fff")
@@ -144,11 +148,12 @@ class AssociatedChart extends React.Component {
           .style('fill', 'white')
       })
       .style("cursor", "pointer")
-      .on("click", this.props.onClickLabel )
+      .on("click", this.props.onClickLabel)
       .text((d) => d.MedicineName)
       .transition()
       .duration(500)
-      .attr("opacity",1);
+      .attr("opacity", 1);
+
 
     this.svg.selectAll(".dotsLine")
       .data(tempData)
@@ -159,10 +164,10 @@ class AssociatedChart extends React.Component {
       .attr("y1", (d, i) => this.yScale(i))
       .attr("x2", this.xScale(0))
       .attr("y2", (d, i) => this.yScale(i))
-      .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8" ) )
+      .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8"))
       .attr("stroke-width", 3)
       .style("cursor", "pointer")
-      .on("click", this.props.onClickBubble )
+      .on("click", this.props.onClickBubble)
       .transition()
       .duration(500)
       .attr("x2", (d, i) => this.xScale(d["value"]) - 7);
@@ -172,43 +177,59 @@ class AssociatedChart extends React.Component {
 
   doPlot() {
     let data = this.props.data;
-    
+
     this.setState({
       data
     }, () => {
 
-      this.width = document.getElementById(this.props.resource + "-chart").clientWidth;//+ this.margin.left;
+      //this.width = document.getElementById("#"+this.chartContainerId).clientWidth;
+
+      if (this.props.width) this.width = this.props.width;
+
+
       this.height = 500;
+      if (this.width <= 480) {
+        this.height = 400;
+      }
 
-      d3.select("#"+this.chartContainerId).html('');
+      d3.select("#" + this.chartContainerId).html('');
+      if (!this.div) {
+        this.div = d3.select("body").append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+      }
 
-      this.div = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
-      
+      if (this.svg) {
+        this.svg.remove();
+      }
+
+      if (this.tooltip) {
+        this.tooltip.remove();
+      }
+
       let mapSVG = d3
-        .select("#"+this.chartContainerId)
+        .select("#" + this.chartContainerId)
         .append('svg')
-        .attr('xmlns', 'http://www.w3.org/2000/svg')
         .attr("width", this.width)
         .attr("height", this.height)
         .attr("display", "block")
         .style("margin", "0 auto")
-        .attr('class', 'svg-map');
 
-      this.svg = mapSVG.append("g").attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+      let marginRight = this.margin.right, marginLeft = this.margin.left
+
+      marginRight = (75 * this.width) / (582 * 1.0);
+      this.margin.right = marginRight;
+
+      this.svg = mapSVG.append("g").attr("transform", "translate(" + marginLeft + "," + this.margin.top + ")");
       this.drawDotPlot(data);
     });
   }
 
-  componentWillMount() {
-    this.doPlot()
+  comonentWillMount() {
+    this.doPlot();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.minCount === this.props.minCount) {
-      return false;
-    }
     this.doPlot()
   }
 

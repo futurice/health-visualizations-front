@@ -13,7 +13,9 @@ test('Can see medical advice warnings', async t => {
 });
 
 test('Can adjust slider', async t => {
-  const handle = Selector('.rc-slider-handle').nth(1)();
+  await t.click(await Selector('a').withText('Sample size filtering').nth(1)());
+  
+  const handle = Selector('.rc-slider-handle')();
   let plotFirst = Selector('#symptoms-chart').find('.labels').nth(0)();
 
   /* Value is 30 at first and plot has hammassärky on top */
