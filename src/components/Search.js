@@ -19,24 +19,16 @@ export default class Search extends Component {
 
     this.state = {
       loading: true,
-      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
-      symptomsSliderValue: this.getSliderVal("symptomsSliderValue"),
-      drugsSliderVisible: localStorage.getItem("drugsSliderValue") !== null,
-      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue") !== null,
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
-    this.drugsSliderOnChange = this.drugsSliderOnChange.bind(this);
-    this.symptomsSliderOnChange = this.symptomsSliderOnChange.bind(this);
-
     this.onClickLabel = this.onClickLabel.bind(this);
     this.onClickBubble = this.onClickBubble.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
-    this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
-    this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
     this.getSliderVal = this.getSliderVal.bind(this);
+    this.onChangeSlider = this.onChangeSlider.bind(this);
   }
 
   getSliderVal(key) {
@@ -47,26 +39,9 @@ export default class Search extends Component {
     return parseInt(raw);
   }
 
-  setDrugsSliderVisible(e) {
-    this.setState({drugsSliderVisible: true});
-  }
-
-  setSymptomsSliderVisible(e) {
-    this.setState({symptomsSliderVisible: true});
-  }
-
-  drugsSliderOnChange(e) {
-    this.setState({
-      drugsSliderValue: e
-    });
-    localStorage.setItem("drugsSliderValue", e);
-  }
-
-  symptomsSliderOnChange(e) {
-    this.setState({
-      symptomsSliderValue: e
-    });
-    localStorage.setItem("symptomsSliderValue", e);
+  onChangeSlider(sliderType, e) {
+    localStorage.setItem(sliderType, e);
+    this.setState(this.state);
   }
 
   onClickBubble(e) {
@@ -114,10 +89,6 @@ export default class Search extends Component {
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
-    this.setState({
-      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
-      symptomSliderValue: this.getSliderVal("symptomsSliderValue")
-    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -201,22 +172,17 @@ export default class Search extends Component {
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
                 <br/>
                 <br/>
-                {this.state.drugsSliderVisible ?
-                  "Move slider to change the minimum sample size" :
-                  <a onClick={this.setDrugsSliderVisible} className="text-link size-14">Sample size filtering</a>
-                }
 
               </p>}
-              value={this.state.drugsSliderValue}
-              includeSlider={this.state.drugsSliderVisible}
-              sliderOnChange={this.drugsSliderOnChange}
+              sliderType="drugsSlider"
+              getSliderVal={this.getSliderVal}
+              onChangeSlider={this.onChangeSlider}
             />
           </div>
-
           <div id="drugs-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
-              minCount={this.state.drugsSliderValue}
+              minCount={this.getSliderVal("drugsSlider")}
               data={this.state.data.associated_drugs}
               resource="drugs"
               onClickLabel={this.onClickLabel}
@@ -235,17 +201,11 @@ export default class Search extends Component {
               bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
                 In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
                 This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
-                <br/>
-                <br/>
-                {this.state.symptomsSliderVisible ?
-                  "Move slider to change the minimum sample size" :
-                  <a onClick={this.setSymptomsSliderVisible} className="text-link size-14">Sample size filtering</a>
-                }
 
                 </p>}
-              value={this.state.symptomsSliderValue}
-              includeSlider={this.state.symptomsSliderVisible}
-              sliderOnChange={this.symptomsSliderOnChange}
+              sliderType="symptomsSlider"
+              getSliderVal={this.getSliderVal}
+              onChangeSlider={this.onChangeSlider}
             />
 
             <br />
@@ -256,7 +216,7 @@ export default class Search extends Component {
           <div id="symptoms-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
-              minCount={this.state.symptomsSliderValue}
+              minCount={this.getSliderVal("symptomsSlider")}
               data={this.state.data.associated_symptoms}
               resource="symptoms"
               onClickLabel={this.onClickLabel}
