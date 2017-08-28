@@ -37,13 +37,14 @@ class BubbleChart extends React.Component {
     this.setState({
       data
     }, () => {
-      this.width = document.getElementById("bubbles-chart").clientHeight;
+      this.width = document.getElementById("bubbles-chart").clientWidth;
       this.height = document.getElementById("bubbles-chart").clientHeight;
-
+      /*
       if (this.props.width) {
         this.width = this.props.width;
         this.height = this.props.width;
       }
+      */
       this.width = Math.min(this.width, 480);
       this.height = Math.min(this.width, 480);
 
@@ -57,23 +58,15 @@ class BubbleChart extends React.Component {
           .style("opacity", 0); 
       }
 
-
-      if (this.svg) {
-        this.svg
-          .attr("width", this.width)
-          .attr("height", this.height)
-      } else {
-        this.svg = d3
-          .select("#" + this.chartContainerId)
-          .append('svg')
-          .attr('xmlns', 'http://www.w3.org/2000/svg')
-          .attr("width", this.width)
-          .attr("height", this.height)
-          .attr("display", "block")
-          .style("margin", "0 auto")
-          .attr('class', 'svg-map');
-      }
-
+      this.svg = d3
+        .select("#" + this.chartContainerId)
+        .append('svg')
+        .attr('xmlns', 'http://www.w3.org/2000/svg')
+        .attr("width", this.width)
+        .attr("height", this.height)
+        .attr("display", "block")
+        .style("margin", "0 auto")
+        .attr('class', 'svg-map');
       
       this.drawBubbles(this.props.data);
     });
@@ -84,24 +77,13 @@ class BubbleChart extends React.Component {
       return;
     }    
     if (this.svg) {
-      this.scalePlot(nextProps.width);
+      this.scalePlot();
     }
   }
 
-  scalePlot(newWidth) {
-    let scale = newWidth / (1.0 * this.initialWidth);
-    scale = Math.min(1, scale);
-    
-    d3.selectAll('.inside-circle')
-      .transition()
-      .duration(400)
-      .attr("transform", "translate(0, 0) scale(" + scale + ")");
-    
-    newWidth = Math.min(newWidth, 480);
-      
-    this.svg
-    .attr("width", newWidth)
-    .attr("height", newWidth)
+  scalePlot() {      
+    this.svg.remove();
+    this.doPlot();
   }
 
   drawBubbles(data) {

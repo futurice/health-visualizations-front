@@ -17,6 +17,7 @@ export default class Search extends Component {
 
   drugChartContainer = null;
   symptomChartContainer = null;
+  dosageChart = null;
   
   constructor(props) {
     super(props);
@@ -41,6 +42,9 @@ export default class Search extends Component {
     this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
     this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
     this.getSliderVal = this.getSliderVal.bind(this);
+
+    this.onResize = this.onResize.bind(this);
+    this.debouncedUpdateDimensions = this.debouncedUpdateDimensions.bind(this);
   }
 
   getSliderVal(key) {
@@ -115,11 +119,25 @@ export default class Search extends Component {
     return this.props.match.params.keyword;
   }
 
+  debouncedUpdateDimensions = _.debounce(this.onResize, 200);  
+
+  onResize() {
+    const bubblePlotWidth = this.dosageChart.bubbleChartContainer.clientWidth;
+    const symptomPlotWidth = this.symptomChartContainer.clientWidth;
+    const drugPlotWidth = this.drugChartContainer.clientWidth;
+
+    this.setState({
+      bubblePlotWidth,
+      symptomPlotWidth,
+      drugPlotWidth
+    });
+  }
+
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
     window.addEventListener("resize", this.debouncedUpdateDimensions)
-
+    
     this.setState({
       drugsSliderValue: this.getSliderVal("drugsSliderValue"),
       symptomSliderValue: this.getSliderVal("symptomsSliderValue")
@@ -141,6 +159,8 @@ export default class Search extends Component {
           data: response.data,
           loading: false
         });
+
+        this.onResize();
       }).catch((error) => {
           if (error.response && error.response.status === 404) {
             this.props.history.replace("/not_found/" + this.getKeyword());
@@ -227,7 +247,7 @@ export default class Search extends Component {
               resource="drugs"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
-              //width={this.drugChartContainer ? this.drugChartContainer.clientWidth : 500}
+              width={this.state.drugPlotWidth}
             />
           </div>
         </div>
@@ -258,7 +278,7 @@ export default class Search extends Component {
             <br />
 
           </div>
-          <div ref={(e) => this.symptomChart = e} id="symptoms-chart" className="chart">
+          <div ref={(e) => this.symptomChartContainer = e} id="symptoms-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
               minCount={this.state.symptomsSliderValue}
@@ -266,7 +286,7 @@ export default class Search extends Component {
               resource="symptoms"
               onClickLabel={this.onClickLabel}
               onClickBubble={this.onClickBubble}
-              //width={this.symptomChartContainer ? this.symptomChartContainer.clientWidth : 500}
+              width={this.state.symptomPlotWidth}
             />
           </div>
         </div>
@@ -279,6 +299,8 @@ export default class Search extends Component {
           data={this.state.data.dosages}
           keyword={this.getKeyword()}
           onClick={this.dosagesOnClick}
+          width={this.state.bubblePlotWidth}
+          ref={(e) => this.dosageChart = e}
         />
 
         <div className="footer size-14 centered">
