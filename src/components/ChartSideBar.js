@@ -15,7 +15,7 @@ export default class ChartSideBar extends Component {
   }
 
   setSliderVisible() {
-    this.props.onChangeSlider(this.props.sliderType, 30);
+    this.props.onChangeSlider(this.props.sliderType, 30, false);
     this.setState(this.state);
   }
 
@@ -41,7 +41,7 @@ export default class ChartSideBar extends Component {
 
     return (
       <div className="chart-side-bar">
- s
+
         { this.props.bodyText }
 
 

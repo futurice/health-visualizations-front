@@ -47,9 +47,11 @@ export default class Search extends Component {
     return parseInt(raw);
   }
 
-  onChangeSlider(sliderType, e) {
+  onChangeSlider(sliderType, e, rerender=true) {
     localStorage.setItem(sliderType, e);
-    this.setState(this.state);
+    if (rerender) {
+      this.setState(this.state);
+    }
   }
 
   onClickBubble(e) {
@@ -193,10 +195,11 @@ export default class Search extends Component {
 
             <ChartSideBar
               bodyText={<p className="size-14">
+                Relevance is a measure of how much the presence of the search term increases the prevalence of different results.
                 Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
-                It <i>also</i> takes into account how often each result appears <i>in general</i>.
-                Relevance is a measure of how much the presence of the search term increases
-                the prevalence of different results. To learn more, please see the FAQ.
+                It also takes into account how often each result appears in general.
+                To learn more, please see the FAQ.
+
                 <br/>
                 <br/>
 
@@ -230,10 +233,10 @@ export default class Search extends Component {
 
             <ChartSideBar
               bodyText={<p className="size-14">
+                Relevance is a measure of how much the presence of the search term increases the prevalence of different results.
                 Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
-                It <i>also</i> takes into account how often each result appears <i>in general</i>.
-                Relevance is a measure of how much the presence of the search term increases
-                the prevalence of different results. To learn more, please see the FAQ.
+                It also takes into account how often each result appears in general.
+                To learn more, please see the FAQ.
               </p>}
               sliderType="symptomsSlider"
               getSliderVal={this.getSliderVal}
