@@ -54,9 +54,9 @@ export default class Landing extends Component {
     return (
         <div>
           <div className="content">
-            <img src={logo} className="logo" alt="logo" />
-            <h1 className="title centered">Nettipuoskari</h1>
+            <h1 className="title centered">Lääkeikkuna</h1>
             <p className="size-13 centered whiteish"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
+            <p className="size-13 centered whiteish"> With data provided by Aller </p>
             <h3 className="heading-2 centered"> How are Finns talking about drugs? </h3>
 
 
