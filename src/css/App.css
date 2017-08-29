@@ -14,8 +14,11 @@
   font-family: 'Futurice-monospaced';
   src: local('Futurice-monospaced'), url(../fonts/FuturiceMonospaced.otf);
 }
-
-
+/*
+* {
+  color: black !important;
+}
+*/
 /* Color palette */
 
 :root {
