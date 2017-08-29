@@ -116,6 +116,10 @@ export default class Search extends Component {
     window.addEventListener("resize", this.debouncedUpdateDimensions);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.debouncedUpdateDimensions);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (this.getKeyword() !== nextProps.match.params.keyword) {
       this.findByKeyword();
