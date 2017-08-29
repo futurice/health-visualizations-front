@@ -25,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "postcss --use postcss-custom-properties --replace build/**/*.css",
     "test": "testcafe chrome src/tests",
     "eject": "react-scripts eject",
     "deploy-production": "npm run build && cd build && mv index.html 200.html && surge . --domain nettipuoskari.surge.sh",
@@ -32,6 +33,8 @@
   },
   "devDependencies": {
     "moxios": "^0.4.0",
+    "postcss-cli": "^4.1.0",
+    "postcss-custom-properties": "^6.1.0",
     "testcafe": "^0.17.1",
     "testcafe-react-selectors": "0.0.6"
   }
