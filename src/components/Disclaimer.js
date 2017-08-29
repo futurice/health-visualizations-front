@@ -29,7 +29,7 @@ export default class Disclaimer extends Component {
     }
     return (
     <div className="disclaimer-container">
-      <h3> Disclaimer </h3>
+      <h3> This is not medical advice </h3>
       
       <p> 
       You should not take anything said here as medical advice, this site is not meant to be a replacement for medical doctors. We are not responsible for the opinions of people expressed on this site. Please, if you are in need of medical attention, seek the help of a doctor.
