@@ -99,9 +99,9 @@ class AssociatedChart extends React.Component {
         this.div.transition()
           .duration(200)
           .style("opacity", 1);
-        this.div.html("Count: <span style='font-weight:bold'>" + d["count"] + "</span><br/>" +
+        this.div.html(
           "Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>" +
-          "<br/><b>Click to see posts</b>")
+          "<br/>Click to see <span style='font-weight:bold'>" + d["count"] + "</span> posts")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })

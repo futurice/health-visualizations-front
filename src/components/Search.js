@@ -23,25 +23,17 @@ export default class Search extends Component {
     super(props);
 
     this.state = {
-      loading: true,
-      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
-      symptomsSliderValue: this.getSliderVal("symptomsSliderValue"),
-      drugsSliderVisible: localStorage.getItem("drugsSliderValue") !== null,
-      symptomsSliderVisible: localStorage.getItem("symptomsSliderValue") !== null,
+      loading: true
     };
 
     this.findByKeyword = this.findByKeyword.bind(this);
-    this.drugsSliderOnChange = this.drugsSliderOnChange.bind(this);
-    this.symptomsSliderOnChange = this.symptomsSliderOnChange.bind(this);
-
     this.onClickLabel = this.onClickLabel.bind(this);
     this.onClickBubble = this.onClickBubble.bind(this);
     this.dosagesOnClick = this.dosagesOnClick.bind(this);
     this.getKeyword = this.getKeyword.bind(this);
     this.onBackButtonEvent = this.onBackButtonEvent.bind(this);
-    this.setDrugsSliderVisible = this.setDrugsSliderVisible.bind(this);
-    this.setSymptomsSliderVisible = this.setSymptomsSliderVisible.bind(this);
     this.getSliderVal = this.getSliderVal.bind(this);
+    this.onChangeSlider = this.onChangeSlider.bind(this);
 
     this.onResize = this.onResize.bind(this);
     this.debouncedUpdateDimensions = this.debouncedUpdateDimensions.bind(this);
@@ -55,26 +47,11 @@ export default class Search extends Component {
     return parseInt(raw);
   }
 
-  setDrugsSliderVisible(e) {
-    this.setState({drugsSliderVisible: true});
-  }
-
-  setSymptomsSliderVisible(e) {
-    this.setState({symptomsSliderVisible: true});
-  }
-
-  drugsSliderOnChange(e) {
-    this.setState({
-      drugsSliderValue: e
-    });
-    localStorage.setItem("drugsSliderValue", e);
-  }
-
-  symptomsSliderOnChange(e) {
-    this.setState({
-      symptomsSliderValue: e
-    });
-    localStorage.setItem("symptomsSliderValue", e);
+  onChangeSlider(sliderType, e, rerender=true) {
+    localStorage.setItem(sliderType, e);
+    if (rerender) {
+      this.setState(this.state);
+    }
   }
 
   onClickBubble(e) {
@@ -136,12 +113,7 @@ export default class Search extends Component {
   componentWillMount() {
     this.findByKeyword();
     window.onpopstate = this.onBackButtonEvent;
-    window.addEventListener("resize", this.debouncedUpdateDimensions)
-    
-    this.setState({
-      drugsSliderValue: this.getSliderVal("drugsSliderValue"),
-      symptomSliderValue: this.getSliderVal("symptomsSliderValue")
-    });
+    window.addEventListener("resize", this.debouncedUpdateDimensions);
   }
 
   componentWillUnmount() {
@@ -226,57 +198,53 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
-                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
-                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
+              bodyText={<p className="size-14">
+                Relevance is a measure of how much the presence of the search term increases the prevalence of different results.
+                Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
+                It also takes into account how often each result appears in general.
+                To learn more, please see the FAQ.
+
                 <br/>
                 <br/>
-                {this.state.drugsSliderVisible ?
-                  "Move slider to change the minimum sample size" :
-                  <a onClick={this.setDrugsSliderVisible} className="text-link size-14">Sample size filtering</a>
-                }
 
               </p>}
-              value={this.state.drugsSliderValue}
-              includeSlider={this.state.drugsSliderVisible}
-              sliderOnChange={this.drugsSliderOnChange}
+              sliderType="drugsSlider"
+              getSliderVal={this.getSliderVal}
+              onChangeSlider={this.onChangeSlider}
             />
           </div>
+          <div id="drugs-chart" className="chart">
 
-          <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
-            <AssociatedChart
-              keyword={this.getKeyword()}
-              minCount={this.state.drugsSliderValue}
-              data={this.state.data.associated_drugs}
-              resource="drugs"
-              onClickLabel={this.onClickLabel}
-              onClickBubble={this.onClickBubble}
-              width={this.state.drugPlotWidth}
-            />
+            <div ref={(e) => this.drugChartContainer = e} id="drugs-chart" className="chart">
+              <AssociatedChart
+                keyword={this.getKeyword()}
+                minCount={this.getSliderVal("drugsSlider")}
+                data={this.state.data.associated_drugs}
+                resource="drugs"
+                onClickLabel={this.onClickLabel}
+                onClickBubble={this.onClickBubble}
+                width={this.state.drugPlotWidth}
+              />
+            </div>
           </div>
         </div>
 
         <br />
 
-        {/* Symptoms association result */}
+          {/* Symptoms association result */}
         <div className="association-result">
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-14">Relevance is calculated by a statistical metric called <a href="https://en.wikipedia.org/wiki/Lift_(data_mining)">Lift</a>.
-                In short, Lift measures how likely symptoms are to appear in a post, given that the search term appears in that post.
-                This measure takes into account how often a symptom appears overall in the data -- common symptoms are not favored over less common symptoms.
-                <br/>
-                <br/>
-                {this.state.symptomsSliderVisible ?
-                  "Move slider to change the minimum sample size" :
-                  <a onClick={this.setSymptomsSliderVisible} className="text-link size-14">Sample size filtering</a>
-                }
-
-                </p>}
-              value={this.state.symptomsSliderValue}
-              includeSlider={this.state.symptomsSliderVisible}
-              sliderOnChange={this.symptomsSliderOnChange}
+              bodyText={<p className="size-14">
+                Relevance is a measure of how much the presence of the search term increases the prevalence of different results.
+                Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
+                It also takes into account how often each result appears in general.
+                To learn more, please see the FAQ.
+              </p>}
+              sliderType="symptomsSlider"
+              getSliderVal={this.getSliderVal}
+              onChangeSlider={this.onChangeSlider}
             />
 
             <br />
@@ -285,7 +253,7 @@ export default class Search extends Component {
           <div ref={(e) => this.symptomChartContainer = e} id="symptoms-chart" className="chart">
             <AssociatedChart
               keyword={this.getKeyword()}
-              minCount={this.state.symptomsSliderValue}
+              minCount={this.getSliderVal("symptomsSlider")}
               data={this.state.data.associated_symptoms}
               resource="symptoms"
               onClickLabel={this.onClickLabel}
@@ -307,6 +275,7 @@ export default class Search extends Component {
           ref={(e) => this.dosageChart = e}
         />
 
+
         <div className="footer size-14 centered">
           <p>_Nettipuoskari is a data science project by <a href="https://spiceprogram.org/chilicorn-fund/"> Futurice’s Chilicorn Fund</a></p>
 
@@ -317,6 +286,7 @@ export default class Search extends Component {
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUNP2r2h5VO2DnnYNpB9D3elPX7F2vfxxKyOfLEnSacPEKUw/viewform"> Contact us </a>
         </div>
       </div>
-    );
+        );
+
   }
-}
+};
