@@ -134,7 +134,7 @@ class BubbleChart extends React.Component {
         this.div.transition()
           .duration(200)
           .style("opacity", .9);
-        this.div.html("Dosage: <span style='font-weight:bold'>" + d.data.Dosage + "mg</span><br/>Count: <span style='font-weight:bold'>" + d.data.count + "</span>")
+        this.div.html("Dosage: <span style='font-weight:bold'>" + d.data.Dosage + "mg</span><br/>Click to see <span style='font-weight:bold'>" + d.data.count + "</span> posts")
           .style("left", (d3.event.pageX + 10) + "px")
           .style("top", (d3.event.pageY - 15) + "px");
       })
