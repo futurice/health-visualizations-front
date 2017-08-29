@@ -32,8 +32,8 @@ export default class Disclaimer extends Component {
       <h3> This is not medical advice </h3>
       
       <p> 
-      You should not take anything said here as medical advice, this site is not meant to be a replacement for medical doctors. We are not responsible for the opinions of people expressed on this site. Please, if you are in need of medical attention, seek the help of a doctor.
-      <br /><br />This site uses cookies to enhance the site's user experience. By using this site you agree to this.
+      This site presents data from online discussions of people who are not doctors. If you are in need of medical advice, talk to your doctor.
+      <br /><br />This site uses cookies. By using this site you agree to our use of cookies.
       </p>
       <button onClick={this.dismiss}>I Agree</button>
     </div> 
