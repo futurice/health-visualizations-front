@@ -20,8 +20,13 @@ class MostCommonChart extends React.Component {
     this.chartContainerId = "most-common-container-" + this.props.resource;
   }
 
-  handleClick = (e) => { 
-    this.props.onClick(e.Name);
+  handleClickLabel = (e) => {
+    this.props.onClickLabel(e.Name);
+    d3.selectAll(".tooltip").remove();
+  };
+
+  handleClickBar = (e) => {
+    this.props.onClickBar(e.Name);
     d3.selectAll(".tooltip").remove();
   };
 
@@ -93,7 +98,7 @@ class MostCommonChart extends React.Component {
       })
       .text((d) => d.Name)
       .style("cursor", "pointer")
-      .on("click", this.handleClick)
+      .on("click", this.handleClickLabel)
       .transition()
       .duration(500)
       .attr("opacity", 1);
@@ -112,7 +117,7 @@ class MostCommonChart extends React.Component {
       .attr("fill-opacity", 0.6)
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
-      .on("click", this.handleClick)
+      .on("click", this.handleClickBar)
       .on("mouseover", (d, index, all) => {
         d3.select(all[index])
           .transition()

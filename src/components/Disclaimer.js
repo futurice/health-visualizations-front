@@ -14,7 +14,6 @@ export default class Disclaimer extends Component {
   }
 
   hasUserSeenAlready() {
-    console.log(localStorage.getItem(SEEN))
     return !!localStorage.getItem(SEEN);
   }
 

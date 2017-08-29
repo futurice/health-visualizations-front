@@ -19,11 +19,16 @@ export default class Landing extends Component {
     super(props);
 
     this.state = {};
-    this.chartOnClick = this.chartOnClick.bind(this);
+    this.onClickLabel = this.onClickLabel.bind(this);
+    this.onClickBar = this.onClickBar.bind(this);
   }
 
-  chartOnClick(keyword) {
+  onClickLabel(keyword) {
     this.props.history.push(`/search/${keyword}`);    
+  }
+
+  onClickBar(keyword) {
+    this.props.history.push(`/search/${keyword}` + "/?posts=true&page=1");
   }
 
   componentWillMount() {
@@ -93,10 +98,6 @@ export default class Landing extends Component {
                   </div>
                   <div className="numbers-duo-icon calendar-container">                  
                     <img src={calendarIcon} className="calendar-icon" alt="calendar-icon" />
-                    {/*<p className="icon-text">
-                    01.2001<br/>
-                    12.2016
-                    </p>*/}
                   </div>
                 </div>
               </div>
@@ -119,14 +120,16 @@ export default class Landing extends Component {
                   <MostCommonChart
                     resource="drugs"
                     data={this.state.drugData}
-                    onClick={this.chartOnClick}
+                    onClickLabel={this.onClickLabel}
+                    onClickBar={this.onClickBar}
                   />
                 </div>
                 <div id="symptoms-chart">
                   <MostCommonChart
                     resource="symptoms"
                     data={this.state.symptomData}
-                    onClick={this.chartOnClick}
+                    onClickLabel={this.onClickLabel}
+                    onClickBar={this.onClickBar}
                   />
                 </div>
               </div>
