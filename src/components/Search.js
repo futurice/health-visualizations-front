@@ -195,10 +195,10 @@ export default class Search extends Component {
 
             <ChartSideBar
               bodyText={<p className="size-14">
-                Relevance is a measure of how much the presence of the search term increases the prevalence of different results.
-                Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
-                It also takes into account how often each result appears in general.
-                To learn more, please see the FAQ.
+                Relevance is a metric that we use to show the strongest connections.
+                Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
+                It also takes into account how often each term appears in general.
+                Click here to learn more about how we calculate it.
 
                 <br/>
                 <br/>
@@ -233,10 +233,10 @@ export default class Search extends Component {
 
             <ChartSideBar
               bodyText={<p className="size-14">
-                Relevance is a measure of how much the presence of the search term increases the prevalence of different results.
-                Relevance is <i>not</i> purely a measure of how often each result appears with the search term.
-                It also takes into account how often each result appears in general.
-                To learn more, please see the FAQ.
+                Relevance is a metric that we use to show the strongest connections.
+                Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
+                It also takes into account how often each term appears in general.
+                Click here to learn more about how we calculate it.
               </p>}
               sliderType="symptomsSlider"
               getSliderVal={this.getSliderVal}

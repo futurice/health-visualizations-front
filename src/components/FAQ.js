@@ -23,11 +23,6 @@ export default class FAQ extends Component {
   }
 
   render() {
-    if (false && this.state.loading) {
-      return <Spinner fadeIn="none" name="pulse" color='white' />;
-    }
-
-    console.log('hei')
     return (
 
       <div>FAQ</div>
