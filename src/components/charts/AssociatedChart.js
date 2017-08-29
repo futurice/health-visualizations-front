@@ -23,6 +23,16 @@ class AssociatedChart extends React.Component {
     this.chartContainerId = "chart-container-" + this.props.resource;
   }
 
+  handleClickLabel = (e) => {
+    this.props.onClickLabel(e);
+    d3.selectAll(".tooltip").remove();
+  };
+
+  handleClickBubble = (e) => {
+    this.props.onClickBubble(e);
+    d3.selectAll(".tooltip").remove();
+  };
+
   drawDotPlot(data) {
 
     let dataArray = [];
@@ -88,7 +98,7 @@ class AssociatedChart extends React.Component {
       .attr("stroke", this.sunshineYellow)
       .attr("stroke-width", 1)
       .style("cursor", "pointer")
-      .on("click", this.props.onClickBubble)
+      .on("click", this.handleClickBubble)
       .on("mouseover", (d, index, all) => {
         d3.select(all[index])
           .transition()
@@ -148,7 +158,7 @@ class AssociatedChart extends React.Component {
           .style('fill', 'white')
       })
       .style("cursor", "pointer")
-      .on("click", this.props.onClickLabel)
+      .on("click", this.handleClickLabel)
       .text((d) => d.MedicineName)
       .transition()
       .duration(500)
@@ -167,7 +177,7 @@ class AssociatedChart extends React.Component {
       .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8"))
       .attr("stroke-width", 3)
       .style("cursor", "pointer")
-      .on("click", this.props.onClickBubble)
+      .on("click", this.handleClickBubble)
       .transition()
       .duration(500)
       .attr("x2", (d, i) => this.xScale(d["value"]) - 7);

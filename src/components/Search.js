@@ -76,12 +76,13 @@ export default class Search extends Component {
   }
   
   onBackButtonEvent(e) {
-    
     if (this.quoteModalIsOpen() || this.basketModalIsOpen()) {
-      e.preventDefault();
       this.props.history.push(this.props.location.pathname);
     }
   }
+
+
+
   quoteModalIsOpen() {
     const queryParams = queryString.parse(this.props.location.search);
     return !!queryParams["quotes_with"] || !!queryParams["posts"];
@@ -99,7 +100,7 @@ export default class Search extends Component {
   debouncedUpdateDimensions = _.debounce(this.onResize, 200);  
 
   onResize() {
-    const bubblePlotWidth = this.dosageChart.bubbleChartContainer.clientWidth;
+    const bubblePlotWidth = (this.dosageChart.bubbleChartContainer ? this.dosageChart.bubbleChartContainer.clientWidth : 0);
     const symptomPlotWidth = this.symptomChartContainer.clientWidth;
     const drugPlotWidth = this.drugChartContainer.clientWidth;
 
@@ -156,13 +157,13 @@ export default class Search extends Component {
         <BasketModal
           isOpen={this.basketModalIsOpen()}
           data={this.state.data.basket}
-          closeModal={() => this.props.history.push("/search/" + this.getKeyword())}
+          closeModal={this.props.history.goBack}
           heading={"Words interpreted as " + this.getKeyword()}
         />
 
         <QuoteModal
           isOpen={this.quoteModalIsOpen()}
-          closeModal={() => this.props.history.push("/search/" + this.getKeyword())}
+          closeModal={this.props.history.goBack}
           searchWords={this.state.data.basket}
           resource={this.state.quoteModalResource}
           forcePage={this.state.quoteModalPage}
