@@ -50,8 +50,6 @@
 
 .chart {
   flex: 4;
-  display: flex;
-  flex-direction: column;
   min-width: 240px;
 }
 

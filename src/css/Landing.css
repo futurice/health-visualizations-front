@@ -69,6 +69,10 @@
   .numbers-duo-calendar-text {
     font-size: 0.75rem;
   }
+
+  .most-common-container {
+    display: flex; 
+  }
 }
 
 body {
@@ -94,7 +98,6 @@ body {
 }
 
 .most-common-container {
-  display: flex;
   margin: 2%;
   margin-top: 5%;
   max-width: 960px;
