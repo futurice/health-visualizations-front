@@ -1,3 +1,11 @@
+
+@media screen and (min-width: 480px) {
+  .association-result {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .search-box {
     display: flex;
     align-items: center;
@@ -31,13 +39,10 @@
 }
 
 .association-result {
-  display: flex;
   max-width: 960px;
   min-height: 480px;
   padding-left: 3%;
   padding-right: 3%;
-  flex-wrap: wrap;
-  flex-flow: wrap-reverse;
   border-bottom: 2px solid #717171;
   padding-bottom: 5%;
 }
