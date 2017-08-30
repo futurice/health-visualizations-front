@@ -191,8 +191,8 @@ class MostCommonChart extends React.Component {
   render() {
     return (
       <div>
-        <h4 className="heading-4"> Most common {this.props.resource} </h4>
-        <p className="size-14 centered"> Count </p>
+        <h4 className="heading-4"> Most mentioned {this.props.resource} </h4>
+        <p className="size-14 centered"> Post count </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
