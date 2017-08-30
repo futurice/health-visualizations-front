@@ -74,7 +74,7 @@
   font-size: 2rem;
 }
 .quote-modal-content {
-  overflow: overlay;
+  overflow: scroll;
   max-height: 800px;
   z-index: 1000;
 }
