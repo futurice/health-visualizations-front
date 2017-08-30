@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import PostCountSlider from './PostCountSlider';
 import '../css/ChartSideBar.css';
+import { Link } from 'react-router-dom';
+
+const bodyText = 
+<p className="size-14">
+  Relevance is a metric that we use to show the strongest connections.
+  Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
+  It also takes into account how often each term appears in general.
+  Click <Link to="/faq">here</Link> to learn more about how we calculate it.
+</p>;
 
 export default class ChartSideBar extends Component {
 
@@ -23,16 +32,15 @@ export default class ChartSideBar extends Component {
     if (this.props.sliderType === "noSlider") {
       return (
         <div className="chart-side-bar">
-          { this.props.bodyText }
+           { bodyText }
         </div>
-
       )
     }
 
     if (!this.isSliderVisible()) {
       return (
         <div className="chart-side-bar">
-          { this.props.bodyText }
+           { bodyText }
           <a onClick={this.setSliderVisible} className="text-link size-14">Sample size filtering</a>
         </div>
 
@@ -42,8 +50,7 @@ export default class ChartSideBar extends Component {
     return (
       <div className="chart-side-bar">
 
-        { this.props.bodyText }
-
+        { bodyText }
 
         <div className="size-14 whiteish">
           Move slider to change the minimum sample size used in filtering.

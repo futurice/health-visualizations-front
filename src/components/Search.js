@@ -199,16 +199,6 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-14">
-                Relevance is a metric that we use to show the strongest connections.
-                Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
-                It also takes into account how often each term appears in general.
-                Click here to learn more about how we calculate it.
-
-                <br/>
-                <br/>
-
-              </p>}
               sliderType="drugsSlider"
               getSliderVal={this.getSliderVal}
               onChangeSlider={this.onChangeSlider}
@@ -237,12 +227,6 @@ export default class Search extends Component {
           <div className="association-result-left">
 
             <ChartSideBar
-              bodyText={<p className="size-14">
-                Relevance is a metric that we use to show the strongest connections.
-                Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
-                It also takes into account how often each term appears in general.
-                Click here to learn more about how we calculate it.
-              </p>}
               sliderType="symptomsSlider"
               getSliderVal={this.getSliderVal}
               onChangeSlider={this.onChangeSlider}
