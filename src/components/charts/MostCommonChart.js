@@ -192,10 +192,10 @@ class MostCommonChart extends React.Component {
     return (
       <div>
         <h4 className="heading-4"> Most mentioned {this.props.resource} </h4>
-        <p className="size-14 centered"> Post count </p>
+        <p className="size-13 centered yellow"> Click the bars to see the posts </p>
         <div id={this.chartContainerId} className='chart-container'>
-
         </div>
+        <p className="size-14 centered white"> Post count </p>
       </div>
     )
   }

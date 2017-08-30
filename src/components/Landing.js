@@ -60,8 +60,10 @@ export default class Landing extends Component {
         <div>
           <div className="content">
             <h1 className="title centered">Lääkeikkuna</h1>
-            <p className="size-13 centered whiteish"> A data science project by <a href="http://futurice.com/"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/"> Citizen Mindscapes </a> </p>
-            <p className="size-13 centered whiteish"> With data provided by Aller </p>
+            <p className="size-13 centered whiteish">
+              A data science project by <a href="http://futurice.com/" target="_blank"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/" target="_blank"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/" target="_blank"> Citizen Mindscapes </a>
+              <br/>With data provided by <a href="http://www.aller.fi/" target="_blank">Aller</a>
+            </p>
             <h3 className="heading-2 centered"> How are Finns talking about drugs? </h3>
 
 
