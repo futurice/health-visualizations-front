@@ -180,14 +180,14 @@ export default class Search extends Component {
           <p className="size-18"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
           <h3 className="no-margin size-45"> {this.getKeyword()} </h3>
 
-          <a className="post-link-container">
+          <div className="post-link-container">
             <div className="post-link-icon">
               <img src={postsSmallIcon} className="posts-small-icon" alt="posts-icon" />
             </div>
             <div className="post-link-text">
               <a onClick={() => this.props.history.push(this.props.location.pathname + "?posts=true&page=1")} className="text-link size-16">{this.state.data.post_count} posts</a>
             </div>
-          </a>
+          </div>
           <div className="basket-link-container">
             <p>
               <a onClick={() => this.props.history.push(this.props.location.pathname + "?basket=true")} className="text-link size-14"> Words interpreted as {this.getKeyword()} </a></p>
