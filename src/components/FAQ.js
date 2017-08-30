@@ -25,7 +25,11 @@ export default class FAQ extends Component {
   render() {
     return (
 
-      <div>FAQ</div>
+      <div>
+        <div className="content">
+          FAQ. Testing testing.
+        </div>
+      </div>
     );
   }
 }
