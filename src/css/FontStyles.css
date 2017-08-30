@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .no-margin {
   margin: 0;
 }
@@ -19,8 +23,17 @@
   font-family: Futurice-monospaced;
 }
 
-/* All sizes are scaled proportionately according to design specs.
-   For example, if design spec says "45px", go with size-45. */
+.faq-question {
+  font-weight: bold;
+  font-size: 0.97rem;
+  color: white;
+}
+
+.faq-answer {
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: white;
+}
 
 .size-45 {
   font-size: 2.42rem;
@@ -54,6 +67,14 @@
   color: #ffffff;
 }
 
+.heading-3 {
+  font-weight: bold;
+  margin: 1rem;
+  margin-top: 50px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
 .heading-4 {
   font-size: 1.2rem;
   font-weight: bold;
@@ -70,4 +91,8 @@
 
 .white {
   color: #fff;
+}
+
+.yellow {
+  color: #ffe638;
 }
