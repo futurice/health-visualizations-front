@@ -43,12 +43,12 @@ export default class PostCountSlider extends Component {
           handle={handle} 
           onChange={this.onChange}
           handleStyle={{
-            borderColor: 'var(--purpley)',
+            borderColor: '#9f6ce3',
             height: 24,
             width: 24,
             marginLeft: -14,
             marginTop: -10,
-            backgroundColor: 'var(--purpley)',
+            backgroundColor: '#9f6ce3',
           }}
         />
       </div>
