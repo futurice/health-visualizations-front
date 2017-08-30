@@ -1,8 +1,13 @@
 import { Selector } from 'testcafe';
 import ReactSelector from 'testcafe-react-selectors';
 
+const clickAgree = async t => {
+  await t.click(Selector("button").withText("I Agree"));
+}
+
 fixture`Search - Drugs view`
-  .page`http://localhost:3000/search/panacod`;
+  .page`http://localhost:3000/search/panacod`
+  .beforeEach(clickAgree);
 
 /* Drugs view */
 
