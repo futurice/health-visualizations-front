@@ -19,20 +19,12 @@
   margin-top: 25px;
 }
 
+.bottom-margin {
+  margin-bottom: 10px;
+}
+
 .monospaced {
   font-family: Futurice-monospaced;
-}
-
-.faq-question {
-  font-weight: bold;
-  font-size: 0.97rem;
-  color: white;
-}
-
-.faq-answer {
-  font-weight: normal;
-  font-size: 0.75rem;
-  color: white;
 }
 
 .size-45 {
@@ -71,6 +63,7 @@
   font-weight: bold;
   margin: 1rem;
   margin-top: 50px;
+  margin-bottom: 10%;
   font-size: 2rem;
   color: #ffffff;
 }
@@ -82,8 +75,14 @@
   text-align: center;
   color: #ffffff;
   margin: 2%;
+  -webkit-margin-after: 0;
 }
 
+.search-heading {
+  font-size: 1.2rem;
+  font-family: 'SpaceMono', monospace;
+  font-weight: bold;
+}
 
 .whiteish {
   color: #d8d8d8;

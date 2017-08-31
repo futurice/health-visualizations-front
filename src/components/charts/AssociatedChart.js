@@ -34,7 +34,6 @@ class AssociatedChart extends React.Component {
   };
 
   drawDotPlot(data) {
-
     let dataArray = [];
 
     for (let i = 0; i < d3.keys(data).length; i++) {
@@ -203,18 +202,12 @@ class AssociatedChart extends React.Component {
       }
 
       d3.select("#" + this.chartContainerId).html('');
-      if (!this.div) {
-        this.div = d3.select("body").append("div")
-          .attr("class", "tooltip")
-          .style("opacity", 0);
-      }
+      this.div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 
       if (this.svg) {
         this.svg.remove();
-      }
-
-      if (this.tooltip) {
-        this.tooltip.remove();
       }
 
       let mapSVG = d3
@@ -253,7 +246,8 @@ class AssociatedChart extends React.Component {
     if (size === 0) {
       return (
         <div className="no-results-found-container">
-          <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
+          <h4 className="heading-4"> Related {_.startCase(_.toLower(this.props.resource))}</h4>
+          <p className="size-16 centered whiteish"> Relevant terms mentioned with {this.props.keyword} </p>
           <p className="no-results-found centered size-16 white monospaced">
             NO RESULTS FOUND
           </p>
@@ -265,12 +259,12 @@ class AssociatedChart extends React.Component {
     }
     return (
       <div className="associated-chart">
-        <h4 className="heading-4"> {_.startCase(_.toLower(this.props.resource))} associated with {this.props.keyword} </h4>
-        <p className="size-16 centered whiteish"> Relevance </p>
+        <h4 className="heading-4 left-padding"> Related {_.startCase(_.toLower(this.props.resource))}</h4>
+        <p className="size-16 centered whiteish left-padding"> Relevant terms mentioned with {this.props.keyword} </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
-        <div className="size-13 centered whiteish top-margin">Click the bubbles to see the posts.</div>
+        <div className="size-13 centered whiteish bottom-margin left-padding">Relevance factor</div>
         <WarningText />
       </div>
     )

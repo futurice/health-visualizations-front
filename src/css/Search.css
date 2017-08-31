@@ -4,11 +4,17 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .left-padding {
+    padding-left: 75px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .search-term-info {
     margin-top: 80px !important;
+  }
+  .left-padding {
+    padding-left: 0;
   }
 }
 
@@ -35,14 +41,6 @@
   padding-left: 3%;
   padding-right: 3%;
   margin: 0 auto;
-}
-
-.search-heading {
-  color: white;
-  font-family: 'Space Mono', monospace;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 .form {

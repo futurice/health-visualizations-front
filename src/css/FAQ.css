@@ -7,3 +7,19 @@
     width: 95%;
     margin: 0 auto;
   }
+
+.faq-question {
+  font-weight: bold;
+  font-size: 0.97rem;
+  color: white;
+  line-height: 1.44;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: white;
+  line-height: 1.44;
+  margin-bottom: 50px;
+}

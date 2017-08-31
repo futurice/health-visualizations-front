@@ -170,14 +170,11 @@ class BubbleChart extends React.Component {
   }
 
   render() {
-    let size = 0, key;
-    for (key in this.props.data) {
-      size += 1
-    }
-    if (size === 0) {
+    if (this.props.data.length === 0) {
       return (
         <div className="no-results-found-container">
-          <h4 className="heading-4"> Dosages associated with { this.props.keyword } </h4>
+          <h4 className="heading-4"> Related Dosages </h4>
+          <p className="size-16 centered whiteish"> Dosages mentioned with { this.props.keyword } </p>
           <p className="no-results-found centered size-16 white monospaced">
             NO RESULTS FOUND
           </p>
@@ -187,8 +184,8 @@ class BubbleChart extends React.Component {
 
     return (
       <div>
-        <h4 className="heading-4"> Dosages associated with { this.props.keyword } </h4>
-        <p className="body-text is-centered"> Count </p>
+        <h4 className="heading-4"> Related Dosages </h4>
+        <p className="size-16 centered whiteish no-margin"> Dosages mentioned with { this.props.keyword } </p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

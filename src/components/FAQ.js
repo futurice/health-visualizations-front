@@ -12,9 +12,16 @@ export default class FAQ extends Component {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   render() {
-    return (      
+    return (
+
       <div className="faq-content">
+
+
         <SearchBox
           history={this.props.history}
           match={this.props.match}
