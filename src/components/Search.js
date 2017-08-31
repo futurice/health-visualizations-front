@@ -100,7 +100,7 @@ export default class Search extends Component {
   debouncedUpdateDimensions = _.debounce(this.onResize, 200);  
 
   onResize() {
-    const bubblePlotWidth = (this.dosageChart.bubbleChartContainer ? this.dosageChart.bubbleChartContainer.clientWidth : 0);
+    const bubblePlotWidth = (this.dosageChart && this.dosageChart.bubbleChartContainer ? this.dosageChart.bubbleChartContainer.clientWidth : 0);
     const symptomPlotWidth = this.symptomChartContainer.clientWidth;
     const drugPlotWidth = this.drugChartContainer.clientWidth;
 
