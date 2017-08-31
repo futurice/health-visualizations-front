@@ -73,6 +73,7 @@ export default class ChartSideBar extends Component {
             className="slider-slider"
             onChange={(e) => this.props.onChangeSlider(this.props.sliderType, e)}
           />
+
           <div className="slider-text-top-left size-14 whiteish">
             More results
           </div>

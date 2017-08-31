@@ -12,6 +12,7 @@ import quotesIcon from '../css/group-3.svg';
 
 import MostCommonChart from './charts/MostCommonChart';
 import { getMostCommon } from '../util';
+import WarningText from "./WarningText";
 
 export default class Landing extends Component {
 
@@ -135,17 +136,22 @@ export default class Landing extends Component {
                   />
                 </div>
               </div>
+              <WarningText/>
             </div>
 
-            <div className="more-information">
-              <h3 className="heading-1-white"> For more information </h3>
-                <p className="size-18 whiteish"> If you have any questions or feedback, feel free to contact us with the button below  </p>
-                <FeedbackButton />
-                <p className="size-13 whiteish">
-                  This site was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
-                </p>
-            </div>
+          <div className="more-information">
+            <h3 className="heading-1-white"> For more information </h3>
+            <br/>
+            <p className="size-18 whiteish"> If you have any questions or feedback, check our <a href="/faq">FAQ</a> or contact us with the button below </p>
+            <p className="size-18 whiteish">
+              This site was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
+            </p><br/>
+            <FeedbackButton />
+
+          </div>
         </div>
+
+
     );
   }
 

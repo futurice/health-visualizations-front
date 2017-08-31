@@ -264,7 +264,7 @@ class AssociatedChart extends React.Component {
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>
-        <div className="size-13 centered whiteish bottom-margin">Relevance factor</div>
+        <div className="size-13 centered whiteish bottom-margin left-padding">Relevance factor</div>
         <WarningText />
       </div>
     )
