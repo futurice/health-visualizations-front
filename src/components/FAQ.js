@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBox from './SearchBox';
+import '../css/FAQ.css';
 
 export default class FAQ extends Component {
 
@@ -18,11 +19,9 @@ export default class FAQ extends Component {
           history={this.props.history}
           match={this.props.match}
         />
-        <div className="heading-3 white centered">
+        <h3 className="heading-3 white centered">
           FAQs
-          <br/>
-          <br/>
-        </div>
+        </h3>
 
 
 

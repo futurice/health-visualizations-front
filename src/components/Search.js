@@ -175,7 +175,9 @@ export default class Search extends Component {
         <SearchBox
           history={this.props.history}
           match={this.props.match}
+          notVisible={this.basketModalIsOpen() || this.quoteModalIsOpen()}
         />
+        
         <div className="search-term-info">
           <p className="size-18"> Search result / {this.state.data.dosages ? "drug" : "symptom"} </p>
           <h3 className="no-margin size-45"> {this.getKeyword()} </h3>

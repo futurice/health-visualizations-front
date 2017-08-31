@@ -6,6 +6,12 @@
   }
 }
 
+@media screen and (max-width: 480px) {
+  .search-term-info {
+    margin-top: 80px !important;
+  }
+}
+
 .search-box {
     display: flex;
     align-items: center;
