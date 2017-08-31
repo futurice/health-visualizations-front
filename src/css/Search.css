@@ -6,10 +6,21 @@
   }
 }
 
+@media screen and (max-width: 480px) {
+  .search-term-info {
+    margin-top: 80px !important;
+  }
+}
+
 .search-box {
     display: flex;
     align-items: center;
     font-size: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: black;
 }
 
 .search-page {

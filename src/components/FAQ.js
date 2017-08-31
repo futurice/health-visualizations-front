@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import QueryForm from './QueryForm';
+import SearchBox from './SearchBox';
+import '../css/FAQ.css';
 
 export default class FAQ extends Component {
 
@@ -12,17 +13,15 @@ export default class FAQ extends Component {
   }
 
   render() {
-    return (
-
+    return (      
       <div className="faq-content">
-        <QueryForm
+        <SearchBox
           history={this.props.history}
+          match={this.props.match}
         />
-        <div className="heading-3 white centered">
+        <h3 className="heading-3 white centered">
           FAQs
-          <br/>
-          <br/>
-        </div>
+        </h3>
 
 
 
@@ -77,7 +76,6 @@ export default class FAQ extends Component {
         <p className="faq-answer">
           No. Adjusting the sample size filter does not change relevance values. It only affects which results are shown and which are filtered out.
         </p>
-
 
 
       </div>
