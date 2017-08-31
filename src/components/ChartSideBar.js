@@ -3,12 +3,20 @@ import PostCountSlider from './PostCountSlider';
 import '../css/ChartSideBar.css';
 import { Link } from 'react-router-dom';
 
-const bodyText = 
+import postsTinyIcon from '../css/posts-tiny.svg';
+
+const bodyText =
+
+
 <p className="size-14">
+    <p className="size-13 yellow bar-hint"> Click the bubbles to see the posts
+      <img src={postsTinyIcon} className="posts-tiny-icon yellow" alt="posts-icon" />
+    </p>
+
   Relevance is a metric that we use to show the strongest connections.
   Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
   It also takes into account how often each term appears in general.
-  Click <Link to="/faq">here</Link> to learn more about how we calculate it.
+  Click <Link to="/faq#top">here</Link> to learn more about how we calculate it.
 </p>;
 
 export default class ChartSideBar extends Component {
@@ -49,6 +57,8 @@ export default class ChartSideBar extends Component {
 
     return (
       <div className="chart-side-bar">
+
+
 
         { bodyText }
 

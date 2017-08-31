@@ -16,7 +16,7 @@ export default class SearchBox extends Component {
       <StickyHeader
         header={
           <div className="search-box">
-            <Link to="/" className="search-heading" > Nettipuoskari </Link>
+            <Link to="/" className="search-heading text-link" > Lääketutka </Link>
             <QueryForm
               value={this.props.match.params.keyword}
               history={this.props.history}
