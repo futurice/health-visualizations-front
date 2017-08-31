@@ -59,13 +59,13 @@ export default class Landing extends Component {
     return (
         <div>
           <div className="content">
-            <h1 className="title centered">Lääkeikkuna</h1>
-            <p className="size-13 centered whiteish">
+            <h1 className="title centered">Lääketutka</h1>
+
+            <h3 className="heading-2 centered"> How are Finns talking about drugs? </h3>
+            <p className="size-16 centered whiteish">
               A data science project by <a href="http://futurice.com/" target="_blank"> Futurice’s</a> <a href="https://spiceprogram.org/chilicorn-fund/" target="_blank"> Chilicorn Fund</a> and <a href="http://blogs.helsinki.fi/citizenmindscapes/" target="_blank"> Citizen Mindscapes </a>
               <br/>With data provided by <a href="http://www.aller.fi/" target="_blank">Aller</a>
             </p>
-            <h3 className="heading-2 centered"> How are Finns talking about drugs? </h3>
-
 
             <div className="body-text-container">
               <div className="numbers-container">
@@ -107,7 +107,7 @@ export default class Landing extends Component {
                 <p className="size-16">
                     Traditional medical research is expensive and focused on predetermined research questions. On the other hand, there is a huge amount of freely accessible Suomi24 online discussion data where people candidly describe their experiences. The topics which appear in these discussions are those that people truly care about. We used machine learning to organize and present this data in a way that would be useful to researchers.
                     <br />
-                    <a className="whole-story" href="#"> Read the full story </a>                    
+                    <a className="whole-story" href="#" target="_blank"> Read the full story </a>
                 </p>
                 
 
@@ -145,10 +145,6 @@ export default class Landing extends Component {
                   This site was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
                 </p>
             </div>
-
-            <section className="chilicorn hero">
-              <img alt="A unicorn" className="chilicorn-static" src={unicorn} />
-            </section>
         </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3'
 import '../../css/Chart.css';
+import postsTinyIcon from '../../css/posts-tiny.svg';
 
 class MostCommonChart extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class MostCommonChart extends React.Component {
     this.noOfTicks = 5;
     this.sunshineYellow = "#ffe638";
     this.purpley = "#9f6ce3";
-    this.margin = { top: 20, right: 50, bottom: 10, left: 100 };
+    this.margin = { top: 20, right: 50, bottom: 10, left: 110 };
     this.xScale = undefined;
     this.yScale = undefined;
     this.chartContainerId = "most-common-container-" + this.props.resource;
@@ -191,8 +192,15 @@ class MostCommonChart extends React.Component {
   render() {
     return (
       <div>
-        <h4 className="heading-4"> Most mentioned {this.props.resource} </h4>
-        <p className="size-13 centered yellow"> Click the bars to see the posts </p>
+        <div className="common-title-container">
+          <h4 className="heading-4"> Most mentioned {this.props.resource} </h4>
+          <div>
+            <p className="size-13 centered yellow bar-hint"> Click the bars to see the posts
+              <img src={postsTinyIcon} className="posts-tiny-icon yellow" alt="posts-icon" />
+            </p>
+          </div>
+        </div>
+
         <div id={this.chartContainerId} className='chart-container'>
         </div>
         <p className="size-14 centered white"> Post count </p>

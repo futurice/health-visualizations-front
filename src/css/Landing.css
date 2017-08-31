@@ -95,6 +95,7 @@ body {
   flex-direction: column;
   display: flex;
   margin: 2%;
+  margin-top: 4%;
 }
 
 .most-common-container {
@@ -287,7 +288,7 @@ img {
 .title {
   margin-top:0;
   font-family: 'Space Mono', monospace;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #ffffff;
   -webkit-margin-after: 0;
@@ -438,4 +439,17 @@ a:hover:not(.feedback-button) {
 .calendar-container {
   display: flex;
   flex-direction: column;
+}
+
+.common-title-container {
+  margin: 0 auto;
+}
+
+.posts-tiny-icon {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.bar-hint {
+  line-height: 100%;
 }
