@@ -105,7 +105,7 @@ export default class Landing extends Component {
                 </div>
               </div>
 
-                <p className="size-16">
+                <p className="size-16 intro-paragraph">
                     Traditional medical research is expensive and focused on predetermined research questions. On the other hand, there is a huge amount of freely accessible Suomi24 online discussion data where people candidly describe their experiences. The topics which appear in these discussions are those that people truly care about. We used machine learning to organize and present this data in a way that would be useful to researchers.
                     <br />
                     <a className="whole-story" href="#" target="_blank"> Read the full story </a>
