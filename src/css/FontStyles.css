@@ -51,6 +51,14 @@
   font-size: 0.70rem;
 }
 
+.heading-1-white {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  padding-top: 0%;
+}
+
 .heading-2 {
   font-weight: 400;
   margin: 1rem;
