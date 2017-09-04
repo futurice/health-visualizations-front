@@ -11,7 +11,7 @@ test('Send feedback links to Google Forms', async t => {
   await t
     .click(await feedbackButton);
 
-  const content = Selector('div').withText('Nettipuoskari feedback')();
+  const content = Selector('div').withText('feedback')();
   await t.expect(await content.exists).ok();
 });
 
