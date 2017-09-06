@@ -76,7 +76,6 @@
 .quote-modal-content {
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 800px;
   z-index: 1000;
 }
 .quote-modal-footer {
