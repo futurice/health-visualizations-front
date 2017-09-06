@@ -367,7 +367,7 @@ a:hover:not(.feedback-button) {
 .icon-centered {
   display: flex;
   align-items: initial !important;
-  margin-top: -54%;
+  margin-bottom: 54%;
 }
 
 .numbers-duo-text-large {
