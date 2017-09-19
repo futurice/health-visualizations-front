@@ -268,7 +268,7 @@ export default class Search extends Component {
 
           <p>In partnership with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes </a></p>
 
-          <p>This work is licenced under ???</p>
+          <p>Based on <a href="https://www.suomi24.fi/">Suomi24 forum</a> data provided by <a href="https://www.aller.fi/">Aller</a></p>
 
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUNP2r2h5VO2DnnYNpB9D3elPX7F2vfxxKyOfLEnSacPEKUw/viewform"> Contact us </a>
         </div>
