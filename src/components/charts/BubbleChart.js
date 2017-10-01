@@ -174,7 +174,8 @@ class BubbleChart extends React.Component {
       return (
         <div className="no-results-found-container">
           <h4 className="heading-4"> Related Dosages </h4>
-          <p className="size-16 centered whiteish"> Dosages mentioned with { this.props.keyword } </p>
+          <p className="size-16 centered whiteish margin-small-vertical"> Dosages mentioned with { this.props.keyword } </p>
+          <p className="size-13 centered darkyellow bar-hint margin-small-vertical"> Click the bubbles to see the posts</p>
           <p className="no-results-found centered size-16 white monospaced">
             NO RESULTS FOUND
           </p>
@@ -185,7 +186,8 @@ class BubbleChart extends React.Component {
     return (
       <div>
         <h4 className="heading-4"> Related Dosages </h4>
-        <p className="size-16 centered whiteish no-margin"> Dosages mentioned with { this.props.keyword } </p>
+        <p className="size-16 centered whiteish margin-small-vertical"> Dosages mentioned with { this.props.keyword } </p>
+        <p className="size-13 centered darkyellow bar-hint margin-small-vertical"> Click the bubbles to see the posts</p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

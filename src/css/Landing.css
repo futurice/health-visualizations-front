@@ -76,7 +76,7 @@
 }
 
 body {
-  background: black;
+  background: #212121;
   font-weight: 400;
   margin: 0;
 }
@@ -290,7 +290,7 @@ img {
 .title {
   margin-top:0;
   font-family: 'Space Mono', monospace;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #ffffff;
   -webkit-margin-after: 0;

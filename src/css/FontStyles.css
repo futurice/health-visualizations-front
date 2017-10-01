@@ -23,6 +23,12 @@
   margin-bottom: 10px;
 }
 
+.margin-small-vertical {
+  margin: 0;
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
 .monospaced {
   font-family: Futurice-monospaced;
 }
@@ -102,4 +108,8 @@
 
 .yellow {
   color: #ffe638;
+}
+
+.darkyellow {
+  color: #f4be97;
 }

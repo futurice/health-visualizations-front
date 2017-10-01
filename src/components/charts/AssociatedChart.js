@@ -176,6 +176,32 @@ class AssociatedChart extends React.Component {
       .attr("stroke", (this.props.resource === "drugs" ? this.sunshineYellow : "#d8d8d8"))
       .attr("stroke-width", 3)
       .style("cursor", "pointer")
+      .on("mouseover", (d, index, all) => {
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr('fill-opacity', 1)
+          .attr('r', this.radius + 5);
+
+        this.div.transition()
+          .duration(200)
+          .style("opacity", 1);
+        this.div.html(
+          "Relevance: <span style='font-weight:bold'>" + d["value"].toFixed(1) + "</span>" +
+          "<br/>Click to see <span style='font-weight:bold'>" + d["count"] + "</span> posts")
+          .style("left", (d3.event.pageX + 10) + "px")
+          .style("top", (d3.event.pageY - 15) + "px");
+      })
+      .on("mouseout", (d, index, all) => {
+        this.div.transition()
+          .duration(250)
+          .style("opacity", 0);
+        d3.select(all[index])
+          .transition()
+          .duration(200)
+          .attr('r', this.radius)
+          .attr('fill-opacity', 0.6);
+      })
       .on("click", this.handleClickBubble)
       .transition()
       .duration(500)
@@ -247,7 +273,8 @@ class AssociatedChart extends React.Component {
       return (
         <div className="no-results-found-container">
           <h4 className="heading-4"> Related {_.startCase(_.toLower(this.props.resource))}</h4>
-          <p className="size-16 centered whiteish"> Relevant terms mentioned with {this.props.keyword} </p>
+          <p className="size-16 centered whiteish left-padding margin-small-vertical"> Relevant terms mentioned with {this.props.keyword} </p>
+          <p className="size-13 centered darkyellow bar-hint left-padding margin-small-vertical"> Click the bubbles to see the posts</p>
           <p className="no-results-found centered size-16 white monospaced">
             NO RESULTS FOUND
           </p>
@@ -260,7 +287,8 @@ class AssociatedChart extends React.Component {
     return (
       <div className="associated-chart">
         <h4 className="heading-4 left-padding"> Related {_.startCase(_.toLower(this.props.resource))}</h4>
-        <p className="size-16 centered whiteish left-padding"> Relevant terms mentioned with {this.props.keyword} </p>
+        <p className="size-16 centered whiteish left-padding margin-small-vertical"> Relevant terms mentioned with {this.props.keyword} </p>
+        <p className="size-13 centered darkyellow bar-hint left-padding margin-small-vertical"> Click the bubbles to see the posts</p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

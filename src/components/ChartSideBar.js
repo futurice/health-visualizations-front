@@ -9,9 +9,9 @@ const bodyText =
 
 
 <p className="size-14">
-    <p className="size-13 yellow bar-hint"> Click the bubbles to see the posts
-      <img src={postsTinyIcon} className="posts-tiny-icon yellow" alt="posts-icon" />
-    </p>
+  {/*<p className="size-13 darkyellow bar-hint"> Click the bubbles to see the posts*/}
+      {/*<img src={postsTinyIcon} className="posts-tiny-icon yellow" alt="posts-icon" />*/}
+    {/*</p>*/}
 
   Relevance is a metric that we use to show the strongest connections.
   Relevance is <i>not</i> purely a measure of how often each term appears with the search term.
