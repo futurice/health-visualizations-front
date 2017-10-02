@@ -274,7 +274,7 @@ class AssociatedChart extends React.Component {
         <div className="no-results-found-container">
           <h4 className="heading-4"> Related {_.startCase(_.toLower(this.props.resource))}</h4>
           <p className="size-16 centered whiteish left-padding margin-small-vertical"> Relevant terms mentioned with {this.props.keyword} </p>
-          <p className="size-13 centered darkyellow bar-hint left-padding margin-small-vertical"> Click the bubbles to see the posts</p>
+          <p className="size-13 centered darkyellow bar-hint left-padding margin-small-vertical2"> Click the bubbles to see the posts</p>
           <p className="no-results-found centered size-16 white monospaced">
             NO RESULTS FOUND
           </p>
@@ -288,7 +288,7 @@ class AssociatedChart extends React.Component {
       <div className="associated-chart">
         <h4 className="heading-4 left-padding"> Related {_.startCase(_.toLower(this.props.resource))}</h4>
         <p className="size-16 centered whiteish left-padding margin-small-vertical"> Relevant terms mentioned with {this.props.keyword} </p>
-        <p className="size-13 centered darkyellow bar-hint left-padding margin-small-vertical"> Click the bubbles to see the posts</p>
+        <p className="size-13 centered darkyellow bar-hint left-padding margin-small-vertical2"> Click the bubbles to see the posts</p>
         <div id={this.chartContainerId} className='chart-container'>
 
         </div>

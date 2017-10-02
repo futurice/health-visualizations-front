@@ -195,7 +195,7 @@ class MostCommonChart extends React.Component {
         <div className="common-title-container">
           <h4 className="heading-4"> Most mentioned {this.props.resource} </h4>
           <div>
-            <p className="size-13 centered darkyellow bar-hint"> Click the bars to see the posts
+            <p className="size-13 centered darkyellow bar-hint margin-small-vertical"> Click the bars to see the posts
               {/*<img src={postsTinyIcon} className="posts-tiny-icon yellow" alt="posts-icon" />*/}
             </p>
           </div>

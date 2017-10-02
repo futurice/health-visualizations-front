@@ -90,6 +90,8 @@
 
 .footer p {
   color: white;
+  margin: 0;
+  line-height: 1.79;
 }
 
 .footer a {
