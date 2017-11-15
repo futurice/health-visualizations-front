@@ -1,8 +1,8 @@
-# HowToGetHealthy (Summer 2017) project frontend
+# Lääketutka frontend
 
 Related repos: 
 * https://github.com/futurice/health-visualizations
-* https://github.com/futurice/how-to-get-healthy
+* https://github.com/futurice/laaketutka-prereqs
 
 This repository contains the code for the web service frontend
 
@@ -11,10 +11,8 @@ Stack:
 * react-router v4
 * testcafe
 
-
-## Contributing 
-
 ### Running
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 - Install npm and nodejs, for example with nvm:
