@@ -29,8 +29,8 @@
     "postbuild": "postcss --use postcss-custom-properties --replace build/**/*.css",
     "test": "testcafe chrome src/tests",
     "eject": "react-scripts eject",
-    "deploy-production": "npm run build && cp robots.txt build/robots.txt && cp google-website-ownership-verification build/googlea8a7a42d156ca88d.html && cd build && mv index.html 200.html && surge . --domain nettipuoskari.surge.sh",
-    "deploy-staging": "npm run build && cp robots.txt build/robots.txt && cp google-website-ownership-verification build/googlea8a7a42d156ca88d.html && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
+    "deploy-production": "npm run build && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari.surge.sh",
+    "deploy-staging": "npm run build && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
   },
   "devDependencies": {
     "moxios": "^0.4.0",
