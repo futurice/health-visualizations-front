@@ -19,7 +19,7 @@ export default class NotFound extends Component {
         <h1 className="minor-margin heading-1">_result not found</h1>
 
         <p className="body-text">
-          This might be either because it isn’t mentioned in the data, or (more likely) we did not recognize it as a drug or symptom. <a href="#"> Our blog post </a> explains how we recognize drugs and symptoms. If you think <b>{ keyword }</b> should be searchable, please click the feedback button below.
+          This might be either because it isn’t mentioned in the data, or (more likely) we did not recognize it as a drug or symptom. <a href="https://futurice.com/blog/learning-medicinal-habits-from-discussion-forum-data"> Our blog post </a> explains how we recognize drugs and symptoms. If you think <b>{ keyword }</b> should be searchable, please click the feedback button below.
         </p>
         <FeedbackButton 
           keyword={keyword}
