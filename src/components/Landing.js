@@ -144,7 +144,7 @@ export default class Landing extends Component {
             <br/>
             <p className="size-18 whiteish"> If you have any questions or feedback, check our <a href="/faq">FAQ</a> or contact us with the button below </p>
             <p className="size-18 whiteish">
-              This service was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
+              Lääketutka (Medicine Radar) was made by <a href="https://futurice.com">Futurice</a> in collaboration with <a href="http://blogs.helsinki.fi/citizenmindscapes/">Citizen Mindscapes</a>
             </p><br/>
             <FeedbackButton />
 

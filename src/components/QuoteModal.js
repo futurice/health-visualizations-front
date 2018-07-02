@@ -124,12 +124,11 @@ export default class QuoteModal extends React.Component {
             autoEscape={true}
             highlightClassName={'highlighted'}
           />
-          {/*Temporarily removed full thread links.*/}
-          {/*<div className="link-container">*/}
-            {/*<a href={post[0]} target="_blank" className="quote-modal-thread-link">*/}
-              {/*Full thread*/}
-            {/*</a>*/}
-          {/*</div>*/}
+          <div className="link-container">
+            <a href={post[0]} target="_blank" className="quote-modal-thread-link">
+              Full thread
+            </a>
+          </div>
         </div>
       );
     });
