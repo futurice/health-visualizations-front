@@ -35,4 +35,9 @@ We use [testcafe](https://github.com/DevExpress/testcafe) for tests, running the
 
 We use [surge.sh](http://surge.sh/) for deployment.
 1. Install `surge`, `npm install -g surge`
-2. `npm run deploy-staging` or `npm run deploy-production`
+2. `surge login` (username and password in the passwordsafe)
+3. `npm run deploy-staging` or `npm run deploy-production`
+
+[Staging](https://nettipuoskari-staging.surge.sh)
+
+[Production](https://www.laaketutka.fi/)
