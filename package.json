@@ -26,17 +26,19 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-staging": "./node_modules/.bin/env-cmd -f .env react-scripts build",
     "postbuild": "postcss --use postcss-custom-properties --replace build/**/*.css",
     "test": "testcafe chrome src/tests",
     "eject": "react-scripts eject",
     "deploy-production": "npm run build && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari.surge.sh",
-    "deploy-staging": "npm run build && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
+    "deploy-staging": "npm run build-staging && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
   },
   "devDependencies": {
     "moxios": "^0.4.0",
     "postcss-cli": "^4.1.0",
     "postcss-custom-properties": "^6.1.0",
     "testcafe": "^0.17.1",
-    "testcafe-react-selectors": "0.0.6"
+    "testcafe-react-selectors": "0.0.6",
+    "env-cmd": "9.0.3"
   }
 }

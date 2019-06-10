@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export const URL = 'https://laaketutka-app.azurewebsites.net/';
+export const URL = process.env.REACT_APP_BACKEND_URL;
 
 export const getByKeyword = (keyword) => {
   return axios.get(generateUrl(keyword));
