@@ -4,6 +4,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route} from 'react-router-dom';
 import Disclaimer from './components/Disclaimer';
+import 'react-app-polyfill/ie11'; // For IE 11 support
 
 var ReactGA = require('react-ga');
 ReactGA.initialize('UA-105305355-1');
