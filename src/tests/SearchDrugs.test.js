@@ -12,7 +12,7 @@ fixture`Search - Drugs view`
 /* Drugs view */
 
 test('Can see drugs header', async t => {
-  const header = Selector('h4').withText('Drugs associated with panacod')();
+  const header = Selector('h3').withText('panacod')();
   await t.expect(await header.exists).ok();
 });
 
@@ -28,7 +28,7 @@ test('Can adjust slider', async t => {
   await t.drag(await handle, -30, 0)
   
   /* Value is now less */
-  await t.expect(await handle.getAttribute('aria-valuenow')).lt('30');
+  await t.expect(parseInt(await handle.getAttribute('aria-valuenow'))).lt(30);
 
 });
 

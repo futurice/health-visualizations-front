@@ -30,7 +30,7 @@ test('Can adjust slider', async t => {
 
   /* Value is now less */
   await t
-    .expect(await handle.getAttribute('aria-valuenow')).lt('30')
+    .expect(parseInt(await handle.getAttribute('aria-valuenow'))).lt(30)
     .wait(1000);
 
   /* Plot changed, jälkisärky is now the first */ 
@@ -38,6 +38,6 @@ test('Can adjust slider', async t => {
 });
 
 test('Can see symptoms header', async t => {
-  const header = Selector('h4').withText('Symptoms associated with burana')();
+  const header = Selector('h3').withText('burana')();
   await t.expect(await header.exists).ok();
 });
