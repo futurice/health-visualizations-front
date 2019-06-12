@@ -23,7 +23,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	2. `npm start`
 	3. The frontend should show up at `http://localhost:3000`
 
-* Backend should be running online, if not, modify [this line](https://github.com/futurice/health-visualizations-front/blob/f4b5c3c9e7bf0abe834270d90b814707d9715b2e/src/util.js#L4) to e.g localhost
+By default, the frontend connects to the staging backend on the cloud. If you want to change it to e.g. localhost, run `cp .env .env.local` and edit the URL in .env.local.
 
 ### Testing
 
@@ -39,6 +39,4 @@ We use [surge.sh](http://surge.sh/) for deployment.
 2. `surge login` (username and password in the passwordsafe)
 3. `npm run deploy-staging` or `npm run deploy-production`
 
-[Staging](https://nettipuoskari-staging.surge.sh)
-
-[Production](https://www.laaketutka.fi/)
+[Staging](https://nettipuoskari-staging.surge.sh), [Production](https://www.laaketutka.fi/)
