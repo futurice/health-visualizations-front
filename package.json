@@ -4,25 +4,25 @@
   "private": true,
   "dependencies": {
     "axios": "~0.21.1",
-    "d3": "^4.10.0",
+    "d3": "^4.13.0",
     "enzyme": "^2.9.1",
-    "lodash": "^4.17.4",
-    "query-string": "^5.0.0",
-    "rc-slider": "^8.3.1",
+    "lodash": "^4.17.20",
+    "query-string": "^5.1.1",
+    "rc-slider": "^8.7.1",
     "rc-tooltip": "^3.4.8",
     "react": "^15.6.1",
-    "react-app-polyfill": "^1.0.1",
-    "react-dom": "^15.6.1",
-    "react-ga": "^2.2.0",
+    "react-app-polyfill": "^1.0.6",
+    "react-dom": "^15.7.0",
+    "react-ga": "^2.7.0",
     "react-highlight-words": "^0.8.1",
-    "react-modal": "^2.2.4",
-    "react-paginate": "^4.4.3",
-    "react-router-dom": "^4.1.2",
+    "react-modal": "^2.4.1",
+    "react-paginate": "^4.4.4",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.1",
     "react-spinkit": "^3.0.0",
     "react-spinner": "^0.2.7",
     "react-sticky-header": "^0.1.9",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^15.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,12 +35,12 @@
     "deploy-staging": "npm run build-staging && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
   },
   "devDependencies": {
+    "env-cmd": "9.0.3",
     "moxios": "^0.4.0",
-    "postcss-cli": "^4.1.0",
-    "postcss-custom-properties": "^6.1.0",
-    "testcafe": "^1.2.1",
-    "testcafe-react-selectors": "3.1.0",
-    "env-cmd": "9.0.3"
+    "postcss-cli": "^4.1.1",
+    "postcss-custom-properties": "^6.3.1",
+    "testcafe": "^1.10.1",
+    "testcafe-react-selectors": "3.1.0"
   },
   "browserslist": {
     "production": [
