@@ -18,7 +18,7 @@
     "react-modal": "^2.4.1",
     "react-paginate": "^4.4.4",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-spinkit": "^3.0.0",
     "react-spinner": "^0.2.7",
     "react-sticky-header": "^0.1.9",
@@ -35,11 +35,11 @@
     "deploy-staging": "npm run build-staging && cp robots.txt build/robots.txt && cd build && mv index.html 200.html && surge . --domain nettipuoskari-staging.surge.sh"
   },
   "devDependencies": {
-    "env-cmd": "9.0.3",
+    "env-cmd": "10.1.0",
     "moxios": "^0.4.0",
-    "postcss-cli": "^4.1.1",
+    "postcss-cli": "^10.1.0",
     "postcss-custom-properties": "^6.3.1",
-    "testcafe": "^1.10.1",
+    "testcafe": "^15.1.317922",
     "testcafe-react-selectors": "3.1.0"
   },
   "browserslist": {
